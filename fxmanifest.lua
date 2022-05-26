@@ -3,9 +3,8 @@ games { 'gta5' }
 lua54 'yes';
 use_fxv2_oal 'yes';
 
-author 'Pablo1610 & his Community';
 description 'NextCitizen, an powerfull FiveM framework RolePlay-Based';
-version '1.0.0';
+version '1.0.0-alpha';
 
 shared_scripts {
 
