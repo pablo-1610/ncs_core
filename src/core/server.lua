@@ -1,0 +1,1 @@
+_NCS:trace("Loading NCS Core, please wait...")
