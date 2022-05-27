@@ -1,4 +1,5 @@
 ---playAnimation
+---@param ped number
 ---@param dict string
 ---@param anim string
 ---@param flag number
@@ -8,15 +9,16 @@
 ---@param duration number
 ---@return nil
 ---@public
-function _NCS:playAnim(dict, anim, flag, blendin, blendout, playbackRate, duration)
+function _NCS:playAnim(ped, dict, anim, flag, blendin, blendout, playbackRate, duration)
     if (blendin == nil) then blendin = 1.0 end
     if (blendout == nil) then blendout = 1.0 end
     if (playbackRate == nil) then playbackRate = 1.0 end
     if (duration == nil) then duration = -1 end
+    if (not DoesEntityExist(ped)) then return end
     RequestAnimDict(dict)
-    while (not (HasAnimDictLoaded(dict))) do 
-        Wait(1) 
+    while (not (HasAnimDictLoaded(dict))) do
+        Wait(1)
     end
-    TaskPlayAnim(PlayerPedId(), dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
+    TaskPlayAnim(ped, dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
     RemoveAnimDict(dict)
 end
