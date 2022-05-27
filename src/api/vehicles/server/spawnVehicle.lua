@@ -4,7 +4,7 @@
 ---@param cb function
 ---@public
 function API_Vehicles:serverSpawn(modelName, coords, cb)
-    local vehicle = Citizen.InvokeNative(`CREATE_AUTOMOBILE`, joaat(modelName), coords)
+    local vehicle = Citizen.InvokeNative('CREATE_AUTOMOBILE', joaat(modelName), coords)
     repeat
         Wait(0)
     until DoesEntityExist(vehicle)
