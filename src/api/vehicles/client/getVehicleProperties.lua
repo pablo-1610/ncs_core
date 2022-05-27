@@ -1,14 +1,14 @@
----getVehicleProperties
+---vehicles_getVehicleProperties
 ---@param vehicleEntity number
 ---@return void
 ---@public
-function _NCS:getVehicleProperties(vehicleEntity)
+function _NCS:vehicles_getVehicleProperties(vehicleEntity)
     if DoesEntityExist(vehicleEntity) then
         local colorPrimary, colorSecondary = GetVehicleColours(vehicleEntity)
         local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleEntity)
         local extras = {}
 
-        for extraId = 0, 12 do
+        for extraId = 1, 15 do
             if DoesExtraExist(vehicleEntity, extraId) then
                 local state = IsVehicleExtraTurnedOn(vehicleEntity, extraId) == 1
                 extras[tostring(extraId)] = state

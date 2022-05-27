@@ -1,8 +1,8 @@
----getClosestPlayer
+---players_getClosestPlayer
 ---@return number, number
 ---@public
-function _NCS:getClosestPlayer()
-    local players, coords, playerClosest, playerClosestPosition, playerClosestDistance  = GetActivePlayers(), GetEntityCoords(PlayerPedId())
+function _NCS:players_getClosestPlayer()
+    local players, coords, playerClosest, playerClosestPosition, playerClosestDistance = GetActivePlayers(), GetEntityCoords(PlayerPedId())
     for _, v in pairs(players) do
         if (GetPlayerPed(v) ~= PlayerPedId()) then
             local oPed = GetPlayerPed(v)
