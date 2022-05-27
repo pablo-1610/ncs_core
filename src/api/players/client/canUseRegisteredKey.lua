@@ -1,6 +1,6 @@
 ---canUseRegisterKey
----@param Bool boolean
----@param ButtonIndex string
+---@param bool boolean
+---@param buttonIndex string
 function _NCS:canUseRegisteredKey(bool, buttonIndex)
     if (type(bool) == 'boolean') then
         for _,v in pairs(registeredKeysTable) do
