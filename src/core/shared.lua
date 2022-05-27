@@ -33,21 +33,13 @@ function _NCS:die(reason)
     error(("(NCS) %s"):format(reason))
 end
 
----formatEvent
----@param eventName string
----@return void
----@public
-function _NCS:formatEvent(eventName)
-    return (("ncs:%s"):format(GetHashKey(eventName)))
-end
-
 ---registerNetEvent
 ---@param eventName string
 ---@return void
 ---@public
 function _NCS:registerNetEvent(eventName, ...)
     if not isEventRegistered(eventName) then
-        RegisterNetEvent(self:formatEvent(eventName), ...)
+        RegisterNetEvent(self:net_formatEvent(eventName), ...)
         registeredEvents[eventName] = true
     end
 end
@@ -58,7 +50,7 @@ end
 ---@return void
 ---@public
 function _NCS:handleEvent(eventName, callback)
-    AddEventHandler(self:formatEvent(eventName), callback)
+    AddEventHandler(self:net_formatEvent(eventName), callback)
 end
 
 ---triggerEvent
@@ -66,7 +58,7 @@ end
 ---@return void
 ---@public
 function _NCS:triggerEvent(eventName, ...)
-    TriggerEvent(self:formatEvent(eventName), ...)
+    TriggerEvent(self:net_formatEvent(eventName), ...)
 end
 
 ---onReady
