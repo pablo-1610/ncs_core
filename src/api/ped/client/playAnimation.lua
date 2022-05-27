@@ -9,8 +9,8 @@
 ---@return nil
 ---@public
 function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbackRate, duration)
-    if not DoesEntityExist(ped) then
-        return
+    if (not (DoesEntityExist(ped))) then
+        _NCS:die("Target ped does not exists")
     end
 
     if (blendin == nil) then
