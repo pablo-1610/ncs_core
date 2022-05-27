@@ -1,30 +1,30 @@
 registeredKeysTable = {}
 ---registerKey
----@param Key string
+---@param key string
 ---@param commandName string
 ---@param commandDesc string
----@param Action function
-function _NCS:registerKey(Key, commandName, commandDesc, Action)
-    Key = string.upper(Key)
-    if (Action) then
+---@param action function
+function _NCS:registerKey(key, commandName, commandDesc, action)
+    key = string.upper(key)
+    if (action) then
         registeredKeysTable[#registeredKeysTable+1] = {
-            key = Key,
+            key = key,
             commandName = commandName,
             commandDesc = commandDesc,
-            action = Action,
+            action = action,
             canUse = true,
         }
         RegisterCommand(commandName, function()
             for k,v in pairs(registeredKeysTable) do
-                if (v.key == Key) then
+                if (v.key == key) then
                     if (v.canUse) then
-                        Action()
+                        action()
                     end
                 end
             end
         end, true)
-        RegisterKeyMapping(commandName, commandDesc, 'keyboard', Key)
+        RegisterKeyMapping(commandName, commandDesc, 'keyboard', key)
     else
-        _NCS:trace(("KEY registerKey [%s - %s] Action invalid or not found"):format(Key, commandName), 5)
+        _NCS:trace(("KEY registerKey [%s - %s] Action invalid or not found"):format(key, commandName), 5)
     end
 end
