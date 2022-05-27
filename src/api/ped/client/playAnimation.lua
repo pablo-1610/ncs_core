@@ -13,18 +13,10 @@ function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbac
         _NCS:die("Target ped does not exists")
     end
 
-    if (blendin == nil) then
-        blendin = 1.0
-    end
-    if (blendout == nil) then
-        blendout = 1.0
-    end
-    if (playbackRate == nil) then
-        playbackRate = 1.0
-    end
-    if (duration == nil) then
-        duration = -1
-    end
+    blendin = blendin or 1.0
+    blendout = blendout or 1.0
+    playbackRate = playbackRate or 1.0
+    duration = duration or -1
 
     RequestAnimDict(dict)
     while (not (HasAnimDictLoaded(dict))) do
