@@ -1,0 +1,110 @@
+body {
+  font-family: "OverpassMedium";
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    .container-top {
+      display: flex;
+      margin: 50px 30px 0 0;
+
+      .thirst {
+        display: flex;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+        .thirstvalue {
+          display: flex;
+          align-items: center;
+          margin: 0 20px 0 10px;
+          color: white;
+          font-size: 14px;
+          font-family: "OverpassMedium";
+        }
+      }
+
+      .hunger {
+        display: flex;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+        .hungervalue {
+          display: flex;
+          align-items: center;
+          margin: 0 20px 0 10px;
+          color: white;
+          font-size: 14px;
+          font-family: "OverpassMedium";
+        }
+      }
+
+      .time {
+        display: flex;
+        img {
+          width: 30px;
+          height: 30px;
+          margin: 0 8px 0 0;
+        }
+        .hourValue {
+          font-family: "OverpassSemiBold";
+          color: white;
+          font-size: 14px;
+        }
+        .dateValue {
+          font-family: "OverpassRegular";
+          color: white;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .container-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 25px 30px 0 0;
+
+    .moneyvalue {
+      color: white;
+      font-size: 16px;
+      font-family: "OverpassBold";
+    }
+    img {
+      width: 40px;
+      height: 40px;
+      margin: 0 0 0 20px;
+    }
+  }
+}
+
+@font-face {
+  font-family: "OverpassMedium";
+  src: url("./assets/fonts/Overpass-Medium.ttf");
+}
+
+@font-face {
+  font-family: "OverpassBold";
+  src: url("./assets/fonts/Overpass-Bold.ttf");
+}
+
+@font-face {
+  font-family: "OverpassRegular";
+  src: url("./assets/fonts/Overpass-Regular.ttf");
+}
+
+@font-face {
+  font-family: "OverpassSemiBold";
+  src: url("./assets/fonts/Overpass-SemiBold.ttf");
+}
