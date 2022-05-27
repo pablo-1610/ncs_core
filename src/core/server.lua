@@ -1,4 +1,4 @@
-_NCS:trace("Loading NCS Core, please wait...")
+_NCS:trace("Loading NCS Core, please wait...", _NCSEnum.LogType.INFO)
 
 ---triggerClientEvent
 ---@param eventName string
@@ -9,6 +9,4 @@ function _NCS:triggerClientEvent(eventName, targetId, ...)
     TriggerClientEvent(self:formatEvent(eventName), targetId, ...)
 end
 
-AddEventHandler("ncs_core:dbConnected", function()
-    _NCS:triggerEvent("ncs_core:loaded")
-end)
+_NCS:triggerEvent("ncs_core:loaded")
