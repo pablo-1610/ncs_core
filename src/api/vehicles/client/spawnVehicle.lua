@@ -1,6 +1,6 @@
 ---spawnVehicle
----@param modelOrHash string or number
----@param coord table
+---@param modelName string
+---@param coords table
 ---@param heading number
 ---@param cb function
 ---@public
