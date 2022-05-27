@@ -3,7 +3,6 @@
 ---@param colorBg number
 ---@return void
 ---@public
-
 function API_Player:showNotification(text, colorBg)
     if (colorBg) then
         ThefeedNextPostBackgroundColor(colorBg)
