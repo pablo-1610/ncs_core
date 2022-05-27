@@ -53,5 +53,13 @@ function _NCS:registerNetEvent(eventName, ...)
     end
 end
 
+---triggerEvent
+---@param eventName string
+---@return void
+---@public
+function _NCS:triggerEvent(eventName, ...)
+    TriggerEvent(self:formatEvent(eventName), ...)
+end
+
 _G._NCS = _NCS
 _G._NCSEnum = {}
