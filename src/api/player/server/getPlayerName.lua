@@ -4,7 +4,7 @@
 ---@public
 function API_Player:getName(playerId)
     if (playerId) then
-        local name = GetPlayerName(playerId)
+        local name <const> = GetPlayerName(playerId)
         if (name ~= nil) then
             return (name)
         end
