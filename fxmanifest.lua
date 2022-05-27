@@ -13,6 +13,7 @@ shared_scripts {
 };
 
 server_scripts {
+    "vendors/oxmysql/oxmysql.js",
     "src/core/server.lua",
     "src/class/**/server.lua",
 };
@@ -21,6 +22,8 @@ client_scripts {
     "src/core/shard.lua",
     "src/class/**/client.lua",
 };
+
+-- Export
 
 shared_scripts {
     "src/core/export.lua",
