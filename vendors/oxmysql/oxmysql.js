@@ -22524,7 +22524,7 @@ setTimeout(() => {
             emit("ncs_core:trace", "Unable to establish a connection to the database.", 5)
             return;
         }
-        emit("ncs_core:trace", "Database connection established.", 2)
+        emit("ncs_core:trace", "Database connection ^2established^7.", 2)
         emit("ncs_core:dbConnected", true)
         serverReady = true;
     });
