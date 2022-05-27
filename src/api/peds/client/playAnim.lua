@@ -1,4 +1,4 @@
----playAnimation
+---playAnim
 ---@param ped number
 ---@param dict string
 ---@param anim string
