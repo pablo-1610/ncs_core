@@ -4,7 +4,7 @@
 ---@param coords table (vector4)
 ---@param cb function
 ---@public
-function _NCS:vehicles_spawnVehicle(modelName, coords, cb)
+function API_Vehicles:spawn(modelName, coords, cb)
     local vehicle = Citizen.InvokeNative(`CREATE_AUTOMOBILE`, joaat(modelName), coords)
     repeat
         Wait(0)
