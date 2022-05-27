@@ -8,6 +8,13 @@ version '1.0.0-alpha';
 
 -- NCS Main
 
+ui_page "src/web/build/index.html"
+
+files {
+    "src/web/build/index.html",
+    "src/web/build/**"
+}
+
 shared_scripts {
     -- NCS Core
     "src/core/shared.lua",
