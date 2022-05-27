@@ -14,7 +14,9 @@ function _NCS:playAnim(ped, dict, anim, flag, blendin, blendout, playbackRate, d
     if (blendout == nil) then blendout = 1.0 end
     if (playbackRate == nil) then playbackRate = 1.0 end
     if (duration == nil) then duration = -1 end
-    if (not DoesEntityExist(ped)) then return end
+    if (not DoesEntityExist(ped)) then 
+        return 
+    end
     RequestAnimDict(dict)
     while (not (HasAnimDictLoaded(dict))) do
         Wait(1)
