@@ -1,4 +1,4 @@
----ped_playAnimation
+---playAnimation
 ---@param dict string
 ---@param anim string
 ---@param flag number
@@ -8,7 +8,7 @@
 ---@param duration number
 ---@return nil
 ---@public
-function _NCS:ped_playAnim(dict, anim, flag, blendin, blendout, playbackRate, duration)
+function API_Ped:playAnimation(dict, anim, flag, blendin, blendout, playbackRate, duration)
     if (blendin == nil) then
         blendin = 1.0
     end
