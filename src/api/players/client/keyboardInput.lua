@@ -12,7 +12,7 @@ function _NCS:keyboardInput(TextEntry, ExampleText, MaxStringLenght)
         Wait(0)
     end
 
-    if UpdateOnscreenKeyboard() ~= 2 then
+    if (UpdateOnscreenKeyboard() ~= 2) then
         local result = GetOnscreenKeyboardResult()
         Wait(500)
         blockinput = false
