@@ -32,12 +32,7 @@ end)
 
 local registredEvents = {}
 local function isEventRegistred(eventName)
-    for k, v in pairs(registredEvents) do
-        if (v == eventName) then
-            return (true)
-        end
-    end
-    return (false)
+    return (registredEvents[eventName] ~= nil)
 end
 ---registerNetEvent
 ---@param eventName string
