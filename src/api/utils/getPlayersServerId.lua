@@ -1,4 +1,4 @@
-local PlayersServerId = {}
+PlayersServerId = {}
 
 ---getPlayersServerId
 ---@return void
@@ -15,4 +15,5 @@ function _NCS:getPlayersServerId()
             table.insert(PlayersServerId, GetPlayerServerId(v))
         end
     end
+    return(PlayersServerId)
 end
