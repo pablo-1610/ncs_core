@@ -1,14 +1,3 @@
---[[
-  This file is part of Meta RP.
-  Created at 28/05/2022 00:09
-  
-  Copyright (c) Meta RP - All Rights Reserved
-  
-  Unauthorized using, copying, modifying and/or distributing of this file,
-  via any medium is strictly prohibited. This code is confidential.
---]]
----@author Pablo_1610
-
 ---@type table<number, NCSPlayer>
 MOD_Players.list = {}
 
