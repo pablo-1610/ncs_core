@@ -11,7 +11,7 @@ end
 ---trace
 ---@return void
 ---@param message string
----@param logType any
+---@param logType? any
 ---@public
 function _NCS:trace(message, logType)
     logType = _NCSEnum._getLogTypeDisplayData(logType or _NCSEnum.LogType.DEBUG)
