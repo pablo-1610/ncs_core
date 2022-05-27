@@ -5,8 +5,8 @@
 function _NCS:getPlayerLicense(playerId)
     for _, v in pairs(GetPlayerIdentifiers(playerId)) do
         if (string.sub(v, 1, string.len("license:")) == "license:") then
-            return v
+            return (v)
         end
     end
-    return false
+    return (false)
 end

@@ -21,5 +21,5 @@ function _NCS:getClosestPlayer()
             end
         end
     end
-    return playerClosest, playerClosestDistance
+    return (playerClosest), (playerClosestDistance)
 end
