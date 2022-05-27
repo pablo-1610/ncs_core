@@ -8,7 +8,7 @@
 ---@param duration number
 ---@return nil
 ---@public
-function API_Ped:playAnimation(dict, anim, flag, blendin, blendout, playbackRate, duration)
+function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbackRate, duration)
     if (blendin == nil) then
         blendin = 1.0
     end
@@ -21,10 +21,15 @@ function API_Ped:playAnimation(dict, anim, flag, blendin, blendout, playbackRate
     if (duration == nil) then
         duration = -1
     end
+
+    if not DoesEntityExist(ped) then
+        return
+    end
+
     RequestAnimDict(dict)
     while (not (HasAnimDictLoaded(dict))) do
         Wait(1)
     end
-    TaskPlayAnim(PlayerPedId(), dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
+    TaskPlayAnim(ped, dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
     RemoveAnimDict(dict)
 end
