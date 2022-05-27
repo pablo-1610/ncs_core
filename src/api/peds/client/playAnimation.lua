@@ -6,7 +6,7 @@
 ---@param blendout number
 ---@param playbackRate number
 ---@param duration number
----@return nil
+---@return void
 ---@public
 function _NCS:playAnimation(dict, anim, flag, blendin, blendout, playbackRate, duration)
     if (blendin == nil) then blendin = 1.0 end
