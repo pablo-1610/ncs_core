@@ -16,11 +16,15 @@ server_scripts {
     "vendors/oxmysql/oxmysql.js",
     "src/core/server.lua",
     "src/class/**/server.lua",
+    "src/modules/**/server/*.lua",
+    "src/api/**/server/*.lua",
 };
 
 client_scripts {
     "src/core/shard.lua",
     "src/class/**/client.lua",
+    "src/modules/**/client/*.lua",
+    "src/api/**/client/*.lua",
 };
 
 -- Export
