@@ -16,7 +16,7 @@ function _NCS:keyboardInput(TextEntry, ExampleText, MaxStringLenght)
         local result = GetOnscreenKeyboardResult()
         Wait(500)
         blockinput = false
-        return result
+        return (result)
     else
         Citizen.Wait(500)
         blockinput = false
