@@ -19,21 +19,11 @@ function _NCS:trace(message, logType)
 end
 
 ---formatEvent
----@return void
 ---@param eventName string
+---@return void
 ---@public
 function _NCS:formatEvent(eventName)
     return (("ncs:%s"):format(GetHashKey(eventName)))
-end
-
-AddEventHandler("ncs_core:trace", function(message, logType)
-    _NCS:trace(message, logType)
-end)
-
-local registeredEvents = {}
-
-local function isEventRegistered(eventName)
-    return (registeredEvents[eventName] ~= nil)
 end
 
 ---registerNetEvent
