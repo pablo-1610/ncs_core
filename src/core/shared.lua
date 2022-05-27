@@ -39,7 +39,7 @@ end
 ---@public
 function _NCS:registerNetEvent(eventName, ...)
     if not isEventRegistered(eventName) then
-        RegisterNetEvent(self:net_formatEvent(eventName), ...)
+        RegisterNetEvent(self:formatEvent(eventName), ...)
         registeredEvents[eventName] = true
     end
 end
@@ -50,7 +50,7 @@ end
 ---@return void
 ---@public
 function _NCS:handleEvent(eventName, callback)
-    AddEventHandler(self:net_formatEvent(eventName), callback)
+    AddEventHandler(self:formatEvent(eventName), callback)
 end
 
 ---triggerEvent
@@ -58,7 +58,7 @@ end
 ---@return void
 ---@public
 function _NCS:triggerEvent(eventName, ...)
-    TriggerEvent(self:net_formatEvent(eventName), ...)
+    TriggerEvent(self:formatEvent(eventName), ...)
 end
 
 ---onReady
@@ -67,6 +67,14 @@ end
 ---@public
 function _NCS:onReady(callback)
     self:handleEvent("ncs_core:loaded", callback)
+end
+
+---net_formatEvent
+---@param eventName string
+---@return void
+---@public
+function _NCS:formatEvent(eventName)
+    return (("ncs:%s"):format(GetHashKey(eventName)))
 end
 
 AddEventHandler("ncs_core:trace", function(message, logType)

@@ -16,7 +16,8 @@ shared_scripts {
     -- NCS Class
     "src/class/**/shared.lua",
     -- NCS Api
-    "src/api/**/shared.lua",
+    "src/api/**/_define.lua",
+    "src/api/**/shared/*.lua",
 };
 
 server_scripts {
@@ -50,6 +51,7 @@ client_scripts {
 shared_scripts {
     -- NCS Export
     "src/core/export.lua",
+    "src/api/**/_export.lua",
 };
 
 --[[

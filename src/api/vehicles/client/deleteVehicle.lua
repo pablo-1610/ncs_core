@@ -1,8 +1,8 @@
----vehicles_deleteVehicle
+---delete
 ---@param vehicleEntity number
 ---@return void
 ---@public
-function _NCS:vehicles_deleteVehicle(vehicleEntity)
+function API_Vehicles:delete(vehicleEntity)
     SetEntityAsMissionEntity(vehicleEntity, 0, 1)
     DeleteVehicle(vehicleEntity)
 end

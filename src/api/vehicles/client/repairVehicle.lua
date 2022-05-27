@@ -1,8 +1,8 @@
----vehicles_repairVehicle
+---repair
 ---@param vehicleEntity number
 ---@return void
 ---@public
-function _NCS:vehicles_repairVehicle(vehicleEntity)
+function API_Vehicles:repair(vehicleEntity)
     SetVehicleFixed(vehicleEntity)
     SetVehicleDirtLevel(vehicleEntity, 0.0)
 end

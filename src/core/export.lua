@@ -6,5 +6,5 @@ local function GetEnums()
     return (_G._NCSEnum)
 end
 
-exports("get", GetNCS)
+exports("getLibrary", GetNCS)
 exports("getEnums", GetEnums)

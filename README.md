@@ -13,6 +13,10 @@ NCS is a core created by the community, for the community. It was designed to en
 
 [Official documentation of NextCitizens.](https://nextcitizens.net)
 
+## Discord
+
+[Official Discord of NextCitizens.](https://discord.gg/T8u4JsserD)
+
 
 ## License
 

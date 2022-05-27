@@ -1,12 +1,16 @@
----vehicles_setVehicleProperties
+---setProperties
 ---@param vehicleEntity number
 ---@param props table
 ---@return void
 ---@public
-function _NCS:setVehicleProperties(vehicleEntity, props)
-    if not DoesEntityExist(vehicleEntity) then return _NCS:die("Can't set vehicle properties for the vehicle (entity doesn't exist)") end
-    if NetworkGetEntityOwner(vehicleEntity) ~= PlayerId() then return _NCS:die("Can't set vehicle properties for the vehicle (client is not the entity owner") end
-    
+function API_Vehicles:setProperties(vehicleEntity, props)
+    if not DoesEntityExist(vehicleEntity) then
+        return _NCS:die("Can't set vehicle properties for the vehicle (entity doesn't exist)")
+    end
+    if NetworkGetEntityOwner(vehicleEntity) ~= PlayerId() then
+        return _NCS:die("Can't set vehicle properties for the vehicle (client is not the entity owner")
+    end
+
     local colorPrimary, colorSecondary = GetVehicleColours(vehicleEntity)
     local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleEntity)
     SetVehicleModKit(vehicleEntity, 0)
