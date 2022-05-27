@@ -5,10 +5,9 @@
 ---@param cb function
 ---@public
 function _NCS:spawnVehicle(modelOrHash, coord, heading, cb)
-    if IsModelInCdimage(modelOrHash) then
+    if (IsModelInCdimage(modelOrHash)) then
         RequestModel(modelOrHash)
-        while not HasModelLoaded(modelOrHash) do
-            _NCS:trace("Waiting model "..modelOrHash, 3)
+        while (not (HasModelLoaded(modelOrHash))) do
             Wait(100)
         end
     end
