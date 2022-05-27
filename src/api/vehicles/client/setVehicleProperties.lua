@@ -1,9 +1,9 @@
----setVehicleProperties 
+---vehicles_setVehicleProperties
 ---@param vehicleEntity number
 ---@param props table
 ---@return void
 ---@public
-function _NCS:setVehicleProperties(vehicleEntity, props)
+function _NCS:vehicles_setVehicleProperties(vehicleEntity, props)
     if DoesEntityExist(vehicleEntity) then
         local colorPrimary, colorSecondary = GetVehicleColours(vehicleEntity)
         local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleEntity)
