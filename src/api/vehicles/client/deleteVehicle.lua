@@ -1,6 +1,6 @@
 ---deleteVehicle
 ---@param vehicle Vehicle
----@return
+---@return void
 ---@public
 function _NCS:deleteVehicle(vehicle)
     SetEntityAsMissionEntity(vehicle, 0, 1)
