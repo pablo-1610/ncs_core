@@ -12,8 +12,8 @@ function API_Player:showAdvancedNotification(icon, type, sender, title, text, co
     if (colorBg) then
         ThefeedNextPostBackgroundColor(colorBg)
     end
-    SetNotificationTextEntry("STRING");
-    AddTextComponentString(text);
-    SetNotificationMessage(icon, icon, true, type, sender, title, text);
-    DrawNotification(false, true);
+    SetNotificationTextEntry("STRING")
+    AddTextComponentString(text)
+    SetNotificationMessage(icon, icon, true, type, sender, title, text)
+    DrawNotification(false, true)
 end
