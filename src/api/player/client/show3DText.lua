@@ -3,7 +3,7 @@
 ---@param y number
 ---@param z number
 ---@param text string
-function API_Player:show3dtext = function(x, y, z, text)
+function API_Player:show3dtext(x, y, z, text)
     local onScreen, x, y = World3dToScreen2d(x, y, z)
     if onScreen then
         SetTextScale(0.90, 0.90)
