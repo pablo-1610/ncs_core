@@ -62,5 +62,13 @@ function _NCS:triggerEvent(eventName, ...)
     TriggerEvent(self:formatEvent(eventName), ...)
 end
 
+---onReady
+---@param callback function
+---@return void
+---@public
+function _NCS:onReady(callback)
+    self:handleEvent("ncs_core:loaded", callback)
+end
+
 _G._NCS = _NCS
 _G._NCSEnum = {}
