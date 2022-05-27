@@ -16,8 +16,9 @@ You can contribute to this repository but you must respect 2 conditions :
 
 Use the conventions explained [here](https://github.com/NextCitizens/ncs_core/commit/1eceac4da41a00ce7aca2bdcd3da47fcef15df83)
 In your commit, you *must* use an emoji like that: 
-<img src="https://cdn.discordapp.com/attachments/942389406835290152/979777057502416906/Capture_decran_2022-05-27_a_18.03.57.png" />
-You can use [gitemoji](http://gitemoji.dev) to find the emoji corresponds to the contribution.
+"⚡️ Improved Performance"
+
+You can use [gitemoji](http://gitemoji.dev) to find the emoji corresponds to the contribution subject.
 
 ## Documentation
 
