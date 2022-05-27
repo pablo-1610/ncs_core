@@ -1,9 +1,9 @@
-PlayersServerId = {}
+ActivePlayers = {}
 
 ---getPlayersServerId
 ---@return void
 ---@public
-function _NCS:getPlayersServerId()
+function _NCS:getActivePlayers()
     for k, v in pairs(GetActivePlayers()) do 
         local found = false
         for _, id in paurs(PlayersServerId) do 
@@ -12,8 +12,8 @@ function _NCS:getPlayersServerId()
             end
         end
         if not found then
-            table.insert(PlayersServerId, GetPlayerServerId(v))
+            table.insert(ActivePlayers, GetPlayerServerId(v))
         end
     end
-    return(PlayersServerId)
+    return(ActivePlayers)
 end
