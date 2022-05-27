@@ -3,7 +3,7 @@
 ---@public
 function _NCS:getClosestPlayer()
     local players, coords, playerCloset, playerClosetPosition, playerClosestDistance  = GetActivePlayers(), GetEntityCoords(PlayerPedId())
-    for k, v in pairs(players) do
+    for _, v in pairs(players) do
         if (GetPlayerPed(v) ~= PlayerPedId()) then
             local oPed = GetPlayerPed(v)
             local oCoords = GetEntityCoords(oPed)
