@@ -15,7 +15,7 @@ end
 ---@public
 function _NCS:trace(message, logType)
     logType = _NCSEnum._getLogTypeDisplayData(logType or _NCSEnum.LogType.DEBUG)
-    print(("[%s^7] %s"):format(("%s%s"):format(logType.displayColor, logType.displayName), message))
+    print(("(^1NCS^7) [%s^7] %s"):format(("%s%s"):format(logType.displayColor, logType.displayName), message))
 end
 
 ---formatEvent
@@ -31,9 +31,11 @@ AddEventHandler("ncs_core:trace", function(message, logType)
 end)
 
 local registeredEvents = {}
+
 local function isEventRegistered(eventName)
     return (registeredEvents[eventName] ~= nil)
 end
+
 ---registerNetEvent
 ---@param eventName string
 ---@return void

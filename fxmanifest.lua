@@ -15,6 +15,8 @@ shared_scripts {
     "src/enum/*.lua",
     -- NCS Class
     "src/class/**/shared.lua",
+    -- NCS Api
+    "src/api/**/shared.lua",
 };
 
 server_scripts {
