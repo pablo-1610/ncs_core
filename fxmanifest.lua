@@ -1,10 +1,10 @@
-fx_version 'cerulean';
-games { 'gta5' }
-lua54 'yes';
-use_fxv2_oal 'yes';
+fx_version 'cerulean'
+game 'gta5'
+lua54 'yes'
+use_fxv2_oal 'yes'
 
-description 'NextCitizen, an powerfull FiveM framework RolePlay-Based';
-version '1.0.0-alpha';
+description 'NextCitizen, an powerfull FiveM framework RolePlay-Based'
+version '1.0.0-alpha'
 
 -- NCS Main
 
@@ -21,7 +21,7 @@ shared_scripts {
     "src/api/**/shared/*.lua",
     -- NCS Modules
     "src/modules/**/shared/*.lua",
-};
+}
 
 server_scripts {
     -- Vendors
@@ -35,7 +35,7 @@ server_scripts {
     "src/api/**/server/*.lua",
     -- NCS Modules
     "src/modules/**/server/*.lua",
-};
+}
 
 client_scripts {
     -- NCS Core
@@ -47,7 +47,7 @@ client_scripts {
     "src/api/**/client/*.lua",
     -- NCS Modules
     "src/modules/**/client/*.lua",
-};
+}
 
 --[[
     Post NCS Load
@@ -63,6 +63,6 @@ shared_scripts {
     Testing files
 --]]
 
-server_script "test/server.lua";
-client_script "test/client.lua";
-shared_script "test/shared.lua";
+server_script "test/server.lua"
+client_script "test/client.lua"
+shared_script "test/shared.lua"
