@@ -1,10 +1,10 @@
----spawnVehicle
+---vehicles_spawnVehicle
 ---@param modelName string
 ---@param coords table
 ---@param heading number
 ---@param cb function
 ---@public
-function _NCS:spawnVehicle(modelName, coords, heading, cb, clientSide)
+function _NCS:vehicles_spawnVehicle(modelName, coords, heading, cb, clientSide)
     local model = GetHashKey(modelName)
     if (not (IsModelInCdimage(model))) then
         return

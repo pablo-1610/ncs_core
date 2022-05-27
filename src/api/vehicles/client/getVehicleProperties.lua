@@ -1,11 +1,8 @@
---[[
-    getVehicleProperties
-    Becareful, some natives like IsToggleModOn can return a boolean when it's returning false and a integer (1) when it's returning true
-]]
+---vehicles_getVehicleProperties
 ---@param vehicleEntity number
 ---@return void
 ---@public
-function _NCS:getVehicleProperties(vehicleEntity)
+function _NCS:vehicles_getVehicleProperties(vehicleEntity)
     if DoesEntityExist(vehicleEntity) then
         local colorPrimary, colorSecondary = GetVehicleColours(vehicleEntity)
         local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleEntity)

@@ -1,4 +1,4 @@
----setVehicleProperties 
+---vehicles_setVehicleProperties
 ---@param vehicleEntity number
 ---@param props table
 ---@return void
