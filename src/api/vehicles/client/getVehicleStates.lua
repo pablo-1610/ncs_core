@@ -1,6 +1,8 @@
 ---getVehicleStates
 ---@param vehicle number
-function _NCS:getVehicleStates(vehicle)
+---@return void
+---@public
+function API_Vehicles:getStates(vehicle)
     local vehicleState = {}
     if (GetVehiclePedIsIn(PlayerPedId()) ~= 0) then
         if (vehicle ~= nil) then
