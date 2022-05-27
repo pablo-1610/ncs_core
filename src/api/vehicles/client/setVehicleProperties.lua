@@ -1,4 +1,4 @@
----setProperties 
+---setVehicleProperties 
 ---@param vehicle number
 ---@param props table
 ---@return void
