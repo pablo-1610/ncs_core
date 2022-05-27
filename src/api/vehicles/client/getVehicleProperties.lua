@@ -1,4 +1,7 @@
----getVehicleProperties
+--[[
+    getVehicleProperties
+    Becareful, some natives like IsToggleModOn can return a boolean when it's returning false and a integer (1) when it's returning true
+]]
 ---@param vehicleEntity number
 ---@return void
 ---@public
@@ -8,7 +11,7 @@ function _NCS:getVehicleProperties(vehicleEntity)
         local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleEntity)
         local extras = {}
 
-        for extraId = 0, 12 do
+        for extraId = 1, 15 do
             if DoesExtraExist(vehicleEntity, extraId) then
                 local state = IsVehicleExtraTurnedOn(vehicleEntity, extraId) == 1
                 extras[tostring(extraId)] = state
