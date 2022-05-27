@@ -1,11 +1,11 @@
 ---canUseRegisterKey
 ---@param Bool boolean
 ---@param ButtonIndex string
-function _NCS:canUseRegisteredKey(Bool, ButtonIndex)
-    if (type(Bool) == 'boolean') then
+function _NCS:canUseRegisteredKey(bool, buttonIndex)
+    if (type(bool) == 'boolean') then
         for _,v in pairs(registeredKeysTable) do
-            if (ButtonIndex) then
-                if (v.key == string.upper(ButtonIndex)) then
+            if (buttonIndex) then
+                if (v.key == string.upper(buttonIndex)) then
                     v.canUse = Bool
                 end
             else
