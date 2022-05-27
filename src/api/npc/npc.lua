@@ -4,7 +4,7 @@
 ---@param coords table
 ---@param heading number
 ---@public
-local npc = {}
+npc = {}
 function npc:createped(ped_type, modelhash, coords, heading)
     self.pedtype = ped_type
     self.modelhash = modelhash
