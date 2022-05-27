@@ -1,6 +1,8 @@
----subtitle
+---showSubtitle
 ---@param text string
-function API_Player:subtitle(text)
+---@return void
+---@public
+function API_Player:showSubtitle(text)
     ClearPrints()
     BeginTextCommandPrint("STRING")
     AddTextComponentSubstringPlayerName(text)
