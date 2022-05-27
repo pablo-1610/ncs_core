@@ -1,4 +1,4 @@
---serverSpawn
+---serverSpawn
 
 ---@param modelName string
 ---@param coords table (vector4)
