@@ -1,5 +1,5 @@
 ---getVehicleProperties
----@param vehicle number
+---@param vehicleEntity number
 ---@return void
 ---@public
 function _NCS:getVehicleProperties(vehicle)
