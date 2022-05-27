@@ -1,0 +1,1 @@
+_G._NCS.Strings = API_Strings
