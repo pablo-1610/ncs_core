@@ -2,9 +2,10 @@ _NCS:trace("Loading NCS Core, please wait...")
 
 ---triggerClientEvent
 ---@param eventName string
+---@param targetId number
 ---@return void
 ---@public
-function _NCS:triggerClientEvent(eventName, targetID, ...)
-    TriggerClientEvent(string eventName, int targetID[, ...])
+function _NCS:triggerClientEvent(eventName, targetId, ...)
+    TriggerClientEvent(self:formatEvent(eventName), targetId, ...)
 end
 
