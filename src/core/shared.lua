@@ -1,6 +1,12 @@
 ---@class _NCS
 local _NCS = {}
 
+local registeredEvents = {}
+
+local function isEventRegistered(eventName)
+    return (registeredEvents[eventName] ~= nil)
+end
+
 ---getVersion
 ---@return string
 ---@public
@@ -61,6 +67,10 @@ end
 function _NCS:onReady(callback)
     self:handleEvent("ncs_core:loaded", callback)
 end
+
+AddEventHandler("ncs_core:trace", function(message, logType)
+    _NCS:trace(message, logType)
+end)
 
 _G._NCS = _NCS
 _G._NCSEnum = {}
