@@ -9,11 +9,11 @@
 ---@public
 
 function _NCS:showAdvancedNotification(icon, type, sender, title, text, colorBg)
-	if (colorBg) then
-		ThefeedNextPostBackgroundColor(colorBg)
-	end
-	SetNotificationTextEntry("STRING");
-	AddTextComponentString(text);
-	SetNotificationMessage(icon, icon, true, type, sender, title, text);
-	DrawNotification(false, true);
+    if (colorBg) then
+        ThefeedNextPostBackgroundColor(colorBg)
+    end
+    SetNotificationTextEntry("STRING");
+    AddTextComponentString(text);
+    SetNotificationMessage(icon, icon, true, type, sender, title, text);
+    DrawNotification(false, true);
 end
