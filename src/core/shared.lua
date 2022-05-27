@@ -32,12 +32,13 @@ end)
 
 local registredEvents = {}
 local function isEventRegistred(eventName)
-    for k,v in pairs(registredEvents) do
-        if v == eventName then return true end
+    for k, v in pairs(registredEvents) do
+        if (v == eventName) then
+            return (true)
+        end
     end
-    return false
+    return (false)
 end
-
 ---registerNetEvent
 ---@param eventName string
 ---@return void
@@ -45,11 +46,7 @@ end
 function _NCS:registerNetEvent(eventName, ...)
     if not isEventRegistred(eventName) then
         RegisterNetEvent(self:formatEvent(eventName), ...)
-        RegisterNetEvent(eventName, function(...)
-            -- TODO: Add something to prevent wrong use of event
-            -- This can be prevent stupid cheaters try to use the event without the proper format
-        end)
-        table.insert(registredEvents, eventName)
+        registredEvents[eventName] = true
     end
 end
 
