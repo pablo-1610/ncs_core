@@ -8,7 +8,7 @@ function _NCS:getClosestPlayer()
             local oPed = GetPlayerPed(v)
             local oCoords = GetEntityCoords(oPed)
             local dst = #(oCoords - coords)
-            if not (playerCloset) then
+            if not (playerClosest) then
                 playerClosest = v
                 playerClosestPosition = oCoords
                 playerClosestDistance = dst
