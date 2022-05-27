@@ -5,8 +5,8 @@
 ---@public
 
 function _NCS:showMissionNotification(text, time)
-	ClearPrints()
-	BeginTextCommandPrint("STRING")
-	AddTextComponentSubstringPlayerName(text)
-	EndTextCommandPrint(time, true)
+    ClearPrints()
+    BeginTextCommandPrint("STRING")
+    AddTextComponentSubstringPlayerName(text)
+    EndTextCommandPrint(time, true)
 end
