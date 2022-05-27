@@ -1,4 +1,7 @@
 
+![App Screenshot](https://cdn.discordapp.com/attachments/882290108827566090/979728114525540362/Nouveau_projet_13.png)
+
+
 # NextCitizens Core
 
 NextCitizens is a powerful and optimized core for your FiveM server based on RolePlay.
