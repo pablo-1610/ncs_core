@@ -30,5 +30,28 @@ AddEventHandler("ncs_core:trace", function(message, logType)
     _NCS:trace(message, logType)
 end)
 
+local registredEvents = {}
+local function isEventRegistred(eventName)
+    return (registredEvents[eventName] ~= nil)
+end
+---registerNetEvent
+---@param eventName string
+---@return void
+---@public
+function _NCS:registerNetEvent(eventName, ...)
+    if not isEventRegistred(eventName) then
+        RegisterNetEvent(self:formatEvent(eventName), ...)
+        registredEvents[eventName] = true
+    end
+end
+
+---triggerEvent
+---@param eventName string
+---@return void
+---@public
+function _NCS:triggerEvent(eventName, ...)
+    TriggerEvent(self:formatEvent(eventName), ...)
+end
+
 _G._NCS = _NCS
 _G._NCSEnum = {}
