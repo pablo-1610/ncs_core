@@ -3,7 +3,7 @@
 ---@param action function
 function _NCS:onControlPress(key, action)
     if IsControlPressed(1, key) then
-        if (IsControlJustReleased(1, key) then
+        if (IsControlJustReleased(1, key)) then
             if (action) then
                 action()
             else
