@@ -5,7 +5,7 @@ function _NCS:getClosestPlayer()
     local players = GetActivePlayers()
     local coords = GetEntityCoords(PlayerPedId())
     local pCloset = nil
-    local pClosetPos = nil
+    local playerClosetPosition = nil
     local playerClosestDistance = nil
     for k,v in pairs(players) do
         if (GetPlayerPed(v) ~= PlayerPedId()) then
@@ -14,12 +14,12 @@ function _NCS:getClosestPlayer()
             local dst = GetDistanceBetweenCoords(oCoords, coords, true)
             if (pCloset == nil) then
                 pCloset = v
-                pClosetPos = oCoords
+                playerClosetPosition = oCoords
                 playerClosestDistance = dst
             else
                 if (dst < playerClosestDistance) then
                     pCloset = v
-                    pClosetPos = oCoords
+                    playerClosetPosition = oCoords
                     playerClosestDistance = dst
                 end
             end
