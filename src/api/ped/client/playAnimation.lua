@@ -9,6 +9,10 @@
 ---@return nil
 ---@public
 function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbackRate, duration)
+    if not DoesEntityExist(ped) then
+        return
+    end
+
     if (blendin == nil) then
         blendin = 1.0
     end
@@ -20,10 +24,6 @@ function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbac
     end
     if (duration == nil) then
         duration = -1
-    end
-
-    if not DoesEntityExist(ped) then
-        return
     end
 
     RequestAnimDict(dict)
