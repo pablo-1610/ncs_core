@@ -17,6 +17,6 @@ function _NCS:PlayAnim(dict, anim, flag, blendin, blendout, playbackRate, durati
     while (not (HasAnimDictLoaded(dict))) do 
         Wait(1) 
     end
-    TaskPlayAnim(GetPlayerPed(-1), dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
+    TaskPlayAnim(PlayerPedId(), dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
     RemoveAnimDict(dict)
 end
