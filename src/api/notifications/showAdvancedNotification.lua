@@ -8,8 +8,8 @@
 ---@return void
 ---@public
 
-function _NCS:showAdvancedNotification(icon, type, sender, title, text, colorBg)--( logo, 1, expediteur, objet, message)
-    if (colorBg) then
+function _NCS:showAdvancedNotification(icon, type, sender, title, text, colorBg)
+	if (colorBg) then
 		ThefeedNextPostBackgroundColor(colorBg)
 	end
 	SetNotificationTextEntry("STRING");
