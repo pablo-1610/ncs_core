@@ -8,7 +8,7 @@
 ---@param duration number
 ---@return nil
 ---@public
-function _NCS:PlayAnim(dict, anim, flag, blendin, blendout, playbackRate, duration)
+function _NCS:playAnim(dict, anim, flag, blendin, blendout, playbackRate, duration)
     if (blendin == nil) then blendin = 1.0 end
     if (blendout == nil) then blendout = 1.0 end
     if (playbackRate == nil) then playbackRate = 1.0 end
