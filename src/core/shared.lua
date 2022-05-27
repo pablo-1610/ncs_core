@@ -1,6 +1,12 @@
 ---@class _NCS
 local _NCS = {}
 
+local registeredEvents = {}
+
+local function isEventRegistered(eventName)
+    return (registeredEvents[eventName] ~= nil)
+end
+
 ---getVersion
 ---@return string
 ---@public
@@ -18,22 +24,13 @@ function _NCS:trace(message, logType)
     print(("(^1NCS^7) [%s^7] %s"):format(("%s%s"):format(logType.displayColor, logType.displayName), message))
 end
 
----formatEvent
+---die
 ---@return void
----@param eventName string
+---@param reason string
+---@return void
 ---@public
-function _NCS:formatEvent(eventName)
-    return (("ncs:%s"):format(GetHashKey(eventName)))
-end
-
-AddEventHandler("ncs_core:trace", function(message, logType)
-    _NCS:trace(message, logType)
-end)
-
-local registeredEvents = {}
-
-local function isEventRegistered(eventName)
-    return (registeredEvents[eventName] ~= nil)
+function _NCS:die(reason)
+    error(("(NCS) %s"):format(reason))
 end
 
 ---registerNetEvent
@@ -42,7 +39,7 @@ end
 ---@public
 function _NCS:registerNetEvent(eventName, ...)
     if not isEventRegistered(eventName) then
-        RegisterNetEvent(self:formatEvent(eventName), ...)
+        RegisterNetEvent(self:net_formatEvent(eventName), ...)
         registeredEvents[eventName] = true
     end
 end
@@ -53,7 +50,7 @@ end
 ---@return void
 ---@public
 function _NCS:handleEvent(eventName, callback)
-    AddEventHandler(self:formatEvent(eventName), callback)
+    AddEventHandler(self:net_formatEvent(eventName), callback)
 end
 
 ---triggerEvent
@@ -61,7 +58,7 @@ end
 ---@return void
 ---@public
 function _NCS:triggerEvent(eventName, ...)
-    TriggerEvent(self:formatEvent(eventName), ...)
+    TriggerEvent(self:net_formatEvent(eventName), ...)
 end
 
 ---onReady
@@ -71,6 +68,10 @@ end
 function _NCS:onReady(callback)
     self:handleEvent("ncs_core:loaded", callback)
 end
+
+AddEventHandler("ncs_core:trace", function(message, logType)
+    _NCS:trace(message, logType)
+end)
 
 _G._NCS = _NCS
 _G._NCSEnum = {}
