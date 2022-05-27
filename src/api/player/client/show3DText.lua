@@ -1,18 +1,13 @@
----show3dtext
+---show3DText
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param text string
-function API_Player:show3dtext(x, y, z, text)
+---@return void
+---@public
+function API_Player:show3DText(x, y, z, text)
     local onScreen, x, y = World3dToScreen2d(x, y, z)
-    if onScreen then
-        SetTextScale(0.90, 0.90)
-        SetTextFont(4)
-        SetTextProportional(1)
-        SetTextColour(255, 255, 255, 215)
-        SetTextEntry("STRING")
-        SetTextCentre(1)
-        AddTextComponentString(text)
-        DrawText(x, y)
+    if (onScreen) then
+        -- TODO : Draw text
     end
 end
