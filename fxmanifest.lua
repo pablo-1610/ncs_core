@@ -11,6 +11,7 @@ version '1.0.0-alpha';
 shared_scripts {
     -- NCS Core
     "src/core/shared.lua",
+    "src/core/events/shared/*.lua",
     -- NCS Enum
     "src/enum/*.lua",
     -- NCS Class
@@ -18,6 +19,8 @@ shared_scripts {
     -- NCS Api
     "src/api/**/_define.lua",
     "src/api/**/shared/*.lua",
+    -- NCS Modules
+    "src/modules/**/shared/*.lua",
 };
 
 server_scripts {
@@ -25,23 +28,25 @@ server_scripts {
     "vendors/oxmysql/oxmysql.js",
     -- NCS Core
     "src/core/server.lua",
+    "src/core/events/server/*.lua",
     -- NCS Class
     "src/class/**/server.lua",
-    -- NCS Modules
-    "src/modules/**/server/*.lua",
     -- NCS API
     "src/api/**/server/*.lua",
+    -- NCS Modules
+    "src/modules/**/server/*.lua",
 };
 
 client_scripts {
     -- NCS Core
     "src/core/client.lua",
+    "src/core/events/client/*.lua",
     -- NCS Class
     "src/class/**/client.lua",
-    -- NCS Modules
-    "src/modules/**/client/*.lua",
     -- NCS API
     "src/api/**/client/*.lua",
+    -- NCS Modules
+    "src/modules/**/client/*.lua",
 };
 
 --[[
