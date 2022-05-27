@@ -14,7 +14,7 @@ function API_Player:showKeyboard(textEntry, exampleText, maxInputLength)
             Wait(500)
             return (result)
         else
-            Citizen.Wait(500)
+            Wait(500)
             return (nil)
         end
     end)
