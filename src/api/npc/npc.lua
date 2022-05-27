@@ -1,11 +1,11 @@
----npc
+---@class npc
 ---@param ped_type number
 ---@param modelhash string
 ---@param coords table
 ---@param heading number
 ---@public
-
-function _NCS:createped(ped_type, modelhash, coords, heading)
+npc = {}
+function npc:createped(ped_type, modelhash, coords, heading)
     self.pedtype = ped_type
     self.modelhash = modelhash
     self.coords = coords
