@@ -27,9 +27,3 @@ function _NCS:getVehicleStates(vehicle)
         return _NCS:trace("Player is not in any vehicle", 5)
     end
 end
-
-Citizen.CreateThread(function()
-    while true do
-        Wait(1)
-    end
-end)
