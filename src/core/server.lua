@@ -9,3 +9,6 @@ function _NCS:triggerClientEvent(eventName, targetId, ...)
     TriggerClientEvent(self:formatEvent(eventName), targetId, ...)
 end
 
+AddEventHandler("ncs_core:dbConnected", function()
+    _NCS:triggerEvent("ncs_core:loaded")
+end)
