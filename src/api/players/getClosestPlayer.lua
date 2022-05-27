@@ -2,12 +2,8 @@
 ---@return void
 ---@public
 function _NCS:getClosestPlayer()
-    local players = GetActivePlayers()
-    local coords = GetEntityCoords(PlayerPedId())
-    local playerCloset = nil
-    local playerClosetPosition = nil
-    local playerClosestDistance = nil
-    for k,v in pairs(players) do
+    local players, coords, playerCloset, playerClosetPosition, playerClosestDistance  = GetActivePlayers(), GetEntityCoords(PlayerPedId())
+    for k, v in pairs(players) do
         if (GetPlayerPed(v) ~= PlayerPedId()) then
             local oPed = GetPlayerPed(v)
             local oCoords = GetEntityCoords(oPed)
@@ -25,5 +21,5 @@ function _NCS:getClosestPlayer()
             end
         end
     end
-    return playerCloset, playerClosestDistance
+    return (playerCloset, playerClosestDistance)
 end
