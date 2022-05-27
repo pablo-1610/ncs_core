@@ -4,7 +4,7 @@ _NCS:trace("Loading NCS Core, please wait...")
 ---@param eventName string
 ---@return void
 ---@public
-function _NCS:triggerClientEvent(eventName, ...)
-    TriggerClientEvent(string eventName, int playerId[, ...])
+function _NCS:triggerClientEvent(eventName, targetID)
+    TriggerClientEvent(string eventName, int targetID[, ...])
 end
 
