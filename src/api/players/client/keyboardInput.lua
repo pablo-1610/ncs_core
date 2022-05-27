@@ -20,6 +20,6 @@ function _NCS:keyboardInput(TextEntry, ExampleText, MaxStringLenght)
     else
         Citizen.Wait(500)
         blockinput = false
-        return nil
+        return (nil)
     end
 end
