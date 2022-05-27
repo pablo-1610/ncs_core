@@ -11,7 +11,7 @@
 function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbackRate, duration)
     CreateThread(function()
         if (not (DoesEntityExist(ped))) then
-            return _NCS:die("Target ped does not exists")
+            return (_NCS:die("Target ped does not exists"))
         end
     
         blendin = blendin or 1.0
