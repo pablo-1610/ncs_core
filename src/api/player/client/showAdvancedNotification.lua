@@ -7,7 +7,6 @@
 ---@param colorBg number
 ---@return void
 ---@public
-
 function API_Player:showAdvancedNotification(icon, type, sender, title, text, colorBg)
     if (colorBg) then
         ThefeedNextPostBackgroundColor(colorBg)
