@@ -6,7 +6,7 @@
 
 function _NCS:showNotification(text, colorBg)
   if (colorBg) then
-	ThefeedNextPostBackgroundColor(colorBg)
+    ThefeedNextPostBackgroundColor(colorBg)
   end
   AddTextEntry("SowNotifSimple", text)
   BeginTextCommandThefeedPost("SowNotifSimple")
