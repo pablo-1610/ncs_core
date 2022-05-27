@@ -45,12 +45,29 @@ function _NCS:registerNetEvent(eventName, ...)
     end
 end
 
+---onReceive
+---@param eventName string
+---@param callback function
+---@return void
+---@public
+function _NCS:handleEvent(eventName, callback)
+    AddEventHandler(self:formatEvent(eventName), callback)
+end
+
 ---triggerEvent
 ---@param eventName string
 ---@return void
 ---@public
 function _NCS:triggerEvent(eventName, ...)
     TriggerEvent(self:formatEvent(eventName), ...)
+end
+
+---onReady
+---@param callback function
+---@return void
+---@public
+function _NCS:onReady(callback)
+    self:handleEvent("ncs_core:loaded", callback)
 end
 
 _G._NCS = _NCS
