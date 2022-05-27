@@ -1,5 +1,4 @@
 ---serverSpawn
-
 ---@param modelName string
 ---@param coords table (vector4)
 ---@param cb function
