@@ -7,7 +7,5 @@ function API_Vehicles:repair(vehicleEntity)
     SetVehicleFixed(vehicleEntity)
     SetVehicleDirtLevel(vehicleEntity, 0.0)
  
-    if repairDeformation then
-        SetVehicleDeformationFixed(vehicleEntity)
-    end
+    SetVehicleDeformationFixed(vehicleEntity)
  end
