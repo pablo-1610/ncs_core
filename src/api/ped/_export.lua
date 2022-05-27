@@ -1,0 +1,1 @@
+_G._NCS.Ped = API_Ped

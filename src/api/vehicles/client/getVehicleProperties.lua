@@ -1,8 +1,8 @@
----vehicles_getVehicleProperties
+---getProperties
 ---@param vehicleEntity number
 ---@return void
 ---@public
-function _NCS:vehicles_getVehicleProperties(vehicleEntity)
+function API_Vehicles:getProperties(vehicleEntity)
     if DoesEntityExist(vehicleEntity) then
         local colorPrimary, colorSecondary = GetVehicleColours(vehicleEntity)
         local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleEntity)

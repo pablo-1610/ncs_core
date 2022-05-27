@@ -1,7 +1,7 @@
----players_getClosestPlayer
+---getClosest
 ---@return number, number
 ---@public
-function _NCS:players_getClosestPlayer()
+function API_Player:getClosest()
     local players, coords, playerClosest, playerClosestPosition, playerClosestDistance = GetActivePlayers(), GetEntityCoords(PlayerPedId())
     for _, v in pairs(players) do
         if (GetPlayerPed(v) ~= PlayerPedId()) then

@@ -1,8 +1,8 @@
----input_showKeyboard
+---showKeyboard
 ---@param TextEntry string
 ---@param ExampleText string
 ---@param MaxStringLenght number
-function _NCS:input_showKeyboard(TextEntry, ExampleText, MaxStringLenght)
+function API_Player:showKeyboard(TextEntry, ExampleText, MaxStringLenght)
 
     AddTextEntry('FMMC_KEY_TIP1', TextEntry)
 
