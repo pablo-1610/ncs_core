@@ -1,7 +1,7 @@
 ---missionNotif
 ---@param text string
 ---@param time number
----public
+---@public
 
 function _NCS:missionNotif(text, time)
 	ClearPrints()
