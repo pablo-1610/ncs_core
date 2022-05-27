@@ -1,12 +1,11 @@
----onPress
----@param Key string
----@param Action function
-function _NCS:onControlPress(Key, Action)
-    Key = string.upper(Key)
-    if KeyList[Key] then
-        if (IsControlJustReleased(1, KeyList[Key])) then
-            if (Action) then
-                Action()
+---onControlPress
+---@param key string
+---@param action function
+function _NCS:onControlPress(key, action)
+    if IsControlPressed(1, key) then
+        if (IsControlJustReleased(1, key) then
+            if (action) then
+                action()
             else
                 _NCS:trace("no action defined", 4)
             end
