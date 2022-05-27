@@ -1,0 +1,1 @@
+_G._NCS.Tables = API_Tables
