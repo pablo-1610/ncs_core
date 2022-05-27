@@ -24,6 +24,15 @@ function _NCS:trace(message, logType)
     print(("(^1NCS^7) [%s^7] %s"):format(("%s%s"):format(logType.displayColor, logType.displayName), message))
 end
 
+---die
+---@return void
+---@param reason string
+---@return void
+---@public
+function _NCS:die(reason)
+    error(("(NCS) %s"):format(reason))
+end
+
 ---formatEvent
 ---@param eventName string
 ---@return void
