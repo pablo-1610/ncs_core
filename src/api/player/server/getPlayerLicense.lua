@@ -10,7 +10,3 @@ function API_Player:getLicense(playerId)
     end
     return (false)
 end
-
-function API_Player:test()
-    print("ok")
-end
