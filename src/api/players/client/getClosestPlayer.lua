@@ -1,5 +1,5 @@
 ---getClosestPlayer
----@return void
+---@return number, number
 ---@public
 function _NCS:getClosestPlayer()
     local players, coords, playerCloset, playerClosetPosition, playerClosestDistance  = GetActivePlayers(), GetEntityCoords(PlayerPedId())
