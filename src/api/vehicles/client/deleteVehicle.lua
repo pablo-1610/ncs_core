@@ -1,5 +1,5 @@
 ---deleteVehicle
----@param vehicle Vehicle
+---@param vehicleEntity number
 ---@return void
 ---@public
 function _NCS:deleteVehicle(vehicle)
