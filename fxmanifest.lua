@@ -35,6 +35,8 @@ server_scripts {
 client_scripts {
     -- NCS Core
     "src/core/shared.lua",
+    -- NCS Client
+    "src/core/client.lua",
     -- NCS Class
     "src/class/**/client.lua",
     -- NCS Modules
