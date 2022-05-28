@@ -7,6 +7,12 @@
 ---@public
 function API_Vehicles:spawn(modelName, coords, heading, cb, clientSide)
     CreateThread(function()
+        assert(type(modelName) == 'string' or type(modelName) == 'number')
+
+        if type(modelName) == 'string' then
+            modelName = GetHashKey(modelName)
+        end
+
         local model = GetHashKey(modelName)
         if (not (IsModelInCdimage(model))) then
             return _NCS:die("Model not found: " .. modelName)
