@@ -8,6 +8,12 @@
 ---@return void
 ---@public
 function API_Vehicles:serverSpawn(modelName, x, y, z, heading, cb)
+    assert(type(modelName) == 'string' or type(modelName) == 'number')
+
+    if type(modelName) == 'string' then -- Only do this if needs a convertion
+        modelName = GetHashKey(modelName)
+    end
+
     local vehicle = CreateVehicle(GetHashKey(modelName),  x, y, z, heading)
     repeat
         Wait(0)
