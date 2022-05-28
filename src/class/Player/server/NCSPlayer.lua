@@ -18,38 +18,38 @@ setmetatable(NCSPlayer, {
 })
 
 --- getId
----@public
 ---@return number
+---@public
 function NCSPlayer:getId()
     return self.id
 end
 
 --- getName
----@public
 ---@return string
+---@public
 function PZPlayer:getName()
     return self.name
 end
 
 
 --- getLicense
----@public
 ---@return string
+---@public
 function PZPlayer:getLicense()
     return self.license
 end
 
 --- getDimension
----@public
 ---@return number
+---@public
 function PZPlayer:getBucket()
     return GetPlayerRoutingBucket(self.id)
 end
 
 --- setBucket
----@public
 ---@param bucketID number
 ---@return void
+---@public
 function PZPlayer:setBucket(bucketID)
     SetEntityRoutingBucket(self.id, bucketID)
 end
