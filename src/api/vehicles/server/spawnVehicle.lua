@@ -14,7 +14,7 @@ function API_Vehicles:serverSpawn(modelName, x, y, z, heading, cb)
         modelName = GetHashKey(modelName)
     end
 
-    local vehicle = CreateVehicle(GetHashKey(modelName),  x, y, z, heading)
+    local vehicle = CreateVehicle(modelName,  x, y, z, heading)
     repeat
         Wait(0)
     until DoesEntityExist(vehicle)
