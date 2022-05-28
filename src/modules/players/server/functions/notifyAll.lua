@@ -3,7 +3,5 @@
 ---@return void
 ---@public
 function MOD_Players:notifyAll(msg)
-    for _, player in pairs(MOD_Players:getAll()) do
-        player:notify(msg)
-    end
+    _NCS:triggerClientEvent("executeFunction", -1, "_G._NCS.Player.showNotification", msg)
 end
