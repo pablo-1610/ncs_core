@@ -1,1 +1,0 @@
-_G._NCS.NPC = API_NPC

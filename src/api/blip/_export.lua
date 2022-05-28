@@ -1,0 +1,1 @@
+_G._NCS.Blip = API_Blip
