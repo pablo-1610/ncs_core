@@ -10,7 +10,7 @@
 function API_Vehicles:serverSpawn(modelName, x, y, z, heading, cb)
     assert(type(modelName) == 'string' or type(modelName) == 'number')
 
-    if type(modelName) == 'string' then -- Only do this if needs a convertion
+    if type(modelName) == 'string' then
         modelName = GetHashKey(modelName)
     end
 

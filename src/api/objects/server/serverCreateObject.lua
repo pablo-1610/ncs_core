@@ -9,7 +9,7 @@
 function API_Objects:serverCreateObject(props, x, y, z, h)
     assert(type(props) == 'string' or type(props) == 'number')
 
-    if type(props) == 'string' then -- Only do this if needs a convertion
+    if type(props) == 'string' then
         props = GetHashKey(props)
     end
 
