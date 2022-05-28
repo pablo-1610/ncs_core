@@ -7,9 +7,9 @@
 ---@public
 function API_Vehicles:spawn(modelName, coords, heading, cb, clientSide)
     CreateThread(function()
-        assert(type(modelName) == 'string' or type(modelName) == 'number')
+        assert(type(modelName) == "string" or type(modelName) == "number")
 
-        if type(modelName) == 'string' then
+        if type(modelName) == "string" then
             modelName = GetHashKey(modelName)
         end
 
