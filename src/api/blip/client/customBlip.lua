@@ -1,5 +1,5 @@
-RegisterNetEvent('API_Blip:customBlip')
-AddEventHandler('API_Blip:customBlip', function(blip_name, blip_coords, blip_sprite, blip_display, blip_scale, blip_color)
+_NCS:registerNetEvent('API_Blip:customBlip')
+_NCS:handleEvent('API_Blip:customBlip', function(blip_name, blip_coords, blip_sprite, blip_display, blip_scale, blip_color)
     Blip = AddBlipForCoord(blip_coords.x, blip_coords.y, blip_coords.z)
     SetBlipSprite(Blip, blip_sprite)
     SetBlipDisplay(Blip, blip_display)
