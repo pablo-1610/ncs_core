@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import receiveNuiEvent from './providers/receiveNuiEvent'
+import sendNuiEvent from './providers/sendNuiEvent'
 
 function App() {
   const [name, setName] = useState('')
@@ -7,6 +8,10 @@ function App() {
     name: string
   }) => {
     setName(data.name)
+
+    sendNuiEvent('ncs_core', 'core', 'a', {
+      name: data.name
+    })
   })
 
   return (
