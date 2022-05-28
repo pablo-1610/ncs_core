@@ -1,0 +1,12 @@
+RegisterNetEvent('API_Blip:customBlip')
+AddEventHandler('API_Blip:customBlip', function(Blip, blip_name, blip_coords, blip_sprite, blip_display, blip_scale, blip_color)
+    SetBlipSprite(Blip, blip_sprite)
+    SetBlipDisplay(Blip, blip_display)
+    SetBlipScale(Blip, blip_scale)
+    SetBlipColour(Blip, blip_color)
+
+    SetBlipAsShortRange(Blip, true)
+    BeginTextCommandSetBlipName("STRING")
+    AddTextComponentString(blip_name)
+    EndTextCommandSetBlipName(Blip)
+end)

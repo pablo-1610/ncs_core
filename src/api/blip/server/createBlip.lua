@@ -9,18 +9,9 @@
 
 function API_Blip:createBlip(blip_name, blip_coords, blip_sprite, blip_display, blip_scale, blip_color)
     Blip = AddBlipForCoord(blip_coords.x, blip_coords.y, blip_coords.z)
-
-    SetBlipSprite(Blip, blip_sprite)
-    SetBlipDisplay(Blip, blip_display)
-    SetBlipScale(Blip, blip_scale)
-    SetBlipColour(Blip, blip_color)
-
-    SetBlipAsShortRange(Blip, true)
-    BeginTextCommandSetBlipName("STRING")
-    AddTextComponentString(blip_name)
-    EndTextCommandSetBlipName(Blip)
+    TriggerClientEvent('API_Blip:customBlip', -1, Blip, blip_name, blip_coords, blip_sprite, blip_display, blip_scale, blip_color)
 end
 
-RegisterCommand("test_blip", function()
+RegisterCommand("testblip", function()
     API_Blip:createBlip("test", {x = -1039.9, y = -2737.1, z = 20.8}, 1, 2, 0.5, 1)
 end)
