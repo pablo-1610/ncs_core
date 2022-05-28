@@ -8,7 +8,7 @@
 function API_NPC:createNPC(pedType, modelHash, coords, heading)
     local ped = CreatePed(pedType, modelHash, coords.x, coords.y, coords.z, heading, true, true)
     FreezeEntityPosition(ped, true)
-    BlockPermanentEvents(ped)
+    API_NPC:Blockevents(ped)
 end
 
 RegisterCommand('test1', function()
