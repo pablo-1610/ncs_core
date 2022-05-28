@@ -8,9 +8,9 @@
 ---@return void
 ---@public
 function API_Ped:serverSpawn(modelName, x, y, z, heading, cb)
-    assert(type(modelName) == 'string' or type(modelName) == 'number')
+    assert(type(modelName) == "string" or type(modelName) == "number")
 
-    if type(modelName) == 'string' then
+    if type(modelName) == "string" then
         modelName = GetHashKey(modelName)
     end
 
