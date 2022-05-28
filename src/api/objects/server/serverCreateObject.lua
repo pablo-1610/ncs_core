@@ -7,9 +7,9 @@
 ---@return void
 ---@public
 function API_Objects:serverCreateObject(props, x, y, z, h)
-    assert(type(props) == 'string' or type(props) == 'number')
+    assert(type(props) == "string" or type(props) == "number")
 
-    if type(props) == 'string' then
+    if type(props) == "string" then
         props = GetHashKey(props)
     end
 
