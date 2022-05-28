@@ -27,7 +27,7 @@ end
 --- getName
 ---@return string
 ---@public
-function PZPlayer:getName()
+function NCSPlayer:getName()
     return self.name
 end
 
@@ -35,14 +35,14 @@ end
 --- getLicense
 ---@return string
 ---@public
-function PZPlayer:getLicense()
+function NCSPlayer:getLicense()
     return self.license
 end
 
 --- getDimension
 ---@return number
 ---@public
-function PZPlayer:getBucket()
+function NCSPlayer:getBucket()
     return GetPlayerRoutingBucket(self.id)
 end
 
@@ -50,6 +50,6 @@ end
 ---@param bucketID number
 ---@return void
 ---@public
-function PZPlayer:setBucket(bucketID)
+function NCSPlayer:setBucket(bucketID)
     SetEntityRoutingBucket(self.id, bucketID)
 end
