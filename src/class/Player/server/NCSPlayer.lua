@@ -68,3 +68,11 @@ end
 function NCSPlayer:setBucket(bucketID)
     SetPlayerRoutingBucket(self.id, bucketID)
 end
+
+--- notify
+---@param msg string
+---@return void
+---@public
+function NCSPlayer:notify(msg)
+    _NCS:triggerClientEvent("executeFunction", self.id, "_G._NCS.Player.showNotification", msg)
+end
