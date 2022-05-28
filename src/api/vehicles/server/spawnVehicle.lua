@@ -1,10 +1,11 @@
 ---serverSpawn
 ---@param modelName string
----@param coords table (vector4)
----@param cb function
+---@param coords table @vector4
+---@param isNetwork? boolean
+---@param cb? function
 ---@public
-function API_Vehicles:serverSpawn(modelName, coords, cb)
-    local vehicle = CreateVehicle(GetHashKey(modelName), coords)
+function API_Vehicles:serverSpawn(modelName, coords, isNetwork, cb)
+    local vehicle = Citizen.InvokeNative(GetHashKey('CREATE_AUTOMOBILE'), GetHashKey(modelName), coords.x, coords.y, coords.z, (coords.h or 90.0), (isNetwork or true))
     repeat
         Wait(0)
     until DoesEntityExist(vehicle)
@@ -21,5 +22,8 @@ function API_Vehicles:serverSpawn(modelName, coords, cb)
         end
     end
 
+    if (not cb) then
+        return vehicle, NetworkGetNetworkIdFromEntity(vehicle)
+    end
     cb(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
 end
