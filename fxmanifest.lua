@@ -34,9 +34,8 @@ shared_scripts {
     "src/api/**/_define.lua",
     "src/api/**/shared/*.lua",
     -- NCS Modules
-    "src/modules/**/_define.lua",
-    "src/modules/**/shared/functions/*.lua",
     "src/modules/**/shared/*.lua",
+    "src/modules/**/shared/functions/*.lua",
     "src/modules/**/shared/events/*.lua",
 }
 
@@ -51,8 +50,8 @@ server_scripts {
     -- NCS API
     "src/api/**/server/*.lua",
     -- NCS Modules
-    "src/modules/**/server/functions/*.lua",
     "src/modules/**/server/*.lua",
+    "src/modules/**/server/functions/*.lua",
     "src/modules/**/server/events/*.lua",
 }
 
@@ -65,8 +64,8 @@ client_scripts {
     -- NCS API
     "src/api/**/client/*.lua",
     -- NCS Modules
-    "src/modules/**/client/functions/*.lua",
     "src/modules/**/client/*.lua",
+    "src/modules/**/client/functions/*.lua",
     "src/modules/**/client/events/*.lua",
 }
 

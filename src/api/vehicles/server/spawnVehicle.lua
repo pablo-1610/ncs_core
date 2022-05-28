@@ -2,6 +2,7 @@
 ---@param modelName string
 ---@param coords table (vector4)
 ---@param cb function
+---@return void
 ---@public
 function API_Vehicles:serverSpawn(modelName, coords, cb)
     local vehicle = CreateVehicle(GetHashKey(modelName), coords)

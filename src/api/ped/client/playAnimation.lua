@@ -6,7 +6,7 @@
 ---@param blendout number
 ---@param playbackRate number
 ---@param duration number
----@return nil
+---@return void
 ---@public
 function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbackRate, duration)
     if (not (DoesEntityExist(ped))) then
