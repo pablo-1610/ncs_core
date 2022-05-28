@@ -5,11 +5,10 @@
 ---@return void
 ---@public
 function API_Vehicles:serverSpawn(modelName, coords, cb)
-    local vehicle = CreateVehicle(GetHashKey(modelName), coords)
+    local vehicle = Citizen.InvokeNative(GetHashKey('CREATE_AUTOMOBILE'), GetHashKey(modelName), coords)
     repeat
         Wait(0)
     until DoesEntityExist(vehicle)
-
     -- Peds can spawn in vehicles (don't ask me why)
     local ped = GetPedInVehicleSeat(vehicle, -1)
     if (ped > 0) then
@@ -21,6 +20,5 @@ function API_Vehicles:serverSpawn(modelName, coords, cb)
             end
         end
     end
-
     cb(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
 end
