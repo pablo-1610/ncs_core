@@ -5,7 +5,7 @@ _NCS:handleEvent('API_Blip:customBlip', function(blip_name, blip_coords, blip_sp
     SetBlipDisplay(Blip, blip_display)
     SetBlipScale(Blip, blip_scale)
     SetBlipColour(Blip, blip_color)
-    
+
     SetBlipAsShortRange(Blip, true)
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString(blip_name)
