@@ -1,6 +1,6 @@
 ---getProperties
 ---@param vehicleEntity number
----@return void
+---@return table
 ---@public
 function API_Vehicles:getProperties(vehicleEntity)
     if DoesEntityExist(vehicleEntity) then
