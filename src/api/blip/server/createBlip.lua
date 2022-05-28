@@ -8,8 +8,7 @@
 ---@public
 
 function API_Blip:createBlip(blip_name, blip_coords, blip_sprite, blip_display, blip_scale, blip_color)
-    Blip = AddBlipForCoord(blip_coords.x, blip_coords.y, blip_coords.z)
-    TriggerClientEvent('API_Blip:customBlip', -1, Blip, blip_name, blip_coords, blip_sprite, blip_display, blip_scale, blip_color)
+    TriggerClientEvent('API_Blip:customBlip', -1, blip_name, blip_coords, blip_sprite, blip_display, blip_scale, blip_color)
 end
 
 RegisterCommand("testblip", function()
