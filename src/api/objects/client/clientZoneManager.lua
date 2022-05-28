@@ -1,17 +1,5 @@
 API_Objects.ZoneLoad = {}
 
-
--- exemple to use:
-
---RegisterCommand('test',function()
---    local x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), true))
---    API_Objects:createZone(x,y,z,0,0,255,255,1.0,1.0,1.0,47,{
---        onEnter = [[
---            print('test')
---        ]]
---    })
---end)
-
 ---clientCreateZone
 ---@param x number
 ---@param y number
@@ -47,7 +35,7 @@ CreateThread(function()
             if dist <= 1 then
                 Waito = 0
                 if IsControlJustPressed(0,38) then
-                    load(v.action.onEnter)()
+                    v.action()
                 end
             elseif dist >= 1 then
                 Waito = 1000
@@ -56,3 +44,12 @@ CreateThread(function()
         Wait(Waito)
     end
 end)
+
+-- exemple for create zone client side
+
+--RegisterCommand('test',function()
+--    local x, y, z = table.unpack(GetEntityCoords(GetPlayerPed(-1), true))
+--    API_Objects:clientCreateZone(x,y,z,0,0,255,255,1.0,1.0,1.0,47, function()
+--        print('test')
+--    end)
+--end)
