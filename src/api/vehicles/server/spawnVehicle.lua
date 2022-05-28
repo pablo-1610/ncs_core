@@ -1,11 +1,14 @@
 ---serverSpawn
 ---@param modelName string
----@param coords table (vector4)
+---@param x number
+---@param y number
+---@param z number
+---@param heading number
 ---@param cb function
 ---@return void
 ---@public
-function API_Vehicles:serverSpawn(modelName, coords, cb)
-    local vehicle = CreateVehicle(GetHashKey(modelName), coords)
+function API_Vehicles:serverSpawn(modelName, x, y, z, heading, cb)
+    local vehicle = CreateVehicle(GetHashKey(modelName),  x, y, z, heading)
     repeat
         Wait(0)
     until DoesEntityExist(vehicle)
