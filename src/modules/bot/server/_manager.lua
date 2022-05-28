@@ -23,8 +23,3 @@ end
 function MOD_Bots:exists(name)
     return (self.list[name] ~= nil)
 end
-
-local bot = NCSBot({
-    name = "NCSBot",
-    token = "OTcyNzc4NjcwODg2MzU5MDgw.G_6_CR.Af85ihqt4CAfRQm8e26ELEtMO5BUZMreHLqLoE"
-})
