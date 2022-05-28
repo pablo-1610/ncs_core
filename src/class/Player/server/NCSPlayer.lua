@@ -9,7 +9,7 @@ NCSPlayer.__index = NCSPlayer
 
 setmetatable(NCSPlayer, {
     __call = function(_, id)
-        local self = setmetatable({}, _MetaKey)
+        local self = setmetatable({}, NCSPlayer)
         self.id = id
         return (self)
     end
