@@ -12,44 +12,59 @@ setmetatable(NCSPlayer, {
         local self = setmetatable({}, NCSPlayer)
         self.id = id
         self.name = _G._NCS.Player:getName(self.id)
-        self.license = _G._NCS.Player:getLicense(self.id)
+        self.identifiers = _G._NCS.Player:getIdentiers(self.id)
         return (self)
     end
 })
 
 --- getId
----@public
 ---@return number
+---@public
 function NCSPlayer:getId()
     return self.id
 end
 
 --- getName
----@public
 ---@return string
-function PZPlayer:getName()
+---@public
+function NCSPlayer:getName()
     return self.name
 end
 
 
 --- getLicense
----@public
 ---@return string
-function PZPlayer:getLicense()
-    return self.license
+---@public
+function NCSPlayer:getLicense()
+    return self.identifiers["license"]
+end
+
+--- getIdentier
+---@param identifier string
+---@return string
+---@public
+function NCSPlayer:getIdentier(identifier)
+    return (self.identifiers[identifier] or false)
+end
+
+--- getIdentiers
+---@return table
+---@public
+function NCSPlayer:getIdentiers()
+    return self.identifiers
 end
 
 --- getDimension
----@public
 ---@return number
-function PZPlayer:getBucket()
+---@public
+function NCSPlayer:getBucket()
     return GetPlayerRoutingBucket(self.id)
 end
 
 --- setBucket
----@public
 ---@param bucketID number
 ---@return void
-function PZPlayer:setBucket(bucketID)
-    SetEntityRoutingBucket(self.id, bucketID)
+---@public
+function NCSPlayer:setBucket(bucketID)
+    SetPlayerRoutingBucket(self.id, bucketID)
 end

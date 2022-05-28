@@ -1,3 +1,4 @@
 AddEventHandler("playerDropped", function(reason)
-    MOD_Players:remove(source)
+    local _src <const> = source
+    MOD_Players:remove(_src)
 end)
