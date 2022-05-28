@@ -1,6 +1,6 @@
 ---getIdentiers
 ---@param playerId number
----@return string
+---@return table
 ---@public
 function API_Player:getIdentiers(playerId)
     local identifiers = {}
