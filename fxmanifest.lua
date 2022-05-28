@@ -50,8 +50,8 @@ server_scripts {
     -- NCS API
     "src/api/**/server/*.lua",
     -- NCS Modules
-    "src/modules/**/server/functions/*.lua",
     "src/modules/**/server/*.lua",
+    "src/modules/**/server/functions/*.lua",
     "src/modules/**/server/events/*.lua",
 }
 
