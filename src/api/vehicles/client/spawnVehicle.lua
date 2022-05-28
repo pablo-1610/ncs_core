@@ -3,6 +3,7 @@
 ---@param coords table
 ---@param heading number
 ---@param cb function
+---@return void
 ---@public
 function API_Vehicles:spawn(modelName, coords, heading, cb, clientSide)
     CreateThread(function()

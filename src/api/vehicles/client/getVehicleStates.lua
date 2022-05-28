@@ -1,6 +1,6 @@
 ---getVehicleStates
 ---@param vehicle number
----@return void
+---@return table
 ---@public
 function API_Vehicles:getStates(vehicle)
     local vehicleState = {}
