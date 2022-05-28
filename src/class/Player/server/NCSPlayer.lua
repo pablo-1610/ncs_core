@@ -44,7 +44,7 @@ end
 ---@return string
 ---@public
 function NCSPlayer:getIdentier(identifier)
-    return (self.identifiers[identifier] or false)
+    return self.identifiers[identifier]
 end
 
 --- getIdentiers
