@@ -7,6 +7,12 @@
 ---@return void
 ---@public
 function API_Objects:serverCreateObject(props, x, y, z, h)
+    assert(type(props) == 'string' or type(props) == 'number')
+
+    if type(props) == 'string' then -- Only do this if needs a convertion
+        props = GetHashKey(props)
+    end
+
     local object = CreateObject(GetHashKey(props), x, y, z - 1, true)
     SetEntityHeading(object, h)
     FreezeEntityPosition(object, true)
