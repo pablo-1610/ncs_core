@@ -1,10 +1,9 @@
 ---getClosest
----@param coords number
+---@param coords table
 ---@return number, number
 ---@public
 
 function API_Vehicles:getClosest(coords)
-
     local vehicles = _NCS.Vehicles.getVehicles()
     local closestDistance = -1
     local closestVehicle = -1
@@ -25,5 +24,4 @@ function API_Vehicles:getClosest(coords)
     end
 
     return (closestVehicle), (closestDistance)
-
 end

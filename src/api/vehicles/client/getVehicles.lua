@@ -1,5 +1,5 @@
 ---getVehicles
----@return number, number
+---@return table
 ---@public
 
 entityEnumerator = {
