@@ -47,7 +47,7 @@ server_scripts {
     "src/core/server.lua",
     "src/core/events/server/*.lua",
     -- NCS Class
-    "src/class/**/server.lua",
+    "src/class/**/server/*.lua",
     -- NCS API
     "src/api/**/server/*.lua",
     -- NCS Modules

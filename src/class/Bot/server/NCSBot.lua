@@ -1,3 +1,21 @@
+---@class NCSBot
+---@field public name string
+---@field public token string
+NCSBot = {}
+NCSBot.__index = NCSBot
+
+setmetatable(NCSBot, {
+    __call = function(_, params)
+        local self = setmetatable({}, NCSBot)
+        self.name = params.name
+        self.token = params.token
+
+        _NCS:trace(("NCSBot: new bot ^2%s^7"):format(self.name), _NCSEnum.LogType.INFO)
+        MOD_Bots.list[self.name] = self
+        return (self)
+    end
+})
+
 ---performDiscord
 ---@param method string
 ---@param endpoint string
@@ -5,7 +23,7 @@
 ---@param getCount boolean
 ---@public
 ---@return table
-function API_Discord:performDiscord(method, endpoint, data, getCount)
+function NCSBot:performDiscord(method, endpoint, data, getCount)
     local request = nil
 
     PerformHttpRequest(("https://discordapp.com/api/%s?with_counts=%s"):format(endpoint, getCount or false), function(errorCode, resultData, resultHeaders)
@@ -28,15 +46,14 @@ end
 ---@param discordId string
 ---@public
 ---@return table
-function API_Discord:get_player(discordId)
+function NCSBot:get_player(discordId)
     return (json.decode(self:performDiscord(_NCSEnum.MethodType.GET, ("users/%s"):format(discordId))))
 end
 
 ---get_guild
----@param guildId string
 ---@public
 ---@return table
-function API_Discord:get_guild(guildId)
+function NCSBot:get_guild(guildId)
     return (json.decode(self:performDiscord(_NCSEnum.MethodType.GET, ("guilds/%s"):format(guildId))))
 end
 
@@ -45,7 +62,7 @@ end
 ---@param discordId string
 ---@public
 ---@return table
-function API_Discord:get_guild_member(guildId, discordId)
+function NCSBot:get_guild_member(guildId, discordId)
     return (json.decode(self:performDiscord(_NCSEnum.MethodType.GET, ("guilds/%s/members/%s"):format(guildId, discordId))))
 end
 
@@ -53,7 +70,7 @@ end
 ---@param guildId string
 ---@public
 ---@return table
-function API_Discord:get_guild_count(guildId)
+function NCSBot:get_guild_count(guildId)
     return (json.decode(self:performDiscord(_NCSEnum.MethodType.GET, ("guilds/%s"):format(guildId), nil, true)))
 end
 
@@ -62,7 +79,7 @@ end
 ---@param showDiscriminator boolean
 ---@public
 ---@return string
-function API_Discord:get_username(discordId, showDiscriminator)
+function NCSBot:get_username(discordId, showDiscriminator)
     local player = self:get_player(discordId)
 
     return (player and (showDiscriminator and ("%s#%s"):format(player.username, player.discriminator) or player.username) or "INVALID")
@@ -72,7 +89,7 @@ end
 ---@param discordId string
 ---@public
 ---@return string
-function API_Discord:get_avatar(discordId)
+function NCSBot:get_avatar(discordId)
     local player = self:get_player(discordId)
 
     if (player) then
@@ -94,8 +111,8 @@ end
 ---@param guildId string
 ---@public
 ---@return string
-function API_Discord:get_guild_name(guildId)
-    local guild = self:get_guild(guildId)
+function NCSBot:get_guild_name(guildId)
+    local guild = self:get_guild()
 
     return (guild and guild.name or "INVALID")
 end
@@ -104,7 +121,7 @@ end
 ---@param guildId string
 ---@public
 ---@return string
-function API_Discord:get_guild_icon(guildId)
+function NCSBot:get_guild_icon(guildId)
     local guild = self:get_guild(guildId)
 
     if (guild) then
@@ -126,7 +143,7 @@ end
 ---@param guildId string
 ---@public
 ---@return table
-function API_Discord:get_guild_roles(guildId)
+function NCSBot:get_guild_roles(guildId)
     local guild = self:get_guild(guildId)
 
     return (guild and guild.roles or {})
@@ -136,7 +153,7 @@ end
 ---@param guildId string
 ---@public
 ---@return table
-function API_Discord:get_guild_roles_count(guildId)
+function NCSBot:get_guild_roles_count(guildId)
     local guild = self:get_guild(guildId)
 
     return (guild and guild.roles and #guild.roles or 0)
@@ -146,7 +163,7 @@ end
 ---@param guildId string
 ---@public
 ---@return table
-function API_Discord:get_guild_members_count(guildId)
+function NCSBot:get_guild_members_count(guildId)
     local guild = self:get_guild_count(guildId)
 
     return (guild and guild.approximate_member_count or 0)
@@ -156,7 +173,7 @@ end
 ---@param guildId string
 ---@public
 ---@return table
-function API_Discord:get_guild_online_members_count(guildId)
+function NCSBot:get_guild_online_members_count(guildId)
     local guild = self:get_guild_count(guildId)
 
     return (guild and guild.approximate_presence_count -1 or 0)
@@ -167,7 +184,7 @@ end
 ---@param guildId string
 ---@public
 ---@return table
-function API_Discord:get_player_role_in_guild(guildId, discordId)
+function NCSBot:get_player_role_in_guild(guildId, discordId)
     local member = self:get_guild_member(guildId, discordId)
 
     return (member and member.roles or {})
@@ -179,7 +196,7 @@ end
 ---@param roleId string
 ---@public
 ---@return boolean
-function API_Discord:player_has_role_in_guild(guildId, discordId, roleId)
+function NCSBot:player_has_role_in_guild(guildId, discordId, roleId)
     local member = self:get_guild_member(guildId, discordId)
 
     for _, role in pairs(member.roles) do
@@ -196,7 +213,7 @@ end
 ---@param guildId string
 ---@public
 ---@return string
-function API_Discord:get_player_nickname_in_guild(guildId, discordId)
+function NCSBot:get_player_nickname_in_guild(guildId, discordId)
     local member = self:get_guild_member(guildId, discordId)
 
     return (member and (member.nick and member.nick or member.user.username) or "INVALID")
@@ -207,7 +224,7 @@ end
 ---@param guildId string
 ---@public
 ---@return boolean
-function API_Discord:is_player_mute_in_guild(guildId, discordId)
+function NCSBot:is_player_mute_in_guild(guildId, discordId)
     local member = self:get_guild_member(guildId, discordId)
 
     return (member and member.mute or false)
@@ -218,8 +235,10 @@ end
 ---@param guildId string
 ---@public
 ---@return string
-function API_Discord:get_player_joined_at_in_guild(guildId, discordId)
+function NCSBot:get_player_joined_at_in_guild(guildId, discordId)
     local member = self:get_guild_member(guildId, discordId)
 
     return (member and member.joined_at or "INVALID")
 end
+
+
