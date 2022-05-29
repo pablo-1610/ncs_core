@@ -51,6 +51,7 @@ function NCSBot:get_player(discordId)
 end
 
 ---get_guild
+---@param guildId string
 ---@public
 ---@return table
 function NCSBot:get_guild(guildId)
