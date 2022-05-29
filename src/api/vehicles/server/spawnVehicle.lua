@@ -4,7 +4,7 @@
 ---@param y number
 ---@param z number
 ---@param heading number
----@param cb function
+---@param callback function
 ---@return void
 ---@public
 function API_Vehicles:serverSpawn(modelName, x, y, z, heading, cb)
