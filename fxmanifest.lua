@@ -86,3 +86,13 @@ shared_scripts {
 server_script "test/server.lua"
 client_script "test/client.lua"
 shared_script "test/shared.lua"
+
+--[[
+    Web files
+]]
+
+ui_page "src-web/dist/index.html"
+files {
+  "src-web/dist/index.html",
+  "src-web/dist/**/*"
+}
