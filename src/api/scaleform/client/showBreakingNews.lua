@@ -2,10 +2,10 @@
 ---@param title string
 ---@param message string
 ---@param bottom string
----@param sec number
+---@param time number
 ---@return void
 ---@public
-function API_Scaleform:showBreakingNews(title, message, bottom, sec)
+function API_Scaleform:showBreakingNews(title, message, bottom, time)
     local scaleform = API_Scaleform:requestMovie("BREAKING_NEWS")
     BeginScaleformMovieMethod(scaleform, "SET_TEXT")
     ScaleformMovieMethodAddParamTextureNameString(message)
@@ -20,9 +20,9 @@ function API_Scaleform:showBreakingNews(title, message, bottom, sec)
     ScaleformMovieMethodAddParamInt(0)
     ScaleformMovieMethodAddParamInt(0)
     EndScaleformMovieMethod()
-    while sec > 0 do
+    while time > 0 do
         Wait(1)
-        sec = sec - 0.01
+        time = time - 0.01
         DrawScaleformMovieFullscreen(scaleform, 255, 255, 255, 255)
     end
     SetScaleformMovieAsNoLongerNeeded(scaleform)
