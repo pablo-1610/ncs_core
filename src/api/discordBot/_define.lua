@@ -1,5 +1,5 @@
 ---@class API_DiscordBot
 API_DiscordBot = {
-    NCSBot = NCSBot,
-    MOD_Bots = MOD_Bots,
+    Bot = NCSBot,
+    Bots = MOD_Bots,
 }
