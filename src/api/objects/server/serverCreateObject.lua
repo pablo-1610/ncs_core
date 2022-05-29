@@ -6,7 +6,7 @@
 ---@param h number
 ---@return void
 ---@public
-function API_Objects:serverCreateObject(props, x, y, z, h)
+function API_Objects:createObject(props, x, y, z, heading)
     assert(type(props) == "string" or type(props) == "number")
     if type(props) == "string" then
         props = GetHashKey(props)
