@@ -1,8 +1,8 @@
 ---setInvincible
----@param ped number
+---@param pedId number
 ---@param state boolean
 ---@return void
 ---@public
-function API_Ped:setInvincible(ped, state)
-    SetEntityInvincible(ped, state)
+function API_Ped:setInvincible(pedId, state)
+    SetEntityInvincible(pedId, state)
 end

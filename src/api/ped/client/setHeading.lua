@@ -1,8 +1,8 @@
 ---setHeading
----@param ped number
+---@param pedId number
 ---@param heading number
 ---@return void
 ---@public
-function API_Ped:setHeading(ped, heading)
-    SetEntityHeading(ped, heading)
+function API_Ped:setHeading(pedId, heading)
+    SetEntityHeading(pedId, heading)
 end

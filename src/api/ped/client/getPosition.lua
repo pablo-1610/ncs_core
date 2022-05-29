@@ -1,7 +1,7 @@
 ---getPosition
----@param ped number
+---@param pedId number
 ---@return table
 ---@public
-function API_Ped:getPosition(ped)
-    return GetEntityCoords(ped)
+function API_Ped:getPosition(pedId)
+    return GetEntityCoords(pedId)
 end

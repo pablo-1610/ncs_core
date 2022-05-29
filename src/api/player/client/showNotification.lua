@@ -1,6 +1,6 @@
 ---showNotification
 ---@param text string
----@param colorBg number
+---@param colorBg? number
 ---@return void
 ---@public
 function API_Player:showNotification(text, colorBg)
