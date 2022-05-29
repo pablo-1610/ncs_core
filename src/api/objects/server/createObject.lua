@@ -11,7 +11,7 @@ function API_Objects:createObject(prop, x, y, z, heading)
     if type(prop) == "string" then
         props = GetHashKey(prop)
     end
-    local object = CreateObject(props, x, y, z, true)
+    local object = CreateObject(prop, x, y, z, true)
     SetEntityHeading(object, heading)
     FreezeEntityPosition(object, true)
 end
