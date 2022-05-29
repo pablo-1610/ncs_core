@@ -1,6 +1,6 @@
 ---setPosition
 ---@param pedId number
----@param coords table
+---@param coords table<number, number, number>
 ---@return void
 ---@public
 function API_Ped:setPosition(pedId, coords)

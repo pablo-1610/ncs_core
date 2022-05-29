@@ -17,14 +17,14 @@ setmetatable(NCSPlayer, {
     end
 })
 
---- getId
+---getId
 ---@return number
 ---@public
 function NCSPlayer:getId()
     return self.id
 end
 
---- getName
+---getName
 ---@return string
 ---@public
 function NCSPlayer:getName()
@@ -32,14 +32,14 @@ function NCSPlayer:getName()
 end
 
 
---- getLicense
+---getLicense
 ---@return string
 ---@public
 function NCSPlayer:getLicense()
     return self.identifiers["license"]
 end
 
---- getIdentier
+---getIdentier
 ---@param identifier string
 ---@return string
 ---@public
@@ -47,21 +47,21 @@ function NCSPlayer:getIdentier(identifier)
     return self.identifiers[identifier]
 end
 
---- getIdentiers
+---getIdentiers
 ---@return table
 ---@public
 function NCSPlayer:getIdentiers()
     return self.identifiers
 end
 
---- getDimension
+---getDimension
 ---@return number
 ---@public
 function NCSPlayer:getBucket()
     return GetPlayerRoutingBucket(self.id)
 end
 
---- setBucket
+---setBucket
 ---@param bucketID number
 ---@return void
 ---@public
@@ -69,10 +69,10 @@ function NCSPlayer:setBucket(bucketID)
     SetPlayerRoutingBucket(self.id, bucketID)
 end
 
---- notify
----@param msg string
+---notify
+---@param message string
 ---@return void
 ---@public
-function NCSPlayer:notify(msg)
-    _NCS:triggerClientEvent("NCs_player:notify", self.id, msg)
+function NCSPlayer:notify(message)
+    _NCS:triggerClientEvent("NCs_player:notify", self.id, message)
 end

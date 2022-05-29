@@ -1,7 +1,7 @@
 ---notifyAll
----@param msg string
+---@param message string
 ---@return void
 ---@public
-function MOD_Players:notifyAll(msg)
-    _NCS:triggerClientEvent("NCs_player:notify", -1, msg)
+function MOD_Players:notifyAll(message)
+    _NCS:triggerClientEvent("NCs_player:notify", -1, message)
 end

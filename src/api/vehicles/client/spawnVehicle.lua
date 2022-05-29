@@ -1,8 +1,9 @@
 ---spawn
 ---@param modelName string
----@param coords table
+---@param coords table<number, number, number>
 ---@param heading number
----@param cb function
+---@param callback? function
+---@param clientSide? boolean
 ---@return void
 ---@public
 function API_Vehicles:spawn(modelName, coords, heading, callback, clientSide)
