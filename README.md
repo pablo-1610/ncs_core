@@ -8,15 +8,25 @@ NextCitizens is a powerful and optimized core for your FiveM server based on Rol
 
 ## About us
 
-NCS is a core created by the community, for the community. It was designed to enhance FiveM server development based on RolePlay. NCS was created and maintained by the community and will not be left behind.
+NCS is a core created by the community, for the community. It was designed to enhance FiveM server development based on
+RolePlay. NCS was created and maintained by the community and will not be left behind.
+
 ## Documentation
 
 [Official documentation of NextCitizens.](https://nextcitizens.net)
 
+## Server Convar [**Requiered**]
+
+```cfg
+ncs_log_level {1 -> 4}
+ncs_unique_identifier {steam, license, xbl, ip, discord, live}
+ncs_allow_multiple_characters {0, 1}
+ncs_max_characters {1 -> 10} [Useless if ncs_allow_multiple_characters is 0]
+```
+
 ## Discord
 
 [Official Discord of NextCitizens.](https://discord.gg/T8u4JsserD)
-
 
 ## License
 
