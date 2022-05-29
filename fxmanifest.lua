@@ -34,6 +34,7 @@ shared_scripts {
     "src/api/**/_define.lua",
     "src/api/**/shared/*.lua",
     -- NCS Modules
+    "src/modules/**/_define.lua",
     "src/modules/**/shared/*.lua",
     "src/modules/**/shared/functions/*.lua",
     "src/modules/**/shared/events/*.lua",
