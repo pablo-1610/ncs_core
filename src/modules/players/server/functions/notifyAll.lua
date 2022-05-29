@@ -3,5 +3,5 @@
 ---@return void
 ---@public
 function MOD_Players:notifyAll(msg)
-    _NCS:triggerClientEvent("executeFunction", -1, "_G._NCS.Player.showNotification", msg)
+    _NCS:triggerClientEvent("NCs_player:notify", -1, msg)
 end
