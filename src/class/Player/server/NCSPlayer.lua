@@ -74,5 +74,5 @@ end
 ---@return void
 ---@public
 function NCSPlayer:notify(msg)
-    _NCS:triggerClientEvent("executeFunction", self.id, "_G._NCS.Player.showNotification", msg)
+    _NCS:triggerClientEvent("NCs_player:notify", self.id, msg)
 end
