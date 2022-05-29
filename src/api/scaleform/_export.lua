@@ -1,0 +1,1 @@
+_G._NCS.Scaleform = API_Scaleform

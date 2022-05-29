@@ -40,6 +40,8 @@ function _NCS:die(reason)
     error(("(NCS) %s"):format(reason))
 end
 
+local registeredEvents = {}
+
 ---registerNetEvent
 ---@param eventName string
 ---@return void
