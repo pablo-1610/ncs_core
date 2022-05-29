@@ -5,7 +5,7 @@
 ---@param cb function
 ---@return void
 ---@public
-function API_Vehicles:spawn(modelName, coords, heading, cb, clientSide)
+function API_Vehicles:spawn(modelName, coords, heading, callback, clientSide)
     CreateThread(function()
         assert(type(modelName) == "string" or type(modelName) == "number")
         if type(modelName) == "string" then
