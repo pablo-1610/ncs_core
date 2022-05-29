@@ -153,7 +153,7 @@ end
 ---get_guild_roles_count
 ---@param guildId string
 ---@public
----@return table
+---@return number
 function NCSBot:get_guild_roles_count(guildId)
     local guild = self:get_guild(guildId)
 
