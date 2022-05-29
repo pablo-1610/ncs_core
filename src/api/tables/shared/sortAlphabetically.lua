@@ -1,12 +1,13 @@
 ---sortAlphabetically
----@param table table
+---@param tableToSort table
 ---@return table
 ---@public
-function API_Tables:sortAlphabetically(table)
+function API_Tables:sortAlphabetically(tableToSort)
     local sortedTable = {}
-    for key, _ in pairs(table) do
-        table.insert(sortedTable, key)
+    for key, _ in pairs(tableToSort) do
+        sortedTable[#sortedTable + 1] = _
     end
+
     table.sort(sortedTable)
     return (sortedTable)
 end
