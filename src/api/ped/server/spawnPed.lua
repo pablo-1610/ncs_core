@@ -14,7 +14,6 @@ function API_Ped:serverSpawn(modelName, x, y, z, heading, cb)
     end
 
     local vehicle = CreatePed(1, modelName, x, y, z, heading)
-
     repeat
         Wait(0)
     until DoesEntityExist(vehicle)
