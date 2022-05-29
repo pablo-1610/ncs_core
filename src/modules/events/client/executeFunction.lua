@@ -1,6 +1,6 @@
 _NCS:registerNetEvent('executeFunction')
 _NCS:handleEvent('executeFunction', function(funcName, ...)
-    local func, error = API_Event:findfunction(funcName)
+    local func, error = API_Strings:findfunction(funcName)
     if func then
         func(...)
     else
