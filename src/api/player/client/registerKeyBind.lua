@@ -10,5 +10,5 @@ function API_Player:registerKeyBind(name, defaultKey, description, callback)
     RegisterCommand(cmd, function()
         callback()
     end)
-    RegisterKeyMapping(cmd, desc, "keyboard", defaultKey)
+    RegisterKeyMapping(cmd, description, "keyboard", defaultKey)
 end
