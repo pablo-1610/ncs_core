@@ -169,7 +169,7 @@ end
 ---get_guild_online_members_count
 ---@param guildId string
 ---@public
----@return table
+---@return number
 function NCSBot:get_guild_online_members_count(guildId)
     local guild = self:get_guild_count(guildId)
 
