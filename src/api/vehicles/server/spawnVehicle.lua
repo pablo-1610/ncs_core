@@ -30,5 +30,5 @@ function API_Vehicles:spawn(modelName, x, y, z, heading, callback)
         end
     end
 
-    cb(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
+    callback(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
 end

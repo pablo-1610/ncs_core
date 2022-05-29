@@ -25,8 +25,8 @@ function API_Vehicles:spawn(modelName, coords, heading, callback, clientSide)
     SetVehicleOnGroundProperly(vehicle)
     SetEntityHeading(vehicle, heading)
     SetEntityAsMissionEntity(vehicle, 1, 1)
-    if cb ~= nil then
-        cb(vehicle)
+    if callback ~= nil then
+        callback(vehicle)
     end
     SetModelAsNoLongerNeeded(vehicle)
 end

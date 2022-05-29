@@ -4,10 +4,10 @@
 ---@param y number
 ---@param z number
 ---@param heading number
----@param cb function
+---@param callback function
 ---@return void
 ---@public
-function API_Ped:serverSpawn(modelName, x, y, z, heading, cb)
+function API_Ped:spawn(modelName, x, y, z, heading, callback)
     assert(type(modelName) == "string" or type(modelName) == "number")
     if type(modelName) == "string" then
         modelName = GetHashKey(modelName)
@@ -18,5 +18,5 @@ function API_Ped:serverSpawn(modelName, x, y, z, heading, cb)
         Wait(0)
     until DoesEntityExist(vehicle)
 
-    cb(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
+    callback(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
 end
