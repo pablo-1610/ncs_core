@@ -1,4 +1,4 @@
----serverSpawn
+---spawn
 ---@param modelName string
 ---@param x number
 ---@param y number
