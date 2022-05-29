@@ -1,4 +1,4 @@
----serverCreateObject
+---createObject
 ---@param props string
 ---@param x number
 ---@param y number
@@ -6,7 +6,7 @@
 ---@param h number
 ---@return void
 ---@public
-function API_Objects:serverCreateObject(props, x, y, z, h)
+function API_Objects:createObject(props, x, y, z, h)
     local object = CreateObject(props, x, y, z - 1, true)
     SetEntityHeading(object, h)
     FreezeEntityPosition(object, true)
