@@ -7,7 +7,7 @@
 ---@param callback function
 ---@return void
 ---@public
-function API_Vehicles:serverSpawn(modelName, x, y, z, heading, cb)
+function API_Vehicles:spawn(modelName, x, y, z, heading, callback)
     assert(type(modelName) == "string" or type(modelName) == "number")
     if type(modelName) == "string" then
         modelName = GetHashKey(modelName)
