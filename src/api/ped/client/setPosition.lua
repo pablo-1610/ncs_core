@@ -3,6 +3,6 @@
 ---@param coords position
 ---@return void
 ---@public
-function API_Player:setPosition(ped, coords)
+function API_Ped:setPosition(ped, coords)
     SetEntityCoords(ped, coords)
 end
