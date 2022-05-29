@@ -1,5 +1,5 @@
 ---getPosition
----@return void
+---@return table
 ---@public
 function API_Player:getPosition()
     return GetEntityCoords(PlayerPedId())

@@ -1,6 +1,6 @@
 ---getPosition
 ---@param ped number
----@return void
+---@return table
 ---@public
 function API_Ped:getPosition(ped)
     return GetEntityCoords(ped)
