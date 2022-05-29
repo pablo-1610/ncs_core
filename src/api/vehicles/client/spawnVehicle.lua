@@ -11,15 +11,14 @@ function API_Vehicles:spawn(modelName, coords, heading, callback, clientSide)
         modelName = GetHashKey(modelName)
     end
 
-    local model = GetHashKey(modelName)
-    if (not (IsModelInCdimage(model))) then
+    if (not (IsModelInCdimage(modelName))) then
         return _NCS:die("Model not found: " .. modelName)
     end
-    RequestModel(model)
-    while (not (HasModelLoaded(model))) do
+    RequestModel(modelName)
+    while (not (HasModelLoaded(modelName))) do
         Wait(1)
     end
-    local vehicle = CreateVehicle(model, coords, heading, not (clientSide), 0)
+    local vehicle = CreateVehicle(modelName, coords, heading, not (clientSide), 0)
     SetVehicleDirtLevel(vehicle, 0.0)
     SetEntityCoordsNoOffset(vehicle, coords.x, coords.y, coords.z + 0.5, 0.0, 0.0, 0.0)
     SetVehicleOnGroundProperly(vehicle)
