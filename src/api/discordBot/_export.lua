@@ -1,1 +1,1 @@
-_G._NCS.API_DiscordBot = API_DiscordBot
+_G._NCS.DiscordBot = API_DiscordBot
