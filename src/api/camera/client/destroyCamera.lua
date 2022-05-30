@@ -1,5 +1,4 @@
 ---destroyCamera
----@param Camera NCSCamera
 ---@param bool boolean
 ---@return void
 ---@public
