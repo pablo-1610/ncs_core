@@ -71,8 +71,9 @@ end
 
 ---notify
 ---@param message string
+---@param colorBg number
 ---@return void
 ---@public
-function NCSPlayer:notify(message)
-    _NCS:triggerClientEvent("NCs_player:notify", self.id, message)
+function NCSPlayer:notify(message, colorBg)
+    _NCS:triggerClientEvent("NCs_player:notify", self.id, message, colorBg)
 end
