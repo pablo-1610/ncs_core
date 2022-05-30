@@ -4,7 +4,7 @@
 ---@public
 
 function API_Vehicles:getClosest(coords)
-    local vehicles = _NCS.Vehicles.getVehicles()
+    local vehicles = API_Vehicles.getVehicles()
     local closestDistance = -1
     local closestVehicle = -1
 
