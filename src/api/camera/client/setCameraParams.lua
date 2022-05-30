@@ -1,5 +1,5 @@
 ---setCameraParams
----@param coords table
+---@param coords table<number, number, number>
 ---@param rotationX number
 ---@param rotationY number
 ---@param rotationZ number
