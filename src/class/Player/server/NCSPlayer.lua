@@ -71,6 +71,7 @@ end
 
 ---notify
 ---@param message string
+---@param colorBg number
 ---@return void
 ---@public
 function NCSPlayer:notify(message, colorBg)
