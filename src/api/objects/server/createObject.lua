@@ -5,7 +5,7 @@
 ---@param z number
 ---@param heading number
 ---@param freeze boolean
----@return void
+---@return object
 ---@public
 function API_Objects:createObject(prop, x, y, z, heading, freeze)
     assert(type(prop) == "string" or type(prop) == "number")

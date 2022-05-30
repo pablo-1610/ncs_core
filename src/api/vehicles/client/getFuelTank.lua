@@ -7,5 +7,5 @@ function API_Vehicles:getFuelTank(vehicleId)
         local fuel <const> = GetVehicleHandlingFloat(vehicleId, "CHandlingData", "fPetrolTankVolume")
         return fuel
     end
-    _NCS:trace('Unable to find vehicle', 1)
+    _NCS:trace("Unable to find vehicle", 1)
 end

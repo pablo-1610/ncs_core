@@ -4,8 +4,7 @@
 ---@param y number
 ---@param z number
 ---@param heading number
----@param callback function
----@return void
+---@return ped
 ---@public
 function API_Ped:spawn(modelName, x, y, z, heading)
     assert(type(modelName) == "string" or type(modelName) == "number")
