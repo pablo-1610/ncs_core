@@ -1,17 +1,15 @@
 ---setCameraParams
----@param params table coords.x, coords.y, coords.z, rotation.x, rotation.y, rotation.z, fov
+---@param coords table
+---@param rotationX number
+---@param rotationY number
+---@param rotationZ number
+---@param fov number
 ---@return void
 ---@public
-function NCSCamera:setCameraParams(params)
+function NCSCamera:setCameraParams(coords, rotationX, rotationY, rotationZ, fov)
     if self.exist then
-        if params.coords then
-            SetCamCoord(self.id, params.coords)
-        end
-        if params.rotation then
-            SetCamRot(self.id, params.rotation, 2)
-        end
-        if params.fov then
-            SetCamFov(self.id, params.fov)
-        end
+        SetCamCoord(self.id, coords)
+        SetCamRot(self.id, rotationX, rotationY, rotationZ, 2)
+        SetCamFov(self.id, params.fov)
     end
 end
