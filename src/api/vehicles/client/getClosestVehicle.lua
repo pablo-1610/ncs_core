@@ -1,5 +1,5 @@
 ---getClosest
----@param coords table
+---@param coords table<number, number, number>
 ---@return number, number
 ---@public
 

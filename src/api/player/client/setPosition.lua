@@ -1,5 +1,5 @@
 ---setPosition
----@param coords position
+---@param coords table<number, number, number>
 ---@return void
 ---@public
 function API_Player:setPosition(coords)
