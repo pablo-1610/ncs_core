@@ -1,5 +1,5 @@
 ---hasWeapon
----@param pedId string
+---@param pedId number
 ---@param weaponName string
 ---@return bool
 ---@public
