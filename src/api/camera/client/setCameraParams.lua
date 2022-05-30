@@ -1,5 +1,4 @@
 ---setCameraParams
----@param Camera NCSCamera
 ---@param params table coords.x, coords.y, coords.z, rotation.x, rotation.y, rotation.z, fov
 ---@return void
 ---@public
