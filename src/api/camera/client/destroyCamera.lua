@@ -1,11 +1,10 @@
 ---destroyCamera
----@param bool boolean
 ---@return void
 ---@public
-function NCSCamera:destroyCamera(bool)
+function NCSCamera:destroyCamera()
     if self.exist then
     	SetCamActive(self.id, false)
-        RenderScriptCams(false, bool, 3000, true, true)
+        RenderScriptCams(false, true, 3000, true, true)
         DestroyCam(self.id, false)
     end
 end
