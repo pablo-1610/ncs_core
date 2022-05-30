@@ -14,6 +14,7 @@ function API_Vehicles:setProperties(vehicleEntity, props)
     local colorPrimary, colorSecondary = GetVehicleColours(vehicleEntity)
     local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleEntity)
     SetVehicleModKit(vehicleEntity, 0)
+	SetVehicleAutoRepairDisabled(vehicleEntity, true)
 
     if props.plate then
         SetVehicleNumberPlateText(vehicleEntity, props.plate)
@@ -37,14 +38,28 @@ function API_Vehicles:setProperties(vehicleEntity, props)
         SetVehicleDirtLevel(vehicleEntity, props.dirtLevel + 0.0)
     end
     if props.color1 then
-        SetVehicleColours(vehicleEntity, props.color1, colorSecondary)
-    end
-    if props.color2 then
-        SetVehicleColours(vehicleEntity, props.color1 or colorPrimary, props.color2)
-    end
+		if type(props.color1) == 'number' then
+			SetVehicleColours(vehicleEntity, props.color1, colorSecondary)
+		else
+			SetVehicleCustomPrimaryColour(vehicleEntity, props.color1[1], props.color1[2], props.color1[3])
+		end
+	end
+	if props.color2 then
+		if type(props.color2) == 'number' then
+			SetVehicleColours(vehicleEntity, props.color1 or colorPrimary, props.color2)
+		else
+			SetVehicleCustomSecondaryColour(vehicleEntity, props.color2[1], props.color2[2], props.color2[3])
+		end
+	end
     if props.pearlescentColor then
         SetVehicleExtraColours(vehicleEntity, props.pearlescentColor, wheelColor)
     end
+    if props.interiorColor then
+		SetVehicleInteriorColor(vehicleEntity, props.interiorColor)
+	end
+    if props.dashboardColor then
+		SetVehicleDashboardColour(vehicleEntity, props.dashboardColor)
+	end
     if props.wheelColor then
         SetVehicleExtraColours(vehicleEntity, props.pearlescentColor or pearlescentColor, props.wheelColor)
     end
@@ -54,24 +69,35 @@ function API_Vehicles:setProperties(vehicleEntity, props)
     if props.windowTint then
         SetVehicleWindowTint(vehicleEntity, props.windowTint)
     end
-
-    if props.neonEnabled then
-        SetVehicleNeonLightEnabled(vehicleEntity, 0, props.neonEnabled[1])
-        SetVehicleNeonLightEnabled(vehicleEntity, 1, props.neonEnabled[2])
-        SetVehicleNeonLightEnabled(vehicleEntity, 2, props.neonEnabled[3])
-        SetVehicleNeonLightEnabled(vehicleEntity, 3, props.neonEnabled[4])
-    end
-
-    if props.extras then
-        for extraId, enabled in pairs(props.extras) do
-            if enabled then
-                SetVehicleExtra(vehicleEntity, tonumber(extraId), 0)
-            else
-                SetVehicleExtra(vehicleEntity, tonumber(extraId), 1)
-            end
-        end
-    end
-
+	if props.neonEnabled then
+		for i = 1, #props.neonEnabled do
+			SetVehicleNeonLightEnabled(vehicleEntity, props.neonEnabled[i], true)
+		end
+	end
+	if props.extras then
+		for id, state in pairs(props.extras) do
+			SetVehicleExtra(vehicleEntity, id, state)
+		end
+	end
+    if props.windows then
+		for i = 1, #props.windows do
+			SmashVehicleWindow(vehicleEntity, props.windows[i])
+		end
+	end
+    if props.doors then
+		for i = 1, #props.doors do
+			SetVehicleDoorBroken(vehicleEntity, props.windows[i], false)
+		end
+	end
+    if props.tyres then
+		for tyre, state in pairs(props.tyres) do
+			if state == 1 then
+				SetVehicleTyreBurst(vehicleEntity, tyre, false, 1000.0)
+			else
+				SetVehicleTyreBurst(vehicleEntity, tyre, true)
+			end
+		end
+	end
     if props.neonColor then
         SetVehicleNeonLightsColour(vehicleEntity, props.neonColor[1], props.neonColor[2], props.neonColor[3])
     end
@@ -138,6 +164,12 @@ function API_Vehicles:setProperties(vehicleEntity, props)
     if props.modTurbo then
         ToggleVehicleMod(vehicleEntity, 18, props.modTurbo)
     end
+    if props.modSubwoofer then
+		ToggleVehicleMod(vehicleEntity, 19, props.modSubwoofer)
+	end
+    if props.modHydraulics then
+		ToggleVehicleMod(vehicleEntity, 21, props.modHydraulics)
+	end
     if props.modXenon then
         ToggleVehicleMod(vehicleEntity, 22, props.modXenon)
     end
@@ -212,6 +244,12 @@ function API_Vehicles:setProperties(vehicleEntity, props)
     end
     if props.modWindows then
         SetVehicleMod(vehicleEntity, 46, props.modWindows, false)
+    end
+    if props.modDoorR then
+		SetVehicleMod(vehicleEntity, 47, props.modDoorR, false)
+	end
+	if props.modLightbar then
+		SetVehicleMod(vehicleEntity, 49, props.modLightbar, false)
     end
 
     if props.modLivery then
