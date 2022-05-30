@@ -1,1 +1,0 @@
-_G._NCS.Camera = API_Camera
