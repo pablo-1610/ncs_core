@@ -1,6 +1,5 @@
 ---setCameraActive
----@param Camera NCSCamera
----@param coords table
+---@param coords table<number, number, number>
 ---@return void
 ---@public
 function NCSCamera:setCameraCoords(coords)
