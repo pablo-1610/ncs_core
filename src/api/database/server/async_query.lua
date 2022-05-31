@@ -4,5 +4,5 @@
 ---@return table
 ---@public
 function API_Database:async_query(query, parameters, cb)
-    export[GetCurrentResourceName()]:query_async(query, parameters, cb)
+    exports[GetCurrentResourceName()]:query_async(query, parameters, cb)
 end

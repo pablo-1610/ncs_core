@@ -5,5 +5,5 @@
 ---@return void
 ---@public
 function API_Database:query(query, parameters, cb)
-    export[GetCurrentResourceName()]:query(query, parameters, cb)
+    exports[GetCurrentResourceName()]:query(query, parameters, cb)
 end

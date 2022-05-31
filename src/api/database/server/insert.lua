@@ -5,5 +5,5 @@
 ---@return void
 ---@public
 function API_Database:insert(query, parameters, cb)
-    export[GetCurrentResourceName()]:insert(query, parameters, cb)
+    exports[GetCurrentResourceName()]:insert(query, parameters, cb)
 end
