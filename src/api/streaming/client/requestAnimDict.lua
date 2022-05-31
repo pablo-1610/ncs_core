@@ -2,7 +2,7 @@
 ---@param animDict string
 ---@param callback function
 ---@public
-function API_Streaming:requestAnimDict(animDict, callback)
+function API_Streaming:requestAnimDict(animDict)
     if (not HasAnimDictLoaded(animDict)) then
         RequestAnimDict(animDict)
         while (not HasAnimDictLoaded(animDict)) do

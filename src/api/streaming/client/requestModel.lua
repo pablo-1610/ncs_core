@@ -2,7 +2,7 @@
 ---@param modelHash string
 ---@param callback function
 ---@public
-function API_Streaming:requestModel(modelHash, callback)
+function API_Streaming:requestModel(modelHash)
     if (not (IsModelInCdimage(modelHash))) then
         return _NCS:die("Model not found: " .. modelHash)
     end

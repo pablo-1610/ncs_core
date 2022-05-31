@@ -11,7 +11,8 @@ function API_Vehicles:spawn(modelName, coords, heading, clientSide)
         modelName = GetHashKey(modelName)
     end
 
-    API_Streaming:requestModel(modelName, function()
+    local Return_Model = API_Streaming:requestModel(modelName)
+    if (Return_Model == modelName) then
         local vehicle = CreateVehicle(modelName, coords, heading, not (clientSide), 0)
         SetVehicleDirtLevel(vehicle, 0.0)
         SetEntityCoordsNoOffset(vehicle, coords.x, coords.y, coords.z + 0.5, 0.0, 0.0, 0.0)
@@ -20,5 +21,5 @@ function API_Vehicles:spawn(modelName, coords, heading, clientSide)
         SetEntityAsMissionEntity(vehicle, 1, 1)
         SetModelAsNoLongerNeeded(vehicle)
         return (vehicle)
-    end)
+    end
 end

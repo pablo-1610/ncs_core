@@ -2,7 +2,7 @@
 ---@param assetName string
 ---@param callback function
 ---@public
-function API_Streaming:requestNamedPtfxAsset(assetName, callback)
+function API_Streaming:requestNamedPtfxAsset(assetName)
     if (not HasNamedPtfxAssetLoaded(assetName)) then
         RequestNamedPtfxAsset(assetName)
         while (not HasNamedPtfxAssetLoaded(assetName)) do

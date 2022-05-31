@@ -2,7 +2,7 @@
 ---@param textureDict string
 ---@param callback function
 ---@public
-function API_Streaming:requestStreamedTextureDict(textureDict, callback)
+function API_Streaming:requestStreamedTextureDict(textureDict)
     if (not HasStreamedTextureDictLoaded(textureDict)) then
         RequestStreamedTextureDict(textureDict)
         while (not HasStreamedTextureDictLoaded(textureDict)) do
