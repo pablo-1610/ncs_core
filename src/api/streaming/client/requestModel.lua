@@ -1,11 +1,10 @@
 ---requestModel
 ---@param modelHash string
----@param callback function
----@return modelHash
+---@return any
 ---@public
 function API_Streaming:requestModel(modelHash)
     if (not (IsModelInCdimage(modelHash))) then
-        return _NCS:die("Model not found: " .. modelHash)
+        return (_NCS:die("Model not found: " .. modelHash))
     end
     modelHash = (type(modelHash) == "number" and modelHash or GetHashKey(modelHash))
     if (not HasModelLoaded(modelHash)) then
