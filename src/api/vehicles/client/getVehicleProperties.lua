@@ -3,8 +3,8 @@
 ---@return table
 ---@public
 function API_Vehicles:getProperties(vehicleId)
-    if not DoesEntityExist(vehicleId) then
-        return _NCS:die("Can't get vehicle properties for the vehicle (entity doesn't exist)")
+    if (not DoesEntityExist(vehicleId)) then
+        return (_NCS:die("Can't get vehicle properties for the vehicle (entity doesn't exist)"))
     end
 
     local primaryColor, secondaryColor = GetVehicleColours(vehicleId)
