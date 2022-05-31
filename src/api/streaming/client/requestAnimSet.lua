@@ -1,5 +1,5 @@
 ---requestAnimSet
----@param textureDict string
+---@param animSet string
 ---@param callback function
 ---@public
 function API_Streaming:requestAnimSet(animSet, callback)
@@ -7,7 +7,7 @@ function API_Streaming:requestAnimSet(animSet, callback)
         RequestAnimSet(animSet)
         while not HasAnimSetLoaded(animSet) do
             Wait(0)
-       end
+        end
     end
     if callback ~= nil then
         callback()
