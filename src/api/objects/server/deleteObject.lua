@@ -1,13 +1,12 @@
----delete
+---deleteObject
 ---@param objectId number
 ---@return void
 ---@public
-function API_Objects:delete(objectId)
+function API_Objects:deleteObject(objectId)
     if (not (DoesEntityExist(objectId))) then
         return _NCS:die("Target entity does not exists")
-    end    
-
-    if IsEntityAnObject(objectId) then
+    end
+    if (IsEntityAnObject(objectId)) then
         DeleteEntity(objectId)
     end
 end
