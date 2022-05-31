@@ -1,6 +1,7 @@
 ---requestAnimSet
 ---@param animSet string
 ---@param callback function
+---@return animSet
 ---@public
 function API_Streaming:requestAnimSet(animSet)
     if (not HasAnimSetLoaded(animSet)) then

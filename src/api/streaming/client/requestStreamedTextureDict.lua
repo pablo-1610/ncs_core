@@ -1,6 +1,7 @@
 ---requestStrealedTextureDict
 ---@param textureDict string
 ---@param callback function
+---@return textureDict
 ---@public
 function API_Streaming:requestStreamedTextureDict(textureDict)
     if (not HasStreamedTextureDictLoaded(textureDict)) then
