@@ -1,7 +1,6 @@
 ---requestNamedPtfxAsset
 ---@param assetName string
----@param callback function
----@return assetName
+---@return string
 ---@public
 function API_Streaming:requestNamedPtfxAsset(assetName)
     if (not HasNamedPtfxAssetLoaded(assetName)) then
