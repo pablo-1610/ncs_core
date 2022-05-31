@@ -8,8 +8,6 @@ function API_Streaming:requestStreamedTextureDict(textureDict, callback)
         while not HasStreamedTextureDictLoaded(textureDict) do
             Wait(0)
         end
-    end
-    if callback ~= nil then
-        callback()
+        return (textureDict)
     end
 end

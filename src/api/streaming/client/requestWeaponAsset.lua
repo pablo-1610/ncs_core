@@ -8,8 +8,6 @@ function API_Streaming:requestWeaponAsset(weaponHash, callback)
         while not HasWeaponAssetLoaded(weaponHash) do
             Wait(0)
         end
-    end
-    if callback ~= nil then
-        callback()
+        return (weaponHash)
     end
 end

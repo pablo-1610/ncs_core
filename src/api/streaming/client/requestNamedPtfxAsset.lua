@@ -8,8 +8,6 @@ function API_Streaming:requestNamedPtfxAsset(assetName, callback)
         while not HasNamedPtfxAssetLoaded(assetName) do
             Wait(0)
         end
-    end
-    if callback ~= nil then
-        callback()
+        return (assetName)
     end
 end

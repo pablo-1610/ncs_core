@@ -12,8 +12,6 @@ function API_Streaming:requestModel(modelHash, callback)
         while not HasModelLoaded(modelHash) do
             Wait(0)
         end
-    end
-    if callback ~= nil then
-        callback()
+        return (modelHash)
     end
 end

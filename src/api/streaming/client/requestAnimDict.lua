@@ -8,8 +8,6 @@ function API_Streaming:requestAnimDict(animDict, callback)
         while not HasAnimDictLoaded(animDict) do
             Wait(0)
         end
-    end
-    if callback ~= nil then
-        callback()
+        return (animDict)
     end
 end

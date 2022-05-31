@@ -8,8 +8,6 @@ function API_Streaming:requestAnimSet(animSet, callback)
         while not HasAnimSetLoaded(animSet) do
             Wait(0)
         end
-    end
-    if callback ~= nil then
-        callback()
+        return (animSet)
     end
 end
