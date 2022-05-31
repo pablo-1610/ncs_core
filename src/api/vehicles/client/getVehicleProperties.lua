@@ -7,7 +7,7 @@ function API_Vehicles:getProperties(vehicleId)
         return _NCS:die("Can't get vehicle properties for the vehicle (entity doesn't exist)")
     end
 
-    local colorPrimary, colorSecondary = GetVehicleColours(vehicleId)
+    local primaryColor, secondaryColor = GetVehicleColours(vehicleId)
     local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleId)
     local modLivery
     local extras, neons = {}, {}
@@ -18,9 +18,9 @@ function API_Vehicles:getProperties(vehicleId)
         tyres = {},
     }
 
-    if GetIsVehiclePrimaryColourCustom(vehicleId) then colorPrimary = {GetVehicleCustomPrimaryColour(vehicleId)} end
+    if GetIsVehiclePrimaryColourCustom(vehicleId) then primaryColor = {GetVehicleCustomPrimaryColour(vehicleId)} end
 
-    if GetIsVehicleSecondaryColourCustom(vehicleId) then colorSecondary = {GetVehicleCustomSecondaryColour(vehicleId)} end
+    if GetIsVehicleSecondaryColourCustom(vehicleId) then secondaryColor = {GetVehicleCustomSecondaryColour(vehicleId)} end
     
     for extraId = 1, 15 do
         if DoesExtraExist(vehicleId, extraId) then
@@ -71,8 +71,8 @@ function API_Vehicles:getProperties(vehicleId)
         tankHealth = math.floor(GetVehiclePetrolTankHealth(vehicleId) + 0.5),
         fuelLevel = math.floor(GetVehicleFuelLevel(vehicleId) + 0.5),
         dirtLevel = math.floor(GetVehicleDirtLevel(vehicleId) + 0.5),
-        color1 = colorPrimary,
-        color2 = colorSecondary,
+        color1 = primaryColor,
+        color2 = secondaryColor,
         pearlescentColor = pearlescentColor,
         interiorColor = GetVehicleInteriorColor(vehicleId),
         dashboardColor = GetVehicleDashboardColour(vehicleId),
