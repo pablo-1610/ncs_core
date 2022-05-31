@@ -1,15 +1,15 @@
 ---getVehicleStates
----@param vehicle number
+---@param vehicleEntity number
 ---@return table
 ---@public
-function API_Vehicles:getStates(vehicle)
+function API_Vehicles:getStates(vehicleEntity)
     local vehicleState = {}
     if (GetVehiclePedIsIn(PlayerPedId()) ~= 0) then
-        if (vehicle ~= nil) then
-            vehicleState.engineHealth = GetVehicleEngineHealth(vehicle)
-            vehicleState.vehicleBodyHealth = GetVehicleBodyHealth(vehicle)
-            vehicleState.dirtLevel = GetVehicleDirtLevel(vehicle)
-            if (GetIsVehicleEngineRunning(vehicle) == 1) then
+        if (vehicleEntity ~= nil) then
+            vehicleState.engineHealth = GetVehicleEngineHealth(vehicleEntity)
+            vehicleState.vehicleBodyHealth = GetVehicleBodyHealth(vehicleEntity)
+            vehicleState.dirtLevel = GetVehicleDirtLevel(vehicleEntity)
+            if (GetIsVehicleEngineRunning(vehicleEntity) == 1) then
                 vehicleState.engineState = true
             else
                 vehicleState.engineState = false
