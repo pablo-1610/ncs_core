@@ -1,0 +1,1 @@
+_G._NCS.PlayersManager = MOD_Players

@@ -14,8 +14,9 @@ end
 ---@return void
 ---@public
 function _NCS:trace(message, logLevelIndex)
+    logLevelIndex = logLevelIndex or _NCSEnum.LogType.DEBUG
     local maxLogLevel <const> = _Internal.LogLevel or _NCSEnum.LogType.INFO
-    logLevelData = _NCSEnum._getLogTypeDisplayData(logLevelIndex or _NCSEnum.LogType.DEBUG)
+    local logLevelData = _NCSEnum._getLogTypeDisplayData(logLevelIndex)
     if (logLevelIndex > maxLogLevel) then
         return
     end
@@ -94,3 +95,4 @@ _G._NCS = _NCS
 _G._Internal = {}
 _G._Config = {}
 _G._NCSEnum = {}
+_G._NCSConstant = {}
