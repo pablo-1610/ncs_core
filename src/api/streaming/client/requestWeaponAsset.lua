@@ -3,9 +3,9 @@
 ---@param callback function
 ---@public
 function API_Streaming:requestWeaponAsset(weaponHash, callback)
-    if not HasWeaponAssetLoaded(weaponHash) then
+    if (not HasWeaponAssetLoaded(weaponHash)) then
         RequestWeaponAsset(weaponHash)
-        while not HasWeaponAssetLoaded(weaponHash) do
+        while (not HasWeaponAssetLoaded(weaponHash)) do
             Wait(0)
         end
         return (weaponHash)

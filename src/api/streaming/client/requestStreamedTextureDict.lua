@@ -3,9 +3,9 @@
 ---@param callback function
 ---@public
 function API_Streaming:requestStreamedTextureDict(textureDict, callback)
-    if not HasStreamedTextureDictLoaded(textureDict) then
+    if (not HasStreamedTextureDictLoaded(textureDict)) then
         RequestStreamedTextureDict(textureDict)
-        while not HasStreamedTextureDictLoaded(textureDict) do
+        while (not HasStreamedTextureDictLoaded(textureDict)) do
             Wait(0)
         end
         return (textureDict)
