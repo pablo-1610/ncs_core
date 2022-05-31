@@ -3,7 +3,7 @@
 ---@param coords table
 ---@return number
 ---@public
-function API_Player:getDistance(pedId, coords)
+function API_Ped:getDistance(pedId, coords)
     local distance <const> = #(API_Ped:getPosition(pedId) - coords)
     return (distance)
 end
