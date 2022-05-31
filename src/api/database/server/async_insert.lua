@@ -4,6 +4,6 @@
 ---@param cb function
 ---@return void
 ---@public
-function API_Database:insert(query, parameters, cb)
+function API_Database:async_insert(query, parameters, cb)
     export[GetCurrentResourceName()]:insert(query, parameters, cb)
 end
