@@ -15,5 +15,5 @@ function API_Objects:createObject(prop, x, y, z, heading, freeze)
     local object <const> = CreateObject(prop, x, y, z, true)
     SetEntityHeading(object, heading)
     FreezeEntityPosition(object, freeze or false)
-    return object
+    return (object)
 end
