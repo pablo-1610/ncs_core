@@ -12,6 +12,9 @@ function API_Vehicles:spawn(modelName, coords, heading, clientSide)
     end
 
     local Return_Model = API_Streaming:requestModel(modelName)
+    while not Return_Model do
+        Wait(0)
+    end
     if (Return_Model == modelName) then
         local vehicle = CreateVehicle(modelName, coords, heading, not (clientSide), 0)
         SetVehicleDirtLevel(vehicle, 0.0)
