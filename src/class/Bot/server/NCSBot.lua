@@ -51,6 +51,7 @@ function NCSBot:get_player(discordId)
 end
 
 ---get_guild
+---@param guildId string
 ---@public
 ---@return table
 function NCSBot:get_guild(guildId)
@@ -124,15 +125,11 @@ end
 function NCSBot:get_guild_icon(guildId)
     local guild = self:get_guild(guildId)
 
-    if (guild) then
-        if (guild.icon) then
-            if (guild.icon:sub(2, 2) == "_") then -- Determine if the icon is PNG or GIF
-                return ("https://cdn.discordapp.com/icons/%s/%s.gif"):format(guildId, guild.icon)
-            else
-                return ("https://cdn.discordapp.com/icons/%s/%s.png"):format(guildId, guild.icon)
-            end
+    if (guild and guild.icon) then
+        if (guild.icon:sub(2, 2) == "_") then -- Determine if the icon is PNG or GIF
+            return ("https://cdn.discordapp.com/icons/%s/%s.gif"):format(guildId, guild.icon)
         else
-            return ("https://cdn.discordapp.com/embed/avatars/0.png")
+            return ("https://cdn.discordapp.com/icons/%s/%s.png"):format(guildId, guild.icon)
         end
     else
         return ("https://cdn.discordapp.com/embed/avatars/0.png")
@@ -152,7 +149,7 @@ end
 ---get_guild_roles_count
 ---@param guildId string
 ---@public
----@return table
+---@return number
 function NCSBot:get_guild_roles_count(guildId)
     local guild = self:get_guild(guildId)
 
@@ -162,7 +159,7 @@ end
 ---get_guild_members_count
 ---@param guildId string
 ---@public
----@return table
+---@return number
 function NCSBot:get_guild_members_count(guildId)
     local guild = self:get_guild_count(guildId)
 
@@ -172,7 +169,7 @@ end
 ---get_guild_online_members_count
 ---@param guildId string
 ---@public
----@return table
+---@return number
 function NCSBot:get_guild_online_members_count(guildId)
     local guild = self:get_guild_count(guildId)
 

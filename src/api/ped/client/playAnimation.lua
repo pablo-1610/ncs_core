@@ -1,4 +1,5 @@
 ---playAnimation
+---@param pedId number
 ---@param dict string
 ---@param anim string
 ---@param flag number
@@ -8,9 +9,9 @@
 ---@param duration number
 ---@return void
 ---@public
-function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbackRate, duration)
-    if (not (DoesEntityExist(ped))) then
-        _NCS:die("Target ped does not exists")
+function API_Ped:playAnimation(pedId, dict, anim, flag, blendin, blendout, playbackRate, duration)
+    if (not (DoesEntityExist(pedId))) then
+        return _NCS:die("Target ped does not exists")
     end
 
     blendin = blendin or 1.0
@@ -22,6 +23,6 @@ function API_Ped:playAnimation(ped, dict, anim, flag, blendin, blendout, playbac
     while (not (HasAnimDictLoaded(dict))) do
         Wait(1)
     end
-    TaskPlayAnim(ped, dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
+    TaskPlayAnim(pedId, dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
     RemoveAnimDict(dict)
 end

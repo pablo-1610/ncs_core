@@ -1,11 +1,19 @@
----serverSpawn
+---spawn
 ---@param modelName string
----@param coords table (vector4)
----@param cb function
+---@param x number
+---@param y number
+---@param z number
+---@param heading number
+---@param callback function
 ---@return void
 ---@public
-function API_Vehicles:serverSpawn(modelName, coords, cb)
-    local vehicle = CreateVehicle(GetHashKey(modelName), coords)
+function API_Vehicles:spawn(modelName, x, y, z, heading, callback)
+    assert(type(modelName) == "string" or type(modelName) == "number")
+    if type(modelName) == "string" then
+        modelName = GetHashKey(modelName)
+    end
+
+    local vehicle = CreateVehicle(modelName, x, y, z, heading)
     repeat
         Wait(0)
     until DoesEntityExist(vehicle)
@@ -22,5 +30,5 @@ function API_Vehicles:serverSpawn(modelName, coords, cb)
         end
     end
 
-    cb(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
+    callback(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
 end
