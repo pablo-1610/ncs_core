@@ -14,7 +14,7 @@ function API_Vehicles:setProperties(vehicleEntity, props)
     local colorPrimary, colorSecondary = GetVehicleColours(vehicleEntity)
     local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleEntity)
     SetVehicleModKit(vehicleEntity, 0)
-	SetVehicleAutoRepairDisabled(vehicleEntity, true)
+    SetVehicleAutoRepairDisabled(vehicleEntity, true)
 
     if props.plate then
         SetVehicleNumberPlateText(vehicleEntity, props.plate)
