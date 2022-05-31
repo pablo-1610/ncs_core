@@ -5,10 +5,10 @@
 function API_Ped:driveVehicle(pedId)
     local inVehicle = IsPedInAnyVehicle(pedId, false)
     if (inVehicle) then
-        local Veh = GetVehiclePedIsIn(pedId, false)
-        local PlaceVeh = GetPedInVehicleSeat(Veh, -1)
-        if (PlaceVeh == pedId) then
-            return true, (Veh)
+        local vehicleEntity = GetVehiclePedIsIn(pedId, false)
+        local placeVeh = GetPedInVehicleSeat(vehicleEntity, -1)
+        if (placeVeh == pedId) then
+            return true, (vehicleEntity)
         else return false end
     else return (inVehicle) end
 end
