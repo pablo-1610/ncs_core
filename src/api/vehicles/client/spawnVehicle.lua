@@ -18,7 +18,7 @@ function API_Vehicles:spawn(modelName, coords, heading, clientSide)
         SetVehicleOnGroundProperly(vehicle)
         SetEntityHeading(vehicle, heading)
         SetEntityAsMissionEntity(vehicle, 1, 1)
-        return (vehicle)
         SetModelAsNoLongerNeeded(vehicle)
+        return (vehicle)
     end)
 end
