@@ -144,5 +144,4 @@ function API_Vehicles:getProperties(vehicleEntity)
         frontBumper = vehicleDamage.frontBumper,
         rearBumper = vehicleDamage.rearBumper,
     }
-
 end
