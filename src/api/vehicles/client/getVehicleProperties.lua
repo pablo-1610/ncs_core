@@ -1,3 +1,5 @@
+-- TODO : This function is very weird, it should be refactored to make it more readable.:sh
+
 ---getProperties
 ---@param vehicleId number
 ---@return table
@@ -21,7 +23,7 @@ function API_Vehicles:getProperties(vehicleId)
     if GetIsVehiclePrimaryColourCustom(vehicleId) then primaryColor = {GetVehicleCustomPrimaryColour(vehicleId)} end
 
     if GetIsVehicleSecondaryColourCustom(vehicleId) then secondaryColor = {GetVehicleCustomSecondaryColour(vehicleId)} end
-    
+
     for extraId = 1, 15 do
         if DoesExtraExist(vehicleId, extraId) then
             local state = IsVehicleExtraTurnedOn(vehicleId, extraId) == 1
@@ -29,7 +31,7 @@ function API_Vehicles:getProperties(vehicleId)
         end
     end
 
-    if GetVehicleMod(vehicleId, 48) == -1 and GetVehicleLivery(vehicleId) ~= -1 then 
+    if GetVehicleMod(vehicleId, 48) == -1 and GetVehicleLivery(vehicleId) ~= -1 then
         modLivery = GetVehicleLivery(vehicleId)
     else
         modLivery = GetVehicleMod(vehicleId, 48)
