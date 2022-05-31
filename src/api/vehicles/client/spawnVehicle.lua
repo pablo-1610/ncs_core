@@ -1,4 +1,4 @@
----spawn
+---spawnVehicle
 ---@param modelName string
 ---@param coords table<number, number, number>
 ---@param heading number
@@ -6,7 +6,7 @@
 ---@param clientSide? boolean
 ---@return void
 ---@public
-function API_Vehicles:spawn(modelName, coords, heading, callback, clientSide)
+function API_Vehicles:spawnVehicle(modelName, coords, heading, callback, clientSide)
     assert(type(modelName) == "string" or type(modelName) == "number")
     if type(modelName) == "string" then
         modelName = GetHashKey(modelName)
