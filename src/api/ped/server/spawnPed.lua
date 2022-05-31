@@ -13,10 +13,10 @@ function API_Ped:spawn(modelName, x, y, z, heading, callback)
         modelName = GetHashKey(modelName)
     end
 
-    local vehicle = CreatePed(1, modelName, x, y, z, heading)
+    local ped = CreatePed(1, modelName, x, y, z, heading)
     repeat
         Wait(0)
-    until DoesEntityExist(vehicle)
+    until DoesEntityExist(ped)
 
-    callback(vehicle, NetworkGetNetworkIdFromEntity(vehicle))
+    callback(ped, NetworkGetNetworkIdFromEntity(ped))
 end

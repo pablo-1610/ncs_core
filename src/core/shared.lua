@@ -23,7 +23,6 @@ function _NCS:trace(message, logLevelIndex)
 end
 
 ---nativeTrace
----@return void
 ---@param message string
 ---@return void
 ---@public
@@ -32,7 +31,6 @@ function _NCS:coreTrace(message)
 end
 
 ---die
----@return void
 ---@param reason string
 ---@return void
 ---@public
@@ -78,7 +76,7 @@ function _NCS:onReady(callback)
     self:handleEvent("ncs_core:loaded", callback)
 end
 
----net_formatEvent
+---formatEvent
 ---@param eventName string
 ---@return void
 ---@public

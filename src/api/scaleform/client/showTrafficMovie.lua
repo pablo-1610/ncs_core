@@ -1,14 +1,14 @@
 ---showTrafficMovie
----@param sec number
+---@param time number
 ---@return void
 ---@public
-function API_Scaleform:showTrafficMovie(sec)
+function API_Scaleform:showTrafficMovie(time)
     local scaleform = API_Scaleform:requestMovie("TRAFFIC_CAM")
     BeginScaleformMovieMethod(scaleform, "PLAY_CAM_MOVIE")
     EndScaleformMovieMethod()
-    while sec > 0 do
+    while time > 0 do
         Citizen.Wait(1)
-        sec = sec - 0.01
+        time = time - 0.01
         DrawScaleformMovieFullscreen(scaleform, 255, 255, 255, 255)
     end
     SetScaleformMovieAsNoLongerNeeded(scaleform)

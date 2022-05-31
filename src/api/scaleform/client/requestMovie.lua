@@ -1,9 +1,9 @@
 ---requestMovie
----@param movie string
+---@param movieName string
 ---@return scaleform
 ---@public
-function API_Scaleform:requestMovie(movie)
-    local scaleform = RequestScaleformMovie(movie)
+function API_Scaleform:requestMovie(movieName)
+    local scaleform = RequestScaleformMovie(movieName)
     while not HasScaleformMovieLoaded(scaleform) do
         Wait(0)
     end
