@@ -5,7 +5,6 @@
 function API_Straming:requestWeaponAsset(weaponHash, callback)
 	if not HasWeaponAssetLoaded(weaponHash) then
 		RequestWeaponAsset(weaponHash)
-
 		while not HasWeaponAssetLoaded(weaponHash) do
 			Wait(0)
 		end
