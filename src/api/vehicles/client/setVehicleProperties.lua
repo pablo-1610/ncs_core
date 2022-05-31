@@ -38,14 +38,14 @@ function API_Vehicles:setProperties(vehicleEntity, props)
         SetVehicleDirtLevel(vehicleEntity, props.dirtLevel + 0.0)
     end
     if props.color1 then
-		if type(props.color1) == 'number' then
+		if type(props.color1) == "number" then
 			SetVehicleColours(vehicleEntity, props.color1, colorSecondary)
 		else
 			SetVehicleCustomPrimaryColour(vehicleEntity, props.color1[1], props.color1[2], props.color1[3])
 		end
 	end
 	if props.color2 then
-		if type(props.color2) == 'number' then
+		if type(props.color2) == "number" then
 			SetVehicleColours(vehicleEntity, props.color1 or colorPrimary, props.color2)
 		else
 			SetVehicleCustomSecondaryColour(vehicleEntity, props.color2[1], props.color2[2], props.color2[3])
