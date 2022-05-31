@@ -23,4 +23,6 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
     MOD_Players:retrieveCharacters(identifier, function(result)
         -- TODO : Retrieve characters from database and then, show a deferal card (adaptivecard) to select one.
     end)
+
+    connection.done()
 end)
