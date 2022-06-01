@@ -9,6 +9,8 @@ function API_Ped:getMugshot(pedId, transparentBackground)
     end
     local headshot = RegisterPedheadshot(pedId)
     if (transparentBackground) then
+        UnregisterPedheadshot(headshot)
+        Wait(100)
         headshot = RegisterPedheadshotTransparent(pedId)
     end
     while (not IsPedheadshotReady(headshot) and not IsPedHeadshotValid(headshot)) do
