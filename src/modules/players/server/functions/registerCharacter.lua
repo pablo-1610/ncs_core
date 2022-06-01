@@ -6,7 +6,7 @@ local function validateData(identity)
             and identity.dob ~= nil
             and identity.dob ~= ""
             and identity.sex ~= nil
-            and tonumber(identity.sex) ~= nil
+            and identity.sex ~= ""
             and identity.height ~= nil
             and tonumber(identity.height) ~= nil
     )
