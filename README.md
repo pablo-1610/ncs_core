@@ -13,7 +13,7 @@ RolePlay. NCS was created and maintained by the community and will not be left b
 
 ## Documentation
 
-[Official documentation of NextCitizens.](https://nextcitizens.github.io/ncs_documentation/)
+[Official documentation of NextCitizens.]([https://docs.nextcitizens.net/)
 
 ## Server Convar [**Requiered**]
 
