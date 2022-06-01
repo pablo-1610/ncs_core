@@ -44,7 +44,7 @@ shared_scripts {
 
 server_scripts {
     -- Vendors
-    "vendors/oxmysql/oxmysql.js",
+    "src/vendors/oxmysql/oxmysql.js",
     -- NCS Core
     "src/core/server.lua",
     "src/core/events/server/*.lua",
@@ -94,8 +94,8 @@ shared_script "test/shared.lua"
     Web files
 ]]
 
-ui_page "src-web/dist/index.html"
+ui_page "src/web/dist/index.html"
 files {
-  "src-web/dist/index.html",
-  "src-web/dist/**/*"
+    "src-web/dist/index.html",
+    "src-web/dist/**/*"
 }
