@@ -2,9 +2,8 @@
 ---@param pedId number
 ---@param coords table
 ---@param radius number
----@return vector3
+---@return table<number, number, number>
 ---@public
-
 function API_Ped:getNearestCoords(pedId, coords, radius)
   local nearestCoords <const> = API_Ped:getPosition(pedId)
   local currentCoords <const> = radius or 5000
@@ -16,5 +15,5 @@ function API_Ped:getNearestCoords(pedId, coords, radius)
     end
   end
  
-  return nearestCoords
+  return (nearestCoords)
 end
