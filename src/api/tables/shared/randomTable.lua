@@ -3,7 +3,7 @@
 ---@return value
 ---@public
 
-function randomTable(tableR)
+function API_Tables:randomTable(tableR)
     if not tableR[1] then return end
     local randM = math.random(0, #tableR)
     if not tableR[randM] then return end
