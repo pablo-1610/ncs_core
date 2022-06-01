@@ -1,5 +1,5 @@
 ---getClosetPed
----@return ped
+---@return number
 ---@public
 function API_Ped:getClosetPed()
     local peds, ped = API_Ped:getAllPeds(), 0
