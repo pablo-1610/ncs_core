@@ -8,8 +8,8 @@ function API_Strings:split(str, delimiter)
 		return {}
 	end
 
-	if not delimiter then
-		return _NCS:die("argument 2, delimiter value invalid!")
+	if (not (delimiter)) then
+		return (_NCS:die("argument 2, delimiter value invalid!"))
 	end
 
 	local result = {}
