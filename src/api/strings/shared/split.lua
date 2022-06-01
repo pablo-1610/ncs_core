@@ -4,7 +4,7 @@
 ---@return table
 ---@public
 function API_Strings:split(str, delimiter)
-	if not str then
+	if (not (str)) then
 		return {}
 	end
 
