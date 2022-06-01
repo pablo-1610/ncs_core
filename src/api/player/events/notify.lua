@@ -1,4 +1,4 @@
-_NCS:registerNetEvent("NCS_player:notify")
-_NCS:handleEvent("NCS_player:notify", function(message, colorBg)
+_NCS:registerNetEvent("ncs_core:notify")
+_NCS:handleEvent("ncs_core:notify", function(message, colorBg)
     API_Player:showNotification(message, colorBg)
 end)
