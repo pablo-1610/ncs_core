@@ -9,5 +9,5 @@ function API_Player:getIdentifiers(playerSrc)
 
 		identifiers[splitted[1]] = v
 	end
-	return identifiers
+	return (identifiers)
 end
