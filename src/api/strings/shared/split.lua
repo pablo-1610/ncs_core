@@ -16,5 +16,5 @@ function API_Strings:split(str, delimiter)
 	for match in (str .. delimiter):gmatch("(.-)" .. delimiter) do
 		table.insert(result, match)
 	end
-	return result
+	return (result)
 end
