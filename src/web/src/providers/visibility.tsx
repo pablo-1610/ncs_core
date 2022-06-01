@@ -1,4 +1,4 @@
-import { useState, FC, ReactNode } from 'react'
+import {FC, useState} from 'react'
 import receiveNuiEvent from './receiveNuiEvent'
 
 const Visibility: FC<{moduleName: String, visibleComponent: any}> = ({moduleName, visibleComponent}) => {
