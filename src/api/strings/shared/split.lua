@@ -1,4 +1,4 @@
----contains
+---split
 ---@param str string
 ---@param delimiter string
 ---@return table
