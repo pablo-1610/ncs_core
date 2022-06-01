@@ -1,7 +1,7 @@
 ---hasWeapon
 ---@param pedId number
 ---@param weaponName string
----@return bool
+---@return boolean
 ---@public
 function API_Ped:hasWeapon(pedId, weaponName)
     if (not (DoesEntityExist(pedId))) then
