@@ -15,12 +15,14 @@ function API_Vehicles:spawn(modelName, coords, heading, clientSide)
     while (not Return_Model) do
         Wait(0)
     end
-    local vehicle = CreateVehicle(modelName, coords, heading, not (clientSide), 0)
-    SetVehicleDirtLevel(vehicle, 0.0)
-    SetEntityCoordsNoOffset(vehicle, coords.x, coords.y, coords.z + 0.5, 0.0, 0.0, 0.0)
-    SetVehicleOnGroundProperly(vehicle)
-    SetEntityHeading(vehicle, heading)
-    SetEntityAsMissionEntity(vehicle, 1, 1)
-    SetModelAsNoLongerNeeded(vehicle)
-    return (vehicle)
+    if (Return_Model == modelName) then
+        local vehicle = CreateVehicle(modelName, coords, heading, not (clientSide), 0)
+        SetVehicleDirtLevel(vehicle, 0.0)
+        SetEntityCoordsNoOffset(vehicle, coords.x, coords.y, coords.z + 0.5, 0.0, 0.0, 0.0)
+        SetVehicleOnGroundProperly(vehicle)
+        SetEntityHeading(vehicle, heading)
+        SetEntityAsMissionEntity(vehicle, 1, 1)
+        SetModelAsNoLongerNeeded(vehicle)
+        return (vehicle)
+    end
 end
