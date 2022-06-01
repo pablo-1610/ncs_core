@@ -14,5 +14,5 @@ function API_Ped:getMugshot(pedId, transparentBackground)
     while (not IsPedheadshotReady(headshot) and not IsPedHeadshotValid(headshot)) do
         Wait(0)
     end
-    return headshot, GetPedheadshotTxdString(headshot)
+    return (headshot), (GetPedheadshotTxdString(headshot))
 end
