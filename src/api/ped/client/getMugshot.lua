@@ -7,12 +7,7 @@ function API_Ped:getMugshot(pedId, transparentBackground)
     if (not (DoesEntityExist(pedId))) then
         return _NCS:die("Target ped does not exists")
     end
-    local headshot = RegisterPedheadshot(pedId)
-    if (transparentBackground) then
-        UnregisterPedheadshot(headshot)
-        Wait(100)
-        headshot = RegisterPedheadshotTransparent(pedId)
-    end
+    local headshot = (transparentBackground) and RegisterPedheadshotTransparent(pedId) or RegisterPedheadshot(pedId)
     while (not IsPedheadshotReady(headshot) and not IsPedHeadshotValid(headshot)) do
         Wait(0)
     end
