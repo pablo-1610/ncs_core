@@ -1,4 +1,4 @@
----printTable
+---shuffleTable
 ---@param tableS table
 ---@return table
 ---@public
