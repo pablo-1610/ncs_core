@@ -9,12 +9,8 @@
 ---@public
 function API_Player:show3DText(x, y, z, text, font, scale)
     local onScreen <const>, x <const>, y <const> = GetScreenCoordFromWorldCoord(x, y, z)
-    if not (scale) then
-        scale = 1
-    end
-    if not (font) then
-        font = 4
-    end
+    scale = scale or 1
+    font = font  or 4
     if (not onScreen) then
         return
     end
