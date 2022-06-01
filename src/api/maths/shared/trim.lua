@@ -3,7 +3,9 @@
 ---@return number
 ---@public
 function API_Maths:trim(number)
-    if (tonumber(number)) then
+if (not tonumber(number)) then
+  return (_NCS:die("Argument 1, not a number"))
+end
 		return (string.gsub(number, "^%s*(.-)%s*$", "%1"))
 	else
 		return (_NCS:die("Not a number"))
