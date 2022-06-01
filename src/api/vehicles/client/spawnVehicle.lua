@@ -10,7 +10,6 @@ function API_Vehicles:spawn(modelName, coords, heading, clientSide)
     if type(modelName) == "string" then
         modelName = GetHashKey(modelName)
     end
-
     local Return_Model = API_Streaming:requestModel(modelName)
     while (not Return_Model) do
         Wait(0)
