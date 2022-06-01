@@ -1,6 +1,5 @@
 ---repair
 ---@param vehicleEntity number
----@return void
 ---@public
 function API_Vehicles:repair(vehicleEntity)
     SetVehicleFixed(vehicleEntity)

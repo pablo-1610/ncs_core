@@ -1,10 +1,10 @@
 ---getModel
----@param vehicle number
+---@param vehicleId number
 ---@return string
 ---@public
-
 function API_Vehicles:getModel(vehicleId)
     if (vehicleId) then
+        ---@type string
         local model = GetDisplayNameFromVehicleModel(GetEntityModel(vehicleId))
         return (model)
     end

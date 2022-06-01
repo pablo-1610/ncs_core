@@ -5,7 +5,6 @@
 ---@param text string
 ---@param font number
 ---@param scale number
----@return void
 ---@public
 function API_Player:show3DText(x, y, z, text, font, scale)
     local onScreen <const>, x <const>, y <const> = World3dToScreen2d(x, y, z)

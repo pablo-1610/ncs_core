@@ -4,6 +4,7 @@
 ---@public
 function API_Vehicles:getFuelTank(vehicleId)
     if (vehicleId) then
+        ---@type number
         local fuel <const> = GetVehicleHandlingFloat(vehicleId, "CHandlingData", "fPetrolTankVolume")
         return (fuel)
     end

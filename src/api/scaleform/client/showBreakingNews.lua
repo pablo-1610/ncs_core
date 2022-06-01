@@ -3,7 +3,6 @@
 ---@param message string
 ---@param bottom string
 ---@param time number
----@return void
 ---@public
 function API_Scaleform:showBreakingNews(title, message, bottom, time)
     local scaleform = API_Scaleform:requestMovie("BREAKING_NEWS")

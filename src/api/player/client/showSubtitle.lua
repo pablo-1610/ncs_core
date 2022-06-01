@@ -1,6 +1,5 @@
 ---showSubtitle
 ---@param text string
----@return void
 ---@public
 function API_Player:showSubtitle(text)
     ClearPrints()

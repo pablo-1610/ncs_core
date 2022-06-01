@@ -1,7 +1,6 @@
 ---setFuel
 ---@param vehicleId number
 ---@param fuel number
----@return number
 ---@public
 function API_Vehicles:setFuel(vehicleId, fuel)
     if (vehicleId) then

@@ -9,6 +9,7 @@ function API_Vehicles:getProperties(vehicleId)
         return (_NCS:die("Can't get vehicle properties for the vehicle (entity doesn't exist)"))
     end
 
+    ---@type table
     local primaryColor, secondaryColor = GetVehicleColours(vehicleId)
     local pearlescentColor, wheelColor = GetVehicleExtraColours(vehicleId)
     local modLivery

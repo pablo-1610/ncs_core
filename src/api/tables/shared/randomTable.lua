@@ -1,6 +1,6 @@
 ---randomTable
 ---@param tableR table
----@return value
+---@return number
 ---@public
 function API_Tables:randomTable(tableR)
     if (not (tableR[1])) then
