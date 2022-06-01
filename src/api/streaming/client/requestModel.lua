@@ -1,6 +1,6 @@
 ---requestModel
 ---@param modelHash string
----@return any
+---@return number
 ---@public
 function API_Streaming:requestModel(modelHash)
     if (not (IsModelInCdimage(modelHash))) then
