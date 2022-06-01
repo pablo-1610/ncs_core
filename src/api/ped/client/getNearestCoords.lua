@@ -5,8 +5,8 @@
 ---@return any
 ---@public
 function API_Ped:getNearestCoords(pedId, coords, radius)
-  local nearestCoords <const> = API_Ped:getPosition(pedId)
-  local currentCoords <const> = radius or 5000
+  local nearestCoords = API_Ped:getPosition(pedId)
+  local currentCoords = radius or 5000
 
   ---@param v any
   for _, v in pairs(coords) do
