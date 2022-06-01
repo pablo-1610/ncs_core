@@ -6,16 +6,15 @@
 ---@public
 
 function API_Ped:getNearestCoords(pedId, coords, radius)
+  local nearestCoords <const> = API_Ped:getPosition(pedId)
+  local currentCoords <const> = radius or 5000
   
-    local nearestCoords <const> = API_Ped:getPosition(pedId)
-    local currentCoords <const> = radius or 5000
-  
-    for _, v in pairs(coords) do         
-        if currentCoords > API_Ped:getDistance(pedId, v) then
-            currentCoords = API_Ped:getDistance(pedId, v)
-            nearestCoords = v
-        end
+  for _, v in pairs(coords) do         
+    if currentCoords > API_Ped:getDistance(pedId, v) then
+      currentCoords = API_Ped:getDistance(pedId, v)
+      nearestCoords = v
     end
+  end
  
   return nearestCoords
 end
