@@ -1,7 +1,7 @@
 _Literals = {
     ERROR_ALREADY_CONNECTED = "Vous êtes déjà connecté.",
     ERROR_SERVER_IDENTIFICATION_METHOD_BROKEN = "La méthode d'identification du serveur est cassée. Veuillez contacter le propriétaire du serveur.",
-    ERROR_SERVER_CHARACTER_CREATION_FAILED =  "La création de personnage a échoué. Veuillez réessayer ou contacter l'équipe du serveur.",
+    ERROR_SERVER_CHARACTER_CREATION_FAILED = "La création de personnage a échoué. Veuillez réessayer ou contacter l'équipe du serveur.",
     CONNECTION_RETRIEVING_CHARACTERS = "Récupération des personnages...",
     CONNECTION_RETRIEVING_PLAYER_DATA = "Récupération des données du joueur...",
     CONNECTION_WELCOME_MESSAGE = "Bienvenue sur %s",
