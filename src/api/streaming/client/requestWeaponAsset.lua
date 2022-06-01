@@ -1,6 +1,6 @@
 ---requestWeaponAsset
 ---@param weaponHash any
----@return any
+---@return number
 ---@public
 function API_Streaming:requestWeaponAsset(weaponHash)
     if (not HasWeaponAssetLoaded(weaponHash)) then
