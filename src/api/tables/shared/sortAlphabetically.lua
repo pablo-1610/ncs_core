@@ -7,7 +7,6 @@ function API_Tables:sortAlphabetically(tableToSort)
     for key, _ in pairs(tableToSort) do
         sortedTable[#sortedTable + 1] = _
     end
-
     table.sort(sortedTable)
     return (sortedTable)
 end
