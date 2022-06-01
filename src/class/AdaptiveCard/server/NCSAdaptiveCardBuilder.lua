@@ -83,7 +83,6 @@ function NCSAdaptiveCardBuilder:addMultipleChoicesInput(id, label, placeholder, 
         isRequired = isRequired
     })
     return (self)
-    local player <const> = 1
 end
 
 ---addActionSet
