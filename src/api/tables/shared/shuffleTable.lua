@@ -1,6 +1,6 @@
 ---printTable
 ---@param tableS table
----@return void
+---@return table
 ---@public
 function API_Tables:shuffleTable(tableS)
     for i = #tableS, 2, -1 do
