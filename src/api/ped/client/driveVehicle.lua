@@ -1,6 +1,6 @@
 ---driveVehicle
 ---@param pedId number
----@return bool, number
+---@return boolean, number
 ---@public
 function API_Ped:driveVehicle(pedId)
     local inVehicle = IsPedInAnyVehicle(pedId, false)
