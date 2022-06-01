@@ -12,18 +12,10 @@ _NCSEnum.DiscordErrorType = {
 }
 
 function _NCSEnum._getDiscordErrorType(code)
-    local codes = {
-        [200] = "Good",
-        [204] = "ErrorNoContent",
-        [400] = "BadRequest",
-        [401] = "Unauthorized",
-        [403] = "Forbidden",
-        [404] = "NotFound",
-        [405] = "MethodNotAllowed",
-        [429] = "TooManyRequests",
-        [500] = "InternalError",
-        [502] = "APIDown",
-    }
-
-    return (codes[code] or "Unknown")
+    for key, value in pairs(_NCSEnum.DiscordErrorType) do
+        if value == code then
+            return tostring(key)
+        end
+    end
+    return 'Unknown'
 end
