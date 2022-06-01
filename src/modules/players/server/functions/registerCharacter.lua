@@ -17,7 +17,6 @@ end
 ---@param callback function
 ---@public
 function MOD_Players:registerCharacter(identifier, identity, callback)
-    print(json.encode(identity))
     if (validateData(identity)) then
         API_Database:insert("INSERT INTO ncs_players_characters (player_identifier, identity, accounts, metadata) VALUES (@player_identifier, @identity, @accounts, \"[]\")", {
             ["player_identifier"] = identifier,
