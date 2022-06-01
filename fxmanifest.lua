@@ -26,6 +26,8 @@ shared_scripts {
     -- NCS Core
     "src/core/shared.lua",
     "src/core/events/shared/*.lua",
+    -- NCS Constant
+    "src/constant/*.lua",
     -- NCS Enum
     "src/enum/*.lua",
     -- NCS Class

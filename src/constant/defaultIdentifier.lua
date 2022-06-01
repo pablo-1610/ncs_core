@@ -1,0 +1,1 @@
+_NCSConstant.defaultIdentifier = "license"

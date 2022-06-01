@@ -1,0 +1,1 @@
+_G._NCS.Database = API_Database

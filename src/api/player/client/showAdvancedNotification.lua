@@ -4,8 +4,7 @@
 ---@param sender string
 ---@param title string
 ---@param text string
----@param colorBg? number
----@return void
+---@param colorBg number
 ---@public
 function API_Player:showAdvancedNotification(icon, type, sender, title, text, colorBg)
     if (colorBg) then

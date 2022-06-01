@@ -2,7 +2,6 @@
 ---@param pedId number
 ---@param weaponName string
 ---@param componentName string
----@return void
 ---@public
 function API_Ped:removeWeaponComponent(pedId, weaponName, componentName)
     local weaponHash = GetHashKey(weaponName)

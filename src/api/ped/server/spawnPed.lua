@@ -1,22 +1,19 @@
----spawn
+---spawnPed
 ---@param modelName string
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param heading number
----@param callback function
----@return void
+---@return number
 ---@public
-function API_Ped:spawn(modelName, x, y, z, heading, callback)
+function API_Ped:spawnPed(modelName, x, y, z, heading)
     assert(type(modelName) == "string" or type(modelName) == "number")
-    if type(modelName) == "string" then
+    if (type(modelName) == "string") then
         modelName = GetHashKey(modelName)
     end
-
-    local ped = CreatePed(1, modelName, x, y, z, heading)
+    local ped <const> = CreatePed(1, modelName, x, y, z, heading)
     repeat
         Wait(0)
     until DoesEntityExist(ped)
-
-    callback(ped, NetworkGetNetworkIdFromEntity(ped))
+    return (ped)
 end

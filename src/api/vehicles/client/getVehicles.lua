@@ -2,7 +2,7 @@
 ---@return table
 ---@public
 
-entityEnumerator = {
+local entityEnumerator = {
     __gc = function(enum)
         if enum.destructor and enum.handle then
             enum.destructor(enum.handle)

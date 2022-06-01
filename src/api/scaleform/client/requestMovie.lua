@@ -1,6 +1,6 @@
 ---requestMovie
 ---@param movieName string
----@return scaleform
+---@return number
 ---@public
 function API_Scaleform:requestMovie(movieName)
     local scaleform = RequestScaleformMovie(movieName)

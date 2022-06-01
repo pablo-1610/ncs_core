@@ -1,7 +1,6 @@
 ---showFloatingHelpNotification
 ---@param text string
----@param pos vector3
----@return void
+---@param pos any
 ---@public
 function API_Player:showFloatingHelpNotification(text, pos)
     AddTextEntry("HELP", text)
