@@ -14,6 +14,7 @@ function API_Vehicles:getClosest(coords)
 
     for i = 1, #vehicles, 1 do
         local vehicleCoords <const> = GetEntityCoords(vehicles[i])
+        ---@type number
         local distance <const> = GetDistanceBetweenCoords(vehicleCoords, coords.x, coords.y, coords.z, true)
 
         if (closestDistance == -1 or closestDistance > distance) then

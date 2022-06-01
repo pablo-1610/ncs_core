@@ -5,7 +5,6 @@
 ---@param z number
 ---@param heading number
 ---@param callback function
----@return void
 ---@public
 function API_Vehicles:spawn(modelName, x, y, z, heading, callback)
     assert(type(modelName) == "string" or type(modelName) == "number")

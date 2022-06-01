@@ -3,11 +3,13 @@
 ---@return string
 ---@public
 function API_Streaming:requestNamedPtfxAsset(assetName)
-    if (not HasNamedPtfxAssetLoaded(assetName)) then
-        RequestNamedPtfxAsset(assetName)
-        while (not HasNamedPtfxAssetLoaded(assetName)) do
-            Wait(0)
-        end
+    if (HasNamedPtfxAssetLoaded(assetName)) then
         return (assetName)
     end
+    
+    RequestNamedPtfxAsset(assetName)
+    while (not HasNamedPtfxAssetLoaded(assetName)) do
+        Wait(0)
+    end
+    return (assetName)
 end
