@@ -6,7 +6,7 @@
 ---@public
 function API_Maths:elapsedTime(firstTime, secondTime, format)
     if (not firstTime or not (secondTime)) then
-        return
+        return 0
     end
     local elapsedTime <const> = (firstTime  - secondTime)
     if (format) then
