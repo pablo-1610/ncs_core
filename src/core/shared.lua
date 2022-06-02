@@ -21,7 +21,6 @@ function _NCS:checkIsUpdate()
         end
 
         local ver <const> = API_Strings:split(lines[6], "'")[2]
-
         if (not (currentVersion == ver)) then
             _NCS:coreTrace("NCS Core has not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", _NCSEnum.LogType.ERROR)
         else
