@@ -1,6 +1,7 @@
 ---leaveVehicle
 ---@param pedId number
 ---@param instant boolean
+---@return void
 ---@public
 function API_Ped:leaveVehicle(pedId, instant)
     if (not (DoesEntityExist(pedId))) then
