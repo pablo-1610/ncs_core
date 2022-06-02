@@ -1,5 +1,6 @@
 ---resetAlpha
 ---@param pedId number
+---@return void
 ---@public
 function API_Ped:resetAlpha(pedId)
     if (not (DoesEntityExist(pedId))) then
