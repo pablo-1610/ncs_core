@@ -25,7 +25,7 @@ function _NCS:checkIsUpdate()
         if (not (currentVersion == ver)) then
             _NCS:coreTrace("NCS Core has not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", _NCSEnum.LogType.ERROR)
         else
-            _NCS:coreTrace("NCS Core is up to date ^7!", _NCSEnum.LogType.INFO)
+            _NCS:coreTrace(("NCS Core is up to date ^7! (%s)"):format(currentVersion), _NCSEnum.LogType.INFO)
         end
     end)
 end
