@@ -17,7 +17,7 @@ function _NCS:checkIsUpdate()
         local lines = {}
 
         for s in resultData:gmatch("[^\r\n]+") do
-            table.insert(lines, s)
+            lines[#lines + 1] = s
         end
 
         local ver <const> = API_Strings:split(lines[6], "'")[2]
