@@ -2,6 +2,7 @@
 ---@param vehicleId number
 ---@param canBeClosed boolean
 ---@param instantly boolean
+---@return void
 ---@public
 function API_Vehicles:openAllDoor(vehicleId, canBeClosed, instantly)
     if (vehicleId) and (DoesEntityExist(vehicleId)) then
