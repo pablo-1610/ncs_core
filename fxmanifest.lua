@@ -3,7 +3,7 @@ game 'gta5'
 lua54 'yes'
 use_fxv2_oal 'yes'
 
-description 'NextCitizen, an powerfull FiveM framework RolePlay-Based'
+description 'NextCitizen, a powerful FiveM framework RolePlay-Based'
 version '1.0.0-alpha'
 
 --[[
