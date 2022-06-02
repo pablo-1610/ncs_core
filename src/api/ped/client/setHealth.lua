@@ -2,7 +2,7 @@
 ---@param pedId number
 ---@param value number
 ---@public
-function API_Ped:resetAlpha(pedId, value)
+function API_Ped:setHealth(pedId, value)
     if (not (DoesEntityExist(pedId))) then
         return _NCS:die("Target ped does not exists")
     end

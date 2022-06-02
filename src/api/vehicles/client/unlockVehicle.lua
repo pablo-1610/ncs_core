@@ -1,7 +1,7 @@
 ---unlockVehicle
 ---@param vehicleId number
 ---@public
-function API_Vehicles:lockVehicle(vehicleId)
+function API_Vehicles:unlockVehicle(vehicleId)
     if (vehicleId) and (DoesEntityExist(vehicleId)) then
         SetVehicleDoorsLocked(vehicleId, 1)
     end
