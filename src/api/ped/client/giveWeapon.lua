@@ -9,8 +9,7 @@
 function API_Ped:giveWeapon(pedId, weaponName, ammo, isHidden, forceInHand)
     if (not (DoesEntityExist(pedId))) then
         return _NCS:die("Target ped does not exists")
-    end    
-    
+    end
     local weaponHash = GetHashKey(weaponName)
     GiveWeaponToPed(pedId, weaponHash, ammo, isHidden, forceInHand)
 end
