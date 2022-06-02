@@ -7,9 +7,5 @@ function API_Ped:leaveVehicle(pedId, instant)
         return _NCS:die("Target ped does not exists")
     end
 
-    if (instant) then
-        TaskLeaveAnyVehicle(pedId, 0, 16)
-    else
-        TaskLeaveAnyVehicle(pedId, 0, 0)
-    end
+    TaskLeaveAnyVehicle(pedId, 0, instant and 16 or 0)
 end
