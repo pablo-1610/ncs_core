@@ -4,10 +4,10 @@
 ---@return void
 ---@public
 function API_Vehicles:setProperties(vehicleId, props)
-    if not DoesEntityExist(vehicleId) then
-        return _NCS:die("Can't set vehicle properties for the vehicle (entity doesn't exist)")
+    if (not (DoesEntityExist(vehicleId))) then
+        return _NCS:die("Target vehicle does not exists")
     end
-    if NetworkGetEntityOwner(vehicleId) ~= PlayerId() then
+    if (NetworkGetEntityOwner(vehicleId) ~= PlayerId()) then
         return _NCS:die("Can't set vehicle properties for the vehicle (client is not the entity owner")
     end
 

@@ -1,19 +1,19 @@
 ---getVehicleStates
----@param vehicleEntity number
+---@param vehicleId number
 ---@return table
 ---@public
-function API_Vehicles:getStates(vehicleEntity)
-    vehicleEntity = (vehicleEntity or 0) > 0 and vehicleEntity or GetVehiclePedIsIn(PlayerPedId())
+function API_Vehicles:getStates(vehicleId)
+    vehicleId = (vehicleId or 0) > 0 and vehicleId or GetVehiclePedIsIn(PlayerPedId())
 
-    if (not (DoesEntityExist(vehicleEntity))) then
-        return _NCS:trace("vehicleEntity does not exists or player is not in any vehicle", 5)
+    if (not (DoesEntityExist(vehicleId))) then
+        return _NCS:die("Target vehicle does not exists")
     end
     
     local vehicleState = {
-        engineHealth = GetVehicleEngineHealth(vehicleEntity),
-        vehicleBodyHealth = GetVehicleBodyHealth(vehicleEntity),
-        dirtLevel = GetVehicleDirtLevel(vehicleEntity),
-        engineState = (GetIsVehicleEngineRunning(vehicleEntity) == 1)
+        engineHealth = GetVehicleEngineHealth(vehicleId),
+        vehicleBodyHealth = GetVehicleBodyHealth(vehicleId),
+        dirtLevel = GetVehicleDirtLevel(vehicleId),
+        engineState = (GetIsVehicleEngineRunning(vehicleId) == 1)
     }
 
     return (vehicleState)

@@ -3,8 +3,9 @@
 ---@param fuel number
 ---@public
 function API_Vehicles:setFuel(vehicleId, fuel)
-    if (vehicleId) then
-        return SetVehicleFuelLevel(vehicleId, fuel)
+    if (not (DoesEntityExist(vehicleId))) then
+        return _NCS:die("Target vehicle does not exists")
     end
-    _NCS:trace("Unable to find vehicle", 1)
+
+    return SetVehicleFuelLevel(vehicleId, fuel)
 end

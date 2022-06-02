@@ -6,6 +6,9 @@
 ---@return void
 ---@public
 function API_Vehicles:spawn(modelName, coords, heading, clientSide)
+    if (not (IsModelValid(GetHashKey(modelName)))) then
+        return _NCS:die("Vehicle model does not exists")
+    end
     assert(type(modelName) == "string" or type(modelName) == "number")
     if type(modelName) == "string" then
         modelName = GetHashKey(modelName)

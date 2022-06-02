@@ -1,11 +1,11 @@
 ---delete
----@param vehicleEntity number
+---@param vehicleId number
 ---@public
-function API_Vehicles:delete(vehicleEntity)
-    if (not (DoesEntityExist(vehicleEntity))) then
-        return _NCS:die("vehicleEntity does not exists")
+function API_Vehicles:delete(vehicleId)
+    if (not (DoesEntityExist(vehicleId))) then
+        return _NCS:die("Target vehicle does not exists")
     end
 
-    SetEntityAsMissionEntity(vehicleEntity, 0, 1)
-    DeleteVehicle(vehicleEntity)
+    SetEntityAsMissionEntity(vehicleId, 0, 1)
+    DeleteVehicle(vehicleId)
 end

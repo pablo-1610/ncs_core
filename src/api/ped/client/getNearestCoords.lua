@@ -5,6 +5,9 @@
 ---@return any
 ---@public
 function API_Ped:getNearestCoords(pedId, coords, radius)
+  if (not (DoesEntityExist(pedId))) then
+    return _NCS:die("Target ped does not exists")
+  end
   local nearestCoords = API_Ped:getPosition(pedId)
   local currentCoords = radius or 5000
 

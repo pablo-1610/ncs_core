@@ -6,8 +6,9 @@
 ---@return void
 ---@public
 function API_Vehicles:openDoor(vehicleId, doorId, canBeClosed, instantly)
-    if (vehicleId) and (DoesEntityExist(vehicleId)) then
-        return SetVehicleDoorOpen(vehicleId, doorId, canBeClosed or false, instantly or false)
+    if (not (DoesEntityExist(vehicleId))) then
+        return _NCS:die("Target vehicle does not exists")
     end
-    _NCS:die("vehicleEntity does not exists")
+
+    return SetVehicleDoorOpen(vehicleId, doorId, canBeClosed or false, instantly or false)
 end

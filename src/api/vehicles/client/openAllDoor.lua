@@ -5,11 +5,12 @@
 ---@return void
 ---@public
 function API_Vehicles:openAllDoor(vehicleId, canBeClosed, instantly)
-    if (vehicleId) and (DoesEntityExist(vehicleId)) then
-        for i = 0, 5 do
-            SetVehicleDoorOpen(vehicleId, i, canBeClosed or false, instantly or false)
-        end
-    return
+    if (not (DoesEntityExist(vehicleId))) then
+        return _NCS:die("Target vehicle does not exists")
     end
-    _NCS:die("vehicleEntity does not exists")
+
+    for i = 0, 5 do
+        SetVehicleDoorOpen(vehicleId, i, canBeClosed or false, instantly or false)
+    end
+    return
 end
