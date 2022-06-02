@@ -4,7 +4,6 @@
 ---@public
 function API_Vehicles:getPlate(vehicleId)
     if (vehicleId) and (DoesEntityExist(vehicleId)) then
-        ---@type string
         local plate <const> = (GetVehicleNumberPlateText(vehicleId))
         return (plate)
     end
