@@ -1,5 +1,6 @@
 ---kill
 ---@param pedId number
+---@return void
 ---@public
 function API_Ped:kill(pedId)
     if (not (DoesEntityExist(pedId))) then
