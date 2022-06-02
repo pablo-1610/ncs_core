@@ -1,5 +1,6 @@
 ---unlockVehicle
 ---@param vehicleId number
+---@return void
 ---@public
 function API_Vehicles:unlockVehicle(vehicleId)
     if (vehicleId) and (DoesEntityExist(vehicleId)) then
