@@ -3,7 +3,7 @@
 ---@param details table
 ---@return void
 ---@public
-function API_Discord:sendWebhook(webhook, details)
+function API_Discord.actions:sendWebhook(webhook, details)
     if (not webhook or not (details)) then
         return
     end
