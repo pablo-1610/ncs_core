@@ -2,7 +2,6 @@
 ---@param title string
 ---@param message string
 ---@param time number
----@return void
 ---@public
 function API_Scaleform:showBigFreemodeMessage(title, message, time)
     local scaleform = API_Scaleform:requestMovie("MP_BIG_MESSAGE_FREEMODE")

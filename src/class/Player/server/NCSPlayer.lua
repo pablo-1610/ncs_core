@@ -1,79 +1,43 @@
 ---@class NCSPlayer
----@field public id string
----@field public label string
----@field public type string
----@field public owner string
----@field public society string
-NCSPlayer = {}
-NCSPlayer.__index = NCSPlayer
+local NCSPlayer = {}
+
+local __instance = {
+    __index = NCSPlayer,
+
+    __eq = function(a, b)
+        return (a.id == b.id)
+    end,
+
+    __tostring = function(self)
+        return ("%s [%s]"):format(self.name, self.id)
+    end
+}
 
 setmetatable(NCSPlayer, {
     __call = function(_, id)
-        local self = setmetatable({}, NCSPlayer)
+        local self = setmetatable({}, __instance)
+
         self.id = id
-        self.name = _G._NCS.Player:getName(self.id)
-        self.identifiers = _G._NCS.Player:getIdentiers(self.id)
+        self.name = GetPlayerName(self.id)
+        self.identifier = API_Player:getIdentifier(self.id)
+        self.inGame = false
+
         return (self)
     end
 })
 
----getId
----@return number
+---triggerEvent
+---@param eventName string
 ---@public
-function NCSPlayer:getId()
-    return self.id
+function NCSPlayer:triggerEvent(eventName, ...)
+    TriggerClientEvent(eventName, self.id, ...)
 end
 
----getName
----@return string
+---ready
 ---@public
-function NCSPlayer:getName()
-    return self.name
-end
-
-
----getLicense
----@return string
----@public
-function NCSPlayer:getLicense()
-    return self.identifiers["license"]
-end
-
----getIdentier
----@param identifier string
----@return string
----@public
-function NCSPlayer:getIdentier(identifier)
-    return self.identifiers[identifier]
-end
-
----getIdentiers
----@return table
----@public
-function NCSPlayer:getIdentiers()
-    return self.identifiers
-end
-
----getDimension
----@return number
----@public
-function NCSPlayer:getBucket()
-    return GetPlayerRoutingBucket(self.id)
-end
-
----setBucket
----@param bucketID number
----@return void
----@public
-function NCSPlayer:setBucket(bucketID)
-    SetPlayerRoutingBucket(self.id, bucketID)
-end
-
----notify
----@param message string
----@param colorBg number
----@return void
----@public
-function NCSPlayer:notify(message, colorBg)
-    _NCS:triggerClientEvent("NCs_player:notify", self.id, message, colorBg)
+function NCSPlayer:ready()
+    self.inGame = true
+    if (MOD_Players.connectingList[self.identifier]) then
+        MOD_Players.connectingList[self.identifier] = false
+    end
 end

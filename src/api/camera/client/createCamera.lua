@@ -6,7 +6,7 @@ NCSCamera.__index = NCSCamera
 ---createCamera
 ---@param cameraCoords table<number, number, number>
 ---@param cameraHeading number
----@return Camera
+---@return table
 ---@public
 function API_Camera:createCamera(cameraCoords, cameraHeading)
     local self = {}
