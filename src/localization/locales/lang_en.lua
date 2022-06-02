@@ -29,4 +29,7 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Play with %s",
 
     CONNECTING_CREATING_CHARACTER = "Creating character...",
+    
+    KICK_DEFAULT_MESSAGE = "You have been kicked from the server.",
+
 }

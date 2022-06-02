@@ -19,10 +19,7 @@ function API_Ped:playAnimation(pedId, dict, anim, flag, blendin, blendout, playb
     playbackRate = playbackRate or 1.0
     duration = duration or -1
 
-    RequestAnimDict(dict)
-    while (not (HasAnimDictLoaded(dict))) do
-        Wait(1)
-    end
+    API_Streaming:requestAnimDict(dict)
     TaskPlayAnim(pedId, dict, anim, blendin, blendout, duration, flag, playbackRate, 0, 0, 0)
     RemoveAnimDict(dict)
 end
