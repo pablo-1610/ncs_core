@@ -7,5 +7,5 @@ function API_Ped:getPosition(pedId)
         return _NCS:die("Target ped does not exists")
     end    
     
-    return GetEntityCoords(pedId)
+    return (GetEntityCoords(pedId))
 end
