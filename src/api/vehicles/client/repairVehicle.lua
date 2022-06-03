@@ -1,6 +1,5 @@
 ---repair
 ---@param vehicleId number
----@return void
 ---@public
 function API_Vehicles:repair(vehicleId)
     if (not (DoesEntityExist(vehicleId))) then
