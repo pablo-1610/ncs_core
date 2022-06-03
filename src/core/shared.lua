@@ -1,5 +1,6 @@
 ---@class _NCS
 local _NCS = {}
+_NCS.ready = false
 
 ---getVersion
 ---@return any
