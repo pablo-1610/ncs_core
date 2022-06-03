@@ -10,7 +10,7 @@ AddEventHandler("playerDropped", function(reason)
 
     if (MOD_Players:exists(_src)) then
         ---@type NCSPlayer
-        local player = MOD_Players:get(identifier)
+        local player = MOD_Players:get(_src)
         player:disconnect()
         MOD_Players:remove(player)
     end
