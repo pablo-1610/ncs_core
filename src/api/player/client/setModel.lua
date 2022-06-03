@@ -13,7 +13,7 @@ function API_Player:setModel(modelName)
     end
 
     modelName = API_Streaming:requestModel(modelName)
-    
+
     SetPlayerModel(PlayerId(), modelName)
     SetModelAsNoLongerNeeded(modelName)
 end
