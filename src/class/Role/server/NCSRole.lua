@@ -22,7 +22,7 @@ local __instance = {
 
     __le = function(a, b)
         return (a.powerIndex <= b.powerIndex)
-    end,
+    end
 }
 
 setmetatable(NCSRole, {
