@@ -3,20 +3,18 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 01 juin 2022 à 19:26
+-- Généré le : ven. 03 juin 2022 à 13:25
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
-SET
-SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET
-time_zone = "+00:00";
+SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
@@ -37,7 +35,8 @@ CREATE TABLE `ncs_inventories`
     `accounts`             text        NOT NULL,
     `weapons`              text        NOT NULL,
     `items`                text        NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -49,8 +48,10 @@ CREATE TABLE `ncs_players`
 (
     `player_identifier` varchar(80) NOT NULL,
     `role_identifier`   varchar(30) NOT NULL,
-    `last_source`       int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    `last_source`       int(11)     NOT NULL,
+    `last_character_id` int(11)     NOT NULL
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -61,12 +62,14 @@ CREATE TABLE `ncs_players`
 CREATE TABLE `ncs_players_characters`
 (
     `player_identifier` varchar(80) NOT NULL,
-    `character_id`      int(11) NOT NULL,
+    `character_id`      int(11)     NOT NULL,
     `identity`          text        NOT NULL,
     `skin`              text DEFAULT NULL,
     `accounts`          text        NOT NULL,
+    `last_position`     text DEFAULT NULL,
     `metadata`          text        NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -78,15 +81,17 @@ CREATE TABLE `ncs_roles`
 (
     `role_identifier` varchar(80) NOT NULL,
     `label`           varchar(80) NOT NULL,
-    `power_index`     int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    `power_index`     int(3)      NOT NULL
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
 
 --
 -- Déchargement des données de la table `ncs_roles`
 --
 
 INSERT INTO `ncs_roles` (`role_identifier`, `label`, `power_index`)
-VALUES ('user', 'User', 0);
+VALUES ('admin', 'Admin', 100),
+       ('user', 'User', 0);
 
 -- --------------------------------------------------------
 
@@ -98,7 +103,8 @@ CREATE TABLE `ncs_roles_permissions`
 (
     `role_identifier` varchar(80) NOT NULL,
     `permission`      varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4;
 
 --
 -- Index pour les tables déchargées
@@ -136,9 +142,10 @@ ALTER TABLE `ncs_roles`
 -- AUTO_INCREMENT pour la table `ncs_players_characters`
 --
 ALTER TABLE `ncs_players_characters`
-    MODIFY `character_id` int (11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+    MODIFY `character_id` int(11) NOT NULL AUTO_INCREMENT,
+    AUTO_INCREMENT = 13;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

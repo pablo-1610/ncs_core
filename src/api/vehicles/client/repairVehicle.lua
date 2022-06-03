@@ -3,7 +3,7 @@
 ---@public
 function API_Vehicles:repair(vehicleEntity)
     if (not (DoesEntityExist(vehicleEntity))) then
-        return _NCS:die("vehicleEntity does not exists")
+        return NCS:die("vehicleEntity does not exists")
     end
 
     SetVehicleFixed(vehicleEntity)

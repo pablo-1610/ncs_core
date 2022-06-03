@@ -22525,7 +22525,9 @@ setTimeout(() => {
             return;
         }
         emit("ncs_core:trace", "Database connection ^2established^7.", 2)
-        emit("ncs_core:dbConnected", true)
+        setTimeout(() => {
+            emit("ncs_core:dbConnected")
+        }, 200);
         serverReady = true;
     });
 });

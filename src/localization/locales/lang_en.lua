@@ -2,6 +2,10 @@ _Literals = {
     ERROR_ALREADY_CONNECTED = "You are already connected.",
     ERROR_SERVER_IDENTIFICATION_METHOD_BROKEN = "The server identification method is broken. Please contact the server owner.",
     ERROR_SERVER_CHARACTER_CREATION_FAILED = "Character creation failed. Please retry or contact the server's staff.",
+    ERROR_SERVER_STARTING_UP = "The server is starting up. Please wait.",
+    ERROR_CRITICAL_HAPPENED = "A critical error happened. Please try to reconnect.",
+
+    CONNECTION_ABORTED = "Connection aborted, please retry.",
 
     CONNECTION_RETRIEVING_CHARACTERS = "Retrieving characters...",
     CONNECTION_RETRIEVING_PLAYER_DATA = "Retrieving player data...",
@@ -29,7 +33,7 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Play with %s",
 
     CONNECTING_CREATING_CHARACTER = "Creating character...",
-    
+
     KICK_DEFAULT_MESSAGE = "You have been kicked from the server.",
 
 }

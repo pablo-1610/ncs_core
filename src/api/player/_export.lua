@@ -1,1 +1,1 @@
-_G._NCS.Player = API_Player
+_G.NCS.Player = API_Player

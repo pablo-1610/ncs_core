@@ -1,4 +1,4 @@
-_NCSEnum.MethodType = {
+NCSEnum.MethodType = {
     GET = "GET",
     POST = "POST",
     PUT = "PUT",

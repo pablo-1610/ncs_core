@@ -11,7 +11,7 @@
 ---@public
 function API_Ped:playAnimation(pedId, dict, anim, flag, blendin, blendout, playbackRate, duration)
     if (not (DoesEntityExist(pedId))) then
-        return _NCS:die("Target ped does not exists")
+        return NCS:die("Target ped does not exists")
     end
 
     blendin = blendin or 1.0

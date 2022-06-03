@@ -1,4 +1,4 @@
-_NCSConstant.validIdentifiers = {
+NCSConstant.validIdentifiers = {
     "steam",
     "license",
     "xbl",

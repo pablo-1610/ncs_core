@@ -1,1 +1,1 @@
-_G._NCS.Camera = API_Camera
+_G.NCS.Camera = API_Camera

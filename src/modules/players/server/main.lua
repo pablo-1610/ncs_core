@@ -2,4 +2,4 @@
 MOD_Players.list = {}
 
 ---@type table<string, number>
-MOD_Players.connectingList = {}
+MOD_Players.selectedCharacter = {}
