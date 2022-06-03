@@ -8,6 +8,10 @@ NCSRole = {}
 local __instance = {
     __index = NCSRole,
 
+    __tostring = function(self)
+        return ("[%i] %s (%s) {%i perms}"):format(self.powerIndex, self.label, self.identifier, API_Tables:count(self.permissions))
+    end,
+
     __eq = function(a, b)
         return (a.powerIndex == b.powerIndex)
     end,
