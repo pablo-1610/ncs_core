@@ -6,8 +6,8 @@
 ---@public
 function API_Ped:setPosition(pedId, coords, keepVehicle)
     if (not (DoesEntityExist(pedId))) then
-        return NCS:die("Target ped does not exists")
-    end    
+        return NCS:die("Target ped doesn't exist")
+    end
 
     RequestCollisionAtCoord(coords.xyz)
     while (not HasCollisionLoadedAroundEntity(pedId)) do

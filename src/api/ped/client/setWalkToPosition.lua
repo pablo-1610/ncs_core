@@ -9,7 +9,7 @@
 ---@public
 function API_Ped:setWalkToPosition(pedId, coords, speed, duration, heading, distanceToSlide)
     if (not (DoesEntityExist(pedId))) then
-        return NCS:die("Target ped does not exists")
+        return NCS:die("Target ped doesn't exist")
     end
     
     TaskGoStraightToCoord(pedId, coords, speed, duration, heading, distanceToSlide)

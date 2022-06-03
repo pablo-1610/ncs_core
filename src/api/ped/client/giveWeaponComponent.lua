@@ -5,7 +5,7 @@
 ---@public
 function API_Ped:giveWeaponComponent(pedId, weaponName, componentName)
     if (not (DoesEntityExist(pedId))) then
-        return NCS:die("Target ped does not exists")
+        return NCS:die("Target ped doesn't exist")
     end
     
     local weaponHash <const> = GetHashKey(weaponName)
