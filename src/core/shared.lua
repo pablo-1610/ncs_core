@@ -10,7 +10,6 @@ function _NCS:getVersion()
 end
 
 ---checkIsUpdate
----@return void
 ---@public
 function _NCS:checkIsUpdate()
     PerformHttpRequest("https://raw.githubusercontent.com/NextCitizens/ncs_core/main/fxmanifest.lua", function (_, resultData, _)
@@ -78,7 +77,7 @@ function _NCS:registerNetEvent(eventName, ...)
     end
 end
 
----onReceive
+---handleEvent
 ---@param eventName string
 ---@param callback function
 ---@public
