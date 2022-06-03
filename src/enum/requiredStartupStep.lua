@@ -1,3 +1,3 @@
-_NCSEnum.RequiredStartupSteps = {
+NCSEnum.RequiredStartupSteps = {
     LOAD_RANKS = "ranks"
 }

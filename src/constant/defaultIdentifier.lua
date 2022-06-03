@@ -1,1 +1,1 @@
-_NCSConstant.defaultIdentifier = "license"
+NCSConstant.defaultIdentifier = "license"

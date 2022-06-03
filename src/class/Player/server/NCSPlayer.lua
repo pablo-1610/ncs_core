@@ -35,7 +35,7 @@ setmetatable(NCSPlayer, {
             local roleIdentifier <const> = row.role_identifier
 
             if (not (roleIdentifier) or not (MOD_Roles:exists(roleIdentifier))) then
-                self.role = (MOD_Roles:exists(_Internal.DefaultRoleIdentifier) and MOD_Roles:get(_Internal.DefaultRoleIdentifier) or MOD_Roles:getLowest())
+                self.role = (MOD_Roles:exists(NCSInternal.DefaultRoleIdentifier) and MOD_Roles:get(NCSInternal.DefaultRoleIdentifier) or MOD_Roles:getLowest())
                 self:save()
                 return
             end
@@ -97,7 +97,7 @@ end
 ---@param eventName string
 ---@public
 function NCSPlayer:triggerEvent(eventName, ...)
-    _NCS:triggerClientEvent(eventName, self.serverId, ...)
+    NCS:triggerClientEvent(eventName, self.serverId, ...)
 end
 
 ---setLastSource
@@ -119,5 +119,5 @@ end
 ---sendData
 ---@public
 function NCSPlayer:sendData()
-    self:triggerEvent("setCache", _NCSEnum.CacheType.PLAYER_DATA, self:minify())
+    self:triggerEvent("setCache", NCSEnum.CacheType.PLAYER_DATA, self:minify())
 end

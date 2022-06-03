@@ -5,7 +5,7 @@
 function API_Streaming:requestModel(modelHash)
     modelHash = (type(modelHash) == "number" and modelHash or GetHashKey(modelHash))
     if (not (IsModelInCdimage(modelHash))) then
-        return (_NCS:die("Model not found: " .. modelHash))
+        return (NCS:die("Model not found: " .. modelHash))
     end
     if (HasModelLoaded(modelHash)) then
         return (modelHash)

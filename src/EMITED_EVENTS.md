@@ -1,6 +1,6 @@
 # List of all NCS Core events
 
-### Each event is prefixed with `ncs:`, but are auto_formatted by the _NCS events functions.
+### Each event is prefixed with `ncs:`, but are auto_formatted by the NCS events functions.
 
 <hr>
 

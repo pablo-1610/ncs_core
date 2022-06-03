@@ -9,7 +9,7 @@ function API_Strings:split(str, delimiter)
 	end
 
 	if (not (delimiter)) then
-		return (_NCS:die("argument 2, delimiter value invalid!"))
+		return (NCS:die("argument 2, delimiter value invalid!"))
 	end
 
 	local result = {}

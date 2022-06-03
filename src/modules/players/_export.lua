@@ -1,1 +1,1 @@
-_G._NCS.PlayersManager = MOD_Players
+_G.NCS.PlayersManager = MOD_Players

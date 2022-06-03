@@ -10,7 +10,7 @@ setmetatable(NCSBot, {
         self.name = params.name
         self.token = params.token
 
-        _NCS:trace(("NCSBot: new bot ^2%s^7"):format(self.name), _NCSEnum.LogType.INFO)
+        NCS:trace(("NCSBot: new bot ^2%s^7"):format(self.name), NCSEnum.LogType.INFO)
         MOD_Bots.list[self.name] = self
         return (self)
     end
@@ -28,15 +28,15 @@ function NCSBot:performDiscord(method, endpoint, data, getCount)
 
     PerformHttpRequest(("https://discordapp.com/api/%s?with_counts=%s"):format(endpoint, getCount or false), function(errorCode, resultData, resultHeaders)
         request = { error = errorCode, result = resultData, headers = resultHeaders }
-        _NCS:trace(("Discord API Request: %s"):format(endpoint), _NCSEnum.LogType.DEBUG)
-    end, method, data and json.encode(data) or "", {["Content-Type"] = "application/json", ["Authorization"] = ("Bot %s"):format(self.token)})
+        NCS:trace(("Discord API Request: %s"):format(endpoint), NCSEnum.LogType.DEBUG)
+    end, method, data and json.encode(data) or "", { ["Content-Type"] = "application/json", ["Authorization"] = ("Bot %s"):format(self.token) })
 
     while (not request) do
         Wait(0)
     end
 
-    if (request.error ~= _NCSEnum.DiscordErrorType.GOOD) then
-        _NCS:trace(("Discord API Error: %s"):format(_NCSEnum._getDiscordErrorType(request.error)), _NCSEnum.LogType.ERROR)
+    if (request.error ~= NCSEnum.DiscordErrorType.GOOD) then
+        NCS:trace(("Discord API Error: %s"):format(NCSEnum._getDiscordErrorType(request.error)), NCSEnum.LogType.ERROR)
     end
 
     return (request.result)
@@ -47,7 +47,7 @@ end
 ---@public
 ---@return table
 function NCSBot:get_player(discordId)
-    return (json.decode(self:performDiscord(_NCSEnum.MethodType.GET, ("users/%s"):format(discordId))))
+    return (json.decode(self:performDiscord(NCSEnum.MethodType.GET, ("users/%s"):format(discordId))))
 end
 
 ---get_guild
@@ -55,7 +55,7 @@ end
 ---@public
 ---@return table
 function NCSBot:get_guild(guildId)
-    return (json.decode(self:performDiscord(_NCSEnum.MethodType.GET, ("guilds/%s"):format(guildId))))
+    return (json.decode(self:performDiscord(NCSEnum.MethodType.GET, ("guilds/%s"):format(guildId))))
 end
 
 ---get_guild_member
@@ -64,7 +64,7 @@ end
 ---@public
 ---@return table
 function NCSBot:get_guild_member(guildId, discordId)
-    return (json.decode(self:performDiscord(_NCSEnum.MethodType.GET, ("guilds/%s/members/%s"):format(guildId, discordId))))
+    return (json.decode(self:performDiscord(NCSEnum.MethodType.GET, ("guilds/%s/members/%s"):format(guildId, discordId))))
 end
 
 ---get_guild_count
@@ -72,7 +72,7 @@ end
 ---@public
 ---@return table
 function NCSBot:get_guild_count(guildId)
-    return (json.decode(self:performDiscord(_NCSEnum.MethodType.GET, ("guilds/%s"):format(guildId), nil, true)))
+    return (json.decode(self:performDiscord(NCSEnum.MethodType.GET, ("guilds/%s"):format(guildId), nil, true)))
 end
 
 ---get_username

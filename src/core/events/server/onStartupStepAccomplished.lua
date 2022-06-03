@@ -1,11 +1,11 @@
 local requiredStartupStepsToBoot = {}
 
-for _, startupStep in pairs(_NCSEnum.RequiredStartupSteps) do
+for _, startupStep in pairs(NCSEnum.RequiredStartupSteps) do
     requiredStartupStepsToBoot[startupStep] = false
 end
 
 local function isStartupStep(stepId)
-    for _, startupStepId in pairs(_NCSEnum.RequiredStartupSteps) do
+    for _, startupStepId in pairs(NCSEnum.RequiredStartupSteps) do
         if (startupStepId == stepId) then
             return (true)
         end
@@ -18,7 +18,7 @@ local function alreadyAccomplished(stepId)
 end
 
 local function canStart()
-    for _, stepId in pairs(_NCSEnum.RequiredStartupSteps) do
+    for _, stepId in pairs(NCSEnum.RequiredStartupSteps) do
         if not (requiredStartupStepsToBoot[stepId]) then
             return (false)
         end
@@ -27,12 +27,12 @@ local function canStart()
 end
 
 local function start()
-    _NCS.ready = true
-    _NCS:coreTrace("The NCS ^2server^7 core is ready !")
-    _NCS:triggerEvent("serverReady")
+    NCS.ready = true
+    NCS:coreTrace("The NCS ^2server^7 core is ready !")
+    NCS:triggerEvent("serverReady")
 end
 
-function _Internal:startupStepAccomplished(stepId)
+function NCSInternal:startupStepAccomplished(stepId)
     if (not (isStartupStep(stepId))) then
         return
     end
@@ -45,6 +45,6 @@ function _Internal:startupStepAccomplished(stepId)
     end
 end
 
-_NCS:handleEvent("startupStepAccomplished", function(stepId)
-    _Internal:startupStepAccomplished(stepId)
+NCS:handleEvent("startupStepAccomplished", function(stepId)
+    NCSInternal:startupStepAccomplished(stepId)
 end)

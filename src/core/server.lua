@@ -2,14 +2,14 @@
 ---@param eventName string
 ---@param targetId number
 ---@public
-function _NCS:triggerClientEvent(eventName, targetId, ...)
+function NCS:triggerClientEvent(eventName, targetId, ...)
     TriggerClientEvent(self:formatEvent(eventName), targetId, ...)
 end
 
 ---onReady
 ---@param callback function
 ---@public
-function _NCS:onReady(callback)
+function NCS:onReady(callback)
     if (self.ready) then
         callback()
     else

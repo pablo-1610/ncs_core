@@ -1,1 +1,1 @@
-_G._NCS.Streaming = API_Streaming
+_G.NCS.Streaming = API_Streaming

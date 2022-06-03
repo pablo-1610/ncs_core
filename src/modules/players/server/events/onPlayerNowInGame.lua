@@ -1,17 +1,17 @@
-_NCS:registerNetEvent("nowInGame", function()
+NCS:registerNetEvent("nowInGame", function()
     local _src <const> = source
 
     ---@param player NCSPlayer
     local function load(player)
         local needToCreateSkin <const> = (not (player.character.skin))
-        local requireSpawn <const> = (not (_Internal.OneSync) and true or (GetEntityModel(GetPlayerPed(_src)) == 225514697))
+        local requireSpawn <const> = (not (NCSInternal.OneSync) and true or (GetEntityModel(GetPlayerPed(_src)) == 225514697))
 
         player.inGame = true
         player:setLastSource(_src)
         player:sendData()
 
-        _NCS:trace(("Player id ^2%s ^7(^2%s^7) is now ^2online ^7with character ^2%i ^7(^2%s^7)"):format(player.serverId, player.name, player.character.id, player.character:getFullName()))
-        _NCS:triggerEvent("playerNowInGame", _src, needToCreateSkin)
+        NCS:trace(("Player id ^2%s ^7(^2%s^7) is now ^2online ^7with character ^2%i ^7(^2%s^7)"):format(player.serverId, player.name, player.character.id, player.character:getFullName()))
+        NCS:triggerEvent("playerNowInGame", _src, needToCreateSkin)
 
         if (needToCreateSkin) then
             player.character:warpToCharacterCustomization(requireSpawn)
@@ -26,7 +26,7 @@ _NCS:registerNetEvent("nowInGame", function()
                 ["@player_identifier"] = API_Player:getIdentifier(_src)
             }, function(rows)
                 if (#rows <= 0) then
-                    _NCS:traceError(("Error while loading player %s: player is not registered"):format(API_Player:getIdentifier(_src)))
+                    NCS:traceError(("Error while loading player %s: player is not registered"):format(API_Player:getIdentifier(_src)))
                     DropPlayer(_src, _Literals.ERROR_CRITICAL_HAPPENED)
                     return
                 end
@@ -35,7 +35,7 @@ _NCS:registerNetEvent("nowInGame", function()
                 local characterId <const> = row.last_character_id
 
                 if (not (characterId)) then
-                    _NCS:traceError(("Error while loading player %s: no character selected"):format(API_Player:getIdentifier(_src)))
+                    NCS:traceError(("Error while loading player %s: no character selected"):format(API_Player:getIdentifier(_src)))
                     DropPlayer(_src, _Literals.CONNECTION_ABORTED)
                     return
                 end
@@ -46,7 +46,7 @@ _NCS:registerNetEvent("nowInGame", function()
                 MOD_Players:set(_src, player)
                 player:setCharacterByIdentifier(characterId, function(success)
                     if (not (success)) then
-                        _NCS:traceError(("Error while loading player %s: character %s not found"):format(API_Player:getIdentifier(_src), characterId))
+                        NCS:traceError(("Error while loading player %s: character %s not found"):format(API_Player:getIdentifier(_src), characterId))
                         DropPlayer(_src, _Literals.CONNECTION_ABORTED)
                         return
                     end
@@ -59,8 +59,8 @@ _NCS:registerNetEvent("nowInGame", function()
         load(MOD_Players:get(_src))
     end
 
-    if (not (_NCS.ready)) then
-        _NCS:onReady(check)
+    if (not (NCS.ready)) then
+        NCS:onReady(check)
         return
     end
 

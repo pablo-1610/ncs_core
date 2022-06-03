@@ -1,1 +1,1 @@
-_G._NCS.Objects = API_Objects
+_G.NCS.Objects = API_Objects

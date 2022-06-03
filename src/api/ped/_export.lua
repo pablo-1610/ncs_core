@@ -1,1 +1,1 @@
-_G._NCS.Ped = API_Ped
+_G.NCS.Ped = API_Ped

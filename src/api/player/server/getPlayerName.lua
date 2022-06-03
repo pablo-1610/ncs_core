@@ -10,5 +10,5 @@ function API_Player:getName(playerId)
             return (name)
         end
     end
-    _NCS:die("Unable to find ID")
+    NCS:die("Unable to find ID")
 end

@@ -1,9 +1,9 @@
 local function GetNCS()
-    return (_G._NCS)
+    return (_G.NCS)
 end
 
 local function GetEnums()
-    return (_G._NCSEnum)
+    return (_G.NCSEnum)
 end
 
 exports("getLibrary", GetNCS)

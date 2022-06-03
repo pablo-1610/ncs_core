@@ -1,4 +1,4 @@
-_NCSEnum.AdaptiveCardInput = {
+NCSEnum.AdaptiveCardInput = {
     TEXT = "Input.Text",
     DATE = "Input.Date",
     NUMBER = "Input.Number",
