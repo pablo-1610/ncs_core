@@ -1,4 +1,4 @@
-_NCSEnum.adaptiveCard = {
+NCSEnum.AdaptiveCard = {
+    -- TODO : Remove this shit, then use the NCSAdaptiveCardBuilder class
     CONNECTION_NO_CHARACTERS = [[{"type":"AdaptiveCard","body":[{"type":"TextBlock","size":"Medium","weight":"Bolder","text":"%s"},{"type":"TextBlock","wrap":true,"text":"%s"},{"type":"ActionSet","actions":[{"type":"Action.Submit","id":"create","title":"%s"}],"id":"creation"}],"$schema":"http://adaptivecards.io/schemas/adaptive-card.json","version":"1.5"}]],
-    CONNECTION_CHARACTER_CREATION = [[{"type":"AdaptiveCard","body":[{"type":"TextBlock","size":"Medium","weight":"Bolder","text":"%s"},{"type":"Input.Text","placeholder":"John","isRequired":true,"id":"firstname","label":"%s"},{"type":"Input.Text","isRequired":true,"id":"lastname","label":"%s","placeholder":"Doe"},{"type":"Input.Date","isRequired":true,"label":"%s","id":"dob"},{"type":"ActionSet","id":"buttons","actions":[{"type":"Action.Submit","title":"%s","id":"create","style":"positive"}]}],"$schema":"http://adaptivecards.io/schemas/adaptive-card.json","version":"1.5"}]],
 }

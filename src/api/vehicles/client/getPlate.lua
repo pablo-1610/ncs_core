@@ -7,6 +7,6 @@ function API_Vehicles:getPlate(vehicleId)
         local plate <const> = (GetVehicleNumberPlateText(vehicleId))
         return (plate)
     end
-    _NCS:die("vehicleEntity does not exists")
+    NCS:die("vehicleEntity does not exists")
 end
 

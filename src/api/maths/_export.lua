@@ -1,1 +1,1 @@
-_G._NCS.Maths = API_Maths
+_G.NCS.Maths = API_Maths

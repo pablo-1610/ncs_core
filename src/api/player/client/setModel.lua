@@ -9,13 +9,11 @@ function API_Player:setModel(modelName)
     end
 
     if (not (IsModelInCdimage(modelName))) then
-        return _NCS:die("Model not found: " .. modelName)
+        return NCS:die("Model not found: " .. modelName)
     end
 
-    RequestModel(modelName)
-    while not HasModelLoaded(modelName) do
-        Wait(0)
-    end
+    modelName = API_Streaming:requestModel(modelName)
+
     SetPlayerModel(PlayerId(), modelName)
     SetModelAsNoLongerNeeded(modelName)
 end

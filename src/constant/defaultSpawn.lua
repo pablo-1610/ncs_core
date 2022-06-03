@@ -1,0 +1,1 @@
+NCSConstant.DefaultSpawn = { position = vector3(1734.37, 3981.3, 31.98), heading = 30.0 }

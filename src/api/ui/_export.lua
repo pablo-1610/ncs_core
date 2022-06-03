@@ -1,1 +1,1 @@
-_G._NCS.UI = API_UI
+_G.NCS.UI = API_UI

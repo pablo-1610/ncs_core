@@ -1,1 +1,1 @@
-_G._NCS.Tables = API_Tables
+_G.NCS.Tables = API_Tables

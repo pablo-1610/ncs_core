@@ -8,7 +8,7 @@
 function NCSCamera:setCameraPointAtEntity(entityId, offsetX, offsetY, offsetZ)
     if self.exist then
         if (not (DoesEntityExist(entityId))) then
-            return _NCS:die("Target ped does not exists")
+            return NCS:die("Target ped does not exists")
         end    
         PointCamAtEntity(self.id, entityId, offsetX or .0, offsetY or .0, offsetZ or .0, true)
     end

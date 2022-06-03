@@ -1,1 +1,1 @@
-_G._NCS.Vehicles = API_Vehicles
+_G.NCS.Vehicles = API_Vehicles

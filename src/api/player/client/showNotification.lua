@@ -6,7 +6,7 @@ function API_Player:showNotification(text, colorBg)
     if (colorBg) then
         ThefeedNextPostBackgroundColor(colorBg)
     end
-    AddTextEntry("SowNotifSimple", text)
-    BeginTextCommandThefeedPost("SowNotifSimple")
+    AddTextEntry("ShowNotifSimple", text)
+    BeginTextCommandThefeedPost("ShowNotifSimple")
     EndTextCommandThefeedPostTicker(false, false)
 end

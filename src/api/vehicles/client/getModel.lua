@@ -8,5 +8,5 @@ function API_Vehicles:getModel(vehicleId)
         local model = GetDisplayNameFromVehicleModel(GetEntityModel(vehicleId))
         return (model)
     end
-    _NCS:trace('Unable to find vehicle', 1)
+    NCS:trace('Unable to find vehicle', 1)
 end

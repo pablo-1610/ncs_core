@@ -6,7 +6,7 @@ function API_Vehicles:getStates(vehicleEntity)
     vehicleEntity = (vehicleEntity or 0) > 0 and vehicleEntity or GetVehiclePedIsIn(PlayerPedId())
 
     if (not (DoesEntityExist(vehicleEntity))) then
-        return _NCS:trace("vehicleEntity does not exists or player is not in any vehicle", 5)
+        return NCS:trace("vehicleEntity does not exists or player is not in any vehicle", 5)
     end
     
     local vehicleState = {
