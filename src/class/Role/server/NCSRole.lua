@@ -46,6 +46,18 @@ setmetatable(NCSRole, {
     end
 })
 
+---minify
+---@return table
+---@public
+function NCSRole:minify()
+    return {
+        identifier = self.identifier,
+        label = self.label,
+        powerIndex = self.powerIndex,
+        permissions = self.permissions
+    }
+end
+
 ---hasPermission
 ---@param permission string
 ---@return boolean
