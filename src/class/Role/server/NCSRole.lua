@@ -32,6 +32,7 @@ setmetatable(NCSRole, {
         self.identifier = identifier
         self.label = label
         self.powerIndex = powerIndex
+        self.permissions = {}
 
         API_Database:query("SELECT * FROM ncs_roles_permissions WHERE role_identifier = @role_identifier", {
             ["role_identifier"] = self.identifier
