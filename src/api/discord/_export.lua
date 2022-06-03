@@ -1,1 +1,1 @@
-_G._NCS.Discord = API_Discord
+_G.NCS.Discord = API_Discord

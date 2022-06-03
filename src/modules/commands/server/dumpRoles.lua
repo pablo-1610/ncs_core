@@ -8,6 +8,6 @@ RegisterCommand("dumpRoles", function(_src)
     end)
     ---@param role NCSRole
     for _, role in pairs(roles) do
-        _NCS:trace(role)
+        NCS:trace(role)
     end
 end)

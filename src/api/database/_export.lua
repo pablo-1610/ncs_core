@@ -1,1 +1,1 @@
-_G._NCS.Database = API_Database
+_G.NCS.Database = API_Database

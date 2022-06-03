@@ -24,7 +24,7 @@ function MOD_Players:registerCharacter(identifier, identity, callback)
             ["accounts"] = json.encode(MOD_Config:getDefaultAccounts())
         }, function(characterId)
             if (callback) then
-                _NCS:trace(("Character created by ^3%s ^7: ^3%s %s"):format(identifier, identity.firstname, identity.lastname))
+                NCS:trace(("Character created by ^3%s ^7: ^3%s %s"):format(identifier, identity.firstname, identity.lastname))
                 callback(characterId)
             end
         end)

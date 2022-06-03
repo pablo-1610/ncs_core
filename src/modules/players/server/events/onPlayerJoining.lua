@@ -3,7 +3,7 @@ AddEventHandler("playerJoining", function()
     local identifier <const> = API_Player:getIdentifier(_src)
 
     if (not (MOD_Players.selectedCharacter[identifier])) then
-        _NCS:trace(("Error while loading player %s: no character selected"):format(identifier))
+        NCS:trace(("Error while loading player %s: no character selected"):format(identifier))
         DropPlayer(_src, _Literals.CONNECTION_ABORTED)
         return
     end
@@ -16,10 +16,10 @@ AddEventHandler("playerJoining", function()
     MOD_Players:set(_src, player)
     player:setCharacterByIdentifier(selectedCharacterIdentifier, function(success)
         if (not (success)) then
-            _NCS:trace(("Error while loading player %s: character %s not found"):format(identifier, selectedCharacterIdentifier))
+            NCS:trace(("Error while loading player %s: character %s not found"):format(identifier, selectedCharacterIdentifier))
             DropPlayer(_src, _Literals.CONNECTION_ABORTED)
             return
         end
-        _NCS:triggerEvent("playerJoining", _src, identifier, selectedCharacterIdentifier)
+        NCS:triggerEvent("playerJoining", _src, identifier, selectedCharacterIdentifier)
     end)
 end)

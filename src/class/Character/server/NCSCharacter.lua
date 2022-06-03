@@ -71,7 +71,7 @@ end
 ---@param requireSpawn boolean
 ---@public
 function NCSCharacter:initialize(requireSpawn)
-    local spawnLocation = (self.lastPosition and self.lastPosition or _NCSConstant.DefaultSpawn)
+    local spawnLocation = (self.lastPosition and self.lastPosition or NCSConstant.DefaultSpawn)
     self.user:triggerEvent("initializeCharacter", requireSpawn, spawnLocation, self:minify())
 end
 

@@ -3,7 +3,7 @@ AddEventHandler("playerDropped", function(reason)
     local identifier <const> = API_Player:getIdentifier(_src)
 
     if (MOD_Players.selectedCharacter[identifier]) then
-        _NCS:trace(("Player id ^1%s ^7has ^1dropped ^7during the ^3connection process^7."):format(_src))
+        NCS:trace(("Player id ^1%s ^7has ^1dropped ^7during the ^3connection process^7."):format(_src))
         MOD_Players.selectedCharacter[identifier] = nil
         return
     end
@@ -14,7 +14,7 @@ AddEventHandler("playerDropped", function(reason)
         MOD_Players:remove(player)
     end
 
-    _NCS:trace(("Player id ^1%s ^7has ^1dropped ^7(%s)"):format(_src, reason))
+    NCS:trace(("Player id ^1%s ^7has ^1dropped ^7(%s)"):format(_src, reason))
 
     -- TODO → Remove from Players, save Player.characters, etc.
 end)

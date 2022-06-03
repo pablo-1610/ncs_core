@@ -8,5 +8,5 @@ function API_Vehicles:getSpeed(vehicleId)
         local speed <const> = (GetEntitySpeed(vehicleId) * 3.6) --Set speed to km/h
         return (speed)
     end
-    _NCS:trace("Unable to find vehicle", 1)
+    NCS:trace("Unable to find vehicle", 1)
 end

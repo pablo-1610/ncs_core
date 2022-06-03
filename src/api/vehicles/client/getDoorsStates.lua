@@ -7,5 +7,5 @@ function API_Vehicles:getDoorsStates(vehicleId)
         local state <const> = (GetVehicleDoorLockStatus(vehicleId))
         return (state)
     end
-    _NCS:die("vehicleEntity does not exists")
+    NCS:die("vehicleEntity does not exists")
 end

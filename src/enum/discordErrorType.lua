@@ -1,4 +1,4 @@
-_NCSEnum.DiscordErrorType = {
+NCSEnum.DiscordErrorType = {
     GOOD = 200,
     ERROR_NO_CONTENT = 204,
     BAD_REQUEST = 400,
@@ -11,8 +11,8 @@ _NCSEnum.DiscordErrorType = {
     API_DOWN = 502,
 }
 
-function _NCSEnum._getDiscordErrorType(code)
-    for key, value in pairs(_NCSEnum.DiscordErrorType) do
+function NCSEnum._getDiscordErrorType(code)
+    for key, value in pairs(NCSEnum.DiscordErrorType) do
         if value == code then
             return tostring(key)
         end

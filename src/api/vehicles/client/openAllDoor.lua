@@ -11,5 +11,5 @@ function API_Vehicles:openAllDoor(vehicleId, canBeClosed, instantly)
         end
     return
     end
-    _NCS:die("vehicleEntity does not exists")
+    NCS:die("vehicleEntity does not exists")
 end

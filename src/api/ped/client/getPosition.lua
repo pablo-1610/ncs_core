@@ -4,7 +4,7 @@
 ---@public
 function API_Ped:getPosition(pedId)
     if (not (DoesEntityExist(pedId))) then
-        return _NCS:die("Target ped does not exists")
+        return NCS:die("Target ped does not exists")
     end    
     
     return (GetEntityCoords(pedId))

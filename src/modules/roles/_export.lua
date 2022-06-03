@@ -1,1 +1,1 @@
-_G._NCS.RolesManager = MOD_Roles
+_G.NCS.RolesManager = MOD_Roles

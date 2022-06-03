@@ -1,17 +1,19 @@
 ---triggerServerEvent
 ---@param eventName string
 ---@public
-function _NCS:triggerServerEvent(eventName, ...)
+function NCS:triggerServerEvent(eventName, ...)
     TriggerServerEvent(self:formatEvent(eventName), ...)
 end
 
 ---getPlayerData
----@return table
+---@return NCSPlayerData
 ---@public
-function _NCS:getPlayerData()
-    return (MOD_Cache:get(_NCSEnum.CacheType.PLAYER_DATA))
+function NCS:getPlayerData()
+    ---@type NCSPlayerData
+    local playerData = MOD_Cache:get(NCSEnum.CacheType.PLAYER_DATA)
+    return (playerData)
 end
 
 CreateThread(function()
-    _NCS:triggerEvent("client_ready")
+    NCS:triggerEvent("client_ready")
 end)
