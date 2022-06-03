@@ -3,9 +3,10 @@
 ---@return number
 ---@public
 function API_Vehicles:getDoorsStates(vehicleId)
-    if (vehicleId) and (DoesEntityExist(vehicleId)) then
-        local state <const> = (GetVehicleDoorLockStatus(vehicleId))
-        return (state)
+    if (not (DoesEntityExist(vehicleId))) then
+        return NCS:die("Target vehicle doesn't exist")
     end
-    NCS:die("vehicleEntity does not exists")
+
+    local state <const> = (GetVehicleDoorLockStatus(vehicleId))
+    return (state)
 end

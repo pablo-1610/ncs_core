@@ -1,11 +1,11 @@
 ---clean
----@param vehicleEntity number
+---@param vehicleId number
 ---@public
-function API_Vehicles:clean(vehicleEntity)
-    if (not (DoesEntityExist(vehicleEntity))) then
-        return NCS:die("vehicleEntity does not exists")
+function API_Vehicles:clean(vehicleId)
+    if (not (DoesEntityExist(vehicleId))) then
+        return NCS:die("Target vehicle doesn't exist")
     end
 
-    SetVehicleDirtLevel(vehicleEntity, 0.0)
-    WashDecalsFromVehicle(vehicleEntity, 1.0)
+    SetVehicleDirtLevel(vehicleId, 0.0)
+    WashDecalsFromVehicle(vehicleId, 1.0)
 end
