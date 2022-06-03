@@ -3,7 +3,7 @@
 ---@field public powerIndex number
 ---@field public permissions table<string, boolean>
 ---@class NCSRole
-local NCSRole = {}
+NCSRole = {}
 
 local __instance = {
     __index = NCSRole,
