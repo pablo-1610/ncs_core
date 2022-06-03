@@ -45,6 +45,13 @@ function _NCS:trace(message, logLevelIndex)
     print(("(^1NCS^7) [%s^7] %s"):format(("%s%s"):format(logLevelData.displayColor, logLevelData.displayName), message))
 end
 
+---traceError
+---@param message string
+---@public
+function _NCS:traceError(message)
+    self:trace(message, _NCSEnum.LogType.ERROR)
+end
+
 ---nativeTrace
 ---@param message string
 ---@public
