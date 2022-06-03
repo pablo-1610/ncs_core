@@ -14,5 +14,5 @@ function _NCS:getPlayerData()
 end
 
 CreateThread(function()
-    _NCS:triggerEvent("ncs_core:loaded")
+    _NCS:triggerEvent("client_ready")
 end)
