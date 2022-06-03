@@ -6,10 +6,12 @@ function NCS:triggerServerEvent(eventName, ...)
 end
 
 ---getPlayerData
----@return table
+---@return NCSPlayerData
 ---@public
 function NCS:getPlayerData()
-    return (MOD_Cache:get(NCSEnum.CacheType.PLAYER_DATA))
+    ---@type NCSPlayerData
+    local playerData = MOD_Cache:get(NCSEnum.CacheType.PLAYER_DATA)
+    return (playerData)
 end
 
 CreateThread(function()
