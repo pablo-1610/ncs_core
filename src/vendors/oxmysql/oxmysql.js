@@ -1308,7 +1308,7 @@ var require_errors = __commonJS({
         exports.EE_CANT_SEEK = 33;
         exports.HA_ERR_KEY_NOT_FOUND = 120;
         exports.HA_ERR_FOUND_DUPP_KEY = 121;
-        exports.HA_ERRNCSInternal_ERROR = 122;
+        exports.HA_ERR_INTERNAL_ERROR = 122;
         exports.HA_ERR_RECORD_CHANGED = 123;
         exports.HA_ERR_WRONG_INDEX = 124;
         exports.HA_ERR_CRASHED = 126;
@@ -2232,7 +2232,7 @@ var require_errors = __commonJS({
         exports.ER_TABLESPACE_MISSING = 1812;
         exports.ER_TABLESPACE_EXISTS = 1813;
         exports.ER_TABLESPACE_DISCARDED = 1814;
-        exports.ERNCSInternal_ERROR = 1815;
+        exports.ER_INTERNAL_ERROR = 1815;
         exports.ER_INNODB_IMPORT_ERROR = 1816;
         exports.ER_INNODB_INDEX_CORRUPT = 1817;
         exports.ER_INVALID_YEAR_COLUMN_LENGTH = 1818;
@@ -2369,7 +2369,7 @@ var require_errors = __commonJS({
         exports[33] = "EE_CANT_SEEK";
         exports[120] = "HA_ERR_KEY_NOT_FOUND";
         exports[121] = "HA_ERR_FOUND_DUPP_KEY";
-        exports[122] = "HA_ERRNCSInternal_ERROR";
+        exports[122] = "HA_ERR_INTERNAL_ERROR";
         exports[123] = "HA_ERR_RECORD_CHANGED";
         exports[124] = "HA_ERR_WRONG_INDEX";
         exports[126] = "HA_ERR_CRASHED";
@@ -3252,7 +3252,7 @@ var require_errors = __commonJS({
         exports[1812] = "ER_TABLESPACE_MISSING";
         exports[1813] = "ER_TABLESPACE_EXISTS";
         exports[1814] = "ER_TABLESPACE_DISCARDED";
-        exports[1815] = "ERNCSInternal_ERROR";
+        exports[1815] = "ER_INTERNAL_ERROR";
         exports[1816] = "ER_INNODB_IMPORT_ERROR";
         exports[1817] = "ER_INNODB_INDEX_CORRUPT";
         exports[1818] = "ER_INVALID_YEAR_COLUMN_LENGTH";
@@ -4315,20 +4315,20 @@ var require_bom_handling = __commonJS({
 });
 
 // node_modules/.pnpm/iconv-lite@0.6.3/node_modules/iconv-lite/encodings/internal.js
-var requireNCSInternal = __commonJS({
+var require_internal = __commonJS({
     "node_modules/.pnpm/iconv-lite@0.6.3/node_modules/iconv-lite/encodings/internal.js"(exports, module2) {
         "use strict";
         var Buffer4 = require_safer().Buffer;
         module2.exports = {
-            utf8: {type: "NCSInternal", bomAware: true},
-            cesu8: {type: "NCSInternal", bomAware: true},
+            utf8: {type: "_internal", bomAware: true},
+            cesu8: {type: "_internal", bomAware: true},
             unicode11utf8: "utf8",
-            ucs2: {type: "NCSInternal", bomAware: true},
+            ucs2: {type: "_internal", bomAware: true},
             utf16le: "ucs2",
-            binary: {type: "NCSInternal"},
-            base64: {type: "NCSInternal"},
-            hex: {type: "NCSInternal"},
-            NCSInternal: InternalCodec
+            binary: {type: "_internal"},
+            base64: {type: "_internal"},
+            hex: {type: "_internal"},
+            _internal: InternalCodec
         };
 
         function InternalCodec(codecOptions, iconv) {
@@ -7611,7 +7611,7 @@ var require_encodings = __commonJS({
     "node_modules/.pnpm/iconv-lite@0.6.3/node_modules/iconv-lite/encodings/index.js"(exports, module2) {
         "use strict";
         var modules = [
-            requireNCSInternal(),
+            require_internal(),
             require_utf32(),
             require_utf16(),
             require_utf7(),
@@ -11389,7 +11389,7 @@ var require_server_handshake = __commonJS({
                             connection.emit("query", query);
                         } else {
                             connection.writeError({
-                                code: Errors.HA_ERRNCSInternal_ERROR,
+                                code: Errors.HA_ERR_INTERNAL_ERROR,
                                 message: "No query handler"
                             });
                         }
@@ -13998,7 +13998,7 @@ var require_connection = __commonJS({
                 } else {
                     this.stream = opts.config.stream;
                 }
-                this.NCSInternalId = _connectionId++;
+                this._internalId = _connectionId++;
                 this._commands = new Queue();
                 this._command = null;
                 this._paused = false;
@@ -14205,15 +14205,15 @@ var require_connection = __commonJS({
                 if (length < MAX_PACKET_LENGTH) {
                     packet.writeHeader(this.sequenceId);
                     if (this.config.debug) {
-                        console.log(`${this.NCSInternalId} ${this.connectionId} <== ${this._command._commandName}#${this._command.stateName()}(${[this.sequenceId, packet._name, packet.length()].join(",")})`);
-                        console.log(`${this.NCSInternalId} ${this.connectionId} <== ${packet.buffer.toString("hex")}`);
+                        console.log(`${this._internalId} ${this.connectionId} <== ${this._command._commandName}#${this._command.stateName()}(${[this.sequenceId, packet._name, packet.length()].join(",")})`);
+                        console.log(`${this._internalId} ${this.connectionId} <== ${packet.buffer.toString("hex")}`);
                     }
                     this._bumpSequenceId(1);
                     this.write(packet.buffer);
                 } else {
                     if (this.config.debug) {
-                        console.log(`${this.NCSInternalId} ${this.connectionId} <== Writing large packet, raw content not written:`);
-                        console.log(`${this.NCSInternalId} ${this.connectionId} <== ${this._command._commandName}#${this._command.stateName()}(${[this.sequenceId, packet._name, packet.length()].join(",")})`);
+                        console.log(`${this._internalId} ${this.connectionId} <== Writing large packet, raw content not written:`);
+                        console.log(`${this._internalId} ${this.connectionId} <== ${this._command._commandName}#${this._command.stateName()}(${[this.sequenceId, packet._name, packet.length()].join(",")})`);
                     }
                     for (offset = 4; offset < 4 + length; offset += MAX_PACKET_LENGTH) {
                         chunk = packet.buffer.slice(offset, offset + MAX_PACKET_LENGTH);
@@ -14317,7 +14317,7 @@ var require_connection = __commonJS({
                         console.trace();
                         const commandName = this._command ? this._command._commandName : "(no command)";
                         const stateName = this._command ? this._command.stateName() : "(no command)";
-                        console.log(`${this.NCSInternalId} ${this.connectionId} ==> ${commandName}#${stateName}(${[packet.sequenceId, packet.type(), packet.length()].join(",")})`);
+                        console.log(`${this._internalId} ${this.connectionId} ==> ${commandName}#${stateName}(${[packet.sequenceId, packet.type(), packet.length()].join(",")})`);
                     }
                 }
                 if (!this._command) {
