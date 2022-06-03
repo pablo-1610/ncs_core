@@ -1,5 +1,6 @@
 ---clean
 ---@param vehicleId number
+---@return void
 ---@public
 function API_Vehicles:clean(vehicleId)
     if (not (DoesEntityExist(vehicleId))) then

@@ -1,5 +1,6 @@
 ---delete
 ---@param vehicleId number
+---@return void
 ---@public
 function API_Vehicles:delete(vehicleId)
     if (not (DoesEntityExist(vehicleId))) then

@@ -1,6 +1,7 @@
 ---setFuel
 ---@param vehicleId number
 ---@param fuel number
+---@return void
 ---@public
 function API_Vehicles:setFuel(vehicleId, fuel)
     if (not (DoesEntityExist(vehicleId))) then
