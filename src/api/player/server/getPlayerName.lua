@@ -4,6 +4,7 @@
 ---@public
 function API_Player:getName(playerId)
     if (playerId) then
+        ---@type string
         local name <const> = GetPlayerName(playerId)
         if (name) then
             return (name)
