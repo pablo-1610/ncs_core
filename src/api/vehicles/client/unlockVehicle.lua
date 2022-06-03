@@ -3,8 +3,9 @@
 ---@return void
 ---@public
 function API_Vehicles:unlockVehicle(vehicleId)
-    if (vehicleId) and (DoesEntityExist(vehicleId)) then
-        return SetVehicleDoorsLocked(vehicleId, 1)
+    if (not (DoesEntityExist(vehicleId))) then
+        return NCS:die("Target vehicle doesn't exist")
     end
-    NCS:die("vehicleEntity does not exists")
+
+    return SetVehicleDoorsLocked(vehicleId, 1)
 end

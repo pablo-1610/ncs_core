@@ -4,7 +4,7 @@
 ---@public
 function API_Ped:getHeading(pedId)
     if (not (DoesEntityExist(pedId))) then
-        return NCS:die("Target ped does not exists")
+        return NCS:die("Target ped doesn't exist")
     end
 
     return (GetEntityHeading(pedId))
