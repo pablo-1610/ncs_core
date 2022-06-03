@@ -93,13 +93,6 @@ function _NCS:triggerEvent(eventName, ...)
     TriggerEvent(self:formatEvent(eventName), ...)
 end
 
----onReady
----@param callback function
----@public
-function _NCS:onReady(callback)
-    self:handleEvent("ncs_core:loaded", callback)
-end
-
 ---formatEvent
 ---@param eventName string
 ---@public
