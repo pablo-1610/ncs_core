@@ -1,6 +1,5 @@
 ---clearPed
 ---@param pedId number
----@return number
 ---@public
 function API_Ped:clearPed(pedId)
   if (not (DoesEntityExist(pedId))) then
