@@ -10,3 +10,9 @@ if (not (CONTENT)) then
 end
 
 load(CONTENT)()
+
+setmetatable(_Literals, {
+    __index = function(_, key)
+        return ("{%s}"):format(key)
+    end
+})

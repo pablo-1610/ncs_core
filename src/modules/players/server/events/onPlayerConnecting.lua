@@ -10,8 +10,18 @@ end
 AddEventHandler("playerConnecting", function(playerName, _, connection)
     connection.defer()
 
-    local _src <const> = source
-    local identifier <const> = API_Player:getIdentifier(_src)
+    if (not (_NCS.ready)) then
+        connection.done(("💢 %s"):format(_Literals.ERROR_SERVER_STARTING_UP))
+        return
+    end
+
+    local identifier <const> = API_Player:getIdentifier(source)
+
+    if (MOD_Players:isInConnectingList(identifier)) then
+        connection.done(("😖 %s"):format(_Literals.ERROR_ALREADY_CONNECTED))
+        return
+    end
+
     local canConnect <const> = isValidIdentification(MOD_Config:getIdentificationType())
 
     if (not (canConnect)) then
@@ -20,24 +30,25 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
     end
 
     local function connect(characterIdentifier)
-        MOD_Players.connectingList[identifier] = characterIdentifier
+        MOD_Players.selectedCharacter[identifier] = characterIdentifier
+        MOD_Players:setLastCharacterId(identifier, characterIdentifier)
         connection.done()
     end
 
     local function showCharacterCreator(onDone)
         local creatorAdaptiveCard <const> = NCSAdaptiveCardBuilder()
                 :addTitle(_Literals.CONNECTION_CHARACTER_CREATION_TITLE)
-                :addInput("sex", _NCSEnum.adaptiveCardInput.TEXT, true, _Literals.CONNECTION_CHARACTER_CREATION_SEX)
-                :addInput("firstname", _NCSEnum.adaptiveCardInput.TEXT, true, _Literals.CONNECTION_CHARACTER_CREATION_FIRSTNAME)
-                :addInput("lastname", _NCSEnum.adaptiveCardInput.TEXT, true, _Literals.CONNECTION_CHARACTER_CREATION_LASTNAME)
-                :addInput("dob", _NCSEnum.adaptiveCardInput.DATE, true, _Literals.CONNECTION_CHARACTER_CREATION_DOB)
-                :addInput("height", _NCSEnum.adaptiveCardInput.NUMBER, true, _Literals.CONNECTION_CHARACTER_CREATION_HEIGHT)
-                :addActionSet("actions", { NCSAdaptiveCardAction(_NCSEnum.adaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_CREATION_BUTTON_CREATE, "create") })
+                :addInput("sex", _NCSEnum.AdaptiveCardInput.TEXT, true, _Literals.CONNECTION_CHARACTER_CREATION_SEX)
+                :addInput("firstname", _NCSEnum.AdaptiveCardInput.TEXT, true, _Literals.CONNECTION_CHARACTER_CREATION_FIRSTNAME)
+                :addInput("lastname", _NCSEnum.AdaptiveCardInput.TEXT, true, _Literals.CONNECTION_CHARACTER_CREATION_LASTNAME)
+                :addInput("dob", _NCSEnum.AdaptiveCardInput.DATE, true, _Literals.CONNECTION_CHARACTER_CREATION_DOB)
+                :addInput("height", _NCSEnum.AdaptiveCardInput.NUMBER, true, _Literals.CONNECTION_CHARACTER_CREATION_HEIGHT)
+                :addActionSet("actions", { NCSAdaptiveCardAction(_NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_CREATION_BUTTON_CREATE, "create") })
         connection.presentCard(creatorAdaptiveCard:build(), function(data)
             local action <const> = data.submitId
             data.submitId = nil
             if (action == "create") then
-                connection.update(("🧸 — %s"):format(_Literals.CONNECTING_CREATING_CHARACTER))
+                connection.update(("🧸 %s"):format(_Literals.CONNECTING_CREATING_CHARACTER))
                 MOD_Players:registerCharacter(identifier, data, function(characterId)
                     if (not (characterId)) then
                         connection.done(_Literals.ERROR_SERVER_CHARACTER_CREATION_FAILED)
@@ -63,7 +74,7 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
         if (#rows == 0) then
             -- The player has no characters, we need to create one
             -- TODO : Change the adaptive card below (which is from an enum) to the new system with the NCSAdaptiveCardBuilder object
-            local adaptiveCard = (_NCSEnum.adaptiveCard.CONNECTION_NO_CHARACTERS):format((_Literals.CONNECTION_WELCOME_MESSAGE):format(_Internal.ServerName), (_Literals.CONNECTION_CHARACTER_REQUIRED):format(_Internal.ServerName), _Literals.CONNECTION_BUTTON_CREATE)
+            local adaptiveCard = (_NCSEnum.AdaptiveCard.CONNECTION_NO_CHARACTERS):format((_Literals.CONNECTION_WELCOME_MESSAGE):format(_Internal.ServerName), (_Literals.CONNECTION_CHARACTER_REQUIRED):format(_Internal.ServerName), _Literals.CONNECTION_BUTTON_CREATE)
             connection.presentCard(adaptiveCard, function()
                 showCharacterCreator(function(characterId)
                     if (not (characterId)) then
@@ -94,7 +105,7 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
             local characterButtons <const> = {}
             for _, character in pairs(characters) do
                 local characterIdentity <const> = json.decode(character.identity)
-                table.insert(characterButtons, NCSAdaptiveCardAction(_NCSEnum.adaptiveCardAction.SUBMIT, (_Literals.CONNECTION_CHARACTER_SELECTION_BUTTON):format(("%s %s"):format(characterIdentity.firstname, characterIdentity.lastname)), tostring(character.character_id)))
+                table.insert(characterButtons, NCSAdaptiveCardAction(_NCSEnum.AdaptiveCardAction.SUBMIT, (_Literals.CONNECTION_CHARACTER_SELECTION_BUTTON):format(("%s %s"):format(characterIdentity.firstname, characterIdentity.lastname)), tostring(character.character_id)))
             end
             local adaptiveCard <const> = NCSAdaptiveCardBuilder():addTitle(_Literals.CONNECTION_CHARACTER_SELECTION_TITLE):addActionSet("selection", characterButtons)
             connection.presentCard(adaptiveCard:build(), function(data)
@@ -106,10 +117,10 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
         end
 
         local function showMainMenu(characters)
-            local actions <const> = { NCSAdaptiveCardAction(_NCSEnum.adaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_SELECT_FETCH_BUTTON, "fetch") }
+            local actions <const> = { NCSAdaptiveCardAction(_NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_SELECT_FETCH_BUTTON, "fetch") }
 
             if (#characters < GetConvarInt("ncs_max_characters", 2)) then
-                table.insert(actions, NCSAdaptiveCardAction(_NCSEnum.adaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_SELECT_CREATE_BUTTON, "create"))
+                table.insert(actions, NCSAdaptiveCardAction(_NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_SELECT_CREATE_BUTTON, "create"))
             end
 
             local adaptiveCard <const> = NCSAdaptiveCardBuilder()

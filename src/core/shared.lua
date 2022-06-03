@@ -1,5 +1,6 @@
 ---@class _NCS
 local _NCS = {}
+_NCS.ready = false
 
 ---getVersion
 ---@return any
@@ -9,7 +10,6 @@ function _NCS:getVersion()
 end
 
 ---checkIsUpdate
----@return void
 ---@public
 function _NCS:checkIsUpdate()
     PerformHttpRequest("https://raw.githubusercontent.com/NextCitizens/ncs_core/main/fxmanifest.lua", function (_, resultData, _)
@@ -44,6 +44,13 @@ function _NCS:trace(message, logLevelIndex)
     print(("(^1NCS^7) [%s^7] %s"):format(("%s%s"):format(logLevelData.displayColor, logLevelData.displayName), message))
 end
 
+---traceError
+---@param message string
+---@public
+function _NCS:traceError(message)
+    self:trace(message, _NCSEnum.LogType.ERROR)
+end
+
 ---nativeTrace
 ---@param message string
 ---@public
@@ -70,7 +77,7 @@ function _NCS:registerNetEvent(eventName, ...)
     end
 end
 
----onReceive
+---handleEvent
 ---@param eventName string
 ---@param callback function
 ---@public
@@ -83,13 +90,6 @@ end
 ---@public
 function _NCS:triggerEvent(eventName, ...)
     TriggerEvent(self:formatEvent(eventName), ...)
-end
-
----onReady
----@param callback function
----@public
-function _NCS:onReady(callback)
-    self:handleEvent("ncs_core:loaded", callback)
 end
 
 ---formatEvent
