@@ -1,7 +1,8 @@
 ---setUser
 ---@param user NCSPlayer
 ---@public
-function NCSCharacter:setUser(user)
+---@param self NCSCharacter
+function NCSCharacter.setUser(self, user)
     self.user = user
     return (self)
 end

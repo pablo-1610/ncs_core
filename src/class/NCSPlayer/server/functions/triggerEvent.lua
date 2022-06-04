@@ -1,6 +1,7 @@
 ---triggerEvent
 ---@param eventName string
 ---@public
-function NCSPlayer:triggerEvent(eventName, ...)
+---@param self NCSPlayer
+function NCSPlayer.triggerEvent(self, eventName, ...)
     NCS:triggerClientEvent(eventName, self.serverId, ...)
 end

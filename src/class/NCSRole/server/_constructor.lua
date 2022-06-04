@@ -4,6 +4,7 @@
 ---@field public permissions table<string, boolean>
 ---@class NCSRole
 NCSRole = {}
+NCSRole.className = "NCSRole"
 
 local __instance = {
     __index = NCSRole,
@@ -34,6 +35,12 @@ setmetatable(NCSRole, {
         self.powerIndex = powerIndex
         self.permissions = {}
 
+        self.export = function()
+            return (API_Tables:exportMetatable(self, function(role)
+                return (MOD_Roles:get(role.identifier))
+            end))
+        end
+
         API_Database:query("SELECT * FROM ncs_roles_permissions WHERE role_identifier = @role_identifier", {
             ["role_identifier"] = self.identifier
         }, function(rows)
@@ -41,6 +48,12 @@ setmetatable(NCSRole, {
                 self.permissions[row.permission] = true
             end
         end)
+
+        --[[
+            Functions
+        --]]
+
+        API_Tables:exportMetatable(NCSRole, self)
 
         return (self)
     end

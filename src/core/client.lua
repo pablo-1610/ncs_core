@@ -17,3 +17,7 @@ end
 CreateThread(function()
     NCS:triggerEvent("client_ready")
 end)
+
+NCS:handleEvent("cacheSet", function(cacheType, firstTime)
+    print(cacheType, firstTime)
+end)

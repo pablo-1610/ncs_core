@@ -8,6 +8,7 @@
 ---@field public sessionData table
 ---@class NCSCharacter
 NCSCharacter = {}
+NCSCharacter.className = "NCSCharacter"
 
 local __instance = {
     __index = NCSCharacter,
@@ -33,6 +34,12 @@ setmetatable(NCSCharacter, {
         self.lastPosition = lastPosition
 
         self.sessionData = {}
+
+        --[[
+            Functions
+        --]]
+
+        API_Tables:exportMetatable(NCSCharacter, self)
 
         return (self)
     end
