@@ -1,9 +1,15 @@
 _Literals = {
+    TYPE_ERROR = "ERROR",
+    TYPE_WARNING = "WARNING",
+    TYPE_INFO = "INFO",
+    TYPE_DEBUG = "DEBUG",
+
     ERROR_ALREADY_CONNECTED = "You are already connected.",
     ERROR_SERVER_IDENTIFICATION_METHOD_BROKEN = "The server identification method is broken. Please contact the server owner.",
     ERROR_SERVER_CHARACTER_CREATION_FAILED = "Character creation failed. Please retry or contact the server's staff.",
     ERROR_SERVER_STARTING_UP = "The server is starting up. Please wait.",
     ERROR_CRITICAL_HAPPENED = "A critical error happened. Please try to reconnect.",
+    ERROR_MISSING_RANK_PERMISSION = "Vous n'avez pas la permission de faire cela.",
 
     CONNECTION_ABORTED = "Connection aborted, please retry.",
 
