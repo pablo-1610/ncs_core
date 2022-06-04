@@ -14,7 +14,7 @@ local __instance = {
     end,
 
     __eq = function(a, b)
-        return (a.powerIndex == b.powerIndex)
+        return (a.identifier == b.identifier)
     end,
 
     __lt = function(a, b)
