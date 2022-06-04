@@ -1,0 +1,1 @@
+_G.NCS.Sanctions = MOD_Sanctions

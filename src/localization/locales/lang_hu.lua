@@ -29,4 +29,8 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Játék vele %s",
 
     CONNECTING_CREATING_CHARACTER = "Karakter létrehozása...",
+
+    KICK_DEFAULT_MESSAGE = "Ki lettél dobva a szerverről.",
+    BAN_DEFAULT_MESSAGE = "Ki lettél tiltva a szerverről.",
+    UNBAN_DEFAULT_MESSAGE = "A kitiltásod feloldva.",
 }
