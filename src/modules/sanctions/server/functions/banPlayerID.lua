@@ -9,7 +9,6 @@ function MOD_Sanctions:banPlayerID(playerSrc, reason, time)
     end
 
     local license <const> = API_Player:getLicense(playerSrc)
-
     if (not license) then
         return
     end
