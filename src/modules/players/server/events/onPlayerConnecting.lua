@@ -17,6 +17,14 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
 
     local identifier <const> = API_Player:getIdentifier(source)
 
+    if (MOD_Sanctions:isPlayerBan(identifier)) then
+        local banP <const> = MOD_Sanctions.List.Bans[identifier]
+        local timeDate <const> = API_Maths:getDateByUnixTime(banP["time"])
+        local unbanDate <const> = ("%s/%s/%s [%sh%s]"):format(timeDate.day, timeDate.month, timeDate.year, timeDate.hour, timeDate.min)
+        connection.done(("💢 %s\n\nID: %s\nReason: %s\nUnban Date: %s"):format(_Literals.BAN_DEFAULT_MESSAGE, banP["ban_id"], banP["reason"], unbanDate))
+        return
+    end
+
     if (MOD_Players:isInConnectingList(identifier)) then
         connection.done(("😖 %s"):format(_Literals.ERROR_ALREADY_CONNECTED))
         return

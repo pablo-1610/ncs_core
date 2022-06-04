@@ -29,4 +29,7 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Juega con %s",
 
     CONNECTING_CREATING_CHARACTER = "Creando personaje...",
+
+    KICK_DEFAULT_MESSAGE = "Has sido expulsado del servidor",
+    BAN_DEFAULT_MESSAGE = "Has sido baneado del servidor",
 }

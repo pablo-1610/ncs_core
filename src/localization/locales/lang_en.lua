@@ -36,4 +36,6 @@ _Literals = {
 
     KICK_DEFAULT_MESSAGE = "You have been kicked from the server.",
 
+    BAN_DEFAULT_MESSAGE = "You have been banned from the server.",
+
 }
