@@ -108,7 +108,7 @@ CREATE TABLE `ncs_roles_permissions`
 
 --
 -- Structure de la table `ncs_bans`
----
+--
 CREATE TABLE `ncs_bans` (
   `ban_id` varchar(255) NOT NULL,
   `license` varchar(80) NOT NULL,
