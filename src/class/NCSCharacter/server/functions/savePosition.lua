@@ -2,6 +2,10 @@
 ---@public
 ---@param self NCSCharacter
 function NCSCharacter.savePosition(self)
+    if (not (self.skin)) then
+        return
+    end
+
     local ped <const> = GetPlayerPed(self.user.serverId)
     local coords <const>, heading <const> = GetEntityCoords(ped), GetEntityHeading(ped)
 
