@@ -14,10 +14,22 @@ function NCS:getPlayerData()
     return (playerData)
 end
 
-CreateThread(function()
-    NCS:triggerEvent("client_ready")
-end)
+---onReady
+---@param callback function
+---@public
+function NCS:onReady(callback)
+    if (self.ready) then
+        callback()
+    else
+        self:handleEvent("clientReady", callback)
+    end
+end
 
 NCS:handleEvent("cacheSet", function(cacheType, firstTime)
-    print(cacheType, firstTime)
+    if (not (NCS.ready)) then
+        if (cacheType == NCSEnum.CacheType.PLAYER_DATA and firstTime) then
+            NCS.ready = true
+            NCS:triggerEvent("clientReady")
+        end
+    end
 end)
