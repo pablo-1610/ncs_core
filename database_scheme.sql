@@ -107,6 +107,26 @@ CREATE TABLE `ncs_roles_permissions`
   DEFAULT CHARSET = utf8mb4;
 
 --
+-- Structure de la table `ncs_bans`
+---
+CREATE TABLE `ncs_bans` (
+  `ban_id` varchar(255) NOT NULL,
+  `license` varchar(80) NOT NULL,
+  `reason` varchar(255) NOT NULL,
+  `time` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `ncs_bans`
+--
+ALTER TABLE `ncs_bans`
+  ADD PRIMARY KEY (`ban_id`);
+COMMIT;
+--
 -- Index pour les tables déchargées
 --
 
