@@ -5,8 +5,9 @@
 ---@public
 function API_Ped:removeWeaponComponent(pedId, weaponName, componentName)
     if (not (DoesEntityExist(pedId))) then
-        return NCS:die("Target ped does not exists")
+        return NCS:die("Target ped doesn't exist")
     end
+
     local weaponHash = GetHashKey(weaponName)
     if API_Ped:hasWeapon(pedId, weaponHash) and API_Ped:hasWeaponComponent(pedId, weaponHash, componentName) then
         RemoveWeaponComponentFromPed(pedId, weaponHash, componentName)

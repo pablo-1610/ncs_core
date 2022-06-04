@@ -3,6 +3,10 @@
 ---@return boolean, number
 ---@public
 function API_Ped:driveVehicle(pedId)
+    if (not (DoesEntityExist(pedId))) then
+        return NCS:die("Target ped doesn't exist")
+    end
+
     local inVehicle = IsPedInAnyVehicle(pedId, false)
     if (not inVehicle) then
         return nil, nil

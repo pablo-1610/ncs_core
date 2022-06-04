@@ -3,10 +3,11 @@
 ---@return string
 ---@public
 function API_Vehicles:getPlate(vehicleId)
-    if (vehicleId) and (DoesEntityExist(vehicleId)) then
-        local plate <const> = (GetVehicleNumberPlateText(vehicleId))
-        return (plate)
+    if (not (DoesEntityExist(vehicleId))) then
+        return NCS:die("Target vehicle doesn't exist")
     end
-    NCS:die("vehicleEntity does not exists")
+
+    local plate <const> = (GetVehicleNumberPlateText(vehicleId))
+    return (plate)
 end
 

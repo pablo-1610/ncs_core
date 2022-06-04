@@ -3,7 +3,7 @@
 ---@param coords table<number, number, number>
 ---@param heading number
 ---@param clientSide? boolean
----@return void
+---@return number
 ---@public
 function API_Vehicles:spawn(modelName, coords, heading, clientSide)
     assert(type(modelName) == "string" or type(modelName) == "number")

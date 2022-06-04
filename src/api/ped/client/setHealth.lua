@@ -5,7 +5,7 @@
 ---@public
 function API_Ped:setHealth(pedId, value)
     if (not (DoesEntityExist(pedId))) then
-        return NCS:die("Target ped does not exists")
+        return NCS:die("Target ped doesn't exist")
     end
 
     SetEntityHealth(pedId, value)

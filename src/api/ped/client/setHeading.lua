@@ -5,8 +5,8 @@
 ---@public
 function API_Ped:setHeading(pedId, heading)
     if (not (DoesEntityExist(pedId))) then
-        return NCS:die("Target ped does not exists")
-    end    
+        return NCS:die("Target ped doesn't exist")
+    end
     
     SetEntityHeading(pedId, heading)
 end
