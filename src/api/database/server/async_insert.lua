@@ -2,8 +2,8 @@
 ---@param query string
 ---@param parameters table
 ---@param cb function
----@return void
+---@return number
 ---@public
-function API_Database:async_insert(query, parameters, cb)
-    exports[GetCurrentResourceName()]:insert_async(query, parameters, cb)
+function API_Database:async_insert(query, parameters)
+	return exports[GetCurrentResourceName()]:insert_async(query, parameters)
 end
