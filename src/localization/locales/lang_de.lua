@@ -30,5 +30,7 @@ _Literals = {
 
     CONNECTING_CREATING_CHARACTER = "Charakter erstellen...",
 
+    KICK_DEFAULT_MESSAGE = "Sie wurden vom Server gekickt",
     BAN_DEFAULT_MESSAGE = "Sie wurden vom Server gebannt.",
+    UNBAN_DEFAULT_MESSAGE = "Sie wurden vom Server entbannt.",
 }

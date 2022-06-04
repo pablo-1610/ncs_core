@@ -32,4 +32,5 @@ _Literals = {
 
     KICK_DEFAULT_MESSAGE = "Zostałeś wyrzucony z serwera.",
     BAN_DEFAULT_MESSAGE = "Zostałeś zbanowany z serwera.",
+    UNBAN_DEFAULT_MESSAGE = "Zostałeś odbanowany z serwera.",
 }

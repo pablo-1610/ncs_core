@@ -30,6 +30,7 @@ _Literals = {
 
     CONNECTING_CREATING_CHARACTER = "Karakter létrehozása...",
 
-    KICK_DEFAULT_MESSAGE = "Ki lettél kikerülve a szerverről.",
-    BAN_DEFAULT_MESSAGE = "A szerver tiltották a kapcsolatod.",
+    KICK_DEFAULT_MESSAGE = "Ki lettél dobva a szerverről.",
+    BAN_DEFAULT_MESSAGE = "Ki lettél tiltva a szerverről.",
+    UNBAN_DEFAULT_MESSAGE = "A kitiltásod feloldva.",
 }

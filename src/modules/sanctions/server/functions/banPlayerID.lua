@@ -15,7 +15,7 @@ function MOD_Sanctions:banPlayerID(playerSrc, reason, time)
     end
 
     if (MOD_Sanctions:isPlayerBan(license)) then
-        NCS.coreTrace(_, ("Player %s is already banned."):format(license))
+        NCS:coreTrace(("Player %s is already banned."):format(license))
         return
     end
 
