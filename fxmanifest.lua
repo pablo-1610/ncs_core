@@ -83,6 +83,7 @@ shared_scripts {
     -- NCS Export
     "src/core/export.lua",
     "src/api/**/_export.lua",
+    "src/modules/**/_export.lua",
 };
 
 --[[
