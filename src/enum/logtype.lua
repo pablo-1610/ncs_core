@@ -6,6 +6,6 @@ NCSEnum.LogType = {
 }
 
 NCSEnum._getLogTypeDisplayData = function(logType)
-    local displayByType = { [4] = { displayName = "DEBUG", displayColor = "^0" }, [3] = { displayName = "INFO", displayColor = "^5" }, [2] = { displayName = "WARNING", displayColor = "^3" }, [1] = { displayName = "ERROR", displayColor = "^1" } }
+    local displayByType = { [4] = { displayName = _Literals.TYPE_DEBUG, displayColor = "^0", clientColor = "~w~" }, [3] = { displayName = _Literals.TYPE_INFO, displayColor = "^5", clientColor = "~b~" }, [2] = { displayName = _Literals.TYPE_WARNING, displayColor = "^3", clientColor = "~y~" }, [1] = { displayName = _Literals.TYPE_ERROR, displayColor = "^1", clientColor = "~r~" } }
     return displayByType[logType]
 end
