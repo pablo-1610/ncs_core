@@ -20,7 +20,7 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
     if (MOD_Sanctions:isPlayerBan(identifier)) then
         local banP <const> = MOD_Sanctions.List.Bans[identifier]
         local currentTime <const> = os.time()
-        if (os.time() > banP.time) then
+        if (currentTime > banP.time) then
             connection.update(("💢 %s"):format(_Literals.UNBAN_DEFAULT_MESSAGE))
             MOD_Sanctions:unbanPlayer(identifier, banP.ban_id)
             Wait(1500)
