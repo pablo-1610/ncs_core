@@ -5,7 +5,7 @@
 ---@return void
 function MOD_Sanctions:banPlayerID(playerSrc, reason, time)
     if (not playerSrc or not reason or not time) then
-        return
+        return NCS:die("The player or the reason or the time is missing")
     end
 
     local license <const> = API_Player:getLicense(playerSrc)
