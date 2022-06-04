@@ -9,8 +9,7 @@ function MOD_Sanctions:banPlayer(license, reason, time)
     end
 
     if (MOD_Sanctions:isPlayerBan(license)) then
-        NCS:coreTrace(("Player %s is already banned."):format(license))
-        return
+        return NCS:die("The player is already banned")
     end
 
     time = API_Maths:unformatTime(time)
