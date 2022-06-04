@@ -23,12 +23,3 @@ function MOD_Sanctions:banPlayerID(playerSrc, reason, time)
 
     MOD_Sanctions:banPlayer(license, reason, time)
 end
-
-RegisterCommand("ban", function(src, args)
-    local playerSrc <const> = args[1]
-    MOD_Sanctions:banPlayerID(playerSrc, "TEST", {
-        ["hours"] = 2,
-        ["minutes"] = 0,
-        ["seconds"] = 0
-    })
-end)
