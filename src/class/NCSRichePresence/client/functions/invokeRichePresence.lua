@@ -15,12 +15,12 @@ function NCSRichePresence:invokeRichePresence()
         end
     end
 
-    _NCS:trace(("NCSDiscord: the richePresence ^2%s^7 is invoked !"):format(self.name), _NCSEnum.LogType.DEBUG)
+    NCS:trace(("NCSDiscord: the richePresence ^2%s^7 is invoked !"):format(self.name), NCSEnum.LogType.DEBUG)
 end
 
-_NCS:registerNetEvent("NCSRichePresence:invokeRichePresence", function(name)
+NCS:registerNetEvent("NCSRichePresence:invokeRichePresence", function(name)
     if (not MOD_Discord:exists(name)) then
-        _NCS:trace(("NCSDiscord: the richePresence ^3%s^7 is not exist !"):format(name or "INVALID"))
+        NCS:trace(("NCSDiscord: the richePresence ^3%s^7 is not exist !"):format(name or "INVALID"), NCSEnum.LogType.WARNING)
         return
     end
 
