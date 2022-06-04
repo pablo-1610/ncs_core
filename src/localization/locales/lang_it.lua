@@ -29,4 +29,8 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Gioca con %s",
 
     CONNECTING_CREATING_CHARACTER = "Creare un personaggio...",
+
+    KICK_DEFAULT_MESSAGE = "Sei stato kickato dal server",
+    BAN_DEFAULT_MESSAGE = "Sei stato bannato dal server",
+    UNBAN_DEFAULT_MESSAGE = "Sei stato sbannato dal server",
 }
