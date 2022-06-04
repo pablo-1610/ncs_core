@@ -5,7 +5,7 @@
 ---@return void
 function MOD_Sanctions:banPlayer(license, reason, time)
     if (not license or not reason or not time) then
-        return
+        return NCS:die("The player or the reason or the time is missing")
     end
 
     if (MOD_Sanctions:isPlayerBan(license)) then
