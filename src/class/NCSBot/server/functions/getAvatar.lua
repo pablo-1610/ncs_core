@@ -7,7 +7,6 @@ function NCSBot:getAvatar(discordId)
     if (player) then
         if (player.avatar) then
             if (player.avatar:sub(2, 2) == "_") then
-                -- Determine if the avatar is PNG or GIF
                 return ("https://cdn.discordapp.com/avatars/%s/%s.gif"):format(discordId, player.avatar)
             else
                 return ("https://cdn.discordapp.com/avatars/%s/%s.png"):format(discordId, player.avatar)
