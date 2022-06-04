@@ -1,0 +1,1 @@
+_G.NCS.Commands = API_Commands
