@@ -8,7 +8,7 @@ function MOD_Sanctions:unbanPlayer(license, ban_id)
     end
 
     if (not MOD_Sanctions:isPlayerBan(license)) then
-        return
+        return NCS:die("This player is not banned")
     end
 
     API_Database:query("DELETE FROM ncs_bans WHERE license = ? AND ban_id = ?", {license, ban_id}, function(result)
