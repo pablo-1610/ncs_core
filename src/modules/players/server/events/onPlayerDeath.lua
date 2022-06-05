@@ -16,27 +16,31 @@ NCS:handleEvent("NowInGame", function()
                 
                 if SourceKillerEntity ~= _src and SourceKillerClientId and NetworkIsPlayerActive(SourceKillerEntity) then
                     local PlayerDeathCoords = GetEntityCoords(PlayerPed)
+                    local PlayerKillerCoords = GetEntityCoords(SourceKillerEntity)
+                    local distance = #(PlayerDeathCoords - PlayerKillerCoords)
 
                     local PlayerDeathData = {
                         ["PlayerDeathCoords"] = PlayerDeathCoords,
                         ["PlayerDeathCause"] = SourceDeathCause,
                         ["PlayerDeathTime"] = GetGameTimer(),
                         ["KilledByPlayer"] = SourceKillerEntity,
+                        ["KillerClientId"] = SourceKillerClientId,
+                        ["KilledByPlayerCoords"] = PlayerKillerCoords,
+                        ["Distance"] = API_Maths.round(distance, 1)
                     }
 
-                    NCSPlayer.setDeathStatus(NCSisDead, PlayerDeathData)
+                    NCSPlayer.setDeathStatus(_src, NCSisDead, PlayerDeathData)
                 else
                     local PlayerDeathCoords = GetEntityCoords(PlayerPed)
 
                     local PlayerDeathData = {
                         ["PlayerDeathCoords"] = PlayerDeathCoords,
                         ["PlayerDeathCause"] = SourceDeathCause,
-                        
                         ["PlayerDeathTime"] = GetGameTimer(),
                         ["KilledByPlayer"] = false
                     }
 
-                    NCSPlayer.setDeathStatus(NCSisDead, PlayerDeathData)
+                    NCSPlayer.setDeathStatus(_src, NCSisDead, PlayerDeathData)
                 end
             elseif not IsPedFatallyInjured(PlayerPed) and NCSisDead then
                 waitTime = 0
