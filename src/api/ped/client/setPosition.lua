@@ -4,7 +4,7 @@
 ---@param keepVehicle boolean
 ---@return void
 ---@public
-function API_Entity:setPosition(pedId, coords, keepVehicle)
+function API_Ped:setPosition(pedId, coords, keepVehicle)
     if (not (DoesEntityExist(pedId))) then
         return NCS:die("Target ped doesn't exist")
     end
