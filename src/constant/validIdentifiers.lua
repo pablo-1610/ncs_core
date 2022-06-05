@@ -1,4 +1,4 @@
-NCSConstant.validIdentifiers = {
+NCSConstant.ValidIdentifiers = {
     "steam",
     "license",
     "xbl",
