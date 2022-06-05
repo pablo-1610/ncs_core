@@ -1,5 +1,5 @@
 local function isValidIdentification(identifierType)
-    for _, validIdentifierType in pairs(NCSConstant.validIdentifiers) do
+    for _, validIdentifierType in pairs(NCSConstant.ValidIdentifiers) do
         if (identifierType == validIdentifierType) then
             return (true)
         end
