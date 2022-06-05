@@ -22521,10 +22521,10 @@ setTimeout(() => {
     }));
     pool.query(mysql_transaction_isolation_level, (err) => {
         if (err) {
-            emit("ncs_core:trace", "Unable to establish a connection to the database.", 5)
+            emit("ncs_core:trace", "Unable to establish a connection to the database.", 4)
             return;
         }
-        emit("ncs_core:trace", "Database connection ^2established^7.", 2)
+        emit("ncs_core:trace", "Database connection ^2established^7.", 3)
         setTimeout(() => {
             emit("ncs_core:dbConnected")
         }, 200);
