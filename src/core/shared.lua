@@ -3,6 +3,10 @@ local NCS = {}
 NCS.ready = false
 NCS.resourceName = GetCurrentResourceName()
 
+local function getInvokingResource()
+    return (GetInvokingResource() == nil and NCS.resourceName or GetInvokingResource())
+end
+
 ---getVersion
 ---@return any
 ---@public
@@ -34,14 +38,20 @@ end
 ---@return void
 ---@public
 function NCS:trace(message, logLevelIndex)
-    logLevelIndex = logLevelIndex or NCSEnum.LogType.DEBUG
-    local maxLogLevel <const> = NCSInternal.LogLevel or NCSEnum.LogType.INFO
-    local logLevelData = NCSEnum._getLogTypeDisplayData(logLevelIndex)
-    if (logLevelIndex > maxLogLevel) then
+    local resourceDisplay <const> = (getInvokingResource() == GetCurrentResourceName() and "^1" or "^3")
+    if (logLevelIndex) then
+        local maxLogLevel <const> = NCSInternal.LogLevel or NCSEnum.LogType.INFO
+        local logLevelData = NCSEnum._getLogTypeDisplayData(logLevelIndex)
+        if (not (logLevelData)) then
+            return (self:die(("Attempt to log with an invalid log level index : %s"):format(tostring(logLevelIndex))))
+        end
+        if (logLevelIndex > maxLogLevel) then
+            return
+        end
+        print(("(%s^7) [%s^7] %s"):format(("%s%s"):format(resourceDisplay, GetInvokingResource()), ("%s%s"):format(logLevelData.displayColor, logLevelData.displayName), message))
         return
     end
-    local resourceDisplay <const> = (GetInvokingResource() == GetCurrentResourceName() and "^1" or "^3")
-    print(("(%s^7) [%s^7] %s"):format(("%s%s"):format(resourceDisplay, GetInvokingResource()), ("%s%s"):format(logLevelData.displayColor, logLevelData.displayName), message))
+    print(("(%s^7) %s"):format(("%s%s"):format(resourceDisplay, GetInvokingResource()), message))
 end
 
 ---traceError
@@ -55,6 +65,9 @@ end
 ---@param message string
 ---@public
 function NCS:systemTrace(message)
+    if (getInvokingResource() ~= GetCurrentResourceName()) then
+        return
+    end
     print(("(^1%s^7) [^6SYSTEM^7] %s"):format(self.resourceName, message))
 end
 
