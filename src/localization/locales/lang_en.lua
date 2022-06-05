@@ -19,8 +19,6 @@ _Literals = {
     CONNECTION_BUTTON_CREATE = "Create a new character",
     CONNECTION_CHARACTER_CREATION_TITLE = "Create a new character",
     CONNECTION_CHARACTER_CREATION_SEX = "Sex",
-    CONNECTION_CHARACTER_CREATION_SEX_MALE = "Male",
-    CONNECTION_CHARACTER_CREATION_SEX_FEMALE = "Female",
     CONNECTION_CHARACTER_CREATION_FIRSTNAME = "Firstname",
     CONNECTION_CHARACTER_CREATION_LASTNAME = "Lastname",
     CONNECTION_CHARACTER_CREATION_DOB = "Date of birth",
@@ -40,5 +38,4 @@ _Literals = {
     KICK_DEFAULT_MESSAGE = "You have been kicked from the server.",
     BAN_DEFAULT_MESSAGE = "You have been banned from the server.",
     UNBAN_DEFAULT_MESSAGE = "You have been unbanned from the server.",
-
 }
