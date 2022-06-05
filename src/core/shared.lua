@@ -16,11 +16,9 @@ function NCS:checkIsUpdate()
     PerformHttpRequest("https://raw.githubusercontent.com/NextCitizens/ncs_core/main/fxmanifest.lua", function(_, resultData, _)
         local currentVersion <const> = NCS:getVersion()
         local lines = {}
-
         for s in resultData:gmatch("[^\r\n]+") do
             lines[#lines + 1] = s
         end
-
         local ver <const> = API_Strings:split(lines[6], "'")[2]
         if (not (currentVersion == ver)) then
             NCS:systemTrace("NCS Core is not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.ERROR)
