@@ -1,0 +1,1 @@
+_G.NCS.Entity = API_Entity
