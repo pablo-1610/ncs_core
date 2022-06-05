@@ -1,5 +1,6 @@
 ---triggerServerEvent
 ---@param eventName string
+---@return void
 ---@public
 function NCS:triggerServerEvent(eventName, ...)
     TriggerServerEvent(self:formatEvent(eventName), ...)
@@ -16,6 +17,7 @@ end
 
 ---onReady
 ---@param callback function
+---@return void
 ---@public
 function NCS:onReady(callback)
     if (self.ready) then

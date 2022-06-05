@@ -1,0 +1,1 @@
+_G.NCS.NoSQL = MOD_NoSQL

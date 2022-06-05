@@ -13,7 +13,7 @@ function MOD_Sanctions:unbanPlayer(license, ban_id)
 
     API_Database:query("DELETE FROM ncs_bans WHERE license = ? AND ban_id = ?", {license, ban_id}, function(result)
         if (result) then
-            NCS:coreTrace(("Player %s unbanned."):format(license))
+            NCS:trace(("Player %s unbanned."):format(license))
             self.List.Bans[license] = nil
         end
     end)

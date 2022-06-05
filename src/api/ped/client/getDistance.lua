@@ -8,6 +8,6 @@ function API_Ped:getDistance(pedId, coords)
         return NCS:die("Target ped doesn't exist")
     end
 
-    local distance <const> = #(API_Ped:getPosition(pedId) - coords)
+    local distance <const> = #(API_Entity:getPosition(pedId) - coords)
     return (distance)
 end

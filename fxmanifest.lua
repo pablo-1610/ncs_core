@@ -103,6 +103,6 @@ shared_script "test/shared.lua"
 
 ui_page "src/web/dist/index.html"
 files {
-    "src-web/dist/index.html",
-    "src-web/dist/**/*"
+    "src/web/dist/index.html",
+    "src/web/dist/**/*"
 }
