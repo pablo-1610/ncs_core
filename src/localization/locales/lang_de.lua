@@ -1,14 +1,23 @@
 _Literals = {
+    TYPE_ERROR = "FEHLER",
+    TYPE_WARNING = "WERBUNG",
+    TYPE_INFO = "INFO",
+    TYPE_DEBUG = "DEBUGGEN",
+    
     ERROR_ALREADY_CONNECTED = "Sie sind bereits verbunden.",
     ERROR_SERVER_IDENTIFICATION_METHOD_BROKEN = "Die Methode zur Identifizierung des Servers ist fehlerhaft. Bitte wenden Sie sich an den Eigentümer des Servers.",
     ERROR_SERVER_CHARACTER_CREATION_FAILED = "Charaktererstellung fehlgeschlagen. Bitte versuchen Sie es erneut oder wenden Sie sich an das Personal des Servers.",
+    ERROR_SERVER_STARTING_UP = "Der Server wird gerade gestartet. Bitte warten Sie.",
+    ERROR_CRITICAL_HAPPENED = "Es ist ein kritischer Fehler aufgetreten. Bitte versuchen Sie erneut, eine Verbindung herzustellen.",
+    ERROR_MISSING_RANK_PERMISSION = "Sie haben nicht die Erlaubnis, dies zu tun.",
 
+    CONNECTION_ABORTED = "Connexion annulée, veuillez réessayer.",
     CONNECTION_RETRIEVING_CHARACTERS = "Charaktere abrufen...",
     CONNECTION_RETRIEVING_PLAYER_DATA = "Abrufen von Spielerdaten...",
 
     CONNECTION_WELCOME_MESSAGE = "Willkommen bei %s",
     CONNECTION_CHARACTER_REQUIRED = "Um bei %s spielen zu können, müssen Sie mindestens einen Charakter erstellen.",
-    CONNECTION_BUTTON_CREATE = "Erstelle einen neuen Charakter",
+    CONNECTION_BUTTON_CREATE = "Erstelle einen neuen Charakter.",
 
     CONNECTION_CHARACTER_CREATION_TITLE = "Erstelle einen neuen Charakter",
     CONNECTION_CHARACTER_CREATION_SEX = "Geschlecht",
