@@ -1,6 +1,7 @@
 ---@class NCS
 local NCS = {}
 NCS.ready = false
+NCS.resourceName = GetCurrentResourceName()
 
 ---getVersion
 ---@return any
