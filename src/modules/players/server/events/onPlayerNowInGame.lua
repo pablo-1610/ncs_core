@@ -20,6 +20,8 @@ NCS:registerNetEvent("nowInGame", function()
                 player.character:initialize(requireSpawn)
             end
         end)
+
+        MOD_Zones:subscribeToZones(player)
     end
 
     local function check()
