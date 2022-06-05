@@ -18,7 +18,7 @@ function API_Player:revive(PlayerId)
 		z = API_Maths.round(coords.z, 1)
 	}
 
-	RespawnPed(playerPed, formattedCoords, 0.0)
+	API_PED.respawnPed(playerPed, formattedCoords, 0.0)
 
 	DoScreenFadeIn(800)
 end
