@@ -25,9 +25,9 @@ function NCS:checkIsUpdate()
         end
         local ver <const> = API_Strings:split(lines[6], "'")[2]
         if (not (currentVersion == ver)) then
-            NCS:systemTrace("NCS Core is not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.ERROR)
+            NCS:trace("NCS Core is not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.ERROR)
         else
-            NCS:systemTrace(("NCS Core is up to date ^7! (%s)"):format(currentVersion), NCSEnum.LogType.INFO)
+            NCS:trace(("NCS Core is up to date ^7! (%s)"):format(currentVersion), NCSEnum.LogType.INFO)
         end
     end)
 end
@@ -59,16 +59,6 @@ end
 ---@public
 function NCS:traceError(message)
     self:trace(message, NCSEnum.LogType.ERROR)
-end
-
----nativeTrace
----@param message string
----@public
-function NCS:systemTrace(message)
-    if (getInvokingResource() ~= GetCurrentResourceName()) then
-        return
-    end
-    print(("(^1%s^7) [^6SYSTEM^7] %s"):format(self.resourceName, message))
 end
 
 ---die
