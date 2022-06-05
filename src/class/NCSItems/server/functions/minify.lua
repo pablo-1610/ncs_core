@@ -7,5 +7,6 @@ function NCSItems.minify(self)
         name = self.name,
         label = self.label,
         weight = self.weight,
+        data = self.data,
     }
 end

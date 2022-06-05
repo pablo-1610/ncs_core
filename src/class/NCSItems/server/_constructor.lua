@@ -16,10 +16,11 @@ setmetatable(NCSItems, {
         self.name = name
         self.label = label
         self.weight = weight
+        self.inventoryName = {}
 
         self.export = function()
-            return (API_Tables:exportMetatable(self, function(role)
-                return (MOD_Items:get(role.name))
+            return (API_Tables:exportMetatable(self, function(item)
+                return (MOD_Items:get(item.name))
             end))
         end
 

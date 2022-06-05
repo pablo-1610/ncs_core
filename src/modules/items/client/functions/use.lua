@@ -1,4 +1,5 @@
 ---use
+---@param self NCSItems
 ---@param name string
 ---@return function
 ---@public
