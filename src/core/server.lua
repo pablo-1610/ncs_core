@@ -18,3 +18,10 @@ function NCS:onReady(callback)
         self:handleEvent("serverReady", callback)
     end
 end
+
+---onStop
+---@param callback function
+---@public
+function NCS:onStop(callback)
+    self:handleEvent("serverStopped", callback)
+end

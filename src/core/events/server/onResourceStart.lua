@@ -4,6 +4,6 @@ AddEventHandler("onResourceStart", function(resourceName)
     end
 
     NCS:checkIsUpdate()
-    NCS:trace("^3Invoking ^7NCS Core...")
+    NCS:trace("Starting NCS, please wait...", NCSEnum.LogType.INFO)
     NCS:triggerEvent("serverInvoked")
 end)

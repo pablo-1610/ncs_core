@@ -3,4 +3,5 @@ AddEventHandler("onResourceStop", function(resourceName)
         return
     end
     NCS:trace("^1Stopping ^7NCS Core...", NCSEnum.LogType.INFO)
+    NCS:triggerEvent("serverStopped")
 end)
