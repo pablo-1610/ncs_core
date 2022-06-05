@@ -22,9 +22,9 @@ function NCS:checkIsUpdate()
 
         local ver <const> = API_Strings:split(lines[6], "'")[2]
         if (not (currentVersion == ver)) then
-            NCS:coreTrace("NCS Core has not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.ERROR)
+            NCS:systemTrace("NCS Core is not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.ERROR)
         else
-            NCS:coreTrace(("NCS Core is up to date ^7! (%s)"):format(currentVersion), NCSEnum.LogType.INFO)
+            NCS:systemTrace(("NCS Core is up to date ^7! (%s)"):format(currentVersion), NCSEnum.LogType.INFO)
         end
     end)
 end
@@ -54,8 +54,8 @@ end
 ---nativeTrace
 ---@param message string
 ---@public
-function NCS:coreTrace(message)
-    print(("(^1NCS^7) [^6CORE^7] %s"):format(message))
+function NCS:systemTrace(message)
+    print(("(^1%s^7) [^6SYSTEM^7] %s"):format(self.resourceName, message))
 end
 
 ---die

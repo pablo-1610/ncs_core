@@ -1,4 +1,4 @@
-local LANG <const> = GetConvar("ncs_language", "en")
+local LANG <const> = GetConvar("ncs_lang", "en")
 local CONTENT <const> = LoadResourceFile("ncs_core", ("src/localization/locales/lang_%s.lua"):format(LANG))
 
 if (not (CONTENT)) then
