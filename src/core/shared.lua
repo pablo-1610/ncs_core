@@ -38,7 +38,8 @@ end
 ---@return void
 ---@public
 function NCS:trace(message, logLevelIndex)
-    local resourceDisplay <const> = (getInvokingResource() == GetCurrentResourceName() and "^1" or "^3")
+    local resName <const> = getInvokingResource()
+    local resourceDisplay <const> = (resName == GetCurrentResourceName() and "^9" or "^5")
     if (logLevelIndex) then
         local maxLogLevel <const> = NCSInternal.LogLevel or NCSEnum.LogType.INFO
         local logLevelData = NCSEnum._getLogTypeDisplayData(logLevelIndex)
@@ -48,10 +49,10 @@ function NCS:trace(message, logLevelIndex)
         if (logLevelIndex > maxLogLevel) then
             return
         end
-        print(("(%s^7) [%s^7] %s"):format(("%s%s"):format(resourceDisplay, GetInvokingResource()), ("%s%s"):format(logLevelData.displayColor, logLevelData.displayName), message))
+        print(("(%s^7) %s^7: %s"):format(("%s%s"):format(resourceDisplay, resName), ("%s%s"):format(logLevelData.displayColor, API_Strings:firstToUpper(logLevelData.displayName:lower())), message))
         return
     end
-    print(("(%s^7) %s"):format(("%s%s"):format(resourceDisplay, GetInvokingResource()), message))
+    print(("(%s^7) %s"):format(("%s%s"):format(resourceDisplay, resName), message))
 end
 
 ---traceError
