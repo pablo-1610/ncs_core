@@ -4,7 +4,7 @@ NCS.ready = false
 NCS.resourceName = GetCurrentResourceName()
 
 local function getInvokingResource()
-    return (GetInvokingResource() == nil and NCS.resourceName or GetInvokingResource())
+    return ((GetInvokingResource() == nil and NCS.resourceName or GetInvokingResource()):lower())
 end
 
 local function safePrint(text)
