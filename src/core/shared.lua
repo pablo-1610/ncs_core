@@ -29,9 +29,9 @@ function NCS:checkIsUpdate()
         end
         local ver <const> = API_Strings:split(lines[6], "'")[2]
         if (not (currentVersion == ver)) then
-            NCS:trace("NCS Core is not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.ERROR)
+            NCS:trace("A new version of NCS is available, you can download it here: ^0https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.WARNING)
         else
-            NCS:trace(("NCS Core is up to date ^7! (%s)"):format(currentVersion), NCSEnum.LogType.INFO)
+            NCS:trace(("Your version of NCS is up to date (^0v%s^7)"):format(currentVersion), NCSEnum.LogType.INFO)
         end
     end)
 end
