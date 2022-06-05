@@ -1,7 +1,8 @@
 ---minify
 ---@return table
 ---@public
-function NCSPlayer:minify()
+---@param self NCSPlayer
+function NCSPlayer.minify(self)
     return {
         id = self.id,
         serverId = self.serverId,

@@ -1,7 +1,8 @@
 ---minify
 ---@return table
 ---@public
-function NCSCharacter:minify()
+---@param self NCSCharacter
+function NCSCharacter.minify(self)
     return {
         id = self.id,
         identity = self.identity,

@@ -2,7 +2,8 @@
 ---@param characterId string
 ---@param callback function
 ---@public
-function NCSPlayer:setCharacterByIdentifier(characterId, callback)
+---@param self NCSPlayer
+function NCSPlayer.setCharacterByIdentifier(self, characterId, callback)
     API_Database:query("SELECT * FROM ncs_players_characters WHERE character_id = @character_id", {
         ["@character_id"] = characterId
     }, function(rows)

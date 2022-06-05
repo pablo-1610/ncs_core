@@ -47,9 +47,9 @@ CREATE TABLE `ncs_inventories`
 CREATE TABLE `ncs_players`
 (
     `player_identifier` varchar(80) NOT NULL,
-    `role_identifier`   varchar(30) NOT NULL,
-    `last_source`       int(11)     NOT NULL,
-    `last_character_id` int(11)     NOT NULL
+    `role_identifier`   varchar(30) DEFAULT NULL,
+    `last_source`       int(11)     DEFAULT NULL,
+    `last_character_id` int(11)     DEFAULT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
@@ -108,7 +108,7 @@ CREATE TABLE `ncs_roles_permissions`
 
 --
 -- Structure de la table `ncs_bans`
----
+--
 CREATE TABLE `ncs_bans` (
   `ban_id` varchar(255) NOT NULL,
   `license` varchar(80) NOT NULL,

@@ -8,16 +8,20 @@ NCS:registerNetEvent("nowInGame", function()
 
         player.inGame = true
         player:setLastSource(_src)
-        player:sendData()
 
         NCS:trace(("Player id ^2%s ^7(^2%s^7) is now ^2online ^7with character ^2%i ^7(^2%s^7)"):format(player.serverId, player.name, player.character.id, player.character:getFullName()))
         NCS:triggerEvent("playerNowInGame", _src, needToCreateSkin)
 
-        if (needToCreateSkin) then
-            player.character:warpToCharacterCustomization(requireSpawn)
-        else
-            player.character:initialize(requireSpawn)
-        end
+        player:onDataLoaded(function()
+            player:sendData()
+            if (needToCreateSkin) then
+                player.character:warpToCharacterCustomization(requireSpawn)
+            else
+                player.character:initialize(requireSpawn)
+            end
+        end)
+
+        MOD_Zones:subscribeToZones(player)
     end
 
     local function check()

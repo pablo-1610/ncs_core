@@ -41,6 +41,7 @@ shared_scripts {
     "src/modules/**/shared/*.lua",
     "src/modules/**/shared/functions/*.lua",
     "src/modules/**/shared/events/*.lua",
+    "src/modules/**/shared/tasks/*.lua",
 }
 
 server_scripts {
@@ -58,6 +59,7 @@ server_scripts {
     "src/modules/**/server/*.lua",
     "src/modules/**/server/functions/*.lua",
     "src/modules/**/server/events/*.lua",
+    "src/modules/**/server/tasks/*.lua"
 }
 
 client_scripts {
@@ -73,6 +75,7 @@ client_scripts {
     "src/modules/**/client/*.lua",
     "src/modules/**/client/functions/*.lua",
     "src/modules/**/client/events/*.lua",
+    "src/modules/**/client/tasks/*.lua"
 }
 
 --[[
@@ -83,6 +86,7 @@ shared_scripts {
     -- NCS Export
     "src/core/export.lua",
     "src/api/**/_export.lua",
+    "src/modules/**/_export.lua",
 };
 
 --[[
@@ -99,6 +103,6 @@ shared_script "test/shared.lua"
 
 ui_page "src/web/dist/index.html"
 files {
-    "src-web/dist/index.html",
-    "src-web/dist/**/*"
+    "src/web/dist/index.html",
+    "src/web/dist/**/*"
 }

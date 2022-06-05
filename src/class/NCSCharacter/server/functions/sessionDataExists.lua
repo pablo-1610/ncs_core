@@ -2,6 +2,7 @@
 ---@param key string
 ---@return boolean
 ---@public
-function NCSCharacter:sessionDataExists(key)
+---@param self NCSCharacter
+function NCSCharacter.sessionDataExists(self, key)
     return (self.sessionData[key] ~= nil)
 end

@@ -4,10 +4,13 @@
 ---@field public inGame boolean
 ---@field public role NCSRole
 ---@field public character NCSCharacter
+---@field public dataLoaded boolean
+---@field public sayHello function
 ---@class NCSPlayer
 NCSPlayer = {}
+NCSPlayer.className = "NCSPlayer"
 
-local __instance = {
+local meta<const> = {
     __index = NCSPlayer,
 
     __eq = function(a, b)
@@ -16,17 +19,22 @@ local __instance = {
 
     __tostring = function(self)
         return ("%s [%s]"):format(self.name, self.id)
-    end
+    end,
 }
 
 setmetatable(NCSPlayer, {
     __call = function(_, serverId)
-        local self = setmetatable({}, __instance)
+        local self = setmetatable({}, meta)
+
+        --[[
+            Variables
+        --]]
 
         self.serverId = serverId
         self.identifier = API_Player:getIdentifier(self.serverId)
         self.name = API_Player:getName(self.serverId)
         self.inGame = false
+        self.dataLoaded = false
 
         API_Database:query("SELECT role_identifier FROM ncs_players WHERE player_identifier = @player_identifier", {
             ["@player_identifier"] = self.identifier
@@ -41,7 +49,14 @@ setmetatable(NCSPlayer, {
             end
 
             self.role = MOD_Roles:get(roleIdentifier)
+            self.dataLoaded = true
         end)
+
+        --[[
+            Functions
+        --]]
+
+        API_Tables:exportMetatable(NCSPlayer, self)
 
         return (self)
     end

@@ -13329,7 +13329,7 @@ var require_connection_config = __commonJS({
                     if (!Object.prototype.hasOwnProperty.call(options, key))
                         continue;
                     if (validOptions[key] !== 1) {
-                        emit("ncs_core:trace", "Invalid MySQL configuration, please set a ^0ncs_sql_connection ^7in the server.cfg !", 5)
+                        emit("ncs_core:trace", "Invalid MySQL configuration, please set a ^0ncs_sql_connection ^7in the server.cfg !", 4)
                     }
                 }
                 this.isServer = options.isServer;
@@ -22521,10 +22521,10 @@ setTimeout(() => {
     }));
     pool.query(mysql_transaction_isolation_level, (err) => {
         if (err) {
-            emit("ncs_core:trace", "Unable to establish a connection to the database.", 5)
+            emit("ncs_core:trace", "Unable to establish a connection to the database.", 4)
             return;
         }
-        emit("ncs_core:trace", "Database connection ^2established^7.", 2)
+        emit("ncs_core:trace", "Database connection ^2established^7.", 3)
         setTimeout(() => {
             emit("ncs_core:dbConnected")
         }, 200);

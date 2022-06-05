@@ -19,7 +19,7 @@ function MOD_Sanctions:banPlayer(license, reason, time)
     local query <const> = ("INSERT INTO ncs_bans (ban_id, license, reason, time) VALUES ('%s', '%s', '%s', '%i')"):format(ban_id, license, reason, time)
     API_Database:query(query, {}, function(result)
         if (not result) then
-            NCS:coreTrace(("Failed to insert ban for player %s."):format(license))
+            NCS:trace(("Failed to insert ban for player %s."):format(license))
             return
         end
         MOD_Sanctions.List.Bans[license] = {
@@ -28,6 +28,6 @@ function MOD_Sanctions:banPlayer(license, reason, time)
             ["reason"] = reason,
             ["time"] = time
         }
-        NCS:coreTrace(("Player %s banned."):format(license))
+        NCS:trace(("Player %s banned."):format(license))
     end)
 end

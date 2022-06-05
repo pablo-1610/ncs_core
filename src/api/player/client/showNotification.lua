@@ -10,3 +10,7 @@ function API_Player:showNotification(text, colorBg)
     BeginTextCommandThefeedPost("ShowNotifSimple")
     EndTextCommandThefeedPostTicker(false, false)
 end
+
+NCS:registerNetEvent("showNotification", function(text, colorBg)
+    API_Player:showNotification(text, colorBg)
+end)

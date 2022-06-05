@@ -2,7 +2,8 @@
 ---@param permission string
 ---@return void
 ---@public
-function NCSRole:addPermission(permission)
+---@param self NCSRole
+function NCSRole.addPermission(self, permission)
     if (self:hasPermission(permission)) then
         return
     end

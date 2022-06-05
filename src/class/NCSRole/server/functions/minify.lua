@@ -1,7 +1,8 @@
 ---minify
 ---@return table
 ---@public
-function NCSRole:minify()
+---@param self NCSRole
+function NCSRole.minify(self)
     return {
         identifier = self.identifier,
         label = self.label,

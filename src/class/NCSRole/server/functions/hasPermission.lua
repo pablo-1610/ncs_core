@@ -2,6 +2,7 @@
 ---@param permission string
 ---@return boolean
 ---@public
-function NCSRole:hasPermission(permission)
+---@param self NCSRole
+function NCSRole.hasPermission(self, permission)
     return (self.permissions[permission] ~= nil)
 end

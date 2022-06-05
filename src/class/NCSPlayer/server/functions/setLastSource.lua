@@ -1,6 +1,7 @@
 ---setLastSource
 ---@param source number
 ---@public
-function NCSPlayer:setLastSource(source)
+---@param self NCSPlayer
+function NCSPlayer.setLastSource(self, source)
     MOD_Players:setLastSource(self.identifier, source)
 end

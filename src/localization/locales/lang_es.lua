@@ -1,14 +1,23 @@
 _Literals = {
-    ERROR_ALREADY_CONNECTED = "Ya está conectado",
-    ERROR_SERVER_IDENTIFICATION_METHOD_BROKEN = "El método de identificación del servidor está roto. Por favor, póngase en contacto con el propietario del servidor",
-    ERROR_SERVER_CHARACTER_CREATION_FAILED = "La creación del personaje ha fallado. Por favor, reintente o contacte con el personal del servidor",
+    TYPE_ERROR = "ERROR",
+    TYPE_WARNING = "PUBLICIDAD",
+    TYPE_INFO = "INFORMACIÓN",
+    TYPE_DEBUG = "DEPURAR",
 
+    ERROR_ALREADY_CONNECTED = "Ya está conectado.",
+    ERROR_SERVER_IDENTIFICATION_METHOD_BROKEN = "El método de identificación del servidor está roto. Por favor, póngase en contacto con el propietario del servidor.",
+    ERROR_SERVER_CHARACTER_CREATION_FAILED = "La creación del personaje ha fallado. Por favor, reintente o contacte con el personal del servidor.",
+    ERROR_SERVER_STARTING_UP = "El servidor se está iniciando. Por favor, espere.",
+    ERROR_CRITICAL_HAPPENED = "Se ha producido un error crítico. Por favor, intente conectarse de nuevo.",
+    ERROR_MISSING_RANK_PERMISSION = "No tienes permiso para hacerlo.",
+
+    CONNECTION_ABORTED = "Conexión cancelada, inténtalo de nuevo.",
     CONNECTION_RETRIEVING_CHARACTERS = "Recuperando personajes...",
     CONNECTION_RETRIEVING_PLAYER_DATA = "Recuperando datos del jugador...",
 
     CONNECTION_WELCOME_MESSAGE = "Bienvenido a %s",
-    CONNECTION_CHARACTER_REQUIRED = "Para jugar en %s, debes crear al menos un personaje",
-    CONNECTION_BUTTON_CREATE = "Crea un nuevo personaje",
+    CONNECTION_CHARACTER_REQUIRED = "Para jugar en %s, debes crear al menos un personaje.",
+    CONNECTION_BUTTON_CREATE = "Crea un nuevo personaje.",
 
     CONNECTION_CHARACTER_CREATION_TITLE = "Crea un nuevo personaje",
     CONNECTION_CHARACTER_CREATION_SEX = "Sexo",

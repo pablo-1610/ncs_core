@@ -2,7 +2,8 @@
 ---@param newCharacter NCSCharacter
 ---@param callback function
 ---@public
-function NCSPlayer:setCharacter(newCharacter, callback)
+---@param self NCSPlayer
+function NCSPlayer.setCharacter(self, newCharacter, callback)
     self.character = newCharacter
 
     if (callback) then

@@ -27,8 +27,13 @@ local function canStart()
 end
 
 local function start()
+    if (not (NCSInternal.OneSync)) then
+        NCS:trace("OneSync is required to start NCS !", NCSEnum.LogType.ERROR)
+        NCS:trace("Please enable OneSync in your server config file with the following line: \"^0set onesync on^7\"", NCSEnum.LogType.ERROR)
+        return
+    end
     NCS.ready = true
-    NCS:coreTrace("The NCS ^2server^7 core is ready !")
+    NCS:trace("The NCS ^2server^7 core is ready !", NCSEnum.LogType.INFO)
     NCS:triggerEvent("serverReady")
 end
 

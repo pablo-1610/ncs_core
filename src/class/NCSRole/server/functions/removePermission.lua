@@ -2,7 +2,8 @@
 ---@param permission string
 ---@return void
 ---@public
-function NCSRole:removePermission(permission)
+---@param self NCSRole
+function NCSRole.removePermission(self, permission)
     if (not self:hasPermission(permission)) then
         return
     end
