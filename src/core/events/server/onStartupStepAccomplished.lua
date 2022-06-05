@@ -28,7 +28,7 @@ end
 
 local function start()
     NCS.ready = true
-    NCS:coreTrace("The NCS ^2server^7 core is ready !")
+    NCS:systemTrace("The NCS ^2server^7 core is ready !")
     NCS:triggerEvent("serverReady")
 end
 

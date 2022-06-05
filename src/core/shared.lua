@@ -1,6 +1,7 @@
 ---@class NCS
 local NCS = {}
 NCS.ready = false
+NCS.resourceName = GetCurrentResourceName()
 
 ---getVersion
 ---@return any
@@ -15,16 +16,14 @@ function NCS:checkIsUpdate()
     PerformHttpRequest("https://raw.githubusercontent.com/NextCitizens/ncs_core/main/fxmanifest.lua", function(_, resultData, _)
         local currentVersion <const> = NCS:getVersion()
         local lines = {}
-
         for s in resultData:gmatch("[^\r\n]+") do
             lines[#lines + 1] = s
         end
-
         local ver <const> = API_Strings:split(lines[6], "'")[2]
         if (not (currentVersion == ver)) then
-            NCS:coreTrace("NCS Core has not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.ERROR)
+            NCS:systemTrace("NCS Core is not up to date ^3please update -> https://github.com/NextCitizens/ncs_core ^7!", NCSEnum.LogType.ERROR)
         else
-            NCS:coreTrace(("NCS Core is up to date ^7! (%s)"):format(currentVersion), NCSEnum.LogType.INFO)
+            NCS:systemTrace(("NCS Core is up to date ^7! (%s)"):format(currentVersion), NCSEnum.LogType.INFO)
         end
     end)
 end
@@ -41,7 +40,8 @@ function NCS:trace(message, logLevelIndex)
     if (logLevelIndex > maxLogLevel) then
         return
     end
-    print(("(^1NCS^7) [%s^7] %s"):format(("%s%s"):format(logLevelData.displayColor, logLevelData.displayName), message))
+    local resourceDisplay <const> = (GetInvokingResource() == GetCurrentResourceName() and "^1" or "^3")
+    print(("(%s^7) [%s^7] %s"):format(("%s%s"):format(resourceDisplay, GetInvokingResource()), ("%s%s"):format(logLevelData.displayColor, logLevelData.displayName), message))
 end
 
 ---traceError
@@ -54,8 +54,8 @@ end
 ---nativeTrace
 ---@param message string
 ---@public
-function NCS:coreTrace(message)
-    print(("(^1NCS^7) [^6CORE^7] %s"):format(message))
+function NCS:systemTrace(message)
+    print(("(^1%s^7) [^6SYSTEM^7] %s"):format(self.resourceName, message))
 end
 
 ---die

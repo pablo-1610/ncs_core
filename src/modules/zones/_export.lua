@@ -1,0 +1,1 @@
+_G.NCS.Zones = MOD_Zones
