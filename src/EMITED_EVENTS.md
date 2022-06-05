@@ -6,13 +6,14 @@
 
 ### Server
 
-|      Event      |                                   Description                                    |                           Variables                           |
-|:---------------:|:--------------------------------------------------------------------------------:|:-------------------------------------------------------------:|
-|  databaseReady  |                             Emited when db is ready                              |                                                               |
-|  serverInvoked  |                      Emited when the server is starting up                       |                                                               |
-|   serverReady   | Emited when the server is ready to server<br/>and all components has been loaded |                                                               |
-|  playerJoining  |                  Emited when a player reach the loading screen                   |              `_src`, `identifier`, `characterId`              |
-| playerNowInGame |      Emited when a player finished the loading screen and game initialized       |                  `_src`, `needToCreateSkin`                   |
+|      Event      |                                   Description                                    |              Variables              |
+|:---------------:|:--------------------------------------------------------------------------------:|:-----------------------------------:|
+|  databaseReady  |                             Emited when db is ready                              |                                     |
+|  serverInvoked  |                      Emited when the server is starting up                       |                                     |
+|   serverReady   | Emited when the server is ready to server<br/>and all components has been loaded |                                     |
+|  serverStopped  |                            Emited when NCS shut down                             |                                     |
+|  playerJoining  |                  Emited when a player reach the loading screen                   | `_src`, `identifier`, `characterId` |
+| playerNowInGame |      Emited when a player finished the loading screen and game initialized       |     `_src`, `needToCreateSkin`      |
 
 <hr>
 
