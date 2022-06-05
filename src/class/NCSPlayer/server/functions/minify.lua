@@ -9,6 +9,7 @@ function NCSPlayer.minify(self)
         identifier = self.identifier,
         name = self.name,
         role = self.role:minify(),
-        character = self.character:minify()
+        character = self.character:minify(),
+        isDead = self.isDead
     }
 end
