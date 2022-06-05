@@ -50,7 +50,7 @@ CREATE TABLE `ncs_players`
     `role_identifier`   varchar(30) DEFAULT NULL,
     `last_source`       int(11)     DEFAULT NULL,
     `last_character_id` int(11)     DEFAULT NULL,
-    `is_dead`           int(1)      DEFAULT NULL,
+    `is_dead`           int(1)      DEFAULT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
