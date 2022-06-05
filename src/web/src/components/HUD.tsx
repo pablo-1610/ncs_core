@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import receiveNuiEvent from "../providers/receiveNuiEvent"
-import hourImage from "../assets/images/hour.png"
+import timeImage from "../assets/images/hour.png"
 import hungerImage from "../assets/images/hunger.png"
 import thirstImage from "../assets/images/thirst.png"
 import moneyImage from "../assets/images/money.png"
@@ -40,29 +40,33 @@ function HUD() {
          <div className="container">
             <div className="container-top">
                <div className="thirst">
-                  <img src={thirstImage} alt="" />
+                  <img src={thirstImage} alt="thirst image" />
+
                   <div className="thirstvalue">{thirst}</div>
                </div>
       
                <div className="hunger">
-                  <img src={hungerImage} alt="" />
+                  <img src={hungerImage} alt="hunger image" />
+
                   <div className="hungervalue">{hunger}</div>
                </div>
       
                <div className="time">
-                  <img src={hourImage} alt="" />
-                  <div className="_">
+                  <img src={timeImage} alt="time image" />
+                  
+                  <div>
                      <div className="hourValue">
-                     {hours.getHours()}:
-                     {(hours.getMinutes() < 10 ? "0" : "") + hours.getMinutes()}
+                        { hours.getHours() }:
+                        { (hours.getMinutes() < 10 ? "0" : "") + hours.getMinutes() }
                      </div>
+
                      <div className="dateValue">
-                     {date.getFullYear() +
-                        "-" +
-                        (date.getMonth() + 1 < 10 ? "0" : "") +
-                        (date.getMonth() + 1) +
-                        "-" +
-                        date.getDate()}
+                        { date.getFullYear() +
+                           "-" +
+                           (date.getMonth() + 1 < 10 ? "0" : "") +
+                           (date.getMonth() + 1) +
+                           "-" +
+                           date.getDate() }
                      </div>
                   </div>
                </div>
@@ -71,7 +75,8 @@ function HUD() {
    
          <div className="container-bottom">
             <div className="moneyvalue">{money}</div>
-            <img src={moneyImage} alt="" />
+
+            <img src={moneyImage} alt="money image" />
          </div>
       </>
    )
