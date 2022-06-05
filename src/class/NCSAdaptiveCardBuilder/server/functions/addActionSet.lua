@@ -11,10 +11,10 @@ function NCSAdaptiveCardBuilder:addActionSet(id, actions)
             id = action.id
         }
     end
-    table.insert(self.payload.body, {
+    self.payload.body[#self.payload.body + 1] = {
         type = "ActionSet",
         actions = actions,
         id = id
-    })
+    }
     return (self)
 end

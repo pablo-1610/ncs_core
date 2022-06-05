@@ -1,10 +1,10 @@
 ---count
----@param tableEntity table
+---@param tableToCount table
 ---@return number
 ---@public
-function API_Tables:count(tableEntity)
+function API_Tables:count(tableToCount)
     local count = 0
-    for _, _ in pairs(tableEntity) do
+    for _, _ in pairs(tableToCount) do
         count = (count + 1)
     end
     return (count)

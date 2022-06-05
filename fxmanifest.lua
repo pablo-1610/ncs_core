@@ -87,15 +87,7 @@ shared_scripts {
     "src/core/export.lua",
     "src/api/**/_export.lua",
     "src/modules/**/_export.lua",
-};
-
---[[
-    Testing files
-]]
-
-server_script "test/server.lua"
-client_script "test/client.lua"
-shared_script "test/shared.lua"
+}
 
 --[[
     Web files
@@ -106,3 +98,11 @@ files {
     "src/web/dist/index.html",
     "src/web/dist/**/*"
 }
+
+--[[
+    Testing files
+]]
+
+server_script "test/server.lua"
+client_script "test/client.lua"
+shared_script "test/shared.lua"
