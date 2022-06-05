@@ -1,6 +1,7 @@
 ---setLastSource
 ---@param identifier string
 ---@param source number
+---@return void
 ---@public
 function MOD_Players:setLastSource(identifier, source)
     API_Database:query("UPDATE ncs_players SET last_source = @last_source WHERE player_identifier = @player_identifier", {

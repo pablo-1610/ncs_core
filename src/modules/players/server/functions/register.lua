@@ -1,6 +1,7 @@
 ---register
 ---@param identifier string
 ---@param callback function
+---@return void
 ---@public
 function MOD_Players:register(identifier, callback)
     API_Database:insert("INSERT INTO ncs_players (player_identifier) VALUES (@player_identifier)", {

@@ -3,6 +3,7 @@
 ---@param defaultKey string
 ---@param desc string
 ---@param callback function
+---@return void
 ---@public
 function MOD_KeyBinds:bind(name, defaultKey, desc, callback)
     local cmd = ("ncs_%s"):format(name)
