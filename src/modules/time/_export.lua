@@ -1,0 +1,1 @@
+_G.NCS.Time = MOD_Time
