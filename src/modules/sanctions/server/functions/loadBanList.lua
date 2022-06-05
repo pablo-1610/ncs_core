@@ -1,5 +1,5 @@
 ---loadBanList
----return void
+---@public
 function MOD_Sanctions:loadBanList()
     API_Database:query("SELECT * FROM ncs_bans", {}, function(result)
         for _, rows in pairs(result) do
