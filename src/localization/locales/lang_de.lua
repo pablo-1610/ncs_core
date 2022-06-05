@@ -11,7 +11,7 @@ _Literals = {
     ERROR_CRITICAL_HAPPENED = "Es ist ein kritischer Fehler aufgetreten. Bitte versuchen Sie erneut, eine Verbindung herzustellen.",
     ERROR_MISSING_RANK_PERMISSION = "Sie haben nicht die Erlaubnis, dies zu tun.",
 
-    CONNECTION_ABORTED = "Connexion annulée, veuillez réessayer.",
+    CONNECTION_ABORTED = "Verbindung abgebrochen, bitte versuchen Sie es erneut.",
     CONNECTION_RETRIEVING_CHARACTERS = "Charaktere abrufen...",
     CONNECTION_RETRIEVING_PLAYER_DATA = "Abrufen von Spielerdaten...",
 
