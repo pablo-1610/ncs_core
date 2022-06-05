@@ -7,6 +7,10 @@ local function getInvokingResource()
     return (GetInvokingResource() == nil and NCS.resourceName or GetInvokingResource())
 end
 
+local function safePrint(text)
+    print((("%s^7"):format(text)))
+end
+
 ---getVersion
 ---@return any
 ---@public
@@ -49,10 +53,10 @@ function NCS:trace(message, logLevelIndex)
         if (logLevelIndex > maxLogLevel) then
             return
         end
-        print(("(%s^7) %s^7: %s"):format(("%s%s"):format(resourceDisplay, resName), ("%s%s"):format(logLevelData.displayColor, API_Strings:firstToUpper(logLevelData.displayName:lower())), message))
+        safePrint(("(%s^7) %s^7: %s"):format(("%s%s"):format(resourceDisplay, resName), ("%s%s"):format(logLevelData.displayColor, API_Strings:firstToUpper(logLevelData.displayName:lower())), message))
         return
     end
-    print(("(%s^7) %s"):format(("%s%s"):format(resourceDisplay, resName), message))
+    safePrint(("(%s^7) %s"):format(("%s%s"):format(resourceDisplay, resName), message))
 end
 
 ---traceError
