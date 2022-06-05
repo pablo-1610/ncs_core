@@ -20,6 +20,7 @@ end
 
 ---checkIsUpdate
 ---@public
+---@return void
 function NCS:checkIsUpdate()
     PerformHttpRequest("https://raw.githubusercontent.com/NextCitizens/ncs_core/main/fxmanifest.lua", function(_, resultData, _)
         local currentVersion <const> = NCS:getVersion()
@@ -61,6 +62,7 @@ end
 
 ---traceError
 ---@param message string
+---@return void
 ---@public
 function NCS:traceError(message)
     self:trace(message, NCSEnum.LogType.ERROR)
@@ -68,6 +70,7 @@ end
 
 ---die
 ---@param reason string
+---@return void
 ---@public
 function NCS:die(reason)
     error(("(NCS) %s"):format(reason))
@@ -77,6 +80,7 @@ local registeredEvents = {}
 
 ---registerNetEvent
 ---@param eventName string
+---@return void
 ---@public
 function NCS:registerNetEvent(eventName, ...)
     if not (registeredEvents[eventName]) then
@@ -88,6 +92,7 @@ end
 ---handleEvent
 ---@param eventName string
 ---@param callback function
+---@return void
 ---@public
 function NCS:handleEvent(eventName, callback)
     AddEventHandler(self:formatEvent(eventName), callback)
@@ -95,6 +100,7 @@ end
 
 ---triggerEvent
 ---@param eventName string
+---@return void
 ---@public
 function NCS:triggerEvent(eventName, ...)
     TriggerEvent(self:formatEvent(eventName), ...)
@@ -102,6 +108,7 @@ end
 
 ---formatEvent
 ---@param eventName string
+---@return void
 ---@public
 function NCS:formatEvent(eventName)
     return (("ncs:%s"):format(GetHashKey(eventName)))
