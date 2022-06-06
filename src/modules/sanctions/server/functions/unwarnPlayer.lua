@@ -7,7 +7,7 @@ function MOD_Sanctions:unwarnPlayer(warn_id, license)
         NCS:trace("You need to specify a warn_id and a license.")
         return
     end
-    local query = ("DELETE FROM ncs_warns WHERE warn_id = '%s' AND license = '%s'"):format(warn_id, license)
+    local query <const> = ("DELETE FROM ncs_warns WHERE warn_id = '%s' AND license = '%s'"):format(warn_id, license)
     API_Database:query(query, {}, function(result)
         if (not result) then
             NCS:trace(("Failed to delete warn for player %s."):format(license))
