@@ -8,6 +8,6 @@ function MOD_Items:addUsable(itemName, callback)
             callback = callback
         }
     else
-        NCS:die('Item <' .. itemName .. '> does not exist.')
+        NCS:die(("Item <%s> does not exist."):format(itemName))
     end
 end
