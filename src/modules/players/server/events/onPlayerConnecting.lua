@@ -145,7 +145,7 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
             local characterButtons <const> = {}
             for _, character in pairs(characters) do
                 local characterIdentity <const> = json.decode(character.identity)
-                table.insert(characterButtons, NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, (_Literals.CONNECTION_CHARACTER_SELECTION_BUTTON):format(("%s %s"):format(characterIdentity.firstname, characterIdentity.lastname)), tostring(character.character_id)))
+                characterButtons[#characterButtons + 1] = NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, (_Literals.CONNECTION_CHARACTER_SELECTION_BUTTON):format(("%s %s"):format(characterIdentity.firstname, characterIdentity.lastname)), tostring(character.character_id))
             end
             local adaptiveCard <const> = NCSAdaptiveCardBuilder():addTitle(_Literals.CONNECTION_CHARACTER_SELECTION_TITLE):addActionSet("selection", characterButtons)
             connection.presentCard(adaptiveCard:build(), function(data)
@@ -160,7 +160,7 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
             local actions <const> = { NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_SELECT_FETCH_BUTTON, "fetch") }
 
             if (#characters < GetConvarInt("ncs_max_characters", 2)) then
-                table.insert(actions, NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_SELECT_CREATE_BUTTON, "create"))
+                actions[#actions + 1] = NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_CHARACTER_SELECT_CREATE_BUTTON, "create")
             end
 
             local adaptiveCard <const> = NCSAdaptiveCardBuilder()
