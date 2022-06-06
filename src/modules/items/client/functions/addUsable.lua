@@ -3,7 +3,6 @@
 ---@param callback function
 ---@return void
 function MOD_Items:addUsable(itemName, callback)
-    Wait(250)
     if MOD_Items.list[itemName] then
         MOD_Items.usable[itemName] = {
             callback = callback
