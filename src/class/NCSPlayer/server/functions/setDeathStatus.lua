@@ -1,7 +1,9 @@
 ---setDeathStatus
----@param DeadStatus boolean
----@public
 ---@param self NCSPlayer
+---@param source number
+---@param DeadStatus boolean
+---@param DeathData table
+---@public
 function NCSPlayer.setDeathStatus(self, source, DeadStatus, DeathData)
     self.isDead = DeadStatus
     self.deathData = DeathData

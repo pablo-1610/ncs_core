@@ -29,7 +29,6 @@ function API_Player:spawn(coords, callback)
 
         NetworkResurrectLocalPlayer(position.x, position.y, position.z, heading, true, true, false)
 
-        API_Ped:setInvincible(ped, false)
         ClearPedBloodDamage(ped)
         ClearPedTasksImmediately(ped)
         RemoveAllPedWeapons(ped)
