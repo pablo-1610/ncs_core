@@ -14,16 +14,15 @@ function MOD_Sanctions:banPlayer(license, reason, time)
 
     time = API_Maths:unformatTime(time)
     time = API_Maths:addTimeToUnix(time)
-    local ban_id <const> = ("BAN-%s-%s"):format(API_Strings:randomString(3), API_Strings:randomString(5))
 
-    local query <const> = ("INSERT INTO ncs_bans (ban_id, license, reason, time) VALUES ('%s', '%s', '%s', '%i')"):format(ban_id, license, reason, time)
+    local query <const> = ("INSERT INTO ncs_bans (license, reason, time) VALUES ('%s', '%s', '%i')"):format(license, reason, time)
     API_Database:query(query, {}, function(result)
         if (not result) then
             NCS:trace(("Failed to insert ban for player %s."):format(license))
             return
         end
         MOD_Sanctions.List.Bans[license] = {
-            ["ban_id"] = ban_id,
+            ["id"] = result.insertId,
             ["license"] = license,
             ["reason"] = reason,
             ["time"] = time

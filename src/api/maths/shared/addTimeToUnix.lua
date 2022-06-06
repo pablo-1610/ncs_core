@@ -1,4 +1,4 @@
----unformatTime
+---addTimeToUnix
 ---@param seconds number
 ---@return number
 ---@public
