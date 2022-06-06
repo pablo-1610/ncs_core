@@ -24,12 +24,13 @@ function API_Player:spawn(coords, callback)
 
         local ped <const> = PlayerPedId()
 
-        -- V requires setting coords as well
         SetEntityCoordsNoOffset(ped, position.x, position.y, position.z, false, false, false, true)
         SetEntityHeading(ped, heading)
 
         NetworkResurrectLocalPlayer(position.x, position.y, position.z, heading, true, true, false)
 
+        API_Ped:setInvincible(ped, false)
+        ClearPedBloodDamage(ped)
         ClearPedTasksImmediately(ped)
         RemoveAllPedWeapons(ped)
         ClearPlayerWantedLevel(PlayerId())

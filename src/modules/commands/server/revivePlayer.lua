@@ -1,5 +1,6 @@
 API_Commands.registerPermissionCommand("revive", "canRevive", function(player, args)
-    if (player.isDead) then
-        API_Player:revive(player.serverId)
+    if (not player.isDead) then
+      return NCS:trace("Player is not dead")
     end
-end)
+    API_Player:revive(player.serverId)
+end) 

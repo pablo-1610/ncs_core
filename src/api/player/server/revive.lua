@@ -2,8 +2,7 @@
 ---@param PlayerId number
 ---@public
 function API_Player:revive(PlayerId)
-    local PlayerPed = GetPlayerPed(PlayerId)
-    local coords = GetEntityCoords(playerPed)
+    local coords = GetEntityCoords(GetPlayerPed(PlayerId))
     NCSPlayer.setDeathStatus(PlayerId, 0, nil)
 
     DoScreenFadeOut(800)
@@ -13,12 +12,15 @@ function API_Player:revive(PlayerId)
 	end
 
 	local formattedCoords = {
-		x = API_Maths.round(coords.x, 1),
-		y = API_Maths.round(coords.y, 1),
-		z = API_Maths.round(coords.z, 1)
+		position = vector3( 
+			API_Maths.round(coords.x, 1), 
+			API_Maths.round(coords.y, 1), 
+			API_Maths.round(coords.z, 1) 
+			),
+		heading = 0.0
 	}
 
-	API_PED.respawnPed(playerPed, formattedCoords, 0.0)
+	API_Player:spawn(formattedCoords)
 
 	DoScreenFadeIn(800)
 end
