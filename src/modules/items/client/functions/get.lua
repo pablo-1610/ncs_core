@@ -3,6 +3,9 @@
 ---@return table
 ---@public
 function MOD_Items:getItem(name)
+    if (not (self.list[name])) then
+        return NCS:die(("Item not found: %s"):format(name))
+    end
     return self.list[name]
 end
 
