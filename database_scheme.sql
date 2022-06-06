@@ -109,8 +109,9 @@ CREATE TABLE `ncs_roles_permissions`
 --
 -- Structure de la table `ncs_bans`
 --
+
 CREATE TABLE `ncs_bans` (
-  `ban_id` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
   `license` varchar(80) NOT NULL,
   `reason` varchar(255) NOT NULL,
   `time` int(11) NOT NULL
@@ -120,11 +121,34 @@ CREATE TABLE `ncs_bans` (
 -- Index pour les tables déchargées
 --
 
+
+CREATE TABLE IF NOT EXISTS `ncs_items` (
+    `name` varchar(25) NOT NULL,
+    `label` varchar(25) NOT NULL,
+    `weight` int(11) NOT NULL,
+    PRIMARY KEY (`name`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `ncs_items` (`name`, `label`, `weight`) VALUES
+('bread', 'Bread', 1),
+ ('water', 'water', 1);
+
+
 --
 -- Index pour la table `ncs_bans`
 --
 ALTER TABLE `ncs_bans`
-  ADD PRIMARY KEY (`ban_id`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `ncs_bans`
+--
+ALTER TABLE `ncs_bans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 --
