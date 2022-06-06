@@ -1,7 +1,7 @@
 ---warpToCharacterCustomization
+---@param self NCSCharacter
 ---@param requireSpawn boolean
 ---@public
----@param self NCSCharacter
 function NCSCharacter.warpToCharacterCustomization(self, requireSpawn)
-    self.user:triggerEvent("invokeCharacterCreator", requireSpawn)
+    NCS:triggerEvent("playerWarpedToCharacterCreator", self.user.serverId, requireSpawn)
 end

@@ -1,6 +1,7 @@
 ---isPlayerBan
 ---@param license string
 ---@return boolean
+---@public
 function MOD_Sanctions:isPlayerBan(license)
     if (not license) then
         return (false)
