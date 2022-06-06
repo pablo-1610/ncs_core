@@ -13,7 +13,5 @@ function API_Player:revive(PlayerId)
 			),
 		heading = 0.0
 	}
-
 	API_Player:spawn(formattedCoords)
-
 end
