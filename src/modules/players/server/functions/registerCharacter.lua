@@ -17,19 +17,22 @@ end
 ---@param callback function
 ---@public
 function MOD_Players:registerCharacter(identifier, identity, callback)
-    if (validateData(identity)) then
-        API_Database:insert("INSERT INTO ncs_players_characters (player_identifier, identity, accounts, skin, metadata) VALUES (@player_identifier, @identity, @accounts, @skin, \"[]\")", {
-            ["player_identifier"] = identifier,
-            ["identity"] = json.encode(identity),
-            ["skin"] = NCSConstant.DefaultSkin,
-            ["accounts"] = json.encode(MOD_Config:getDefaultAccounts())
-        }, function(characterId)
-            if (callback) then
-                NCS:trace(("Character created by ^3%s ^7: ^3%s %s"):format(identifier, identity.firstname, identity.lastname))
-                callback(characterId)
-            end
-        end)
-    else
-        callback(nil)
+    if (not validateData(identity)) then 
+        if (callback) then 
+            callback(nil)
+        end
+        return
     end
+
+    API_Database:insert("INSERT INTO ncs_players_characters (player_identifier, identity, accounts, skin, metadata) VALUES (@player_identifier, @identity, @accounts, @skin, \"[]\")", {
+        ["player_identifier"] = identifier,
+        ["identity"] = json.encode(identity),
+        ["skin"] = NCSConstant.DefaultSkin,
+        ["accounts"] = json.encode(MOD_Config:getDefaultAccounts())
+    }, function(characterId)
+        if (callback) then
+            NCS:trace(("Character created by ^3%s ^7: ^3%s %s"):format(identifier, identity.firstname, identity.lastname))
+            callback(characterId)
+        end
+    end)
 end
