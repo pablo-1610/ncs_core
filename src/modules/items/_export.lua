@@ -1,0 +1,1 @@
+_G.NCS.Items = MOD_Items

@@ -121,6 +121,19 @@ CREATE TABLE `ncs_bans` (
 -- Index pour les tables déchargées
 --
 
+
+CREATE TABLE IF NOT EXISTS `ncs_items` (
+    `name` varchar(25) NOT NULL,
+    `label` varchar(25) NOT NULL,
+    `weight` int(11) NOT NULL,
+    PRIMARY KEY (`name`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `ncs_items` (`name`, `label`, `weight`) VALUES
+('bread', 'Bread', 1),
+ ('water', 'water', 1);
+
+
 --
 -- Index pour la table `ncs_bans`
 --
