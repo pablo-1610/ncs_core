@@ -3,7 +3,7 @@ NCS:handleEvent("nowInGame", function()
     local isDead = 0
     local waitTime = 1000
 
-    if (MOD_Players:get(_src).isDead) then
+    if (MOD_Players:get(_src).character.isDead) then
         isDead = 1
         waitTime = 100
 

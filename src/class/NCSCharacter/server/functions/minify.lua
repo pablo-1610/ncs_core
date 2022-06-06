@@ -9,6 +9,8 @@ function NCSCharacter.minify(self)
         skin = self.skin,
         accounts = self.accounts,
         lastPosition = self.lastPosition,
-        metadata = self.metadata
+        metadata = self.metadata,
+        is_dead = self.is_dead,
+        death_data = self.death_data
     }
 end

@@ -9,7 +9,7 @@ API_Commands:registerPermissionCommand("revive", "canRevive", function(player, a
     if not target then
         return (player:showSystemNotification(_Literals.TYPE_ERROR, NCSEnum.LogType.ERROR))
     end
-    if (not (target.isDead == 1)) then
+    if (not (target.character.isDead == 1)) then
         return (player:showSystemNotification(_Literals.ERROR_PLAYER_NOT_DEAD, NCSEnum.LogType.ERROR))
     end
 
@@ -23,7 +23,7 @@ API_Commands:registerPermissionCommand("revive", "canRevive", function(player, a
 		Wait(0)
 	end
 
-    NCSPlayer:setDeathStatus(target.serverId, 0, {})
+    NCSCharacter:setDeathStatus(target.serverId, 0, {})
     NCS:triggerClientEvent("ncs_core:revivePlayer", target.serverId, formattedCoords)
     NCS:trace(("Player id ^2%s ^7(^2%s^7) as been revive"):format(target.serverId, target.name), 3)
 end) 

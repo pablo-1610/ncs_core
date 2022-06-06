@@ -4,8 +4,6 @@ local PlayerData = {
     serverId = nil,
     identifier = nil,
     name = nil,
-    is_dead = nil,
-    death_data = {},
     role = {
         identifier = nil,
         label = nil,
@@ -18,6 +16,8 @@ local PlayerData = {
         skin = {},
         accounts = {},
         lastPosition = {},
-        metadata = {}
+        metadata = {},
+        is_dead = nil,
+        death_data = {},
     },
 }

@@ -68,7 +68,9 @@ CREATE TABLE `ncs_players_characters`
     `skin`              text DEFAULT NULL,
     `accounts`          text        NOT NULL,
     `last_position`     text DEFAULT NULL,
-    `metadata`          text        NOT NULL
+    `metadata`          text        NOT NULL,
+    `is_dead`           int(1)      DEFAULT NULL,
+    `death_cause`       text        DEFAULT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
