@@ -121,7 +121,6 @@ CREATE TABLE `ncs_bans` (
 --
 
 
--- Listage de la structure de table ncs_core. ncs_items
 CREATE TABLE IF NOT EXISTS `ncs_items` (
     `name` varchar(25) NOT NULL,
     `label` varchar(25) NOT NULL,
@@ -129,8 +128,6 @@ CREATE TABLE IF NOT EXISTS `ncs_items` (
     PRIMARY KEY (`name`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Listage des données de la table ncs_core.ncs_items : ~2 rows (environ)
-DELETE FROM `ncs_items`;
 INSERT INTO `ncs_items` (`name`, `label`, `weight`) VALUES
 ('bread', 'Bread', 1),
  ('water', 'water', 1);
