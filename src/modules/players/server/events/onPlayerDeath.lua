@@ -1,48 +1,47 @@
-NCS:handleEvent("NowInGame", function()
+NCS:handleEvent("nowInGame", function()
     local _src <const> = source
-    local NCSisDead = false
-    local waitTime = 850
+    local isDead = 0
+    local waitTime = 1000
+
+    -- if (MOD_Players:get(_src).isDead) then
+    --     isDead = 1
+    --     waitTime = 100
+
+
+    -- end
     
     while true do
-        if (NetworkIsPlayerActive(_src)) then
-            local PlayerPed <const> = GetPlayerPed(_src)
-
-            if IsPedFatallyInjured(PlayerPed) and not NCSisDead then
-                waitTime = 10
-                NCSisDead = true
+        if (MOD_Players:exists(_src)) then
+            local playerPed <const> = GetPlayerPed(_src)
+            if ((GetEntityHealth(playerPed) <= 0) and (isDead == 0)) then
+                waitTime = 100
+                isDead = 1
                 
-                local SourceKillerEntity <const>, SourceDeathCause <const> = GetPedSourceOfDeath(PlayerPed)
-                local SourceKillerClientId <const> = NetworkGetPlayerIndexFromPed(SourceKillerEntity)
-                local PlayerDeathCoords <const> = GetEntityCoords(PlayerPed)
-
-                if SourceKillerEntity ~= _src and SourceKillerClientId and NetworkIsPlayerActive(SourceKillerEntity) then
-                    local PlayerKillerCoords <const> = GetEntityCoords(SourceKillerEntity)
-                    local distance <const> = #(PlayerDeathCoords - PlayerKillerCoords)
-                    
-                    local PlayerDeathData = {
-                        ["PlayerDeathCoords"] = PlayerDeathCoords,
-                        ["PlayerDeathCause"] = SourceDeathCause,
-                        ["PlayerDeathTime"] = GetGameTimer(),
-                        ["KilledByPlayer"] = SourceKillerEntity,
-                        ["KillerClientId"] = SourceKillerClientId,
-                        ["KilledByPlayerCoords"] = PlayerKillerCoords,
-                        ["Distance"] = API_Maths.round(distance, 1)
+                local sourceKillerEntity <const>, sourceDeathCause <const> = GetPedSourceOfDeath(playerPed), GetPedCauseOfDeath(playerPed)
+                local playerDeathCoords <const> = GetEntityCoords(playerPed)
+                if sourceKillerEntity ~= _src and sourceKillerEntity  ~= 0 then
+                    local playerDeathData = {
+                        ["playerDeathCoords"] = playerDeathCoords,
+                        ["playerDeathCause"] = sourceDeathCause,
+                        ["playerDeathTime"] = GetGameTimer(),
+                        ["killerEntity"] = sourceKillerEntity
                     }
-                    NCSPlayer.setDeathStatus(_src, NCSisDead, PlayerDeathData)
+                    NCS:trace(("Player id ^2%s ^7(^2%s^7) as been killed by ^2%s ^7(^2%s^7)"):format(_src, MOD_Players:get(_src).name, sourceKillerEntity, MOD_Players:get(sourceKillerEntity).name), 3)
                 else
-                    local PlayerDeathData = {
-                        ["PlayerDeathCoords"] = PlayerDeathCoords,
-                        ["PlayerDeathCause"] = SourceDeathCause,
-                        ["PlayerDeathTime"] = GetGameTimer(),
-                        ["KilledByPlayer"] = false
+                    local playerDeathData = {
+                        ["playerDeathCoords"] = playerDeathCoords,
+                        ["playerDeathCause"] = sourceDeathCause,
+                        ["playerDeathTime"] = GetGameTimer(),
+                        ["killerEntity"] = false
                     }
-                    NCSPlayer.setDeathStatus(_src, NCSisDead, PlayerDeathData)
+                    NCS:trace(("Player id ^2%s ^7(^2%s^7) died without killer"):format(_src, MOD_Players:get(_src).name), 3)
                 end
-            elseif not IsPedFatallyInjured(PlayerPed) and NCSisDead then
-                waitTime = 0
-                NCSisDead = false
+                NCSPlayer:setDeathStatus(_src, isDead, playerDeathData)
+            elseif (GetEntityHealth(playerPed) >= 1) and (isDead == 1) then
+                waitTime = 1000
+                isDead = 0
             end
-          end
+        end
         Wait(waitTime)
     end
 end)
