@@ -38,4 +38,6 @@ _Literals = {
     KICK_DEFAULT_MESSAGE = "You have been kicked from the server.",
     BAN_DEFAULT_MESSAGE = "You have been banned from the server.",
     UNBAN_DEFAULT_MESSAGE = "You have been unbanned from the server.",
+
+    BIND_INTERACTION_KEY = "Interact"
 }
