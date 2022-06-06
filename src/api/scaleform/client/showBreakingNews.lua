@@ -5,7 +5,7 @@
 ---@param time number
 ---@public
 function API_Scaleform:showBreakingNews(title, message, bottom, time)
-    local scaleform = API_Scaleform:requestMovie("BREAKING_NEWS")
+    local scaleform <const> = API_Scaleform:requestMovie("BREAKING_NEWS")
     BeginScaleformMovieMethod(scaleform, "SET_TEXT")
     ScaleformMovieMethodAddParamTextureNameString(message)
     ScaleformMovieMethodAddParamTextureNameString(bottom)
