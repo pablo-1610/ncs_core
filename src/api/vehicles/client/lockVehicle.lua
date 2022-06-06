@@ -2,7 +2,7 @@
 ---@param vehicleId number
 ---@return void
 ---@public
-function API_Vehicles:lockVehicle(vehicleId)
+function API_Vehicles:lock(vehicleId)
     if (not (DoesEntityExist(vehicleId))) then
         return NCS:die("Target vehicle doesn't exist")
     end
