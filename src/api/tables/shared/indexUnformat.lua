@@ -3,9 +3,9 @@
 ---@return table
 ---@public
 function API_Tables:indexUnformat(tableToUnformat)
-    TableUnformat = {}
+    local tableUnformat = {}
     for index, value in pairs(tableToUnformat) do
-        TableIndex[index] = value
+        tableUnformat[index] = value
     end
-    return (TableUnformat)
+    return (tableUnformat)
 end
