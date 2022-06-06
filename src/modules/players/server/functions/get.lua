@@ -3,5 +3,5 @@
 ---@return NCSPlayer
 ---@public
 function MOD_Players:get(id)
-    return (self.list[id])
+    return (MOD_Players.list[id])
 end

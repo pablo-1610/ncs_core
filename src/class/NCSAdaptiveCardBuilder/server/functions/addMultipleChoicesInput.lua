@@ -12,7 +12,7 @@ function NCSAdaptiveCardBuilder:addMultipleChoicesInput(id, label, placeholder, 
             value = tonumber(v[2])
         }
     end
-    table.insert(self.payload.body, {
+    self.payload.body[#self.payload.body + 1] = {
         type = "Input.ChoiceSet",
         choices = choices,
         placeholder = placeholder,
@@ -20,6 +20,6 @@ function NCSAdaptiveCardBuilder:addMultipleChoicesInput(id, label, placeholder, 
         label = label,
         style = "compact",
         isRequired = isRequired
-    })
+    }
     return (self)
 end

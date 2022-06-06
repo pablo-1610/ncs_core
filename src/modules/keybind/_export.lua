@@ -1,1 +1,0 @@
-_G.NCS.KeyBinds = MOD_KeyBinds

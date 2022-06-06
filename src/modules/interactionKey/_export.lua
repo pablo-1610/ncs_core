@@ -1,0 +1,1 @@
+_G.NCS.InteractionKey = MOD_InteractionKey

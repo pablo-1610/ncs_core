@@ -1,7 +1,7 @@
 ---unbanPlayer
 ---@param license string
 ---@param ban_id string
----@return void
+---@public
 function MOD_Sanctions:unbanPlayer(license, ban_id)
     if (not license or not ban_id) then
         return NCS:die("The license or id of the ban is missing")

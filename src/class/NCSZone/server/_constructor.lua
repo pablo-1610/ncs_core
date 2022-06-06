@@ -16,7 +16,7 @@ setmetatable(NCSZone, {
     __call = function(_, id, position, handler, helpText, color, drawDistance, interactDistance)
         local self = setmetatable({}, __instance)
 
-        self.id = GetHashKey(id)
+        self.id = id
         self.position = position
         self.handler = handler
         self.helpText = helpText

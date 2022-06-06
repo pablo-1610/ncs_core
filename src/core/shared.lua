@@ -20,8 +20,9 @@ end
 
 ---checkIsUpdate
 ---@public
----@return void
 function NCS:checkIsUpdate()
+    if not NCSInternal.AllowVersionCheck then return end
+
     PerformHttpRequest("https://raw.githubusercontent.com/NextCitizens/ncs_core/main/fxmanifest.lua", function(_, resultData, _)
         local currentVersion <const> = NCS:getVersion()
         local lines = {}

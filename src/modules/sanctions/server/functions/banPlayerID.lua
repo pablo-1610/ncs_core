@@ -2,7 +2,7 @@
 ---@param playerSrc number
 ---@param reason string
 ---@param time table
----@return void
+---@public
 function MOD_Sanctions:banPlayerID(playerSrc, reason, time)
     if (not playerSrc or not reason or not time) then
         return NCS:die("The player or the reason or the time is missing")

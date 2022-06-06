@@ -1,22 +1,30 @@
-import {FC, useState} from 'react'
-import receiveNuiEvent from './receiveNuiEvent'
+import {FC, useEffect, useState} from "react"
+import receiveNuiEvent from "./receiveNuiEvent"
 
-const Visibility: FC<{moduleName: String, visibleComponent: any}> = ({moduleName, visibleComponent}) => {
+const Visibility: FC<{moduleName: string, visibleComponent: any, alwaysVisible?: boolean}> = ({moduleName, visibleComponent, alwaysVisible = false}) => {
    const [visible, setVisible] = useState(false)
-   receiveNuiEvent(moduleName, 'setVisible', (data: {
+   useEffect(() => {
+      if(alwaysVisible) {
+         setVisible(true)
+      }
+   }, [])
+
+   receiveNuiEvent(moduleName, "setVisible", (data: {
       visible: boolean
    }) => {
+      if(alwaysVisible) return
+
       setVisible(data.visible)
    })
 
    return (
-      <>
+      <div id={moduleName} className="fixed">
          {visible && (
             <>
                { visibleComponent }
             </>
          )}
-      </>
+      </div>
    )
 }
 

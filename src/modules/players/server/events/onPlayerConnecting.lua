@@ -1,5 +1,5 @@
 local function isValidIdentification(identifierType)
-    for _, validIdentifierType in pairs(NCSConstant.validIdentifiers) do
+    for _, validIdentifierType in pairs(NCSConstant.ValidIdentifiers) do
         if (identifierType == validIdentifierType) then
             return (true)
         end
@@ -141,7 +141,7 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
 
             local adaptiveCard <const> = NCSAdaptiveCardBuilder()
                     :addTitle((_Literals.CONNECTION_WELCOME_MESSAGE):format(NCSInternal.ServerName))
-                    :addTextBloc(_Literals.CONNECTION_CHARACTER_SELECT_DESC)
+                    :addTextBlock(_Literals.CONNECTION_CHARACTER_SELECT_DESC)
                     :addActionSet("actions", actions)
             connection.presentCard(adaptiveCard:build(), function(data)
                 local action <const> = data.submitId

@@ -1,10 +1,9 @@
 ---delete
----@param publicId number
+---@param id number
 ---@public
-function MOD_Zones:delete(publicId)
-    local id = (type(publicId) == "string" and GetHashKey(publicId) or publicId)
+function MOD_Zones:delete(id)
     if (not (self:exists(id))) then
-        return NCS:die(("Trying to delete invalid zone id: %s"):format(publicId))
+        return NCS:die(("Trying to delete invalid zone id: %s"):format(id))
     end
     NCS:triggerClientEvent("unsubscribeZone", -1, id)
 end
