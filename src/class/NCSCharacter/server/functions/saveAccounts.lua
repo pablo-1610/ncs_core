@@ -2,7 +2,7 @@
 ---@public
 ---@param self NCSCharacter
 function NCSCharacter.saveAccounts(self)
-    if (not (self.skin)) then
+    if (not (self.accounts)) then
         return
     end
 
