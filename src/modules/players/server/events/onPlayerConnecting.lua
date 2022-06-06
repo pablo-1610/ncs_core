@@ -16,19 +16,43 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
     end
 
     local identifier <const> = API_Player:getIdentifier(source)
+    local function showBan(banData)
+        local actions <const> = { NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_BAN_INFORMATION, "banInformation") }
+        local banAdaptiveCard <const> = NCSAdaptiveCardBuilder()
+            :addTitle(_Literals.CONNECTION_BAN_TITLE)
+            :addActionSet("actions", actions)
+        connection.presentCard(banAdaptiveCard:build(), function(data) 
+            local action <const> = data.submitId
+            data.submitId = nil
+            if (action == "banInformation") then
+                local timeDate <const> = API_Maths:getDateByUnixTime(banData["time"])
+                local unbanDate <const> = ("%s/%s/%s [%sh%s]"):format(timeDate.day, timeDate.month, timeDate.year, timeDate.hour, timeDate.min)
+
+                local actions <const> = { NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_BAN_BACK, "banInformationBack") }
+                local banAdaptiveCard <const> = NCSAdaptiveCardBuilder()
+                    :addTitle(_Literals.CONNECTION_BAN_TITLE)
+                    :addTextBlock(("%s: %s"):format(_Literals.CONNECTION_BAN_ID, banData.id))
+                    :addTextBlock(("%s: %s"):format(_Literals.CONNECTION_BAN_REASON, banData.reason))
+                    :addTextBlock(("%s: %s"):format(_Literals.CONNECTION_BAN_DATE, unbanDate))
+                    :addActionSet("actions", actions)
+                connection.presentCard(banAdaptiveCard:build(), function(data) 
+                    local action <const> = data.submitId
+                    data.submitId = nil
+                    if (action == "banInformationBack") then
+                        showBan()
+                    end
+                end)
+            end
+        end)
+    end
 
     if (MOD_Sanctions:isPlayerBan(identifier)) then
-        local banP <const> = MOD_Sanctions.List.Bans[identifier]
+        local banData <const> = MOD_Sanctions.List.Bans[identifier]
         local currentTime <const> = os.time()
-        if (currentTime > banP.time) then
-            connection.update(("💢 %s"):format(_Literals.UNBAN_DEFAULT_MESSAGE))
-            MOD_Sanctions:unbanPlayer(identifier, banP.ban_id)
-            Wait(1500)
-            connection.done()
+        if (currentTime > banData.time) then
+            MOD_Sanctions:unbanPlayer(identifier, banData.id)
         else
-            local timeDate <const> = API_Maths:getDateByUnixTime(banP["time"])
-            local unbanDate <const> = ("%s/%s/%s [%sh%s]"):format(timeDate.day, timeDate.month, timeDate.year, timeDate.hour, timeDate.min)
-            connection.done(("💢 %s\n\nID: %s\nReason: %s\nUnban Date: %s"):format(_Literals.BAN_DEFAULT_MESSAGE, banP["ban_id"], banP["reason"], unbanDate))
+            showBan(banData)
             return
         end
     end
