@@ -34,6 +34,6 @@ _Literals = {
     BAN_DEFAULT_MESSAGE = "Ki lettél tiltva a szerverről.",
     UNBAN_DEFAULT_MESSAGE = "A kitiltásod feloldva.",
 
-    ERROR_PLAYER_NOT_DEAD = "Játékos nem halott.",
+    ERROR_PLAYER_NOT_DEAD = "Nem vagy még halott.",
     ERROR_PLAYER_NOT_FOUND = "Nem található a játékos.",
 }
