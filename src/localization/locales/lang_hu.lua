@@ -35,5 +35,5 @@ _Literals = {
     UNBAN_DEFAULT_MESSAGE = "A kitiltásod feloldva.",
 
     ERROR_PLAYER_NOT_DEAD = "Játékos nem halott.",
-    ERROR_PLAYER_NOT_FOUND = "Nem található a játékos.",
+    ERROR_PLAYER_ALREADY_DEAD = "Játékos már halott.",
 }

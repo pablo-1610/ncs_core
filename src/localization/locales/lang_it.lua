@@ -35,5 +35,4 @@ _Literals = {
     UNBAN_DEFAULT_MESSAGE = "Sei stato sbannato dal server",
 
     ERROR_PLAYER_NOT_DEAD = "Il giocatore non è morto",
-    ERROR_PLAYER_NOT_FOUND = "Il giocatore non è stato trovato",
-}
+    ERROR_PLAYER_ALREADY_DEAD = "Il giocatore è già morto",

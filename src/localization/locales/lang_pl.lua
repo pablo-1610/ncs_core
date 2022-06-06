@@ -35,5 +35,5 @@ _Literals = {
     UNBAN_DEFAULT_MESSAGE = "Zostałeś odbanowany z serwera.",
 
     ERROR_PLAYER_NOT_DEAD = "Nie możesz zostać zabity.",
-    ERROR_PLAYER_NOT_FOUND = "Nie znaleziono gracza.",
+    ERROR_PLAYER_ALREADY_DEAD = "Jesteś już martwy.",
 }

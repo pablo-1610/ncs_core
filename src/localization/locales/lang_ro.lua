@@ -35,5 +35,5 @@ _Literals = {
     UNBAN_DEFAULT_MESSAGE = "Ai fost debanat de pe server",
 
     ERROR_PLAYER_NOT_DEAD = "Nu esti mort.",
-    ERROR_PLAYER_NOT_IN_VEHICLE = "Nu esti in vehicul.",
+    ERROR_PLAYER_ALREADY_DEAD = "Esti deja mort.",
 }
