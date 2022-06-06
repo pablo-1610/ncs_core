@@ -126,6 +126,29 @@ CREATE TABLE `ncs_bans` (
 ALTER TABLE `ncs_bans`
   ADD PRIMARY KEY (`ban_id`);
 COMMIT;
+
+--
+-- Structure de la table `ncs_warns`
+--
+
+CREATE TABLE `ncs_warns` (
+  `warn_id` varchar(255) NOT NULL,
+  `license` varchar(255) NOT NULL,
+  `reason` varchar(255) NOT NULL,
+  `date` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `ncs_warns`
+--
+ALTER TABLE `ncs_warns`
+  ADD PRIMARY KEY (`warn_id`);
+COMMIT;
+
 --
 -- Index pour les tables déchargées
 --

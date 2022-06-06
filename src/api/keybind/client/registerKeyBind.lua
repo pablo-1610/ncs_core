@@ -4,7 +4,7 @@
 ---@param desc string
 ---@param callback function
 ---@public
-function MOD_KeyBinds:bind(name, defaultKey, desc, callback)
+function API_KeyBind:bind(name, defaultKey, desc, callback)
     local cmd = ("ncs_%s"):format(name)
     RegisterCommand(cmd, function()
         if (not (self.enabled)) then

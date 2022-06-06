@@ -1,2 +1,2 @@
----@class API_Keybind
-API_Keybind = {}
+---@class API_KeyBind
+API_KeyBind = {}
