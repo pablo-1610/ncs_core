@@ -11,6 +11,6 @@ function NCSPlayer.minify(self)
         role = self.role:minify(),
         character = self.character:minify(),
         isDead = self.isDead,
-        deathData = self.deathData or false
+        deathData = self.deathData or {}
     }
 end

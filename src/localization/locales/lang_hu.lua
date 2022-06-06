@@ -33,4 +33,7 @@ _Literals = {
     KICK_DEFAULT_MESSAGE = "Ki lettél dobva a szerverről.",
     BAN_DEFAULT_MESSAGE = "Ki lettél tiltva a szerverről.",
     UNBAN_DEFAULT_MESSAGE = "A kitiltásod feloldva.",
+
+    ERROR_PLAYER_NOT_DEAD = "Játékos nem halott.",
+    ERROR_PLAYER_NOT_FOUND = "Nem található a játékos.",
 }

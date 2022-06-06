@@ -33,4 +33,7 @@ _Literals = {
     KICK_DEFAULT_MESSAGE = "Ai fost kickat de pe server",
     BAN_DEFAULT_MESSAGE = "Ai fost banat de pe server",
     UNBAN_DEFAULT_MESSAGE = "Ai fost debanat de pe server",
+
+    ERROR_PLAYER_NOT_DEAD = "Nu esti mort.",
+    ERROR_PLAYER_NOT_IN_VEHICLE = "Nu esti in vehicul.",
 }
