@@ -15,7 +15,6 @@ function API_Player:spawn(coords, callback)
 
         self:freeze(PlayerId(), true)
 
-        API_Streaming:requestModel(defaultModel)
         self:setModel(defaultModel)
 
         SetPedDefaultComponentVariation(PlayerPedId())
