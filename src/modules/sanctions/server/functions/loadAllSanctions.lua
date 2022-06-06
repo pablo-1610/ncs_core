@@ -7,7 +7,7 @@ function MOD_Sanctions:loadAllSanctions()
                 return
             end
             MOD_Sanctions.List.Bans[rows.license] = {
-                ["ban_id"] = rows.ban_id,
+                ["id"] = rows.id,
                 ["license"] = rows.license,
                 ["reason"] = rows.reason,
                 ["time"] = rows.time
@@ -22,7 +22,7 @@ function MOD_Sanctions:loadAllSanctions()
                 return
             end
             MOD_Sanctions.List.Warns[rows.license] = {
-                ["warn_id"] = rows.warn_id,
+                ["id"] = rows.id,
                 ["license"] = rows.license,
                 ["reason"] = rows.reason
             }

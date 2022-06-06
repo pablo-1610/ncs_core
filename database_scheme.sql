@@ -156,21 +156,27 @@ COMMIT;
 --
 
 CREATE TABLE `ncs_warns` (
-  `warn_id` varchar(255) NOT NULL,
+  `id` int(11) NOT NULL,
   `license` varchar(255) NOT NULL,
   `reason` varchar(255) NOT NULL,
   `date` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Index pour les tables déchargées
+-- Index pour la table `ncs_bans`
+--
+ALTER TABLE `ncs_warns`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- Index pour la table `ncs_warns`
+-- AUTO_INCREMENT pour la table `ncs_bans`
 --
 ALTER TABLE `ncs_warns`
-  ADD PRIMARY KEY (`warn_id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 --
