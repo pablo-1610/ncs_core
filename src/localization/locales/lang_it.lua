@@ -36,3 +36,4 @@ _Literals = {
 
     ERROR_PLAYER_NOT_DEAD = "Il giocatore non è morto",
     ERROR_PLAYER_ALREADY_DEAD = "Il giocatore è già morto",
+}
