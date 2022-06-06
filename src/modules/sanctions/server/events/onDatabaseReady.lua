@@ -1,3 +1,3 @@
 NCS:handleEvent("databaseReady", function()
-    MOD_Sanctions:loadBanList()
+    MOD_Sanctions:loadAllSanctions()
 end)

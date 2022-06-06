@@ -39,6 +39,8 @@ _Literals = {
     BAN_DEFAULT_MESSAGE = "Vous avez été banni du serveur.",
     UNBAN_DEFAULT_MESSAGE = "Vous avez été débanni du serveur.",
 
+    BIND_INTERACTION_KEY = "Intéragir",
+    
     ERROR_PLAYER_NOT_DEAD = "Le joueur n'est pas mort.",
     ERROR_PLAYER_ALREADY_DEAD = "Le joueur est déjà mort.",
 }

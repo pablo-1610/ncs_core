@@ -14,7 +14,7 @@ function API_Strings:split(str, delimiter)
 
 	local result = {}
 	for match in (str .. delimiter):gmatch("(.-)" .. delimiter) do
-		table.insert(result, match)
+		result[#result + 1] = match
 	end
 	return (result)
 end

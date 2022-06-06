@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#hud {
+   width: 100vw;
+   height: 100vh;
+   font-family: "Overpass";
+   font-weight: 500;
+}
+
+#hud .container {
+   display: flex;
+   align-items: flex-start;
+   justify-content: flex-end;
+}
+
+#hud .container .container-top {
+   display: flex;
+   margin: 50px 30px 0 0;
+}
+
+#hud .container .container-top .thirst {
+   display: flex;
+}
+
+#hud .container .container-top .thirst img {
+   width: 30px;
+   height: 30px;
+}
+
+#hud .container .container-top .thirst .thirstvalue {
+   display: flex;
+   align-items: center;
+   margin: 0 20px 0 10px;
+   color: white;
+   font-size: 14px;
+   font-family: "Overpass";
+   font-weight: 500;
+}
+
+#hud .container .container-top .hunger {
+   display: flex;
+}
+
+#hud .container .container-top .hunger img {
+   width: 30px;
+   height: 30px;
+}
+
+#hud .container .container-top .hunger .hungervalue {
+   display: flex;
+   align-items: center;
+   margin: 0 20px 0 10px;
+   color: white;
+   font-size: 14px;
+   font-family: "Overpass";
+   font-weight: 500;
+}
+
+#hud .container .container-top .time {
+   display: flex;
+}
+
+#hud .container .container-top .time img {
+   width: 30px;
+   height: 30px;
+   margin: 0 8px 0 0;
+}
+
+#hud .container .container-top .time .hourValue {
+   font-family: "Overpass";
+   font-weight: 600;
+   color: white;
+   font-size: 14px;
+}
+
+#hud .container .container-top .time .dateValue {
+   font-family: "Overpass";
+   font-weight: 400;
+   color: white;
+   font-size: 14px;
+}
+
+#hud .container-bottom {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   margin: 25px 30px 0 0;
+}
+
+#hud .container-bottom .moneyvalue {
+   color: white;
+   font-size: 16px;
+   font-family: "Overpass";
+   font-weight: 700;
+}
+
+#hud .container-bottom img {
+   width: 40px;
+   height: 40px;
+   margin: 0 0 0 20px;
+}

@@ -3,4 +3,5 @@ NCSInternal.ServerName = GetConvar("sv_hostname", "N/A") or "N/A"
 NCSInternal.OneSync = (GetConvar("onesync", "false") == "on") or false
 NCSInternal.DefaultRoleIdentifier = (GetConvar("ncs_default_server_role", "off") == "on")
 NCSInternal.DefaultSpawn = (GetConvar("ncs_default_spawn_position", "undefined") == "undefined" and nil or json.decode(GetConvar("ncs_default_spawn_position", "undefined")))
+NCSInternal.DisableWantedLevel = (GetConvar("ncs_disable_wanted_level", "true") == "true")
 NCSInternal.AllowVersionCheck = (GetConvarInt("ncs_allow_version_check") or 1) == 1
