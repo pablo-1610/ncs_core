@@ -11,7 +11,7 @@ function NCSCharacter.removeAccount(self, _, accountName, amount)
     if (not self.accounts[accountName]) then
         return NCS:die("Account not found.")
     end
-    
+    amount = (amount or 0)
     if (self.accounts[accountName] - amount < 0) then
         return NCS:die("Not enough money.")
     end
