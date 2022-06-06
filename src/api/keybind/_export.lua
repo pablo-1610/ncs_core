@@ -1,1 +1,1 @@
-_G.NCS.Keybind = API_Keybind
+_G.NCS.KeyBinds = API_KeyBind

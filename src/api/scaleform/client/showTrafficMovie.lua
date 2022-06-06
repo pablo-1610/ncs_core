@@ -2,7 +2,7 @@
 ---@param time number
 ---@public
 function API_Scaleform:showTrafficMovie(time)
-    local scaleform = API_Scaleform:requestMovie("TRAFFIC_CAM")
+    local scaleform <const> = API_Scaleform:requestMovie("TRAFFIC_CAM")
     BeginScaleformMovieMethod(scaleform, "PLAY_CAM_MOVIE")
     EndScaleformMovieMethod()
     while time > 0 do

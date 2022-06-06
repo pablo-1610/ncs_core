@@ -19,9 +19,6 @@ function MOD_Zones:startDrawer()
                     DrawMarker(25, zone.position.x, zone.position.y, (zone.position.z - 0.97), 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, zone.interactDistance, zone.interactDistance, zone.interactDistance, color[1], color[2], color[3], color[4], false, true, 2, false, false, false, false)
                     if (distance <= zone.interactDistance and (self.enabled)) then
                         API_Player:showHelpNotification(zone.helpText)
-                        if (IsControlJustPressed(0, 51)) then
-                            NCS:triggerServerEvent("zoneInteract", id)
-                        end
                     end
                 end
             end

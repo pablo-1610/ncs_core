@@ -1,14 +1,18 @@
 NCS:registerNetEvent("initializeCharacter", function(requireSpawn, spawnCoords, character)
-    local function applyComponents()
-        -- TODO : When module skin will be ready, apply components such as skin, and then outfit (character.metadata.outfits[character.metadata.selectedOutfit])
+    local function loadModel()
+        if character.skin["sex"] == 1 then
+            API_Player:setModel('mp_f_freemode_01')
+        end
     end
 
     if (requireSpawn) then
         API_Player:spawn(spawnCoords, function()
-            applyComponents()
+            loadModel()
+            MOD_Skin:applySkin(character.skin, true)
         end)
         return
     end
 
-    applyComponents()
+    loadModel()
+    MOD_Skin:applySkin(character.skin, true)
 end)

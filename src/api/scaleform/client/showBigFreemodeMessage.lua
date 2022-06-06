@@ -4,7 +4,7 @@
 ---@param time number
 ---@public
 function API_Scaleform:showBigFreemodeMessage(title, message, time)
-    local scaleform = API_Scaleform:requestMovie("MP_BIG_MESSAGE_FREEMODE")
+    local scaleform <const> = API_Scaleform:requestMovie("MP_BIG_MESSAGE_FREEMODE")
     BeginScaleformMovieMethod(scaleform, "SHOW_SHARD_WASTED_MP_MESSAGE")
     ScaleformMovieMethodAddParamTextureNameString(title)
     ScaleformMovieMethodAddParamTextureNameString(message)

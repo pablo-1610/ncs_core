@@ -1,1 +1,1 @@
-NCSConstant.defaultIdentifier = "license"
+NCSConstant.DefaultIdentifier = "license"

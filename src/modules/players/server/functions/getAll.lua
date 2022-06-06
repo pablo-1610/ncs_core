@@ -2,5 +2,5 @@
 ---@return table<number, NCSPlayer>
 ---@public
 function MOD_Players:getAll()
-    return (self.list)
+    return (MOD_Players.list)
 end
