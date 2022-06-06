@@ -35,9 +35,10 @@ setmetatable(NCSPlayer, {
         self.name = API_Player:getName(self.serverId)
         self.inGame = false
         self.dataLoaded = false
+        self.deathData = {}
 
-        API_Database:query("SELECT role_identifier FROM ncs_players WHERE player_identifier = @player_identifier", {
-            ["@player_identifier"] = self.identifier
+        API_Database:query("SELECT role_identifier, is_dead FROM ncs_players WHERE player_identifier = @player_identifier", {
+            ["@player_identifier"] = self.identifier,
         }, function(rows)
             local row <const> = rows[1]
             local roleIdentifier <const> = row.role_identifier
@@ -49,6 +50,7 @@ setmetatable(NCSPlayer, {
             end
 
             self.role = MOD_Roles:get(roleIdentifier)
+            self.isDead = row.is_dead
             self.dataLoaded = true
         end)
 

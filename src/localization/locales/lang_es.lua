@@ -42,4 +42,7 @@ _Literals = {
     KICK_DEFAULT_MESSAGE = "Has sido expulsado del servidor",
     BAN_DEFAULT_MESSAGE = "Has sido baneado del servidor",
     UNBAN_DEFAULT_MESSAGE = "Has sido desbaneado del servidor",
+
+    ERROR_PLAYER_NOT_DEAD = "El jugador no está muerto",
+    ERROR_PLAYER_ALREADY_DEAD = "El jugador ya está muerto",
 }
