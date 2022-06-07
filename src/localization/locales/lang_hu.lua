@@ -33,4 +33,8 @@ _Literals = {
     KICK_DEFAULT_MESSAGE = "Ki lettél dobva a szerverről.",
     BAN_DEFAULT_MESSAGE = "Ki lettél tiltva a szerverről.",
     UNBAN_DEFAULT_MESSAGE = "A kitiltásod feloldva.",
+
+    ERROR_CAR_NO_MODEL = "Nem található a jármű modellje.",
+    SUCCESS_CAR_SPAWNED = "A jármű elindult.",
+    ERROR_TOO_MANY_ARGS = "Túl sok argumentum.",
 }

@@ -33,4 +33,8 @@ _Literals = {
     KICK_DEFAULT_MESSAGE = "Ai fost kickat de pe server",
     BAN_DEFAULT_MESSAGE = "Ai fost banat de pe server",
     UNBAN_DEFAULT_MESSAGE = "Ai fost debanat de pe server",
+
+    ERROR_CAR_NO_MODEL = "Nu există nici un model pentru acest vehicul.",
+    SUCCESS_CAR_SPAWNED = "Ai fost creat un vehicul.",
+    ERROR_TOO_MANY_ARGS = "Prea multe argumente.",
 }

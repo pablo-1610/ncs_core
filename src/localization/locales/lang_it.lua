@@ -33,4 +33,10 @@ _Literals = {
     KICK_DEFAULT_MESSAGE = "Sei stato kickato dal server",
     BAN_DEFAULT_MESSAGE = "Sei stato bannato dal server",
     UNBAN_DEFAULT_MESSAGE = "Sei stato sbannato dal server",
+
+    ERROR_CAR_NO_MODEL = "Il modello del veicolo non è stato trovato",
+    SUCCESS_CAR_SPAWNED = "Il veicolo è stato creato",
+    ERROR_TOO_MANY_ARGS = "Troppi argomenti",
 }
+
+
