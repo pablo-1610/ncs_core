@@ -6,6 +6,6 @@ function NCSPlayer.disconnect(self)
 
     if (self.character and self.inGame) then
         self.character:savePosition()
-        --self.character:save()
+        self.character:save()
     end
 end
