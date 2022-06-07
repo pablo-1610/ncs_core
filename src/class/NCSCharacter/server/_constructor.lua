@@ -33,12 +33,10 @@ setmetatable(NCSCharacter, {
         self.metadata = metadata
         self.lastPosition = lastPosition
 
-        API_Database:query("SELECT is_dead FROM ncs_players_characters WHERE character_id = @character_id", {
-            ["@character_id"] = self.id,
-        }, function(rows)
-            local row <const> = rows[1]
-
-            self.isDead = row.is_dead
+        API_Database:single("SELECT is_dead FROM ncs_players_characters WHERE character_id = @character_id", {
+          ["@character_id"] = self.id,
+        }, function(row)
+          self.isDead = row.is_dead
         end)
 
         self.sessionData = {}

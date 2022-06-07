@@ -37,10 +37,9 @@ setmetatable(NCSPlayer, {
         self.dataLoaded = false
         self.deathData = {}
 
-        API_Database:query("SELECT role_identifier FROM ncs_players WHERE player_identifier = @player_identifier", {
+        API_Database:single("SELECT role_identifier FROM ncs_players WHERE player_identifier = @player_identifier", {
             ["@player_identifier"] = self.identifier,
-        }, function(rows)
-            local row <const> = rows[1]
+        }, function(row)
             local roleIdentifier <const> = row.role_identifier
 
             if (not (roleIdentifier) or not (MOD_Roles:exists(roleIdentifier))) then
