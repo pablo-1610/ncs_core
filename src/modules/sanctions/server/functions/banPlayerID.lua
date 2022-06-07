@@ -17,7 +17,7 @@ function MOD_Sanctions:banPlayerID(playerSrc, reason, time)
         return NCS:die("The player is already banned")
     end
 
-    API_Player:kickPlayer(playerSrc, _Literals.BAN_DEFAULT_MESSAGE)
+    API_Player:kick(playerSrc, _Literals.BAN_DEFAULT_MESSAGE)
 
     MOD_Sanctions:banPlayer(license, reason, time)
 end
