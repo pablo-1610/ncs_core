@@ -75,5 +75,6 @@ function MOD_Skin:applySkin(skinTable, save)
 
     if (save) then
         self.character = API_Tables:indexUnformat(skinToApply)
+        NCS:triggerServerEvent("savePlayerSkin", self.character)
     end
 end

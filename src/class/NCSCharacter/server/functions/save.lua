@@ -11,4 +11,4 @@ function NCSCharacter.save(self)
         ["@is_dead"] = self.isDead,
         ["@death_data"] = json.encode(self.deathData)
     })
-end
+end 
