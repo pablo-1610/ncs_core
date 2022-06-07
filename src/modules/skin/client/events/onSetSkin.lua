@@ -1,4 +1,4 @@
 NCS:registerNetEvent("setSkin")
-NCS:handleEvent("setSkin", function(skin, save)
-    MOD_Skin:applySkin(skin, save)
+NCS:handleEvent("setSkin", function(skin)
+    MOD_Skin:applySkin(skin)
 end)

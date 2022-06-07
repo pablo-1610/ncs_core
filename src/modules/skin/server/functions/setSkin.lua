@@ -8,7 +8,7 @@ function MOD_Skin:setSkin(playerId, skinTable, save)
         skinToApply[index] = value
     end
 
-    NCS:triggerClientEvent("setSkin", skinToApply, save)
+    NCS:triggerClientEvent("setSkin", skinToApply)
 
     if save then
         MOD_Players:get(playerId).character.skin = skinToApply

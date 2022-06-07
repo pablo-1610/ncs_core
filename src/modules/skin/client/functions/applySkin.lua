@@ -2,7 +2,7 @@
 ---@param skinTable table
 ---@param save boolean
 ---@public
-function MOD_Skin:applySkin(skinTable, save)
+function MOD_Skin:applySkin(skinTable)
     local playerPed = PlayerPedId()
 
     SetPedHeadBlendData(playerPed, skinTable["face"], skinTable["face"], skinTable["face"], skinTable["skin"], skinTable["skin"], skinTable["skin"], 1.0, 1.0, 1.0, true)
@@ -66,9 +66,5 @@ function MOD_Skin:applySkin(skinTable, save)
         ClearPedProp(playerPed, 7)
     else
         SetPedPropIndex(playerPed, 7, skinTable["bracelets_1"], skinTable["bracelets_2"], 2) -- Bracelets
-    end
-
-    if (save) then
-        self.character = skinTable
     end
 end

@@ -8,11 +8,11 @@ NCS:registerNetEvent("initializeCharacter", function(requireSpawn, spawnCoords, 
     if (requireSpawn) then
         API_Player:spawn(spawnCoords, function()
             loadModel()
-            MOD_Skin:applySkin(character.skin, true)
+            MOD_Skin:applySkin(character.skin)
         end)
         return
     end
 
     loadModel()
-    MOD_Skin:applySkin(character.skin, true)
+    MOD_Skin:applySkin(character.skin)
 end)
