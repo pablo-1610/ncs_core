@@ -1,4 +1,4 @@
----createObject
+---create
 ---@param prop string
 ---@param x number
 ---@param y number
@@ -7,7 +7,7 @@
 ---@param freeze boolean
 ---@return number
 ---@public
-function API_Objects:createObject(prop, x, y, z, heading, freeze)
+function API_Objects:create(prop, x, y, z, heading, freeze)
     assert(type(prop) == "string" or type(prop) == "number")
     if type(prop) == "string" then
         prop = GetHashKey(prop)
