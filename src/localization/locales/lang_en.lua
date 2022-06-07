@@ -47,4 +47,8 @@ _Literals = {
     CONNECTION_BAN_DATE = "Unban date",
     CONNECTION_BAN_INFORMATION = "My banishment",
     CONNECTION_BAN_BACK = "Return back",
+
+    ERROR_CAR_NO_MODEL = "You need to specify a model.",
+    SUCCESS_CAR_SPAWNED = "Your car has been spawned.",
+    ERROR_TOO_MANY_ARGS = "Too many arguments.",
 }

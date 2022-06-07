@@ -107,6 +107,16 @@ CREATE TABLE `ncs_roles_permissions`
   DEFAULT CHARSET = utf8mb4;
 
 --
+-- Déchargement des données de la table ncs_roles_permissions
+--
+
+INSERT INTO `ncs_roles_permissions` (role_identifier, permission) VALUES
+    ('admin', 'canRevive'),
+    ('admin', 'canKill'),
+    ('admin', 'canCar');
+    
+
+--
 -- Structure de la table `ncs_bans`
 --
 

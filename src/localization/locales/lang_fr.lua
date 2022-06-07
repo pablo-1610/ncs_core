@@ -39,5 +39,9 @@ _Literals = {
     BAN_DEFAULT_MESSAGE = "Vous avez été banni du serveur.",
     UNBAN_DEFAULT_MESSAGE = "Vous avez été débanni du serveur.",
 
-    BIND_INTERACTION_KEY = "Intéragir"
+    BIND_INTERACTION_KEY = "Intéragir",
+
+    ERROR_CAR_NO_MODEL = "Vous devez spécifier un modèle de véhicule.",
+    SUCCESS_CAR_SPAWNED = "Véhicule créé.",
+    ERROR_TOO_MANY_ARGS = "Trop d'arguments.",
 }
