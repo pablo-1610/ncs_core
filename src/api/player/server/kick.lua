@@ -1,9 +1,9 @@
----kickPlayer
+---kick
 ---@param playerSrc number
 ---@param reason string
 ---@return void
 ---@public
-function API_Player:kickPlayer(playerSrc, reason)
+function API_Player:kick(playerSrc, reason)
     if (not playerSrc or playerSrc <= 0) then
         return NCS:die("Specified source is invalid : kick canceled")
     end
