@@ -1,4 +1,4 @@
----unlockVehicle
+---unlock
 ---@param vehicleId number
 ---@return void
 ---@public
