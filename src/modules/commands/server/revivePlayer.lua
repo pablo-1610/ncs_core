@@ -24,6 +24,6 @@ API_Commands:registerPermissionCommand("revive", "canRevive", function(player, a
 	end
 
     NCSCharacter:setDeathStatus(target.serverId, 0, {})
-    NCS:triggerClientEvent("playerIsNowAlive", _src, formattedCoords, target.character.skin) 
+    NCS:triggerClientEvent("playerIsNowAlive", target.serverId, formattedCoords, target.character.skin)
     NCS:trace(("Player id ^2%s ^7(^2%s^7) as been revive"):format(target.serverId, target.name), 3)
 end) 
