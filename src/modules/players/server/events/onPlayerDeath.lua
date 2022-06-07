@@ -49,6 +49,7 @@ NCS:handleEvent("nowInGame", function()
         local player = MOD_Players:get(_src)
         if (player.character.isDead ~= 0) then
             NCS:triggerClientEvent("playerIsNowDeath", _src)
+            NCS:trace(("Player id ^2%s ^7(^2%s^7) is reconnected and was died before disconnect"):format(_src, MOD_Players:get(_src).name), 3)
         end
     end
 end)
