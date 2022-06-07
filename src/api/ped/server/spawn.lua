@@ -1,4 +1,4 @@
----spawnPed
+---spawn
 ---@param modelName string
 ---@param x number
 ---@param y number
@@ -6,7 +6,7 @@
 ---@param heading number
 ---@return number
 ---@public
-function API_Ped:spawnPed(modelName, x, y, z, heading)
+function API_Ped:spawn(modelName, x, y, z, heading)
     assert(type(modelName) == "string" or type(modelName) == "number")
     if (type(modelName) == "string") then
         modelName = GetHashKey(modelName)
