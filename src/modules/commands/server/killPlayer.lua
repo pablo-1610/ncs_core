@@ -14,6 +14,6 @@ API_Commands:registerPermissionCommand("kill", "canKill", function(player, args)
     end
 
     NCSCharacter:setDeathStatus(target.serverId, 1, {})
-    NCS:triggerClientEvent("playerIsNowDeath", target.serverId)
+    NCS:triggerClientEvent("playerIsNowDeath", target.serverId, target.character.deathData)
     NCS:trace(("Player id ^2%s ^7(^2%s^7) as been killed"):format(target.serverId, target.name), 3)
 end)

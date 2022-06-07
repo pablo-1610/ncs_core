@@ -1,5 +1,5 @@
 NCS:registerNetEvent("playerIsNowDeath")
-NCS:handleEvent("playerIsNowDeath", function()
+NCS:handleEvent("playerIsNowDeath", function(deathData)
     local playerPed <const> = PlayerPedId()
     API_Ped:kill(playerPed)
 end)
