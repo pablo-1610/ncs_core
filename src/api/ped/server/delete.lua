@@ -1,14 +1,13 @@
----deletePed
+---delete
 ---@param pedId number
 ---@return void
 ---@public
-function API_Ped:deletePed(pedId)
+function API_Ped:delete(pedId)
     if (not (DoesEntityExist(pedId))) then
         return NCS:die("Target ped doesn't exist")
     end
-    if (IsEntityAPed(pedId)) then
-        DeleteEntity(pedId)
-    else
+    if (not IsEntityAPed(pedId)) then
         return NCS:die("Target ped doesn't exist")
     end
+    DeleteEntity(pedId)
 end
