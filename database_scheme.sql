@@ -49,8 +49,7 @@ CREATE TABLE `ncs_players`
     `player_identifier` varchar(80) NOT NULL,
     `role_identifier`   varchar(30) DEFAULT NULL,
     `last_source`       int(11)     DEFAULT NULL,
-    `last_character_id` int(11)     DEFAULT NULL,
-    `is_dead`           int(1)      DEFAULT NULL
+    `last_character_id` int(11)     DEFAULT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
@@ -69,7 +68,7 @@ CREATE TABLE `ncs_players_characters`
     `accounts`          text        NOT NULL,
     `last_position`     text DEFAULT NULL,
     `metadata`          text        NOT NULL,
-    `is_dead`           int(1)      DEFAULT NULL,
+    `is_dead`           int(1)      DEFAULT 0,
     `death_cause`       text        DEFAULT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
