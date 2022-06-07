@@ -3,14 +3,6 @@ NCS:handleEvent("nowInGame", function()
     local isDead = 0
     local waitTime = 1000
 
-    if (MOD_Players:get(_src).character.isDead) then
-        isDead = 1
-        waitTime = 100
-
-        local playerPed <const> = GetPlayerPed(_src)
-        NCS:triggerClientEvent("ncs_core:killPlayer", MOD_Players:get(_src).serverId, MOD_Players:get(_src).serverId)
-    end
-    
     while true do
         if (MOD_Players:exists(_src)) then
             local playerPed <const> = GetPlayerPed(_src)
@@ -37,12 +29,23 @@ NCS:handleEvent("nowInGame", function()
                     }
                     NCS:trace(("Player id ^2%s ^7(^2%s^7) died without killer"):format(_src, MOD_Players:get(_src).name), 3)
                 end
-                NCSPlayer:setDeathStatus(_src, isDead, playerDeathData)
+                NCSCharacter:setDeathStatus(_src, isDead, playerDeathData)
             elseif (GetEntityHealth(playerPed) >= 1) and (isDead == 1) then
                 waitTime = 1000
                 isDead = 0
             end
         end
         Wait(waitTime)
+    end
+end)
+
+NCS:handleEvent("nowInGame", function()
+    local _src <const> = source
+    Wait(5000)
+    if (MOD_Players:exists(_src)) then
+        local player = MOD_Players:get(_src)
+        if (player.character.isDead ~= 0) then
+            NCS:triggerClientEvent("ncs_core:killPlayer", _src)
+        end
     end
 end)
