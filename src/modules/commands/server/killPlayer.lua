@@ -13,7 +13,8 @@ API_Commands:registerPermissionCommand("kill", "canKill", function(player, args)
         return (player:showSystemNotification(_Literals.ERROR_PLAYER_ALREADY_DEAD, NCSEnum.LogType.ERROR))
     end
 
-    NCSCharacter:setDeathStatus(target.serverId, 1, {})
+    target.character:setDeathStatus(1, {})
+    MOD_Players:set(target.serverId, target)
     NCS:triggerClientEvent("playerIsNowDeath", target.serverId, target.character.deathData)
     NCS:trace(("Player id ^2%s ^7(^2%s^7) as been killed"):format(target.serverId, target.name), 3)
 end)

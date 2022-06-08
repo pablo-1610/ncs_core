@@ -9,6 +9,7 @@ NCS:handleEvent("nowInGame", function()
             if ((GetEntityHealth(playerPed) <= 0) and (isDead == 0)) then
                 waitTime = 100
                 isDead = 1
+                local player = MOD_Players:getPlayer(_src)
                 
                 local sourceKillerEntity <const>, sourceDeathCause <const> = GetPedSourceOfDeath(playerPed), GetPedCauseOfDeath(playerPed)
                 local playerDeathCoords <const> = GetEntityCoords(playerPed)
@@ -20,8 +21,9 @@ NCS:handleEvent("nowInGame", function()
                         ["killerEntity"] = sourceKillerEntity
                     }
                     NCS:trace(("Player id ^2%s ^7(^2%s^7) as been killed by ^2%s ^7(^2%s^7)"):format(_src, MOD_Players:get(_src).name, sourceKillerEntity, MOD_Players:get(sourceKillerEntity).name), 3)
-                    NCSCharacter:setDeathStatus(_src, isDead, playerDeathData)
+                    player.character:setDeathStatus(isDead, playerDeathData)
                     TriggerEvent("playerIsNowDeath", _src, playerDeathData)
+                    MOD_Players:setPlayer(_src, player)
                 else
                     local playerDeathData = {
                         ["playerDeathCoords"] = playerDeathCoords,
@@ -30,8 +32,9 @@ NCS:handleEvent("nowInGame", function()
                         ["killerEntity"] = false
                     }
                     NCS:trace(("Player id ^2%s ^7(^2%s^7) died without killer"):format(_src, MOD_Players:get(_src).name), 3)
-                    NCSCharacter:setDeathStatus(_src, isDead, playerDeathData)
+                    player.character:setDeathStatus(isDead, playerDeathData)
                     NCS:triggerEvent("playerIsNowDeath", _src, playerDeathData)
+                    MOD_Players:setPlayer(_src, player)
                 end
             elseif (GetEntityHealth(playerPed) >= 1) and (isDead == 1) then
                 waitTime = 1000
