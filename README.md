@@ -18,15 +18,6 @@ RolePlay. NCS was created and maintained by the community and will not be left b
 
 [Official documentation of NextCitizens.](https://nextcitizens.github.io/ncs_documentation/)
 
-## Server Convar [**Requiered**]
-
-```cfg
-ncs_log_level {1 -> 4}
-ncs_unique_identifier {steam, license, xbl, ip, discord, live}
-ncs_allow_multiple_characters {0, 1}
-ncs_max_characters {1 -> 10} [Useless if ncs_allow_multiple_characters is 0]
-```
-
 ## Discord
 
 [Official Discord of NextCitizens.](https://discord.gg/T8u4JsserD)
