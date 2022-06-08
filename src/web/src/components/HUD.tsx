@@ -19,6 +19,7 @@ function HUD() {
    useEffect(() => {
       const hoursInterval = setInterval(() => setHours(new Date()), 10000)
       const dateInterval = setInterval(() => setDates(new Date()), 1000 * 60 * 60 * 20)
+
       return () => {
          clearInterval(hoursInterval)
          clearInterval(dateInterval)
@@ -40,19 +41,19 @@ function HUD() {
          <div className="container">
             <div className="container-top">
                <div className="thirst">
-                  <img src={thirstImage} alt="thirst image" />
+                  <img src={thirstImage} alt="thirst image"/>
 
                   <div className="thirstvalue">{thirst}</div>
                </div>
       
                <div className="hunger">
-                  <img src={hungerImage} alt="hunger image" />
+                  <img src={hungerImage} alt="hunger image"/>
 
                   <div className="hungervalue">{hunger}</div>
                </div>
       
                <div className="time">
-                  <img src={timeImage} alt="time image" />
+                  <img src={timeImage} alt="time image"/>
                   
                   <div>
                      <div className="hourValue">
@@ -76,7 +77,7 @@ function HUD() {
          <div className="container-bottom">
             <div className="moneyvalue">{money}</div>
 
-            <img src={moneyImage} alt="money image" />
+            <img src={moneyImage} alt="money image"/>
          </div>
       </>
    )
