@@ -1,0 +1,1 @@
+_G.NCS.UI = MOD_UI
