@@ -1,4 +1,4 @@
-NCS:handleEvent("nowInGame", function()
+NCS:handleEvent("initializedCharacter", function()
     local _src <const> = source
     local isDead = 0
     local waitTime = 1000
@@ -45,7 +45,7 @@ NCS:handleEvent("nowInGame", function()
     end
 end)
 
-NCS:handleEvent("nowInGame", function()
+NCS:handleEvent("initializedCharacter", function()
     local _src <const> = source
     Wait(5000)
     if (MOD_Players:exists(_src)) then
