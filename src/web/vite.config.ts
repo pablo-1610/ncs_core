@@ -1,4 +1,4 @@
-import {build, defineConfig} from "vite"
+import {defineConfig} from "vite"
 import {VitePluginFonts} from "vite-plugin-fonts"
 import react from "@vitejs/plugin-react"
 
@@ -6,7 +6,7 @@ import react from "@vitejs/plugin-react"
 export default defineConfig({
   base: "./",
   build: {
-    minify: "terser",
+    minify: "terser"
   },
   plugins: [
     react(),

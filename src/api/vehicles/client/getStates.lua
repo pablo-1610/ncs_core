@@ -1,4 +1,4 @@
----getVehicleStates
+---getStates
 ---@param vehicleId number
 ---@return table
 ---@public
