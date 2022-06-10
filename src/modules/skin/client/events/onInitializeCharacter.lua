@@ -10,9 +10,11 @@ NCS:registerNetEvent("initializeCharacter", function(requireSpawn, spawnCoords, 
             loadModel()
             MOD_Skin:applySkin(character.skin, true)
         end)
+        NCS:triggerServerEvent("initializedCharacter")
         return
     end
 
     loadModel()
     MOD_Skin:applySkin(character.skin, true)
+    NCS:triggerServerEvent("initializedCharacter")
 end)
