@@ -1,7 +1,7 @@
----setCoords
+---setPosition
 ---@param coords table<number, number, number>
 ---@public
-function NCSCamera:setCoords(coords)
+function NCSCamera:setPosition(coords)
     if (not self.exist) then
         return
     end
