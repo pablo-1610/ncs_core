@@ -1,9 +1,10 @@
----setCameraPointAtCoords
----@param coords table<number, number, number>
----@return void
+---setPointAtCoords
+---@param position table<number, number, number>
 ---@public
-function NCSCamera:setCameraPointAtCoords(coords)
-    if self.exist then
-        PointCamAtCoord(self.id, coords)
+function NCSCamera:setPointAtCoords(position)
+    if (not self.exist) then
+        return
     end
+
+    PointCamAtCoord(self.id, position)
 end
