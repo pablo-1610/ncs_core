@@ -27,7 +27,7 @@ function MOD_Players:registerCharacter(identifier, identity, callback)
     API_Database:insert("INSERT INTO ncs_players_characters (player_identifier, identity, accounts, skin, metadata) VALUES (@player_identifier, @identity, @accounts, @skin, \"[]\")", {
         ["player_identifier"] = identifier,
         ["identity"] = json.encode(identity),
-        ["skin"] = NCSConstant.DefaultSkin,
+        ["skin"] = json.encode(NCSConstant.DefaultSkin),
         ["accounts"] = json.encode(MOD_Config:getDefaultAccounts())
     }, function(characterId)
         if (callback) then
