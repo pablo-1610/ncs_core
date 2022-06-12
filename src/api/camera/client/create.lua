@@ -3,19 +3,19 @@
 NCSCamera = {}
 NCSCamera.__index = NCSCamera
 
----createCamera
----@param cameraCoords table<number, number, number>
----@param cameraHeading number
+---create
+---@param coords table<number, number, number>
+---@param heading number
 ---@return table
 ---@public
-function API_Camera:createCamera(cameraCoords, cameraHeading)
+function API_Camera:create(coords, heading)
     local self = {}
     self.id = CreateCam("DEFAULT_SCRIPTED_CAMERA", 0)
     self.exist = DoesCamExist(self.id)
 
-    SetCamCoord(self.id, cameraCoords)
+    SetCamCoord(self.id, coords)
     if cameraHeading then
-        PointCamAtCoord(self.id, cameraHeading)
+        PointCamAtCoord(self.id, heading)
     end
 
     return setmetatable(self, NCSCamera)
