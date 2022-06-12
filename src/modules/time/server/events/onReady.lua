@@ -1,10 +1,11 @@
 local dataName <const> = "time"
 
 NCS:onReady(function()
-    if (not (NCS.NoSQL:getIsContentAvailable(dataName))) then
+    local content <const> = NCS.NoSQL:getContent(dataName)
+    if (not (NCS.NoSQL:getIsContentAvailable(dataName)) or not content) then
         MOD_Time.currentTime = { 12, 00 }
-    else
-        MOD_Time.currentTime = NCS.NoSQL:getContent(dataName)
+    elseif content then
+        MOD_Time.currentTime = content
     end
     MOD_Time:startClock()
 end)
