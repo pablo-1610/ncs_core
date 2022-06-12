@@ -47,4 +47,7 @@ _Literals = {
     CONNECTION_BAN_DATE = "Unban date",
     CONNECTION_BAN_INFORMATION = "My banishment",
     CONNECTION_BAN_BACK = "Return back",
+    
+    ERROR_PLAYER_NOT_DEAD = "This player is not dead.",
+    ERROR_PLAYER_ALREADY_DEAD = "This player is already dead.",
 }

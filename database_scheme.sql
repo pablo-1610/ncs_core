@@ -67,7 +67,9 @@ CREATE TABLE `ncs_players_characters`
     `skin`              text DEFAULT NULL,
     `accounts`          text        NOT NULL,
     `last_position`     text DEFAULT NULL,
-    `metadata`          text        NOT NULL
+    `metadata`          text        NOT NULL,
+    `is_dead`           int(1)      DEFAULT 0,
+    `death_cause`       text        DEFAULT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
@@ -105,6 +107,14 @@ CREATE TABLE `ncs_roles_permissions`
     `permission`      varchar(10) NOT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
+
+--
+-- Déchargement des données de la table `ncs_roles_permissions`
+--
+
+INSERT INTO `ncs_roles_permissions` (`role_identifier`, `permission`) VALUES
+	('admin', 'canRevive'),
+	('admin', 'canKill');
 
 --
 -- Structure de la table `ncs_bans`

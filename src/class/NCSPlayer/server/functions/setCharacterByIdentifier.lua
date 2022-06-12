@@ -13,7 +13,7 @@ function NCSPlayer.setCharacterByIdentifier(self, characterId, callback)
         end
         local row <const> = rows[1]
         ---@type NCSCharacter
-        local newCharacter = NCSCharacter(characterId, json.decode(row.identity), json.decode(row.skin), json.decode(row.accounts), json.decode(row.last_position), json.decode(row.metadata))
+        local newCharacter = NCSCharacter(characterId, json.decode(row.identity), json.decode(row.skin), json.decode(row.accounts), json.decode(row.last_position), json.decode(row.metadata), row.is_dead, json.decode(row.death_cause))
                 :setUser(self)
         self:setCharacter(newCharacter, callback)
     end)

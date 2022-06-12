@@ -1,0 +1,8 @@
+NCS:registerNetEvent("playerIsNowAlive")
+NCS:handleEvent("playerIsNowAlive", function(coords, skin)
+    API_Player:spawn(coords)
+    CreateThread(function()
+        Wait(100)
+        MOD_Skin:applySkin(skin)
+    end)
+end)

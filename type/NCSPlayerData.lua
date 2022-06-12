@@ -16,6 +16,8 @@ local PlayerData = {
         skin = {},
         accounts = {},
         lastPosition = {},
-        metadata = {}
+        metadata = {},
+        is_dead = nil,
+        death_data = {},
     },
 }

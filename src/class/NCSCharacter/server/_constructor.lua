@@ -23,7 +23,7 @@ local __instance = {
 }
 
 setmetatable(NCSCharacter, {
-    __call = function(_, id, identity, skin, accounts, lastPosition, metadata)
+    __call = function(_, id, identity, skin, accounts, lastPosition, metadata, isDead, deathCause)
         local self = setmetatable({}, __instance)
 
         self.id = id
@@ -32,6 +32,8 @@ setmetatable(NCSCharacter, {
         self.accounts = accounts
         self.metadata = metadata
         self.lastPosition = lastPosition
+        self.isDead = isDead
+        self.death_data = deathCause
 
         self.sessionData = {}
 
