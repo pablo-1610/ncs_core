@@ -14,7 +14,7 @@ function API_Camera:create(coords, heading)
     self.exist = DoesCamExist(self.id)
 
     SetCamCoord(self.id, coords)
-    if cameraHeading then
+    if heading then
         PointCamAtCoord(self.id, heading)
     end
 
