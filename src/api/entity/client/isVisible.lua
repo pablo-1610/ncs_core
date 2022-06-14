@@ -1,12 +1,11 @@
 ---setVisible
 ---@param entityId number
----@param state boolean
----@return void
+---@return bool
 ---@public
-function API_Entity:isVisible(entityId, state)
+function API_Entity:isVisible(entityId)
     if (not (DoesEntityExist(entityId))) then
         return NCS:die("Target entity doesn't exist")
     end
     
-    IsEntityVisible(entityId, state)
+    return IsEntityVisible(entityId)
 end
