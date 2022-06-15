@@ -1,4 +1,4 @@
----setVisible
+---isVisible
 ---@param entityId number
 ---@return bool
 ---@public
