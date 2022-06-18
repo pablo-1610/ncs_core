@@ -144,6 +144,33 @@ INSERT INTO `ncs_items` (`name`, `label`, `weight`) VALUES
  ('water', 'water', 1);
 
 
+CREATE TABLE IF NOT EXISTS `ncs_jobs` (
+    `name` varchar(255) NOT NULL,
+    `label` varchar(255) NOT NULL,
+    PRIMARY KEY (`name`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+DELETE FROM `ncs_jobs`;
+INSERT INTO `ncs_jobs` (`name`, `label`) VALUES
+('ambulance', 'medecin'),
+('police', 'Policier');
+
+CREATE TABLE IF NOT EXISTS `ncs_jobs_grades` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `name` varchar(25) NOT NULL,
+    `nameGrade` varchar(25) NOT NULL,
+    `label` varchar(25) NOT NULL,
+    PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO `ncs_jobs_grades` (`id`, `name`, `nameGrade`, `label`) VALUES
+(1, 'police', 'recrue', 'Cadet'),
+(2, 'police', 'officier', 'Officier'),
+(3, 'ambulance', 'recrue', 'Recrue');
+
+
 --
 -- Index pour la table `ncs_bans`
 --
