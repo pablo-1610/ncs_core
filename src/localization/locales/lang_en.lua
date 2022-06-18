@@ -9,7 +9,7 @@ _Literals = {
     ERROR_SERVER_CHARACTER_CREATION_FAILED = "Character creation failed. Please retry or contact the server's staff.",
     ERROR_SERVER_STARTING_UP = "The server is starting up. Please wait.",
     ERROR_CRITICAL_HAPPENED = "A critical error happened. Please try to reconnect.",
-    ERROR_MISSING_RANK_PERMISSION = "Vous n'avez pas la permission de faire cela.",
+    ERROR_MISSING_RANK_PERMISSION = "You do not have permission to do this.",
 
     CONNECTION_ABORTED = "Connection aborted, please retry.",
     CONNECTION_RETRIEVING_CHARACTERS = "Retrieving characters...",

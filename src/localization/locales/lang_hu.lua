@@ -1,15 +1,22 @@
 _Literals = {
+    TYPE_ERROR = "ERROR",
+    TYPE_WARNING = "WARNING",
+    TYPE_INFO = "INFO",
+    TYPE_DEBUG = "DEBUG",
+
     ERROR_ALREADY_CONNECTED = "Már csatlakoztál.",
     ERROR_SERVER_IDENTIFICATION_METHOD_BROKEN = "A szerver azonosítási metódusa hibás. Kérlek vedd fel a kapcsolatot a szerver tulajdonosával",
     ERROR_SERVER_CHARACTER_CREATION_FAILED = "Karakter létrehozás sikertelen. Kérlek próbáld újra, vagy vedd fel a kapcsolatot a szerver vezetőjével.",
+    ERROR_SERVER_STARTING_UP = "A szerver indítás alatt. Kérlek várj.",
+    ERROR_CRITICAL_HAPPENED = "Kritikus hiba történt. Próbálj újra csatlakozni.",
+    ERROR_MISSING_RANK_PERMISSION = "Nincs jogod ehhez.",
 
+    CONNECTION_ABORTED = "Csatlakozás megszakadt, próbáld újra.",
     CONNECTION_RETRIEVING_CHARACTERS = "Karakterek lekérése...",
     CONNECTION_RETRIEVING_PLAYER_DATA = "Játékos adatok lekérése...",
-
     CONNECTION_WELCOME_MESSAGE = "Üdvözöllek a %s",
     CONNECTION_CHARACTER_REQUIRED = "A %s játékhoz létre kell hoznod legalább egy karaktert.",
     CONNECTION_BUTTON_CREATE = "Új karakter létrehozása",
-
     CONNECTION_CHARACTER_CREATION_TITLE = "Új karakter létrehozása",
     CONNECTION_CHARACTER_CREATION_SEX = "Nem",
     CONNECTION_CHARACTER_CREATION_SEX_MALE = "Férfi",
@@ -20,19 +27,28 @@ _Literals = {
     CONNECTION_CHARACTER_CREATION_HEIGHT = "Magasság",
     CONNECTION_CHARACTER_CREATION_BUTTON_CREATE = "Létrehozás",
     CONNECTION_CHARACTER_CREATION_BUTTON_GOBACK = "Vissza",
-
     CONNECTION_CHARACTER_SELECT_DESC = "Választanod kell egy karaktert a játékhoz.",
     CONNECTION_CHARACTER_SELECT_FETCH_BUTTON = "Karaktereim",
     CONNECTION_CHARACTER_SELECT_CREATE_BUTTON = "Új készítése",
-
     CONNECTION_CHARACTER_SELECTION_TITLE = "Karakter választása",
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Játék vele %s",
 
     CONNECTING_CREATING_CHARACTER = "Karakter létrehozása...",
 
+    ZONE_DEFAULT_HELP_TEXT = "Nyomd meg a ~INPUT_CONTEXT~ gombot az interakcióhoz.",
+
     KICK_DEFAULT_MESSAGE = "Ki lettél dobva a szerverről.",
     BAN_DEFAULT_MESSAGE = "Ki lettél tiltva a szerverről.",
     UNBAN_DEFAULT_MESSAGE = "A kitiltásod feloldva.",
+
+    BIND_INTERACTION_KEY = "Interakció",
+
+    CONNECTION_BAN_TITLE = "Kitiltás",
+    CONNECTION_BAN_ID = "Id",
+    CONNECTION_BAN_REASON = "Indok",
+    CONNECTION_BAN_DATE = "Lejárati dátum",
+    CONNECTION_BAN_INFORMATION = "Saját kitiltások",
+    CONNECTION_BAN_BACK = "Vissza",
 
     ERROR_PLAYER_NOT_DEAD = "Játékos nem halott.",
     ERROR_PLAYER_ALREADY_DEAD = "Játékos már halott.",
