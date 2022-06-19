@@ -1,7 +1,3 @@
-NCS:registerNetEvent("receiveItems", function(data)
-    MOD_Items.list[data.name] = {
-        label = data.label,
-        weight = data.weight,
-        inventoryName = {}
-    }
+NCS:registerNetEvent("receiveItems", function(items)
+    MOD_Items.list = items
 end)
