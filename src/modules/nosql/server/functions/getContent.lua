@@ -8,8 +8,8 @@ function MOD_NoSQL:getContent(fileName)
     local result <const> = self:readFile(filePath)
     if (result ~= nil) then
         return json.decode(result)
-    else
-        NCS:die(("getContent failed on file: %s"):format(filePath)) 
-        return false
     end
+
+    NCS:trace(("getContent failed on file: %s"):format(filePath), 2) 
+    return false
 end
