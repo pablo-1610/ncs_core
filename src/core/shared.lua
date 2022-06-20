@@ -40,7 +40,7 @@ end
 
 ---trace
 ---@param message string
----@param logLevelIndex any
+---@param logLevelIndex number
 ---@return void
 ---@public
 function NCS:trace(message, logLevelIndex)
@@ -93,10 +93,17 @@ end
 ---handleEvent
 ---@param eventName string
 ---@param callback function
----@return void
+---@return table
 ---@public
 function NCS:handleEvent(eventName, callback)
-    AddEventHandler(self:formatEvent(eventName), callback)
+    return AddEventHandler(self:formatEvent(eventName), callback)
+end
+
+---removeEvent
+---@param eventHandler table
+---@public
+function NCS:removeEvent(eventHandler)
+    RemoveEventHandler(eventHandler)
 end
 
 ---triggerEvent
