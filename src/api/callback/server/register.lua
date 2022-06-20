@@ -14,10 +14,11 @@ function API_Callback:register(eventName, cb)
   end
 
   if (serverCallbacks[eventName]) then 
-    NCS:trace(("Server callback override, eventName: "):format(eventName), 2)
+    NCS:trace(("Server callback override, eventName: %s"):format(eventName), 2)
   end
 
   serverCallbacks[eventName] = cb
+  NCS:trace(("New server callback registered. eventName: %s"):format(eventName), 3)
 end
 
 NCS:registerNetEvent("ncs_core:callback:server")
