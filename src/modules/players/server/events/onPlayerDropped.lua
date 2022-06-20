@@ -16,6 +16,4 @@ AddEventHandler("playerDropped", function(reason)
     end
 
     NCS:trace(("Player id ^1%s ^7has ^1dropped ^7(%s)"):format(_src, reason))
-
-    -- TODO → Remove from Players, save Player.characters, etc.
 end)
