@@ -8,6 +8,7 @@ local function isValidIdentification(identifierType)
 end
 
 AddEventHandler("playerConnecting", function(playerName, _, connection)
+    local _src <const> = source
     connection.defer()
 
     if (not (NCS.ready)) then
@@ -15,7 +16,7 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
         return
     end
 
-    local identifier <const> = API_Player:getIdentifier(source)
+    local identifier <const> = API_Player:getIdentifier(_src)
     local function showBan(banData)
         local actions <const> = { NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_BAN_INFORMATION, "banInformation") }
         local banAdaptiveCard <const> = NCSAdaptiveCardBuilder()
@@ -113,8 +114,12 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
     MOD_Players:retrieveCharacters(identifier, function(rows)
         if (#rows == 0) then
             -- The player has no characters, we need to create one
-            -- TODO : Change the adaptive card below (which is from an enum) to the new system with the NCSAdaptiveCardBuilder object
-            local adaptiveCard = (NCSEnum.AdaptiveCard.CONNECTION_NO_CHARACTERS):format((_Literals.CONNECTION_WELCOME_MESSAGE):format(NCSInternal.ServerName), (_Literals.CONNECTION_CHARACTER_REQUIRED):format(NCSInternal.ServerName), _Literals.CONNECTION_BUTTON_CREATE)
+            local adaptiveCard <const> = NCSAdaptiveCardBuilder()
+                :addTitle((_Literals.CONNECTION_WELCOME_MESSAGE):format(NCSInternal.ServerName))
+                :addTextBlock((_Literals.CONNECTION_CHARACTER_REQUIRED):format(NCSInternal.ServerName))
+                :addActionSet("actions", { NCSAdaptiveCardAction(NCSEnum.AdaptiveCardAction.SUBMIT, _Literals.CONNECTION_BUTTON_CREATE, "creation") })
+                :build()
+            
             connection.presentCard(adaptiveCard, function()
                 showCharacterCreator(function(characterId)
                     if (not (characterId)) then
