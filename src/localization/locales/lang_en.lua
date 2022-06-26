@@ -32,6 +32,7 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Play with %s",
 
     CONNECTING_CREATING_CHARACTER = "Creating character...",
+    CONNECTING_CREATING_INVENTORY = "Creating inventory...",
 
     ZONE_DEFAULT_HELP_TEXT = "Press ~INPUT_CONTEXT~ to interact.",
 
@@ -50,4 +51,8 @@ _Literals = {
     
     ERROR_PLAYER_NOT_DEAD = "This player is not dead.",
     ERROR_PLAYER_ALREADY_DEAD = "This player is already dead.",
+
+    CASH_MONEY = "Liquid",
+    BANK_MONEY = "Bank Money",
+    BLACK_MONEY = "Black Money",
 }

@@ -1,4 +1,5 @@
 ---onDataLoaded
+---@param self NCSPlayer
 ---@param callback function
 ---@public
 ---@param self NCSPlayer

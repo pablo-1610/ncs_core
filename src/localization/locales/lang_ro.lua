@@ -29,6 +29,7 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Joaca cu %s",
 
     CONNECTING_CREATING_CHARACTER = "Crearea caracterului",
+    CONNECTING_CREATING_INVENTORY = "Crearea inventarului...",
 
     KICK_DEFAULT_MESSAGE = "Ai fost kickat de pe server",
     BAN_DEFAULT_MESSAGE = "Ai fost banat de pe server",

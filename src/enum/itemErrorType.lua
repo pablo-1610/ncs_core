@@ -1,0 +1,7 @@
+NCSEnum.ItemErrorType = {
+    SUCCESS = 1,
+    ITEM_NOT_EXIST = 2,
+    PLAYER_NOT_EXIST = 3,
+    NOT_SUFFICIENT_PLACE = 4,
+    NOT_PLAYER_HAS_ITEM = 5
+}

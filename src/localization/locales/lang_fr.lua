@@ -31,7 +31,8 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_TITLE = "Sélectionner un personnage",
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Jouer avec %s",
 
-    CONNECTING_CREATING_CHARACTER = "Création du personnage",
+    CONNECTING_CREATING_CHARACTER = "Création du personnage...",
+    CONNECTING_CREATING_INVENTORY = "Création de l'inventaire...",
 
     ZONE_DEFAULT_HELP_TEXT = "Appuyez sur ~INPUT_CONTEXT~ pour intéragir.",
 
@@ -43,4 +44,8 @@ _Literals = {
     
     ERROR_PLAYER_NOT_DEAD = "Le joueur n'est pas mort.",
     ERROR_PLAYER_ALREADY_DEAD = "Le joueur est déjà mort.",
+
+    CASH_MONEY = "Liquide",
+    BANK_MONEY = "Monnaie Bancaire",
+    BLACK_MONEY = "Source inconnue",
 }

@@ -12,6 +12,9 @@ setmetatable(NCSBot, {
 
         NCS:trace(("NCSBot: new bot ^2%s^7"):format(self.name), NCSEnum.LogType.INFO)
         MOD_Bots.list[self.name] = self
+
+        API_Tables:exportMetatable(NCSBot, self)
+
         return (self)
     end
 })

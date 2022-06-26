@@ -24,11 +24,10 @@ function MOD_Players:registerCharacter(identifier, identity, callback)
         return
     end
 
-    API_Database:insert("INSERT INTO ncs_players_characters (player_identifier, identity, accounts, skin, metadata) VALUES (@player_identifier, @identity, @accounts, @skin, \"[]\")", {
+    API_Database:insert("INSERT INTO ncs_players_characters (player_identifier, identity, skin, metadata) VALUES (@player_identifier, @identity, @skin, \"[]\")", {
         ["player_identifier"] = identifier,
         ["identity"] = json.encode(identity),
         ["skin"] = json.encode(NCSConstant.DefaultSkin),
-        ["accounts"] = json.encode(MOD_Config:getDefaultAccounts())
     }, function(characterId)
         if (callback) then
             NCS:trace(("Character created by ^3%s ^7: ^3%s %s"):format(identifier, identity.firstname, identity.lastname))
