@@ -32,5 +32,4 @@ function NCSCharacter:giveItem(itemName, count, callback)
     end
 
     callback(NCSEnum.ItemErrorType.SUCCESS)
-    NCSCharacter.save(self.user)
 end
