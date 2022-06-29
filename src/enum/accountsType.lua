@@ -4,6 +4,6 @@ NCSEnum.AccountsType = {
 }
 
 NCSEnum._getAccountLabel = function(accountType)
-    local displayAccount = { [1] = _Literals.CASH_MONEY, [3] = _Literals.BLACK_MONEY }
+    local displayAccount<const> = { [1] = _Literals.CASH_MONEY, [2] = _Literals.BLACK_MONEY }
     return displayAccount[accountType]
 end
