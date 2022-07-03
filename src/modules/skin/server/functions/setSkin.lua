@@ -8,7 +8,11 @@ function MOD_Skin:setSkin(playerId, skinTable, save)
         skinToApply[index] = value
     end
 
-    NCS:triggerClientEvent("setSkin", skinToApply)
+    local bagsWeight = NCSConstant.bagsWeight[skinToApply["bags_1"]]
+
+    MOD_Players:get(playerId).character:setMaxWeight(bagsWeight or GetConvarInt("ncs_default_max_weight", 20))
+
+    NCS:triggerClientEvent("setSkin", playerId, skinToApply)
 
     if save then
         MOD_Players:get(playerId).character.skin = skinToApply
