@@ -95,8 +95,15 @@ AddEventHandler("playerConnecting", function(playerName, _, connection)
                         connection.done(_Literals.ERROR_SERVER_CHARACTER_CREATION_FAILED)
                         return
                     end
-                    onDone(characterId)
-                    return
+                    connection.update(("💼 %s"):format(_Literals.CONNECTING_CREATING_CHARACTER))
+                    MOD_Players:registerInventory(characterId, function(bool)
+                        if (not bool) then
+                            connection.done(_Literals.ERROR_SERVER_CHARACTER_CREATION_FAILED)
+                            return
+                        end
+                        onDone(characterId)
+                        return
+                    end)
                 end)
             else
                 onDone()

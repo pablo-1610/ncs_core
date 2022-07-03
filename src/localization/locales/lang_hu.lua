@@ -34,6 +34,7 @@ _Literals = {
     CONNECTION_CHARACTER_SELECTION_BUTTON = "Játék vele %s",
 
     CONNECTING_CREATING_CHARACTER = "Karakter létrehozása...",
+    CONNECTING_CREATING_INVENTORY = "A leltár létrehozása...",
 
     ZONE_DEFAULT_HELP_TEXT = "Nyomd meg a ~INPUT_CONTEXT~ gombot az interakcióhoz.",
 

@@ -51,7 +51,7 @@ setmetatable(NCSPlayer, {
             self.role = MOD_Roles:get(roleIdentifier)
             self.dataLoaded = true
         end)
-
+        
         --[[
             Functions
         --]]

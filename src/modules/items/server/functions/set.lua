@@ -4,6 +4,7 @@
 ---@param weight number
 function MOD_Items:set(name, label, weight)
     self.list[name] = {
+        name = name,
         label = label,
         weight = weight,
     }

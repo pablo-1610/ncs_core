@@ -27,16 +27,14 @@ SET time_zone = "+00:00";
 -- Structure de la table `ncs_inventories`
 --
 
-CREATE TABLE `ncs_inventories`
-(
-    `inventory_identifier` varchar(80) NOT NULL,
-    `max_weight`           float       NOT NULL,
-    `allowed_content`      text        NOT NULL,
-    `accounts`             text        NOT NULL,
-    `weapons`              text        NOT NULL,
-    `items`                text        NOT NULL
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+CREATE TABLE `ncs_inventories` (
+  `character_id` int(11) NOT NULL,
+  `max_weight` float NOT NULL,
+  `allowed_content` text NOT NULL,
+  `accounts` text NOT NULL,
+  `weapons` text NOT NULL,
+  `items` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -65,7 +63,6 @@ CREATE TABLE `ncs_players_characters`
     `character_id`      int(11)     NOT NULL,
     `identity`          text        NOT NULL,
     `skin`              text DEFAULT NULL,
-    `accounts`          text        NOT NULL,
     `last_position`     text DEFAULT NULL,
     `metadata`          text        NOT NULL,
     `is_dead`           int(1)      DEFAULT 0,
@@ -224,7 +221,7 @@ COMMIT;
 -- Index pour la table `ncs_inventories`
 --
 ALTER TABLE `ncs_inventories`
-    ADD PRIMARY KEY (`inventory_identifier`);
+  ADD PRIMARY KEY (`character_id`);
 
 --
 -- Index pour la table `ncs_players`

@@ -5,6 +5,7 @@
 ---@field public accounts table
 ---@field public lastPosition any
 ---@field public metadata table
+---@field public inventory table<maxWeight:number; allowedContent:table; accounts:table; weapons:table; items:table>
 ---@field public sessionData table
 ---@class NCSCharacter
 NCSCharacter = {}
@@ -23,18 +24,17 @@ local __instance = {
 }
 
 setmetatable(NCSCharacter, {
-    __call = function(_, id, identity, skin, accounts, lastPosition, metadata, isDead, deathCause)
+    __call = function(_, id, identity, skin, lastPosition, metadata, isDead, deathCause, inventory)
         local self = setmetatable({}, __instance)
 
         self.id = id
         self.identity = identity
         self.skin = skin
-        self.accounts = accounts
         self.metadata = metadata
         self.lastPosition = lastPosition
         self.isDead = isDead
         self.death_data = deathCause
-
+        self.inventory = inventory
         self.sessionData = {}
 
         --[[
