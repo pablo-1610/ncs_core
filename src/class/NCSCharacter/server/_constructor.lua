@@ -24,12 +24,14 @@ local __instance = {
 }
 
 setmetatable(NCSCharacter, {
-    __call = function(_, id, identity, skin, lastPosition, metadata, isDead, deathCause, inventory)
+    __call = function(_, id, identity, skin, job, job_grade, lastPosition, metadata, isDead, deathCause, inventory)
         local self = setmetatable({}, __instance)
 
         self.id = id
         self.identity = identity
         self.skin = skin
+        self.job = job
+        self.job_grade = job_grade
         self.metadata = metadata
         self.lastPosition = lastPosition
         self.isDead = isDead
