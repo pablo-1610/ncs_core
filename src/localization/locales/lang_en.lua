@@ -51,6 +51,10 @@ _Literals = {
     
     ERROR_PLAYER_NOT_DEAD = "This player is not dead.",
     ERROR_PLAYER_ALREADY_DEAD = "This player is already dead.",
+    
+    ERROR_NO_PLAYER_ID = "Error no player with this id",
+    ERROR_JOB_NOT_EXIST = "This job doesn\'t exist",
+    ERROR_JOB_GRADE_NOT_EXIST = "This grade doesn\'t exist",
 
     CASH_MONEY = "Liquid",
     BANK_MONEY = "Bank Money",

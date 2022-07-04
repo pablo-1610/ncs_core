@@ -59,16 +59,17 @@ CREATE TABLE `ncs_players`
 
 CREATE TABLE `ncs_players_characters`
 (
-    `player_identifier` varchar(80) NOT NULL,
-    `character_id`      int(11)     NOT NULL,
-    `identity`          text        NOT NULL,
-    `skin`              text DEFAULT NULL,
-    `last_position`     text DEFAULT NULL,
-    `metadata`          text        NOT NULL,
-    `is_dead`           int(1)      DEFAULT 0,
-    `death_cause`       text        DEFAULT NULL
-) ENGINE = InnoDB
-  DEFAULT CHARSET = utf8mb4;
+  `player_identifier` varchar(80) NOT NULL,
+  `character_id`      int(11)     NOT NULL,
+  `identity`          text        NOT NULL,
+  `skin`              text        DEFAULT NULL,
+  `job`               varchar(25) NOT NULL,
+  `job_grade`         varchar(25) NOT NULL,
+  `last_position`     text        DEFAULT NULL,
+  `metadata`          text        NOT NULL,
+  `is_dead`           int(1)      DEFAULT 0,
+  `death_cause`       text        DEFAULT NULL
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -100,8 +101,8 @@ VALUES ('admin', 'Admin', 100),
 
 CREATE TABLE `ncs_roles_permissions`
 (
-    `role_identifier` varchar(80) NOT NULL,
-    `permission`      varchar(10) NOT NULL
+  `role_identifier` varchar(80) NOT NULL,
+  `permission`      varchar(10) NOT NULL
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4;
 
@@ -111,7 +112,8 @@ CREATE TABLE `ncs_roles_permissions`
 
 INSERT INTO `ncs_roles_permissions` (`role_identifier`, `permission`) VALUES
 	('admin', 'canRevive'),
-	('admin', 'canKill');
+	('admin', 'canKill'),
+  ('admin', 'canSetJob');
 
 --
 -- Structure de la table `ncs_bans`
@@ -130,11 +132,11 @@ CREATE TABLE `ncs_bans` (
 
 
 CREATE TABLE IF NOT EXISTS `ncs_items` (
-    `name` varchar(25) NOT NULL,
-    `label` varchar(25) NOT NULL,
-    `weight` int(11) NOT NULL,
-    PRIMARY KEY (`name`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `name` varchar(25) NOT NULL,
+  `label` varchar(25) NOT NULL,
+  `weight` int(11) NOT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `ncs_items` (`name`, `label`, `weight`) VALUES
 ('bread', 'Bread', 1),
@@ -142,10 +144,10 @@ INSERT INTO `ncs_items` (`name`, `label`, `weight`) VALUES
 
 
 CREATE TABLE IF NOT EXISTS `ncs_jobs` (
-    `name` varchar(255) NOT NULL,
-    `label` varchar(255) NOT NULL,
-    PRIMARY KEY (`name`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `name` varchar(255) NOT NULL,
+  `label` varchar(255) NOT NULL,
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 DELETE FROM `ncs_jobs`;
@@ -154,18 +156,19 @@ INSERT INTO `ncs_jobs` (`name`, `label`) VALUES
 ('police', 'Policier');
 
 CREATE TABLE IF NOT EXISTS `ncs_jobs_grades` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `name` varchar(25) NOT NULL,
-    `nameGrade` varchar(25) NOT NULL,
-    `label` varchar(25) NOT NULL,
-    PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(25) NOT NULL,
+  `nameGrade` varchar(25) NOT NULL,
+  `label` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 
 INSERT INTO `ncs_jobs_grades` (`id`, `name`, `nameGrade`, `label`) VALUES
-(1, 'police', 'recrue', 'Cadet'),
-(2, 'police', 'officier', 'Officier'),
-(3, 'ambulance', 'recrue', 'Recrue');
+  (1, 'police', 'recrue', 'Cadet'),
+  (2, 'police', 'officier', 'Officier'),
+  (3, 'ambulance', 'recrue', 'Recrue'),
+  (4, 'unemployed', 'unemployed', 'Unemployed');
 
 
 --
