@@ -110,8 +110,10 @@ CREATE TABLE `ncs_roles_permissions`
 --
 
 INSERT INTO `ncs_roles_permissions` (`role_identifier`, `permission`) VALUES
-	('admin', 'canRevive'),
-	('admin', 'canKill');
+('admin', 'canRevive'),
+('admin', 'canKill'),
+('admin', 'canGiveAcc'),
+('admin', 'canGiveIte');
 
 --
 -- Structure de la table `ncs_bans`
