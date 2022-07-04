@@ -2,11 +2,21 @@
 ---@param command string
 ---@param roleIdentifier string
 ---@param handler function
+---@param restrictedArgs table<string>
 ---@public
-function API_Commands:registerRoleCommand(command, roleIdentifier, handler)
+function API_Commands:registerRoleCommand(command, roleIdentifier, handler, restrictedArgs)
+    local useMess = ""
+    for _, arg in pairs(restrictedArgs or {}) do
+        useMess = useMess .. " ".. ("(^3%s^7)"):format(arg)
+    end
+
     RegisterCommand(command, function(_src, args)
         if (_src == 0) then
             return
+        end
+        local _restrictedArgs = (restrictedArgs and #restrictedArgs or 0)
+        if (_restrictedArgs ~= 0 and (#args ~= _restrictedArgs)) then
+            return (NCS:trace(("Bad use command : /%s %s"):format(command, useMess), NCSEnum.LogType.WARNING))
         end
         if (not (MOD_Roles:exists(roleIdentifier))) then
             return (NCS:die(("Execution of command %s failed, role %id does not exist"):format(command, roleIdentifier)))

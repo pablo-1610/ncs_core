@@ -17,5 +17,5 @@ function NCSEnum._getDiscordErrorType(code)
             return tostring(key)
         end
     end
-    return 'Unknown'
+    return ('Unknown')
 end

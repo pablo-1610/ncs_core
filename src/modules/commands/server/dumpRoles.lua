@@ -1,7 +1,4 @@
-RegisterCommand("dumpRoles", function(_src)
-    if (_src ~= 0) then
-        return
-    end
+API_Commands:registerConsoleCommand("dumpRoles", function()
     local roles = MOD_Roles:getAll()
     table.sort(roles, function(a, b)
         return a.powerIndex < b.powerIndex
