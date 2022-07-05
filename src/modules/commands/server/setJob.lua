@@ -1,15 +1,14 @@
 API_Commands:registerPermissionCommand("setjob", "canSetJob", function(player, args)
-    local target
     if not args[1] then
         return (player:showSystemNotification(_Literals.ERROR_NO_PLAYER_ID, NCSEnum.LogType.ERROR))
-    else 
-        local targetid = tonumber(args[1])
-        target = MOD_Players:get(targetid)
     end
-    if not target then
+    local targetid = tonumber(args[1])
+
+    if (not MOD_Players:exists(targetid)) then
         return (player:showSystemNotification(_Literals.TYPE_ERROR, NCSEnum.LogType.ERROR))
     end
 
+    local target = MOD_Players:get(targetid)
     local job = MOD_Jobs:get(args[2])
     if not job then
         return (player:showSystemNotification(_Literals.ERROR_JOB_NOT_EXIST, NCSEnum.LogType.ERROR))
@@ -26,4 +25,4 @@ API_Commands:registerPermissionCommand("setjob", "canSetJob", function(player, a
     else
         NCS:trace(("Player id ^2%s ^7(^2%s^7) setjob to %s"):format(target.serverId, target.name, args[2]), 3)
     end
-end)
+end, { "serverId", "jobName" })
