@@ -1,6 +1,6 @@
 API_Commands:registerPermissionCommand("kill", "canKill", function(player, args)
     local firstArgs <const> = args[1]
-    local target = MOD_Players:get(firstArgs == nil and player.serverId or firstArgs)
+    local target <const> = MOD_Players:get(firstArgs == nil and player.serverId or firstArgs)
     if not target then
         player:showSystemNotification(_Literals.TYPE_ERROR, NCSEnum.LogType.ERROR)
         return
