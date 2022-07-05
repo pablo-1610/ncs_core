@@ -13,16 +13,15 @@ API_Commands:registerPermissionCommand("setjob", "canSetJob", function(player, a
     if not job then
         return (player:showSystemNotification(_Literals.ERROR_JOB_NOT_EXIST, NCSEnum.LogType.ERROR))
     end
-
-    target.character:setJob(args[2])
     
     if args[3] then 
         if not MOD_Jobs:get(args[2]).grades[args[3]] then
             return (player:showSystemNotification(_Literals.ERROR_JOB_GRADE_NOT_EXIST, NCSEnum.LogType.ERROR))
         end
-        target.character:setJobGrade(args[3])
+        target.character:setJob(targetid, args[2], args[3])
         NCS:trace(("Player id ^2%s ^7(^2%s^7) setjob to %s grade %s"):format(target.serverId, target.name, args[2], args[3]), 3)
     else
+        target.character:setJob(targetid, args[2])
         NCS:trace(("Player id ^2%s ^7(^2%s^7) setjob to %s"):format(target.serverId, target.name, args[2]), 3)
     end
 end, { "serverId", "jobName" })
