@@ -10,6 +10,8 @@ _Literals = {
     ERROR_SERVER_STARTING_UP = "Le serveur est en cours de démarrage. Veuillez patienter.",
     ERROR_CRITICAL_HAPPENED = "Une erreur critique s'est produite. Veuillez réessayer de se reconnecter.",
     ERROR_MISSING_RANK_PERMISSION = "Vous n'avez pas la permission de faire cela.",
+    ERROR_MISSING_RANK = "Le role n'existe pas.",
+    ERROR_RANK_NOT_PRECISE = "Precisé le role a mettre.",
 
     CONNECTION_ABORTED = "Connexion annulée, veuillez réessayer.",
     CONNECTION_RETRIEVING_CHARACTERS = "Récupération des personnages...",

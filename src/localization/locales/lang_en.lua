@@ -10,6 +10,8 @@ _Literals = {
     ERROR_SERVER_STARTING_UP = "The server is starting up. Please wait.",
     ERROR_CRITICAL_HAPPENED = "A critical error happened. Please try to reconnect.",
     ERROR_MISSING_RANK_PERMISSION = "You do not have permission to do this.",
+    ERROR_MISSING_RANK = "The role does not exist.",
+    ERROR_RANK_NOT_PRECISE = "The rank to set isn't specified.",
 
     CONNECTION_ABORTED = "Connection aborted, please retry.",
     CONNECTION_RETRIEVING_CHARACTERS = "Retrieving characters...",
