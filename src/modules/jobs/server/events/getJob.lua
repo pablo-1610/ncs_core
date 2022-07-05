@@ -1,5 +1,6 @@
 API_Callback:register("getPlayerJob", function(source)
-    local job = MOD_Players:get(source).character:getJob()
-    local jobGrade = MOD_Players:get(source).character:getJobGrade()
+    local character = MOD_Players:get(source).character
+    local job = character:getJob()
+    local jobGrade = character:getJobGrade()
     return job, jobGrade
 end)
