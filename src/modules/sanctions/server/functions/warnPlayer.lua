@@ -9,6 +9,7 @@ function MOD_Sanctions:warnPlayer(license, reason)
             NCS:trace(("Failed to insert warn for player %s."):format(license))
             return
         end
+        
         MOD_Sanctions.List.Warns[result.insertId] = {
             ["id"] = result.insertId,
             ["license"] = license,
