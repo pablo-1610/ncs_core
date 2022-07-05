@@ -8,7 +8,7 @@ API_Commands:registerPermissionCommand("revive", "canRevive", function(player, a
     local playerPed = GetPlayerPed(target.serverId)
     local coords = GetEntityCoords(playerPed)
 	local formattedCoords = {
-		position = vector3(coords[1], coords[2], coords[3]),
+		position = vector3(coords.x, coords.y, coords.z),
 		heading = 90.0
 	}
 
