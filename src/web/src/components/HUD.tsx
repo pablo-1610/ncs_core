@@ -4,6 +4,7 @@ import timeImage from "../assets/images/hour.png"
 import hungerImage from "../assets/images/hunger.png"
 import thirstImage from "../assets/images/thirst.png"
 import moneyImage from "../assets/images/money.png"
+import formatMoney from "../utilities/formatMoney"
 
 function HUD() {
    const [hours, setHours] = useState(new Date())
@@ -11,10 +12,6 @@ function HUD() {
    const [hunger, setHunger] = useState(0)
    const [thirst, setThirst] = useState(0)
    const [money, setMoney] = useState("")
-
-   const formatMoney = (money: number): string => {
-      return money.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.")
-   }
 
    useEffect(() => {
       const hoursInterval = setInterval(() => setHours(new Date()), 10000)
