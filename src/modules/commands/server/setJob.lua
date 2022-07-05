@@ -7,13 +7,13 @@ API_Commands:registerPermissionCommand("setjob", "canSetJob", function(player, a
         return
     end 
     
-    local target = MOD_Players:get(firstArgs)
+    local target <const> = MOD_Players:get(firstArgs)
     if not target then
         player:showSystemNotification(_Literals.TYPE_ERROR, NCSEnum.LogType.ERROR)
         return
     end
 
-    local job = MOD_Jobs:get(secondArgs)
+    local job <const> = MOD_Jobs:get(secondArgs)
     if not job then
         player:showSystemNotification(_Literals.ERROR_JOB_NOT_EXIST, NCSEnum.LogType.ERROR)
         return
