@@ -1,11 +1,9 @@
 API_Commands:registerPermissionCommand("setjob", "canSetJob", function(player, args)
-    local target
     if not args[1] then
         return (player:showSystemNotification(_Literals.ERROR_NO_PLAYER_ID, NCSEnum.LogType.ERROR))
-    else 
-        local targetid = tonumber(args[1])
-        target = MOD_Players:get(targetid)
-    end
+    end 
+    
+    local target = MOD_Players:get(args[1])
     if not target then
         return (player:showSystemNotification(_Literals.TYPE_ERROR, NCSEnum.LogType.ERROR))
     end
