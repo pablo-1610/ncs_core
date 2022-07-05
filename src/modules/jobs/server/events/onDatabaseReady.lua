@@ -1,8 +1,10 @@
 NCS:handleEvent("databaseReady", function()
     API_Database:query("SELECT * FROM ncs_jobs", {}, function(rows)
         if (#rows <= 0) then
-            return (NCS:die("You must have at least one job in your database"))
+            NCS:die("You must have at least one job in your database")
+            return
         end
+        
         for _, row in pairs(rows) do
             local tableForGrade = {}
             API_Database:query("SELECT * FROM ncs_jobs_grades WHERE name = ?", {row.name}, function(grades)
