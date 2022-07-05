@@ -2,7 +2,8 @@ API_Commands:registerPermissionCommand("revive", "canRevive", function(player, a
     local firstArgs <const> = args[1]
     local target = MOD_Players:get(firstArgs == nil and player.serverId or firstArgs)
     if not target then
-        return (player:showSystemNotification(_Literals.TYPE_ERROR, NCSEnum.LogType.ERROR))
+        player:showSystemNotification(_Literals.TYPE_ERROR, NCSEnum.LogType.ERROR)
+        return
     end
 
     local playerPed = GetPlayerPed(target.serverId)
