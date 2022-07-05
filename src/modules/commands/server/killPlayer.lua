@@ -4,9 +4,6 @@ API_Commands:registerPermissionCommand("kill", "canKill", function(player, args)
     if not target then
         return (player:showSystemNotification(_Literals.TYPE_ERROR, NCSEnum.LogType.ERROR))
     end
-    if (not (target.character.isDead == 0)) then
-        return (player:showSystemNotification(_Literals.ERROR_PLAYER_ALREADY_DEAD, NCSEnum.LogType.ERROR))
-    end
 
     target.character:setDeathStatus(1, {})
     MOD_Players:set(target.serverId, target)
