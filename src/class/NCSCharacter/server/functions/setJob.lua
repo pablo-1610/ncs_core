@@ -8,11 +8,7 @@ function NCSCharacter:setJob(source, job, job_grade)
         return
     end
     self.job = job
-    if not MOD_Jobs:get(self.job).grades[job_grade] then
-        self.job_grade = MOD_Jobs:get(job).grades[1].nameGrade
-    else
-        self.job_grade = job_grade
-    end
+    self.job_grade = MOD_Jobs:get(self.job).grades[job_grade] and job_grade or MOD_Jobs:get(job).grades[1].nameGrade
     NCS:triggerClientEvent("jobChange", source, job, self.job_grade )
     return (self.job)
 end
