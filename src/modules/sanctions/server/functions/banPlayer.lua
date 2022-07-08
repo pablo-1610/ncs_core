@@ -5,11 +5,13 @@
 ---@public
 function MOD_Sanctions:banPlayer(license, reason, time)
     if (not license or not reason or not time) then
-        return NCS:die("The player or the reason or the time is missing")
+        NCS:die("The player or the reason or the time is missing")
+        return
     end
 
     if (MOD_Sanctions:isPlayerBan(license)) then
-        return NCS:die("The player is already banned")
+        NCS:die("The player is already banned")
+        return
     end
 
     time = API_Maths:unformatTime(time)
@@ -21,12 +23,14 @@ function MOD_Sanctions:banPlayer(license, reason, time)
             NCS:trace(("Failed to insert ban for player %s."):format(license))
             return
         end
+        
         MOD_Sanctions.List.Bans[license] = {
             ["id"] = result.insertId,
             ["license"] = license,
             ["reason"] = reason,
             ["time"] = time
         }
+
         NCS:trace(("Player %s banned."):format(license))
     end)
 end
