@@ -31,4 +31,4 @@ API_Commands:registerPermissionCommand("setjob", "canSetJob", function(player, a
     else
         NCS:trace(("Player id ^2%s ^7(^2%s^7) setjob to %s"):format(target.serverId, target.name, secondArgs), 3)
     end
-end)
+end, { "serverId", "jobName" })
