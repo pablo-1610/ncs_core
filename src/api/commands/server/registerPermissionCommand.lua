@@ -4,6 +4,7 @@
 ---@param handler function
 ---@public
 function API_Commands:registerPermissionCommand(command, permission, handler, restrictedArgs)
+    local useMess = ""
     local registerCommand = function(commandName)
         RegisterCommand(commandName, function(_src, args)
             if (_src == 0) then
@@ -25,16 +26,16 @@ function API_Commands:registerPermissionCommand(command, permission, handler, re
             handler(player, args)
         end)
     end
-    local useMess = ""
+
     for _, arg in pairs(restrictedArgs or {}) do
         useMess = useMess .. " ".. ("(^3%s^7)"):format(arg)
     end
 
     if type(command) == "string" then
-        registerCommand(command, permission, handler)
+        registerCommand(command)
     elseif type(command) == "table" then
         for _, v  in pairs(command) do
-            registerCommand(v, permission, handler)
+            registerCommand(v)
         end
     end
 end
