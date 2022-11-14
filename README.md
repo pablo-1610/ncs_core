@@ -3,6 +3,8 @@
 
 # NextCitizens Core
 
+# ⚠️ This project was abandoned due to the lack of time of the main developer (Pablo). Maybe it will start again one day... 
+
 NextCitizens is a powerful and optimized core for your FiveM server based on RolePlay.
 
 ```diff
